@@ -1,0 +1,12 @@
+/** Slug list mirrors app/hizmetler/<slug>/page.tsx routes */
+export const HIZMET_SLUGS = [
+  "implant-tedavisi",
+  "dis-beyazlatma",
+  "ortodonti",
+  "cocuk-dis-hekimligi",
+  "kanal-tedavisi",
+  "protez-zirkonyum",
+  "dis-dolgusu",
+] as const;
+
+export type HizmetSlug = (typeof HIZMET_SLUGS)[number];
