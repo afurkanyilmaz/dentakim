@@ -1,5 +1,6 @@
-import { WHATSAPP_URL } from "@/lib/constants";
-import { BUSINESS } from "@/lib/business";
+import { Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
+import { BUSINESS, whatsappUrl } from "@/lib/business";
 
 export function StickyCallBar() {
   return (
@@ -7,18 +8,18 @@ export function StickyCallBar() {
       <div className="grid grid-cols-2 gap-0 border-t border-border/60 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
         <a
           href={BUSINESS.phone.href}
-          className="flex items-center justify-center gap-1 bg-brand-dark py-4 text-center text-sm font-semibold text-white"
+          className="flex items-center justify-center gap-2 bg-brand-dark py-4 text-center text-sm font-semibold text-white"
         >
-          <span aria-hidden>📞</span>
+          <Phone className="size-4 shrink-0" aria-hidden />
           {BUSINESS.phone.display}
         </a>
         <a
-          href={WHATSAPP_URL}
+          href={whatsappUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1 bg-brand-whatsapp py-4 text-center text-sm font-semibold text-white"
+          className="flex items-center justify-center gap-2 bg-brand-whatsapp py-4 text-center text-sm font-semibold text-white"
         >
-          <span aria-hidden>💬</span>
+          <WhatsAppIcon className="size-4" />
           WhatsApp
         </a>
       </div>

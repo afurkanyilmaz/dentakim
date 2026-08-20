@@ -811,4 +811,191 @@ Kliniğimizde kullanılan sistemin bilgisi, barkodu ve seri numarası hasta dosy
       },
     ],
   },
+
+  {
+    slug: "dis-protezi-cesitleri",
+    title: "Diş Protezi Çeşitleri: Sabit mi, Hareketli mi? Hangisi Size Uygun?",
+    excerpt:
+      "Zirkonyum köprü, implant üstü protez, tam ve bölümlü damak: protez türlerinin farkları, ömürleri ve hangi durumda hangisinin tercih edildiği.",
+    date: "2026-08-20",
+    readTime: "8 dk",
+    category: "Protez",
+    authorSlug: "dr-musa-burak-sakar",
+    serviceSlug: "protez-zirkonyum",
+    whatsappMessage:
+      "Merhaba, diş protezi seçenekleri hakkında bilgi almak ve muayene randevusu oluşturmak istiyorum.",
+    content: `
+Eksik dişlerin tamamlanmasında tek bir doğru yöntem yok. Seçim; kaç dişin eksik olduğuna, çene kemiğinizin durumuna, komşu dişlerin sağlamlığına ve günlük yaşam alışkanlıklarınıza göre değişir. Bu yazıda protez türlerini yan yana koyuyoruz.
+
+## Protezler ikiye ayrılır
+
+- **Sabit protezler:** Ağızda çıkarılmadan kalır. Kron, köprü ve implant üstü protezler bu gruptadır. Kendi dişiniz gibi kullanılır.
+- **Hareketli protezler:** Hasta tarafından takılıp çıkarılır. Tam damak ve bölümlü protezler bu gruptadır. Temizliği kolaydır ama alışma süresi gerektirir.
+
+Kararı belirleyen ilk soru şudur: destek alınacak sağlam diş veya kemik var mı?
+
+## Zirkonyum kron ve köprü
+
+Tek diş eksikliğinde veya birkaç dişin yan yana kaybedildiği durumlarda, komşu dişlerden destek alınarak köprü yapılabilir. Zirkonyum altyapı ışığı doğal diş minesine benzer şekilde geçirdiği için görünüm canlıdır; metal içermediğinden dişetinde gri hat oluşturmaz.
+
+Dezavantajı: köprü için komşu dişlerin aşındırılması gerekir. O dişler sağlamsa, bu durum implanta göre bir kayıptır.
+
+> Komşu dişleriniz sağlamsa ve tek diş eksikse, köprü yerine implant çoğu vakada daha koruyucu bir seçenektir; karar tomografi sonrası verilir.
+
+## İmplant üstü protez
+
+Çene kemiğine yerleştirilen implantlardan destek alan sabit veya çıkarılabilir protezlerdir. Komşu dişlere dokunulmaz, çiğneme kuvveti doğrudan kemiğe aktarılır.
+
+Tam dişsizlikte özellikle alt çenede "overdenture" adı verilen çözüm sık tercih edilir: 2-4 implant üzerine oturan, hasta tarafından çıkarılabilen ama yerinden oynamayan protez. Alt tam damağın kaymasından şikâyet eden hastalarda konfor farkı belirgindir.
+
+## Tam damak protezi
+
+Hiç dişi kalmamış hastalarda uygulanır. Emme etkisiyle tutunur; üst çenede damak yüzeyi geniş olduğu için tutuculuk genellikle iyidir, alt çenede dil hareketleri nedeniyle daha zordur.
+
+Alışma süreci gerçektir: ilk haftalarda konuşma ve çiğnemede zorlanma normaldir. Kemik zamanla eriyeceği için birkaç yılda bir besleme (rebazaj) veya yenileme gerekir.
+
+## Bölümlü protez
+
+Bazı dişleri duran hastalarda, kalan dişlere kancalarla tutunan çıkarılabilir protezdir. Ekonomik ve hızlı bir çözümdür; ancak kancaların görünürlüğü ve destek dişler üzerindeki yük dezavantajlarıdır. Hassas tutuculu (precision attachment) tasarımlarda kanca görünmez.
+
+## Karşılaştırma
+
+- **Konfor:** İmplant üstü sabit protez > zirkonyum köprü > bölümlü protez > tam damak
+- **Komşu dişi koruma:** İmplant üstü protez, diğer tüm seçeneklerden üstündür
+- **Tedavi süresi:** Köprü ve hareketli protezler haftalar; implantlı çözümler aylar sürer
+- **Bakım:** Sabit protezlerde ara yüz fırçası ve düzenli profesyonel temizlik; hareketli protezlerde günlük çıkarıp temizleme
+- **Ömür:** Zirkonyum kron/köprü ortalama 10-15 yıl; implant gövdesi düzenli bakımla çok daha uzun; hareketli protezler kemik değişimine bağlı olarak birkaç yılda bir yenilenir
+
+## Bakım her seçenekte belirleyici
+
+Sabit protezlerde en sık karşılaşılan sorun, kron kenarındaki dişeti iltihabıdır. Ara yüz fırçası ve altı aylık profesyonel temizlik, protezin ömrünü doğrudan uzatır. Hareketli protezlerde ise gece çıkarılıp temiz suda bekletilmesi, hem dokunun dinlenmesini hem de protezin deforme olmamasını sağlar.
+
+> Diş sıkma (bruksizm) varsa gece plağı önerilir; aksi hâlde protez üzerindeki aşırı yük kırılmalara yol açabilir.
+
+## Karar nasıl veriliyor?
+
+Muayenede kalan dişlerin sağlamlığı, dişeti durumu, kapanış ilişkisi ve çene kemiği hacmi değerlendirilir; gerekirse panoramik röntgen veya tomografi alınır. Ardından uygun seçenekler ömür, süre ve maliyet açısından yan yana anlatılır. Çoğu hastada birden fazla seçenek uygundur; tercih birlikte yapılır.
+
+Protez tedavilerimizi [Protez ve Zirkonyum sayfamızda](/hizmetler/protez-zirkonyum), implant seçeneklerini ise [İmplant Tedavisi sayfamızda](/hizmetler/implant-tedavisi) ayrıntılı anlatıyoruz.
+
+Size hangi protezin uygun olduğunu öğrenmek için WhatsApp'tan yazabilir ya da doğrudan arayabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Sabit protez mi hareketli protez mi daha iyi?",
+        answer:
+          "Genel bir üstünlük sıralaması yapılamaz. Sabit protezler konfor ve doğallık açısından öndedir ancak yeterli destek dişi veya kemik gerektirir. Hareketli protezler daha geniş vakada uygulanabilir ve maliyeti düşüktür. Karar; kalan diş sayısı, kemik hacmi ve beklentinize göre muayenede verilir.",
+      },
+      {
+        question: "Protez alışma süreci ne kadar sürer?",
+        answer:
+          "Sabit protezlerde birkaç gün içinde alışma sağlanır. Hareketli protezlerde, özellikle ilk kez kullanılıyorsa konuşma ve çiğnemeye alışma 2-4 hafta sürebilir. Bu dönemde birkaç kontrol randevusu ile bası noktaları düzeltilir.",
+      },
+      {
+        question: "Protez kaç yılda bir yenilenir?",
+        answer:
+          "Zirkonyum kron ve köprüler doğru bakımla ortalama 10-15 yıl kullanılır. Hareketli protezler ise çene kemiğindeki değişime bağlı olarak birkaç yılda bir besleme veya yenileme gerektirir. Altı aylık kontroller bu süreyi uzatır.",
+      },
+      {
+        question: "Protez yaptırırken komşu dişlerim kesilir mi?",
+        answer:
+          "Köprü planlanıyorsa destek alınacak komşu dişlerin aşındırılması gerekir. İmplant üstü protezde ise komşu dişlere dokunulmaz. Bu, sağlam komşu dişi olan hastalarda implantın en önemli avantajıdır.",
+      },
+    ],
+  },
+  {
+    slug: "estetik-dis-hekimligi-nedir",
+    title: "Estetik Diş Hekimliği Nedir? Lamina, Zirkonyum ve Gülüş Tasarımı",
+    excerpt:
+      "Lamina veneer, zirkonyum kaplama, bonding ve gülüş tasarımı arasındaki farklar; hangi durumda hangisi uygulanır, diş kesilmesi şart mı?",
+    date: "2026-08-20",
+    readTime: "8 dk",
+    category: "Estetik Diş Hekimliği",
+    authorSlug: "dr-berna-kalkan-yardim",
+    serviceSlug: "protez-zirkonyum",
+    whatsappMessage:
+      "Merhaba, estetik diş tedavileri ve gülüş tasarımı hakkında bilgi almak istiyorum.",
+    content: `
+Estetik diş hekimliği tek bir işlem değil, dişlerin rengini, formunu ve dizilimini yüz hatlarıyla uyumlu hâle getirmeyi amaçlayan bir planlama yaklaşımıdır. Aynı sonuca birden çok yoldan ulaşılabilir; hangisinin uygun olduğu dişin mevcut durumuna bağlıdır.
+
+## En az müdahaleden en fazlasına
+
+Estetik planlamada temel ilke, hedefe ulaştıran en az müdahaleli yöntemi seçmektir. Sıralama genellikle şöyledir:
+
+1. Diş beyazlatma: Yalnızca renk sorunu varsa hiçbir aşındırma gerekmez.
+2. Bonding (kompozit düzenleme): Küçük kırık, aralık veya şekil bozukluğu kompozit ile tek seansta düzeltilir.
+3. Lamina veneer: Dişin yalnızca ön yüzüne ince porselen yaprakçık uygulanır; minimal aşındırma gerekir.
+4. Zirkonyum kron: Diş büyük ölçüde madde kaybetmiş veya kanal tedavili ise tam kaplama yapılır.
+
+> Sıra atlanmamalıdır. Renk sorunu beyazlatma ile çözülebilecekken doğrudan kaplamaya geçmek, geri dönüşü olmayan diş dokusu kaybı demektir.
+
+## Lamina veneer
+
+Ön dişlerin görünen yüzeyine uygulanan, yaklaşık 0,3-0,7 mm kalınlığında porselen yaprakçıklardır. Renk, form ve küçük diziliş bozukluklarını düzeltir.
+
+Avantajı: diş dokusundan çok az aşındırma gerektirir, ışık geçirgenliği doğala yakındır, leke tutmaz.
+
+Uygun olmadığı durumlar: dişte ileri düzey madde kaybı, kanal tedavisi görmüş kırılgan dişler, şiddetli diş sıkma alışkanlığı. Bu vakalarda tam kaplama daha güvenlidir.
+
+## Zirkonyum kaplama
+
+Metal içermeyen, beyaz ve yarı geçirgen zirkonyum oksit altyapı üzerine porselen uygulanır. Dişin tamamını sarar.
+
+Metal destekli porselene göre farkı: ışığı geçirdiği için görünüm daha canlıdır ve yıllar içinde dişeti çekildiğinde kaplamanın dibinde gri hat oluşmaz. Metal içermediğinden alerji riski de yoktur.
+
+## Bonding — tek seanslık çözüm
+
+Kompozit dolgu maddesinin diş yüzeyine şekillendirilerek uygulanmasıdır. Diş aralıkları, küçük kırıklar ve kenar düzensizlikleri tek seansta düzeltilebilir. Aşındırma gerekmez veya çok azdır.
+
+Sınırı: kompozit porselen kadar leke tutmaz değildir; çay, kahve ve sigara kullanımında birkaç yılda bir parlatma veya yenileme gerekebilir.
+
+## Gülüş tasarımı ne demek?
+
+Yukarıdaki işlemlerden birini ya da birkaçını, tek tek dişler yerine gülüşün bütünü düşünülerek planlamaktır. Diş boyu, orta hat, dişeti seviyesi, dudak hareketi ve yüz simetrisi birlikte değerlendirilir.
+
+Dijital gülüş tasarımında fotoğraf, video ve ağız içi tarama verileri bilgisayarda birleştirilir; sonuç tedaviye başlamadan önce ekranda modellenir. İstenirse bu model geçici bir prova olarak dişlerin üzerine uygulanır ve aynada gerçek boyutta değerlendirilir.
+
+## Diş kesilmesi şart mı?
+
+Hayır. Bazı vakalarda beyazlatma ve şeffaf plak tedavisiyle hiç aşındırma yapılmadan sonuç alınır. Lamina veneer uygulanacaksa minimal düzeyde aşındırma gerekir; tam kaplama ise yalnızca diş zaten madde kaybetmişse gündeme gelir.
+
+Ne kadar müdahale gerektiği planlama aşamasında netleşir ve sizden onay alınmadan hiçbir işlem yapılmaz.
+
+## Doğal görünüm nasıl sağlanır?
+
+Doğal sonucun anahtarı dişleri olabildiğince beyaz ve simetrik yapmak değil, oranları yüze uydurmaktır. Yaş, cinsiyet, dudak yapısı ve mesleki beklenti seçilecek tonu ve formu doğrudan etkiler.
+
+> Aşırı beyaz ve tamamen simetrik dişler ilk bakışta çarpıcı görünse de yapay algılanır; hafif asimetri ve doğal yüzey dokusu tasarımın bilinçli parçasıdır.
+
+## Öncesinde çözülmesi gerekenler
+
+Estetik işlemler öncesinde dişeti sağlığı, çürükler ve kapanış bozuklukları giderilir. Aktif dişeti iltihabı varken yapılan kaplamalar kısa sürede kenar uyumsuzluğu ve renklenme gösterir. Diş sıkma varsa gece plağı planlanır.
+
+Estetik tedavilerimizi [Protez ve Zirkonyum sayfamızda](/hizmetler/protez-zirkonyum) ve [Diş Beyazlatma sayfamızda](/hizmetler/dis-beyazlatma) ayrıntılı bulabilirsiniz. Uygulamaları [hekimlerimiz](/hekimler) yürütmektedir.
+
+Kendi gülüşünüz için hangi yöntemin uygun olduğunu öğrenmek isterseniz WhatsApp'tan yazabilir ya da telefonla ulaşabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Lamina mı zirkonyum mu tercih edilmeli?",
+        answer:
+          "Diş büyük ölçüde sağlamsa ve sorun renk ya da hafif form bozukluğuysa lamina veneer daha koruyucudur; çok az aşındırma gerektirir. Diş madde kaybetmiş, kanal tedavisi görmüş veya kırılgansa zirkonyum tam kaplama daha güvenlidir.",
+      },
+      {
+        question: "Estetik tedavi sonrası dişlerim hassas olur mu?",
+        answer:
+          "Aşındırma yapılan vakalarda ilk günlerde geçici sıcak-soğuk hassasiyeti görülebilir; genellikle birkaç gün içinde geçer. Geçici kaplama döneminde hassasiyet daha belirgin olabilir, kalıcı kaplama sonrası azalır.",
+      },
+      {
+        question: "Gülüş tasarımı kaç seansta biter?",
+        answer:
+          "Yalnızca kaplama içeren vakalar genellikle 1-2 hafta içinde tamamlanır. Ortodonti, dişeti düzenlemesi veya implant gerektiren kapsamlı planlar aylar sürebilir. Süre, ilk planlamada takvimle birlikte paylaşılır.",
+      },
+      {
+        question: "Sonucu önceden görebilir miyim?",
+        answer:
+          "Evet. Dijital tasarımda yeni gülüşünüz ekranda modellenir; istenirse geçici bir prova (mock-up) olarak dişlerinizin üzerine uygulanır ve aynada gerçek boyutta değerlendirirsiniz. Onayınızdan sonra kalıcı işleme geçilir.",
+      },
+    ],
+  },
 ];

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SERVICES, WHATSAPP_URL } from "@/lib/constants";
-import { BUSINESS } from "@/lib/business";
+import { SERVICES } from "@/lib/constants";
+import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { getServiceIcon } from "@/lib/service-icons";
 import type { ServicePageContent } from "@/lib/service-pages";
 import { ServiceCard } from "@/components/shared/ServiceCard";
@@ -9,6 +9,7 @@ import { FAQAccordion } from "@/components/shared/FAQAccordion";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
 import { ImplantBrands } from "@/components/shared/ImplantBrands";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import Image from "next/image";
 import { getDoctorsForService } from "@/lib/doctors";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -122,7 +123,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
                   {BUSINESS.phone.display}
                 </a>
                 <a
-                  href={WHATSAPP_URL}
+                  href={whatsappUrl(`Merhaba, ${content.h1} hakkında bilgi almak istiyorum.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
@@ -130,6 +131,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
                     "border-brand-primary text-brand-primary"
                   )}
                 >
+                  <WhatsAppIcon className="size-4" />
                   WhatsApp
                 </a>
               </div>

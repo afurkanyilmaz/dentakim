@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { Clock, MapPin, Stethoscope } from "lucide-react";
 
@@ -33,6 +34,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-whatsapp px-5 text-center text-[14px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark sm:px-7 sm:text-[15px]"
             >
+              <WhatsAppIcon className="size-4" />
               WhatsApp&apos;tan Bilgi Al
             </a>
             <a

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import Link from "next/link";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { generateMeta } from "@/lib/seo";
@@ -7,7 +8,7 @@ import { getBreadcrumbSchema, getFAQPageSchema } from "@/lib/schema";
 import { BreadcrumbNav } from "@/components/shared/BreadcrumbNav";
 import { FAQAccordion } from "@/components/shared/FAQAccordion";
 import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
-import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = generateMeta({
   title: "Randevu",
@@ -76,7 +77,7 @@ export default function RandevuPage() {
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
             >
-              <MessageCircle className="size-5" aria-hidden />
+              <WhatsAppIcon className="size-5" />
               WhatsApp&apos;tan Yazın
             </a>
             <a

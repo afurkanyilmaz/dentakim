@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import Image from "next/image";
 import { BUSINESS } from "@/lib/business";
 import { SERVICES } from "@/lib/constants";
@@ -96,6 +97,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
               rel="noopener noreferrer"
               className="inline-flex min-h-12 items-center rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
             >
+              <WhatsAppIcon className="size-4" />
               WhatsApp&apos;tan Randevu
             </a>
             <a

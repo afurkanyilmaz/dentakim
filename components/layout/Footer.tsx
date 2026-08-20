@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import Image from "next/image";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { SERVICES } from "@/lib/constants";
 import { DOCTORS } from "@/lib/doctors";
 import { REGIONS } from "@/lib/regions";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 
 const KLINIK_LINKS = [
   { href: "/klinik", label: "Kliniğimiz" },
@@ -62,7 +63,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="mt-2 inline-flex items-center gap-2 text-[15px] font-semibold text-brand-accent transition-colors hover:text-brand-surface"
             >
-              <MessageCircle className="size-4" aria-hidden />
+              <WhatsAppIcon className="size-4" />
               WhatsApp&apos;tan yazın
             </a>
           </div>

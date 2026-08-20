@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
 
 /**
@@ -10,7 +11,44 @@ import { AlertTriangle } from "lucide-react";
  *   "1. Adım"    → numaralı adım
  *   "> Uyarı"    → vurgu kutusu
  *   diğer        → paragraf (ilki giriş paragrafı olarak büyük gösterilir)
+ *
+ * Satır içinde şunlar desteklenir:
+ *   [metin](/adres)  → site içi bağlantı
+ *   **metin**        → kalın vurgu
  */
+
+/** Satır içi biçimlendirmeyi (bağlantı ve kalın) React düğümlerine çevirir. */
+function withLinks(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  // Bağlantı veya kalın kalıbını sırayla yakalar.
+  const re = /\[([^\]]+)\]\((\/[^)\s]*)\)|\*\*([^*]+)\*\*/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    if (m[1] && m[2]) {
+      parts.push(
+        <Link
+          key={`lnk-${i++}`}
+          href={m[2]}
+          className="font-semibold text-brand-link underline decoration-brand-accent/40 underline-offset-4 transition-colors hover:text-brand-dark hover:decoration-brand-accent"
+        >
+          {m[1]}
+        </Link>
+      );
+    } else if (m[3]) {
+      parts.push(
+        <strong key={`b-${i++}`} className="font-bold text-brand-dark">
+          {m[3]}
+        </strong>
+      );
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts.length ? parts : text;
+}
 
 export type Heading = { id: string; text: string };
 
@@ -48,7 +86,7 @@ export function ArticleBody({ content }: { content: string }) {
           {bullets.map((b, i) => (
             <li key={i} className="flex gap-3.5">
               <span className="mt-[10px] size-1.5 shrink-0 rounded-full bg-brand-accent" aria-hidden />
-              <span className="text-[16.5px] leading-[1.7] text-brand-mid">{b}</span>
+              <span className="text-[16.5px] leading-[1.7] text-brand-mid">{withLinks(b)}</span>
             </li>
           ))}
         </ul>
@@ -63,7 +101,7 @@ export function ArticleBody({ content }: { content: string }) {
               <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-primary-light font-heading text-[17px] font-bold text-brand-accent tabular-nums">
                 {i + 1}
               </span>
-              <span className="pt-1 text-[16.5px] leading-[1.7] text-brand-mid">{b}</span>
+              <span className="pt-1 text-[16.5px] leading-[1.7] text-brand-mid">{withLinks(b)}</span>
             </li>
           ))}
         </ol>
@@ -106,7 +144,7 @@ export function ArticleBody({ content }: { content: string }) {
             className="flex gap-3.5 rounded-panel border border-brand-accent/35 bg-brand-primary-light p-5"
           >
             <AlertTriangle className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
-            <p className="text-[16px] font-medium leading-[1.7] text-brand-dark">{t.slice(2)}</p>
+            <p className="text-[16px] font-medium leading-[1.7] text-brand-dark">{withLinks(t.slice(2))}</p>
           </aside>
         );
         return;
@@ -137,7 +175,7 @@ export function ArticleBody({ content }: { content: string }) {
               : "text-[17px] leading-[1.78] text-brand-mid [text-wrap:pretty]"
           }
         >
-          {t}
+          {withLinks(t)}
         </p>
       );
     });

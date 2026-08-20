@@ -1,6 +1,7 @@
 import { BUSINESS, whatsappUrl } from "@/lib/business";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import { cn } from "@/lib/utils";
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 
 type Props = {
   title?: string;
@@ -49,7 +50,7 @@ export function ContactCTA({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-full bg-brand-whatsapp px-[34px] py-[18px] text-[16.5px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
             >
-              <MessageCircle className="size-5" aria-hidden />
+              <WhatsAppIcon className="size-5" />
               WhatsApp&apos;tan Randevu
             </a>
             <a
@@ -95,7 +96,7 @@ export function ContactCTA({
           rel="noopener noreferrer"
           className="inline-flex min-h-12 items-center gap-2 rounded-full bg-brand-whatsapp px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
         >
-          <MessageCircle className="size-4" aria-hidden />
+          <WhatsAppIcon className="size-4" />
           WhatsApp&apos;tan Bilgi Al
         </a>
         <a
