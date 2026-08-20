@@ -129,28 +129,6 @@ export default function HekimPage({ params }: Props) {
               </section>
             ) : null}
 
-            {doctor.pending.length > 0 ? (
-              <section
-                aria-labelledby="icerik-bekleniyor"
-                className="rounded-card border border-dashed border-border bg-card p-6"
-              >
-                <h2
-                  id="icerik-bekleniyor"
-                  className="font-heading text-sm font-bold uppercase tracking-wide text-brand-mid"
-                >
-                  [NEEDS_CONTENT] — klinikten bekleniyor
-                </h2>
-                <ul className="mt-3 space-y-1 text-sm text-brand-mid">
-                  {doctor.pending.map((p) => (
-                    <li key={p}>• {p}</li>
-                  ))}
-                </ul>
-                <p className="mt-4 text-xs text-brand-mid">
-                  Bu blok yalnızca içerik tamamlanana kadar görünür; bilgiler geldiğinde
-                  kaldırılır. Doğrulanmamış hiçbir bilgi uydurulmamıştır.
-                </p>
-              </section>
-            ) : null}
 
             {doctor.serviceSlugs.length > 0 ? (
               <section aria-labelledby="uyguladigi-tedaviler">

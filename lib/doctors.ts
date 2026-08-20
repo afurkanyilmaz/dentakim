@@ -51,7 +51,10 @@ export type Doctor = {
   photo: string | null;
   /** Bu hekimin öne çıkan hizmet slug'ları — iç bağlantı için. */
   serviceSlugs: string[];
-  /** Doğrulanmamış alanlar — hekim sayfasında [NEEDS_CONTENT] olarak listelenir. */
+  /**
+   * Klinikten beklenen bilgiler — SİTEDE GÖSTERİLMEZ, yalnızca ekip içi not.
+   * Bilgi geldiğinde ilgili alan doldurulup bu listeden çıkarılır.
+   */
   pending: string[];
 };
 
