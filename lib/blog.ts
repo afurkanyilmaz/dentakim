@@ -344,7 +344,7 @@ Diş ağrısı çoğu zaman gece, yani hekime ulaşmanın en zor olduğu saatte 
 
 ## Ağrıyı geçici olarak azaltan yöntemler
 
-Bunlar tedavi değildir; hekime ulaşana kadar geçen süreyi rahatlatmak içindir.
+> Bunlar tedavi değildir; hekime ulaşana kadar geçen süreyi rahatlatmak içindir.
 
 - Başınızı yüksekte tutun. Yatarken ekstra bir yastık kullanmak bölgedeki basıncı azaltır.
 - Yanağınıza dışarıdan soğuk kompres uygulayın; 15 dakika uygulayıp 15 dakika ara verin.
@@ -371,7 +371,7 @@ Aşağıdaki durumlar acil değerlendirme gerektirir:
 - Darbe sonrası kırılan veya yerinden oynayan diş
 - Durmayan kanama
 
-Bu tablolar enfeksiyonun yayıldığını gösterebilir; erken müdahale hem dişi kurtarma şansını artırır hem de daha ciddi komplikasyonların önüne geçer.
+> Bu tablolar enfeksiyonun yayıldığını gösterebilir; erken müdahale hem dişi kurtarma şansını artırır hem de daha ciddi komplikasyonların önüne geçer.
 
 ## Klinikte ne yapılır?
 
@@ -446,7 +446,7 @@ Ağrınız varsa beklemeyin: WhatsApp'tan yazarak veya doğrudan arayarak durumu
 - Yerleştiremiyorsanız süt, serum fizyolojik veya hastanın kendi tükürüğü içinde saklayın. Musluk suyunda bekletmeyin.
 - Vakit kaybetmeden kliniğe ulaşın. İlk otuz dakikada müdahale edilen dişlerde tutunma şansı belirgin biçimde yüksektir.
 
-Süt dişi yerinden çıktıysa geri yerleştirilmez; altındaki daimi diş germine zarar verebilir. Yine de değerlendirme için hekime başvurulmalıdır.
+> Süt dişi yerinden çıktıysa geri yerleştirilmez; altındaki daimi diş germine zarar verebilir. Yine de değerlendirme için hekime başvurulmalıdır.
 
 ## Apse belirtileri
 
@@ -524,7 +524,7 @@ Kaynaşma tamamlandığında ölçü alınır ve kalıcı kaplama hazırlanır. 
 - Ağır sigara kullanımı: İyileşmeyi olumsuz etkiler, en azından iyileşme döneminde bırakılması önerilir.
 - Yetersiz kemik hacmi: Greftleme veya sinüs yükseltme ile uygun zemin oluşturulabilir.
 
-"Kemiğim yok, bende olmaz" yorumu çoğu vakada doğru değildir; karar ancak tomografi sonrası verilebilir.
+> "Kemiğim yok, bende olmaz" yorumu çoğu vakada doğru değildir; karar ancak tomografi sonrası verilebilir.
 
 ## Süre ve maliyeti ne belirler?
 
@@ -604,7 +604,7 @@ Basit vakalarda tek seansta tamamlanabilir. İltihap fazlaysa, apse varsa veya k
 
 İşlemin kendisi lokal anestezi altında ağrısızdır. Asıl ağrı, tedavi öncesindeki iltihaptan kaynaklanır ve tedavi bu ağrıyı ortadan kaldırır. İşlemden sonra ilk birkaç gün ısırırken hafif hassasiyet olabilir; bu normaldir ve giderek azalır.
 
-Ancak şu belirtilerde hekiminize dönmelisiniz: giderek artan ve gece uyandıran ağrı, yüzde şişlik, dişin uzamış gibi hissedilmesi, ateş.
+> Şu belirtilerde hekiminize dönmelisiniz: giderek artan ve gece uyandıran ağrı, yüzde şişlik, dişin uzamış gibi hissedilmesi, ateş.
 
 ## Kanal tedavisi görmüş diş ne kadar dayanır?
 
@@ -673,7 +673,7 @@ Ağzınıza özel hazırlanan şeffaf plaklara düşük konsantrasyonlu jel uygu
 
 ## Marketten alınan ürünler işe yarar mı?
 
-Beyazlatıcı macun ve bantlar yalnızca yüzeydeki lekeleri azaltır; dokunun kendi rengini değiştirmez. Kutudan çıkan hazır plaklar dişeti sınırına oturmadığı için jel taşabilir ve dişetinde yanık oluşturabilir. Karbonat, limon ve kömür gibi ev yöntemleri ise mineyi aşındırır; bu hasar geri dönüşsüzdür.
+Beyazlatıcı macun ve bantlar yalnızca yüzeydeki lekeleri azaltır; dokunun kendi rengini değiştirmez. Kutudan çıkan hazır plaklar dişeti sınırına oturmadığı için jel taşabilir ve dişetinde yanık oluşturabilir. > Karbonat, limon ve kömür gibi ev yöntemleri mineyi aşındırır; bu hasar geri dönüşsüzdür.
 
 ## Zarar verir mi?
 
@@ -687,7 +687,7 @@ Beslenme alışkanlıklarına göre ortalama 1-3 yıl. İşlemden sonraki ilk 48
 
 ## Önemli bir not
 
-Kaplama, dolgu ve laminalar beyazlamaz. Ön dişlerinizde dolgu varsa, beyazlatma sonrası renk uyumsuzluğu oluşabilir; bu durumda dolguların yenilenmesi planlanır. Bu ayrıntı muayenede önceden konuşulmalıdır.
+> Kaplama, dolgu ve laminalar beyazlamaz. Ön dişlerinizde dolgu varsa beyazlatma sonrası renk uyumsuzluğu oluşabilir; bu ayrıntı muayenede önceden konuşulmalıdır.
 
 ## Randevu
 
@@ -763,7 +763,7 @@ Buna karşılık toplam tedavi ücretini belirleyen tek şey implantın kendisi 
 
 ## "Ucuz implant" neden risklidir?
 
-Düşük maliyetli sistemlerde en sık karşılaşılan sorunlar; belgelendirmesi izlenemeyen ürünler, sınırlı protetik parça seçeneği ve tedarikçinin piyasadan çekilmesi durumunda parça bulunamamasıdır. Yerleştirme anındaki tasarruf, yıllar sonra tedavinin baştan yapılması anlamına gelebilir.
+Düşük maliyetli sistemlerde en sık karşılaşılan sorunlar; belgelendirmesi izlenemeyen ürünler, sınırlı protetik parça seçeneği ve tedarikçinin piyasadan çekilmesi durumunda parça bulunamamasıdır. > Yerleştirme anındaki tasarruf, yıllar sonra tedavinin baştan yapılması anlamına gelebilir.
 
 Bunun tersi de doğru değildir: en pahalı sistem her hasta için en uygun sistem demek değildir. Doğru sistem, sizin kemik yapınıza ve protetik planınıza uyan sistemdir.
 

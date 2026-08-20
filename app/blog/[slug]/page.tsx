@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -17,6 +16,7 @@ import {
 import { BreadcrumbNav } from "@/components/shared/BreadcrumbNav";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import { FAQAccordion } from "@/components/shared/FAQAccordion";
+import { ArticleBody, TableOfContents, extractHeadings } from "@/components/shared/ArticleBody";
 import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
 
 type Props = { params: { slug: string } };
@@ -35,88 +35,6 @@ export function generateMetadata({ params }: Props): Metadata {
   });
 }
 
-/** Satır bazlı içerik: "## " başlık, "- " liste maddesi, "1. " numaralı adım, diğer paragraf. */
-function renderContent(raw: string) {
-  const out: ReactNode[] = [];
-  let bullets: string[] = [];
-  let steps: string[] = [];
-
-  const flush = (key: string) => {
-    if (bullets.length) {
-      out.push(
-        <ul key={`ul-${key}`} className="flex flex-col gap-3">
-          {bullets.map((b, i) => (
-            <li key={i} className="flex gap-3.5">
-              <span
-                className="mt-[11px] size-1.5 shrink-0 rounded-full bg-brand-accent"
-                aria-hidden
-              />
-              <span className="text-[16.5px] leading-[1.7] text-brand-mid">{b}</span>
-            </li>
-          ))}
-        </ul>
-      );
-      bullets = [];
-    }
-    if (steps.length) {
-      out.push(
-        <ol key={`ol-${key}`} className="flex flex-col gap-3">
-          {steps.map((b, i) => (
-            <li key={i} className="flex gap-3.5">
-              <span className="mt-0.5 shrink-0 font-heading text-[18px] font-bold text-brand-accent tabular-nums">
-                {i + 1}.
-              </span>
-              <span className="text-[16.5px] leading-[1.7] text-brand-mid">{b}</span>
-            </li>
-          ))}
-        </ol>
-      );
-      steps = [];
-    }
-  };
-
-  raw
-    .trim()
-    .split("\n")
-    .forEach((line, i) => {
-      const t = line.trim();
-      if (!t) return;
-
-      if (t.startsWith("## ")) {
-        flush(String(i));
-        out.push(
-          <h2
-            key={i}
-            className="mt-6 font-heading text-[clamp(24px,3.2vw,32px)] font-semibold leading-[1.25] text-brand-dark first:mt-0 [text-wrap:pretty]"
-          >
-            {t.slice(3)}
-          </h2>
-        );
-        return;
-      }
-      if (t.startsWith("- ")) {
-        if (steps.length) flush(String(i));
-        bullets.push(t.slice(2));
-        return;
-      }
-      const numbered = /^\d+\.\s+(.*)$/.exec(t);
-      if (numbered) {
-        if (bullets.length) flush(String(i));
-        steps.push(numbered[1]);
-        return;
-      }
-      flush(String(i));
-      out.push(
-        <p key={i} className="text-[17px] leading-[1.78] text-brand-mid [text-wrap:pretty]">
-          {t}
-        </p>
-      );
-    });
-
-  flush("end");
-  return out;
-}
-
 export default function BlogPostPage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
   if (!post) notFound();
@@ -129,6 +47,7 @@ export default function BlogPostPage({ params }: Props) {
   const related = BLOG_POSTS.filter(
     (p) => p.slug !== post.slug && p.category && p.category === post.category
   ).slice(0, 3);
+  const headings = extractHeadings(post.content);
 
   return (
     <main className="pb-16">
@@ -203,7 +122,11 @@ export default function BlogPostPage({ params }: Props) {
       </div>
 
       <div className="container mx-auto max-w-[880px] px-6 py-14">
-        <article className="flex flex-col gap-5">{renderContent(post.content)}</article>
+        <TableOfContents headings={headings} />
+
+        <article className="mt-10">
+          <ArticleBody content={post.content} />
+        </article>
 
         <MedicalDisclaimer className="mt-10" />
 
