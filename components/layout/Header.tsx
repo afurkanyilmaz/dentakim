@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { SERVICES } from "@/lib/constants";
 import { DOCTORS } from "@/lib/doctors";
@@ -28,10 +29,18 @@ const NAV = [
   { href: "/iletisim", label: "İletişim" },
 ];
 
-/** Marka kilidi — Cormorant Garamond wordmark + altın üst başlık. */
+/** Marka kilidi — logo işareti + Cormorant Garamond wordmark + altın üst başlık. */
 function Wordmark() {
   return (
-    <Link href="/" className="flex items-baseline gap-2.5">
+    <Link href="/" className="flex items-center gap-2.5" aria-label={`${BUSINESS.brandName} ana sayfa`}>
+      <Image
+        src="/images/logo-mark.png"
+        alt=""
+        width={36}
+        height={36}
+        className="size-9 shrink-0"
+        priority
+      />
       <span className="font-heading text-[30px] font-bold leading-none tracking-[0.02em] text-brand-dark">
         {BUSINESS.brandName}
       </span>

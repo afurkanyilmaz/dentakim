@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { SERVICES } from "@/lib/constants";
 import { DOCTORS } from "@/lib/doctors";
@@ -31,7 +32,14 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Marka + NAP */}
           <div>
-            <p className="font-heading text-[30px] font-bold text-brand-surface">
+            <p className="flex items-center gap-2.5 font-heading text-[30px] font-bold text-brand-surface">
+              <Image
+                src="/images/logo-mark.png"
+                alt=""
+                width={36}
+                height={36}
+                className="size-9 shrink-0"
+              />
               {BUSINESS.brandName}
             </p>
             <p className="mt-3 text-[14.5px] leading-[1.7]">
