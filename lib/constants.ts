@@ -1,3 +1,7 @@
+/**
+ * NOT: İşletme bilgileri lib/business.ts'e taşındı; hekim kadrosu lib/doctors.ts'te.
+ * Bu dosya yalnızca SERVICES listesi ve geriye dönük uyumluluk için duruyor.
+ */
 export const CLINIC = {
   name: "Dentakim Ağız ve Diş Sağlığı Polikliniği",
   shortName: "Dentakim",
@@ -27,15 +31,6 @@ export const CLINIC = {
     instagram: "https://instagram.com/dentakim.istanbul",
     facebook: "https://facebook.com/dentakim",
   },
-  doctors: [
-    {
-      name: "Dr. Musa Burak Sakar",
-      title: "Diş Hekimi",
-      specialization: "Genel Diş Hekimliği & İmplant",
-      bio: "Uzun yıllara dayanan deneyimi ile Küçükçekmece'de hastalara güvenilir ve ağrısız diş tedavisi sunmaktadır.",
-      photo: "/images/doctor-sakar.jpg",
-    },
-  ],
 } as const;
 
 export const SERVICES = [
@@ -67,7 +62,7 @@ export const SERVICES = [
     slug: "kanal-tedavisi",
     title: "Kanal Tedavisi",
     icon: "root-canal",
-    desc: "Ağrısız kanal tedavisi",
+    desc: "Lokal anestezi ile kanal tedavisi",
   },
   {
     slug: "protez-zirkonyum",
@@ -80,6 +75,12 @@ export const SERVICES = [
     title: "Diş Dolgusu",
     icon: "filling",
     desc: "Renk uyumlu kompozit dolgular",
+  },
+  {
+    slug: "agiz-dis-cene-cerrahisi",
+    title: "Ağız, Diş ve Çene Cerrahisi",
+    icon: "surgery",
+    desc: "Gömülü 20'lik diş çekimi ve cerrahi işlemler",
   },
 ] as const;
 

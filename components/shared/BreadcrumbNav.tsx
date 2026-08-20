@@ -4,7 +4,7 @@ export type Crumb = { label: string; href?: string };
 
 export function BreadcrumbNav({ items }: { items: Crumb[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="text-sm text-brand-mid">
+    <nav aria-label="Breadcrumb" className="text-sm text-brand-faint">
       <ol className="flex flex-wrap items-center gap-1">
         {items.map((crumb, idx) => {
           const last = idx === items.length - 1;
@@ -18,7 +18,7 @@ export function BreadcrumbNav({ items }: { items: Crumb[] }) {
               {!last && crumb.href ? (
                 <Link
                   href={crumb.href}
-                  className="text-brand-primary hover:underline"
+                  className="text-brand-link hover:underline"
                 >
                   {crumb.label}
                 </Link>

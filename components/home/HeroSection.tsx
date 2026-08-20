@@ -1,84 +1,80 @@
-"use client";
+import Image from "next/image";
+import { BUSINESS, whatsappUrl } from "@/lib/business";
+import { Clock, MapPin } from "lucide-react";
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { CLINIC } from "@/lib/constants";
-import { Star } from "lucide-react";
-
+/**
+ * Hero — Claude Design (Dentakim Anasayfa.dc.html) düzeni:
+ * iki sütun, serif başlık, altın üst başlık, WhatsApp birincil CTA.
+ */
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-brand-primary-light/50 to-background">
-      <div className="container relative mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="max-w-3xl"
-        >
-          <p className="text-sm font-semibold uppercase tracking-wide text-brand-primary">
-            Küçükçekmece · Sultan Murat Caddesi
+    <section className="border-b border-brand-line bg-brand-surface">
+      <div className="container mx-auto grid max-w-[1240px] items-center gap-12 px-6 py-[clamp(40px,6vw,72px)] lg:grid-cols-2">
+        <div>
+          <p className="text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+            İstanbul · {BUSINESS.address.district}
           </p>
-          <h1 className="mt-3 font-heading text-4xl font-bold tracking-tight text-brand-dark md:text-5xl">
-            Küçükçekmece&apos;nin Güvenilen Diş Kliniği
+
+          <h1 className="mt-5 font-heading text-[clamp(36px,5.4vw,58px)] font-medium leading-[1.08] text-brand-dark [text-wrap:pretty]">
+            Küçükçekmece&apos;de Sağlıklı ve Estetik Gülüşler İçin Modern Diş
+            Tedavileri
           </h1>
-          <p className="mt-5 text-lg text-brand-mid">
-            İmplant, ortodonti, estetik diş ve çocuk diş hekimliğinde deneyimli ekip;
-            ağrısız yaklaşım ve modern teknoloji ile{" "}
-            <span className="font-medium text-brand-dark">Dentakim</span>’de
-            buluşuyor.
+
+          <p className="mt-6 max-w-xl text-[17px] leading-[1.7] text-brand-mid [text-wrap:pretty]">
+            Küçükçekmece&apos;deki kliniğimizde implant, zirkonyum ve estetik diş
+            tedavilerinde hekim kadromuzla size özel çözümler. Dijital planlama,
+            lokal anestezi ile konfor odaklı yaklaşım.
           </p>
+
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/randevu"
-              className={cn(
-                buttonVariants({ variant: "default", size: "lg" }),
-                "bg-brand-accent px-6 text-brand-dark hover:bg-brand-accent/90"
-              )}
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
             >
-              Randevu Al
-            </Link>
-            <Link
-              href="/hizmetler"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "border-brand-primary px-6 text-brand-primary hover:bg-brand-primary-light"
-              )}
+              WhatsApp&apos;tan Bilgi Al
+            </a>
+            <a
+              href={BUSINESS.phone.href}
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-brand-line-strong px-7 text-[15px] font-semibold text-brand-dark transition-colors hover:border-brand-dark"
             >
-              Hizmetlerimiz
-            </Link>
+              {BUSINESS.phone.display}
+            </a>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex items-center gap-2 rounded-xl border border-border/70 bg-white/80 px-4 py-3 text-sm text-brand-dark shadow-sm backdrop-blur">
-              <div className="flex text-brand-accent">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-4 fill-brand-accent stroke-brand-accent" />
-                ))}
-              </div>
-              <span className="font-medium">Google 5.0</span>
-            </div>
-            <div className="rounded-xl border border-border/70 bg-white/80 px-4 py-3 text-sm shadow-sm backdrop-blur">
-              <p className="font-heading font-bold text-brand-dark">15+ yıl</p>
-              <p className="text-brand-mid">Klinik deneyimi</p>
-            </div>
-            <div className="rounded-xl border border-border/70 bg-white/80 px-4 py-3 text-sm shadow-sm backdrop-blur">
-              <p className="font-heading font-bold text-brand-dark">5000+</p>
-              <p className="text-brand-mid">Hasta memnuniyeti</p>
-            </div>
-            <div className="rounded-xl border border-border/70 bg-white/80 px-4 py-3 text-sm shadow-sm backdrop-blur">
-              <p className="font-heading font-bold text-brand-dark">Aynı Gün</p>
-              <p className="text-brand-mid">Müsaitliğe göre randevu</p>
-            </div>
+          {/* Doğrulanabilir güven bilgileri */}
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            {/* Puan/yıldız gösterimi tanıtım kuralları nedeniyle kaldırıldı;
+                doğrulanabilir bilgiler gösteriliyor. */}
+            <p className="flex items-center gap-2 text-sm text-brand-mid">
+              <MapPin className="size-4 text-brand-accent" aria-hidden />
+              <span className="font-semibold text-brand-dark">
+                {BUSINESS.address.district}
+              </span>
+              Sultan Murat Caddesi üzerinde
+            </p>
+            <p className="flex items-center gap-2 text-sm text-brand-mid">
+              <Clock className="size-4 text-brand-accent" aria-hidden />
+              <span className="font-semibold text-brand-dark">
+                Hafta içi {BUSINESS.hours.weekdays.opens}–{BUSINESS.hours.weekdays.closes}
+              </span>
+              · Cumartesi açık
+            </p>
           </div>
-        </motion.div>
-        <p className="mt-8 text-xs text-brand-mid">
-          Hemen arayın:{" "}
-          <a className="font-semibold text-brand-primary" href={`tel:${CLINIC.phoneRaw}`}>
-            {CLINIC.phone}
-          </a>
-        </p>
+        </div>
+
+        {/* Klinik görseli */}
+        <div className="relative overflow-hidden rounded-card border border-brand-line bg-brand-primary-light">
+          <Image
+            src="/images/klinik/resepsiyon.jpg"
+            alt="Dentakim Küçükçekmece kliniği karşılama ve bekleme alanı"
+            width={900}
+            height={700}
+            className="h-full w-full object-cover"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

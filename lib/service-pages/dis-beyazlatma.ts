@@ -15,7 +15,7 @@ export const disBeyazlatma: ServicePageContent = {
     "Hekim gözetiminde kullanılan LED veya lazer uyarımlı sistemlerde süre sıkı takip edilir; ev tipi tray’lerde ise plak uyumu ve sızdırmazlık son derece kritiktir. İnternetten tek başına tray almak dişeti sınırını koruyamayabilir.",
     "Beyazlatma sonrası birkaç gün sıcak-soğuk hassasiyeti olabilir; florür jelleri ve desensitizer ürünlerle yönetilir. Renk stabilitesini korumak için aşırı renklendirici sıvılardan ilk haftalar kaçınmak önerilir.",
     "Yaşlanan mine yüzeylerinde yüzeysel mikro-aşındırma ve sonra beyazlatma kombine edilen minimal invaziv estetik protokoller de bazı durumlarda tercih edilebilir. Bu yaklaşım diş yapısı dar olan vakalar için daha kontrollüdür.",
-    "Son olarak, Küçükçekmece’de düzenli dişeti bakımınız ile mine yüzeyindeki yüzey lekelenmeler daha geç oluşur. Profesyonel temizlik + bilinçli ev hijyeni, beyazlatma etkisinin uzamasına yardım eder. Dentakim’de her adım yazılı olarak anlatılır; ücretsiz ön görüşmede yaşam tarzınıza uygun seçenekler konuşulur.",
+    "Son olarak, Küçükçekmece’de düzenli dişeti bakımınız ile mine yüzeyindeki yüzey lekelenmeler daha geç oluşur. Profesyonel temizlik + bilinçli ev hijyeni, beyazlatma etkisinin uzamasına yardım eder. Dentakim’de her adım yazılı olarak anlatılır; ön görüşmede yaşam tarzınıza uygun seçenekler konuşulur.",
   ],
   steps: [
     "Ağız içi kontrol, hassas bölgelerin ve eski dolguların işaretlenmesi.",

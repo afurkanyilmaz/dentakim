@@ -16,38 +16,26 @@
     --font-sans: var(--font-sans);
   }
   :root {
-    --background: oklch(0.985 0.002 100);
-    --foreground: oklch(0.231 0.03 271);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.45 0.09 172);
-    --primary-foreground: oklch(0.99 0.01 172);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.551 0.02 258);
-    --accent: oklch(0.965 0.02 172);
-    --accent-foreground: oklch(0.35 0.08 172);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.45 0.09 172);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    /* Claude Design token'ları — Dentakim Anasayfa.dc.html */
+    --background: #FCFBF9;
+    --foreground: #16242F;
+    --card: #FFFFFF;
+    --card-foreground: #16242F;
+    --popover: #FFFFFF;
+    --popover-foreground: #16242F;
+    --primary: #16242F;
+    --primary-foreground: #FCFBF9;
+    --secondary: #F3EFE7;
+    --secondary-foreground: #16242F;
+    --muted: #F3EFE7;
+    --muted-foreground: #5B6B77;
+    --accent: #F3EAD9;
+    --accent-foreground: #8A6A32;
+    --destructive: #9C3520;
+    --border: #ECE7DD;
+    --input: #ECE7DD;
+    --ring: #B99358;
+    --radius: 1rem;
   }
   .dark {
     --background: oklch(0.145 0 0);

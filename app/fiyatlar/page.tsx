@@ -1,32 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { generateMeta } from "@/lib/seo";
+import { whatsappUrl } from "@/lib/business";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = generateMeta({
   title: "Fiyatlar ve Ücretlendirme",
   description:
-    "Dentakim Küçükçekmece’de şeffaf planlama: tedavi ücretleri vaka bazında değişir. Ücretsiz ön görüşme ile net özet.",
+    "Dentakim Küçükçekmece’de şeffaf planlama: tedavi ücretleri vaka bazında değişir. Muayene ön görüşme ile net özet.",
   slug: "fiyatlar",
 });
 
 export default function FiyatlarPage() {
   return (
     <main className="pb-16">
-      <div className="border-b border-border/60 bg-brand-primary-light/40">
-        <div className="container mx-auto max-w-3xl px-4 py-12">
-          <h1 className="font-heading text-3xl font-bold text-brand-dark md:text-4xl">
+      <div className="border-b border-brand-line bg-brand-primary-light">
+        <div className="container mx-auto max-w-[880px] px-6 py-14">
+          <h1 className="font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
             Fiyatlar
           </h1>
-          <p className="mt-3 text-brand-mid">
+          <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid">
             Diş tedavisi maliyetleri; tanı, kullanılan materyal ve seans sayısına göre
             değişir. Web sitemizde genel aralık yerine, muayene sonrası yazılı plan
             paylaşmayı tercih ediyoruz.
           </p>
         </div>
       </div>
-      <div className="container mx-auto max-w-3xl px-4 py-12">
+      <div className="container mx-auto max-w-[880px] px-6 py-14">
         <div className="space-y-4 text-brand-mid leading-relaxed">
           <p>
             İmplant, ortodonti ve protez gibi uzun soluklu tedavilerde ön değerlendirme
@@ -35,7 +36,7 @@ export default function FiyatlarPage() {
             sıralanır.
           </p>
           <p>
-            Ücretsiz ön görüşme ile hedeflerinizi dinler, gerekiyorsa radyoloji ve
+            Ön görüşmede hedeflerinizi dinler, gerekiyorsa radyoloji ve
             fotoğraf çekimleriyle tanıyı tamamlarız. Ardından kalemler ve tahmini
             seans takvimi yazılı özetlenir.
           </p>
@@ -46,15 +47,17 @@ export default function FiyatlarPage() {
           </p>
         </div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            href="/randevu"
+          <a
+            href={whatsappUrl("Merhaba, tedavi fiyatları hakkında bilgi almak istiyorum.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "default" }),
               "bg-brand-accent text-brand-dark hover:bg-brand-accent/90"
             )}
           >
-            Randevu al
-          </Link>
+            WhatsApp&apos;tan Bilgi Al
+          </a>
           <Link href="/blog/kucukcekmece-dis-fiyatlari" className={buttonVariants({ variant: "outline" })}>
             Blog: Küçükçekmece diş fiyatları
           </Link>

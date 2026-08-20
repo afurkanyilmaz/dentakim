@@ -13,8 +13,10 @@ export type GeoPageDef = {
 export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
   "kucukcekmece-dis-klinigi": {
     slug: "kucukcekmece-dis-klinigi",
-    h1: "Küçükçekmece Diş Kliniği | Dentakim",
-    metaTitle: "Küçükçekmece Diş Kliniği | Dentakim",
+    // Anasayfa "Küçükçekmece diş kliniği" sorgusunu hedefliyor; bu sayfa
+    // yamyamlığı önlemek için mahalle ve ulaşım odağına çevrildi.
+    h1: "Küçükçekmece Diş Hekimi: Mahalleler, Ulaşım ve Tedaviler",
+    metaTitle: "Küçükçekmece Diş Hekimi — Mahalleler ve Ulaşım Rehberi",
     metaDescription:
       "Fevzi Çakmak, İnönü, Atakent, Cennet ve Halkalı çevresinde güvenilir diş kliniği Dentakim. Sultan Murat Cd. üzerinde implant, ortodonti ve estetik diş tedavileri.",
     areaServed: [
@@ -42,7 +44,7 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
       "fevzi-cakmak-dis-klinigi",
       "inonu-mahallesi-dis-klinigi",
       "cennet-mahallesi-dis-klinigi",
-      "sevakoy-dis-klinigi",
+      "sefakoy-dis-klinigi",
       "halkali-dis-klinigi",
       "atakent-dis-klinigi",
     ],
@@ -62,7 +64,7 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
       "Diş beyazlatma ve ön bölge estetiği talepleri özellikle genç çalışan kesimde yoğundur. Mine yüzeyi ve dişeti değerlendirmesi yapılmadan kimyasal işlem önerilmez. Dentakim’de ofis tipi veya ev protokolleri kişiselleştirilir; hassasiyet yönetimi için ürün seçimi ve süre kontrolü hekim tarafından yapılır.",
       "Kanal tedavisi ve zirkonyum kaplama gibi çok adımlı işlemlerde seanslar arası ağrı kontrolü ve geçici protez konforu önemlidir. Avcılar’dan düzenli gelen hastalar için takvim, iş ve okul saatlerine göre optimize edilir. Acil durumlarda telefon hattı üzerinden önceliklendirme yapılabilir.",
       "Bölgesel olarak Avcılar ve Küçükçekmece arasında hareket eden hastalar, aynı klinikte devamlılık sağlamak isteyebilir. Bu durumda tıbbi öykü, röntgen arşivi ve tedavi notları tek dosyada tutulara süreç kesintisiz yürür. İç bağlantılar ile ana sayfa ve hizmet sayfalarına kolayca geçebilirsiniz.",
-      "Sonuç olarak Avcılar Diş Kliniği araması yapan kullanıcılar için Dentakim; net adres, doğrulanmış telefon ve harita bağlantısı ile güvenilir bir tercih sunar. Ücretsiz ön görüşme ile beklentinizi dinler, size uygun tedavi sırasını ve süre tahminini yazılı özetleriz.",
+      "Sonuç olarak Avcılar Diş Kliniği araması yapan kullanıcılar için Dentakim; net adres, doğrulanmış telefon ve harita bağlantısı ile güvenilir bir tercih sunar. Muayene ön görüşme ile beklentinizi dinler, size uygun tedavi sırasını ve süre tahminini yazılı özetleriz.",
     ],
     transportNote:
       "E-5 üzerinden Küçükçekmece yönüne ilerlerken metrobüs ve ana caddeler üzerinden Sultan Murat Caddesi’ne bağlanabilirsiniz. Ambarlı ve Gümüşpala’dan gelen hastalar için toplu taşıma aktarmaları pratik seçenekler sunar.",
@@ -103,7 +105,7 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
       "İmplant ve protez ihtiyacı olan yetişkin hastalarda kemik hacmi ve sistemik sağlık öyküsü sorgulanır. Kontrolsüz diyabet veya kan sulandırıcı kullanımı gibi durumlar planı etkileyebilir; bu yüzden güncel raporlar istenebilir. Hekim-hasta iş birliği ile riskler açık şekilde paylaşılır.",
       "Esenyurt Diş Kliniği arayan kullanıcılar için Dentakim’in Küçükçekmece’deki merkezi, geniş hizmet yelpazesi ile tek çatı altında çözüm sunar. İç bağlantılar ile hizmet sayfalarına yönlendirme yapılır; blog içerikleri ise süre ve fiyat konularında ön bilgilendirme sağlar.",
       "Hasta memnuniyeti için iletişim hatları sürdürülebilir şekilde açık tutulur. WhatsApp üzerinden randevu metni göndermek mümkündür. Adres ve telefon bilgileri Google İşletme Profili ile uyumlu biçimde web sitede de aynı şekilde yer alır.",
-      "Sonuç olarak Esenyurt’tan gelen hastalar, Talatpaşa ve çevre mahallelerinden başlayarak Dentakim’de uzun soluklu tedavilere güvenle devam edebilir. Ücretsiz ön görüşme ile hedefleriniz dinlenir ve size özel yol haritası çıkarılır.",
+      "Sonuç olarak Esenyurt’tan gelen hastalar, Talatpaşa ve çevre mahallelerinden başlayarak Dentakim’de uzun soluklu tedavilere güvenle devam edebilir. Muayene ön görüşme ile hedefleriniz dinlenir ve size özel yol haritası çıkarılır.",
     ],
     transportNote:
       "E-5 ve TEM bağlantıları üzerinden Avrupa yakası içinde ilerleyerek Küçükçekmece yönüne geçilebilir. Toplu taşıma kullanan hastalar için aktarma noktaları planlanırken randevu saatinin trafikten bağımsız netleşmesi önerilir.",
@@ -149,8 +151,8 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
       "Atakent’ten Küçükçekmece yönüne ilçe içi bağlantılarla Sultan Murat Caddesi’ne geçilebilir. Trafik yoğun saatlerinde randevu öncesi yol planı önerilir.",
     nearbySlugs: ["halkali-dis-klinigi", "kucukcekmece-dis-klinigi"],
   },
-  "guneshli-dis-klinigi": {
-    slug: "guneshli-dis-klinigi",
+  "gunesli-dis-klinigi": {
+    slug: "gunesli-dis-klinigi",
     h1: "Güneşli Diş Kliniği | Dentakim",
     metaTitle: "Güneşli Diş Kliniği | Dentakim Küçükçekmece",
     metaDescription:
@@ -189,7 +191,7 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
     ],
     transportNote:
       "Mahmutbey’den Küçükçekmece yönüne TEM/E-5 bağlantıları veya toplu taşıma aktarmaları kullanılabilir. Trafik yoğun saatlerinde randevu öncesi yol planı önerilir.",
-    nearbySlugs: ["guneshli-dis-klinigi", "bagcilar-dis-klinigi"],
+    nearbySlugs: ["gunesli-dis-klinigi", "bagcilar-dis-klinigi"],
   },
   "fevzi-cakmak-dis-klinigi": {
     slug: "fevzi-cakmak-dis-klinigi",
@@ -210,7 +212,7 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
     ],
     transportNote:
       "Fevzi Çakmak Mahallesi’nde Sultan Murat Caddesi üzerindeki konumumuz, yürüyerek veya kısa araç mesafesiyle erişimi kolaylaştırır. Haritadan rota alabilirsiniz.",
-    nearbySlugs: ["kucukcekmece-dis-klinigi", "sevakoy-dis-klinigi", "inonu-mahallesi-dis-klinigi"],
+    nearbySlugs: ["kucukcekmece-dis-klinigi", "sefakoy-dis-klinigi", "inonu-mahallesi-dis-klinigi"],
   },
   "inonu-mahallesi-dis-klinigi": {
     slug: "inonu-mahallesi-dis-klinigi",
@@ -252,8 +254,8 @@ export const GEO_BY_SLUG: Record<string, GeoPageDef> = {
       "Cennet Mahallesi’nden Küçükçekmece Sultan Murat Caddesi yönüne ilçe içi bağlantılarla ulaşabilirsiniz. Haritadan rota almanız yeterlidir.",
     nearbySlugs: ["kucukcekmece-dis-klinigi", "halkali-dis-klinigi", "inonu-mahallesi-dis-klinigi"],
   },
-  "sevakoy-dis-klinigi": {
-    slug: "sevakoy-dis-klinigi",
+  "sefakoy-dis-klinigi": {
+    slug: "sefakoy-dis-klinigi",
     h1: "Sefaköy Diş Kliniği | Dentakim",
     metaTitle: "Sefaköy Diş Kliniği | Dentakim Küçükçekmece",
     metaDescription:

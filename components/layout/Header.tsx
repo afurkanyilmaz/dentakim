@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { CLINIC, SERVICES } from "@/lib/constants";
-import { buttonVariants } from "@/components/ui/button";
+import { useState } from "react";
+import { SERVICES } from "@/lib/constants";
+import { DOCTORS } from "@/lib/doctors";
+import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -16,121 +16,75 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Menu } from "lucide-react";
 
-function ToothLogo({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <path
-        d="M12 2C9.2 2 7 4.1 7 7.2c0 1.2.3 2.3.8 3.2-.4 1.4-.8 3.1-.8 5.1 0 2.2 1.1 4.5 2.7 5.5.6.4 1.3.6 2 .6.9 0 1.7-.3 2.3-.9.6.6 1.4.9 2.3.9.7 0 1.4-.2 2-.6 1.6-1 2.7-3.3 2.7-5.5 0-2-.4-3.7-.8-5.1.5-.9.8-2 .8-3.2C17 4.1 14.8 2 12 2Z"
-        fill="currentColor"
-        opacity="0.15"
-      />
-      <path
-        d="M12 2.5C9.45 2.5 7.5 4.35 7.5 7.1c0 1.05.25 2 .7 2.85-.45 1.35-.85 3.05-.85 5.05 0 2.05 1 4.15 2.45 5.05.55.35 1.15.55 1.8.55.75 0 1.45-.25 2-.75.55.5 1.25.75 2 .75.65 0 1.25-.2 1.8-.55 1.45-.9 2.45-3 2.45-5.05 0-2-.4-3.7-.85-5.05.45-.85.7-1.8.7-2.85 0-2.75-1.95-4.6-4.5-4.6Z"
-        stroke="currentColor"
-        strokeWidth="1.2"
-      />
-    </svg>
-  );
-}
-
-function BrandLogo() {
-  const [failed, setFailed] = useState(false);
-  if (failed) {
-    return <ToothLogo className="size-8 text-brand-primary" />;
-  }
-  return (
-    <Image
-      src="/images/logo-dentakim.svg"
-      alt="Dentakim logo"
-      width={32}
-      height={32}
-      className="size-8"
-      onError={() => setFailed(true)}
-      priority={false}
-    />
-  );
-}
-
 const NAV = [
-  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/hekimler", label: "Hekimler" },
+  { href: "/bolgeler", label: "Bölgeler" },
+  { href: "/klinik", label: "Klinik" },
   { href: "/blog", label: "Blog" },
   { href: "/iletisim", label: "İletişim" },
 ];
 
-export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+/** Marka kilidi — Cormorant Garamond wordmark + altın üst başlık. */
+function Wordmark() {
+  return (
+    <Link href="/" className="flex items-baseline gap-2.5">
+      <span className="font-heading text-[30px] font-bold leading-none tracking-[0.02em] text-brand-dark">
+        {BUSINESS.brandName}
+      </span>
+      <span className="hidden text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-accent sm:inline">
+        Ağız ve Diş Sağlığı
+      </span>
+    </Link>
+  );
+}
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+export function Header() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-40 w-full border-b transition-colors",
-        scrolled
-          ? "border-border/60 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/70"
-          : "border-transparent bg-background"
-      )}
-    >
-      <div className="container mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-heading text-xl font-bold text-brand-primary"
-        >
-          <BrandLogo />
-          <span className="leading-none">{CLINIC.shortName}</span>
-        </Link>
+    <header className="sticky top-0 z-50 w-full border-b border-brand-line bg-[rgba(252,251,249,0.92)] backdrop-blur-[12px]">
+      <div className="container mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-3 px-6 py-3.5">
+        <Wordmark />
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Ana menü">
+        {/* Masaüstü menü */}
+        <nav
+          className="hidden items-center gap-x-[26px] text-[14.5px] font-semibold md:flex"
+          aria-label="Ana menü"
+        >
           <DropdownMenu>
-            <DropdownMenuTrigger
-              className={cn(
-                "inline-flex h-9 items-center gap-1 rounded-lg px-3 text-sm font-medium text-brand-dark outline-none",
-                "hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
-              )}
-            >
-              Hizmetler
+            <DropdownMenuTrigger className="inline-flex items-center gap-1 text-brand-mid outline-none transition-colors hover:text-brand-dark focus-visible:text-brand-dark">
+              Tedaviler
               <ChevronDown className="size-4 opacity-70" aria-hidden />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-[min(100vw-2rem,560px)] p-3">
-              <DropdownMenuLabel className="text-brand-mid">
-                Tüm hizmetler
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
+            <DropdownMenuContent
+              align="start"
+              className="w-[min(100vw-2rem,540px)] rounded-card border-brand-line bg-white p-4"
+            >
               <div className="grid gap-1 sm:grid-cols-2">
                 {SERVICES.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/hizmetler/${s.slug}`}
-                    className="rounded-md px-2 py-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                    className="rounded-panel px-3 py-2.5 outline-none transition-colors hover:bg-brand-primary-light focus-visible:bg-brand-primary-light"
                   >
-                    <span className="font-medium text-brand-dark">{s.title}</span>
-                    <span className="mt-0.5 block text-xs text-brand-mid">{s.desc}</span>
+                    <span className="block font-heading text-[17px] font-semibold text-brand-dark">
+                      {s.title}
+                    </span>
+                    <span className="mt-0.5 block text-xs font-normal text-brand-mid">
+                      {s.desc}
+                    </span>
                   </Link>
                 ))}
               </div>
-              <DropdownMenuSeparator />
               <Link
                 href="/hizmetler"
-                className="block rounded-md px-2 py-2 text-sm font-medium text-brand-primary hover:bg-brand-primary-light"
+                className="mt-2 block border-t border-brand-line px-3 pt-3 text-sm font-bold text-brand-accent hover:text-brand-dark"
               >
-                Hizmetler sayfası
+                Tüm tedaviler →
               </Link>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -139,79 +93,104 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-brand-dark hover:bg-muted"
+              className="text-brand-mid transition-colors hover:text-brand-dark"
             >
               {item.label}
             </Link>
           ))}
-
-          <Link
-            href="/randevu"
-            className={cn(
-              buttonVariants({ variant: "default" }),
-              "ml-2 bg-brand-accent text-brand-dark hover:bg-brand-accent/90"
-            )}
-          >
-            Randevu Al
-          </Link>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <Sheet>
+        {/* Sağ blok: telefon + CTA */}
+        <div className="flex items-center gap-3.5">
+          <a
+            href={BUSINESS.phone.href}
+            className="hidden items-center gap-2 text-[14.5px] font-bold text-brand-dark transition-colors hover:text-brand-accent lg:flex"
+          >
+            <span
+              className="inline-block size-2 rounded-full bg-brand-whatsapp"
+              aria-hidden
+            />
+            {BUSINESS.phone.display}
+          </a>
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full bg-brand-dark px-[22px] py-3 text-sm font-bold text-brand-surface transition-colors hover:bg-brand-deep sm:inline-block"
+          >
+            Randevu Oluştur
+          </a>
+
+          {/* Mobil menü */}
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={cn(
-                buttonVariants({ variant: "outline", size: "icon" }),
-                "border-brand-primary/30"
-              )}
+              className="inline-flex size-10 items-center justify-center rounded-full border border-brand-line text-brand-dark md:hidden"
               aria-label="Menüyü aç"
             >
               <Menu className="size-5" />
             </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[min(100vw-2rem,420px)] px-4"
-            >
+            <SheetContent side="right" className="w-[min(100vw-2rem,400px)] bg-brand-surface px-5">
               <SheetHeader>
-                <SheetTitle className="font-heading text-brand-dark">Menü</SheetTitle>
+                <SheetTitle className="text-left font-heading text-2xl font-semibold text-brand-dark">
+                  Menü
+                </SheetTitle>
               </SheetHeader>
-              <div className="mt-6 flex flex-col gap-1 pb-6">
-                <p className="px-2 text-xs font-semibold uppercase tracking-wide text-brand-mid">
-                  Hizmetler
+
+              <div className="mt-6 flex flex-col gap-1 pb-8">
+                <p className="px-3 pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                  Tedaviler
                 </p>
                 {SERVICES.map((s) => (
                   <Link
                     key={s.slug}
                     href={`/hizmetler/${s.slug}`}
-                    className="rounded-lg px-3 py-3 text-sm font-medium text-brand-dark hover:bg-muted"
+                    onClick={() => setOpen(false)}
+                    className="rounded-panel px-3 py-3 font-heading text-lg font-semibold text-brand-dark hover:bg-brand-primary-light"
                   >
                     {s.title}
                   </Link>
                 ))}
                 <Link
                   href="/hizmetler"
-                  className="rounded-lg px-3 py-3 text-sm font-semibold text-brand-primary hover:bg-brand-primary-light"
+                  onClick={() => setOpen(false)}
+                  className="rounded-panel px-3 py-3 text-sm font-bold text-brand-accent"
                 >
-                  Tüm hizmetler
+                  Tüm tedaviler →
                 </Link>
-                <div className="my-3 h-px bg-border" />
-                {NAV.map((item) => (
+
+                <div className="my-3 h-px bg-brand-line" />
+
+                <p className="px-3 pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                  Klinik
+                </p>
+                {[...NAV, { href: "/fiyatlar", label: "Fiyatlar" }].map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-lg px-3 py-3 text-sm font-medium text-brand-dark hover:bg-muted"
+                    onClick={() => setOpen(false)}
+                    className="rounded-panel px-3 py-3 text-[15px] font-semibold text-brand-mid hover:bg-brand-primary-light hover:text-brand-dark"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Link
-                  href="/randevu"
+                {DOCTORS.length > 0 ? null : null}
+
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    buttonVariants({ variant: "default" }),
-                    "mt-4 bg-brand-accent text-brand-dark hover:bg-brand-accent/90"
+                    "mt-5 rounded-full bg-brand-dark px-6 py-3.5 text-center text-sm font-bold text-brand-surface"
                   )}
                 >
-                  Randevu Al
-                </Link>
+                  Randevu Oluştur
+                </a>
+                <a
+                  href={BUSINESS.phone.href}
+                  className="mt-2 rounded-full border border-brand-line px-6 py-3.5 text-center text-sm font-bold text-brand-dark"
+                >
+                  {BUSINESS.phone.display}
+                </a>
               </div>
             </SheetContent>
           </Sheet>

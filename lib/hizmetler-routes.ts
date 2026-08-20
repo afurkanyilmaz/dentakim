@@ -7,6 +7,7 @@ export const HIZMET_SLUGS = [
   "kanal-tedavisi",
   "protez-zirkonyum",
   "dis-dolgusu",
+  "agiz-dis-cene-cerrahisi",
 ] as const;
 
 export type HizmetSlug = (typeof HIZMET_SLUGS)[number];

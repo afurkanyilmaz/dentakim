@@ -1,65 +1,105 @@
-"use client";
+import { BUSINESS } from "@/lib/business";
+import { Clock, ExternalLink, MapPin, Phone } from "lucide-react";
+import { Section, SectionHeader } from "@/components/shared/Section";
 
-import { motion } from "framer-motion";
-import { CLINIC } from "@/lib/constants";
-import { Clock, MapPin, Phone } from "lucide-react";
-
+/** İletişim & konum — Claude Design'daki krem zeminli harita bölümü. */
 export function MapSection() {
   return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="container mx-auto max-w-6xl px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid gap-10 lg:grid-cols-2 lg:items-stretch"
-        >
-          <div className="overflow-hidden rounded-2xl border border-border/70 shadow-sm">
-            <iframe
-              title="Dentakim Küçükçekmece harita — Fevzi Çakmak Sultan Murat Cd. No:86 A"
-              src={CLINIC.googleMapsEmbed}
-              className="h-[320px] w-full lg:h-full lg:min-h-[380px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <div className="flex flex-col justify-center rounded-2xl border border-border/70 bg-brand-surface/50 p-8">
-            <h2 className="font-heading text-2xl font-bold text-brand-dark md:text-3xl">
-              Kliniğimize gelin
-            </h2>
-            <p className="mt-3 flex gap-2 text-brand-mid">
-              <MapPin className="mt-1 size-5 shrink-0 text-brand-primary" aria-hidden />
-              <span>
-                Fevzi Çakmak, Sultan Murat Cd. No:86A Küçükçekmece —{" "}
-                <span className="font-medium text-brand-dark">
-                  kolay ulaşım, net adres
-                </span>
-              </span>
-            </p>
-            <p className="mt-4 flex gap-2 text-brand-mid">
-              <Phone className="mt-1 size-5 shrink-0 text-brand-primary" aria-hidden />
-              <a
-                href={`tel:${CLINIC.phoneRaw}`}
-                className="font-semibold text-brand-primary hover:underline"
-              >
-                {CLINIC.phone}
-              </a>
-            </p>
-            <div className="mt-6 space-y-2 text-sm text-brand-mid">
-              <p className="flex items-start gap-2 font-medium text-brand-dark">
-                <Clock className="mt-0.5 size-5 shrink-0 text-brand-primary" aria-hidden />
-                Çalışma saatleri
+    <Section id="iletisim" tone="white" labelledBy="konum-baslik">
+      <SectionHeader
+        id="konum-baslik"
+        eyebrow="İletişim & Konum"
+        title="Küçükçekmece'nin merkezinde, ulaşımı kolay"
+        lead="Halkalı, Atakent, Sefaköy ve Cennet Mahallesi'nden ortalama 10 dakikada ulaşabilirsiniz."
+      />
+
+      <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+        <div className="flex flex-col justify-center gap-7 rounded-card border border-brand-line bg-brand-surface p-8">
+          <div className="flex gap-3.5">
+            <MapPin className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+            <div>
+              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                Adres
               </p>
-              <p>Hafta içi: {CLINIC.hours.weekdays}</p>
-              <p>Cumartesi: {CLINIC.hours.saturday}</p>
-              <p>Pazar: {CLINIC.hours.sunday}</p>
+              <p className="mt-1.5 text-[15.5px] leading-[1.7] text-brand-mid">
+                {BUSINESS.address.street}
+                <br />
+                {BUSINESS.address.postalCode} {BUSINESS.address.district} /{" "}
+                {BUSINESS.address.city}
+              </p>
             </div>
-            <p className="mt-6 text-sm text-brand-mid">
-              Tam adres: {CLINIC.address.full}
-            </p>
           </div>
-        </motion.div>
+
+          <div className="flex gap-3.5">
+            <Phone className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+            <div>
+              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                Telefon
+              </p>
+              <a
+                href={BUSINESS.phone.href}
+                className="mt-1.5 block text-[17px] font-bold text-brand-dark transition-colors hover:text-brand-accent"
+              >
+                {BUSINESS.phone.display}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex gap-3.5">
+            <ExternalLink className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+            <div>
+              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                Google
+              </p>
+              <a
+                href={BUSINESS.google.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1.5 block text-[15.5px] font-semibold text-brand-link hover:text-brand-dark"
+              >
+                İşletme profilimiz · Plus Code {BUSINESS.plusCode.split(" ")[0]}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex gap-3.5">
+            <Clock className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+            <div className="w-full">
+              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                Çalışma Saatleri
+              </p>
+              <dl className="mt-1.5 space-y-1 text-[15px] text-brand-mid">
+                <div className="flex justify-between gap-6">
+                  <dt>{BUSINESS.hours.weekdays.days}</dt>
+                  <dd className="tabular-nums">
+                    {BUSINESS.hours.weekdays.opens} – {BUSINESS.hours.weekdays.closes}
+                  </dd>
+                </div>
+                <div className="flex justify-between gap-6">
+                  <dt>{BUSINESS.hours.saturday.days}</dt>
+                  <dd className="tabular-nums">
+                    {BUSINESS.hours.saturday.opens} – {BUSINESS.hours.saturday.closes}
+                  </dd>
+                </div>
+                <div className="flex justify-between gap-6">
+                  <dt>{BUSINESS.hours.sunday.days}</dt>
+                  <dd>Kapalı</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div className="min-h-[360px] overflow-hidden rounded-card border border-brand-line">
+          <iframe
+            title="Dentakim Küçükçekmece harita — Fevzi Çakmak, Sultan Murat Cd. No:86 A"
+            src={BUSINESS.google.embedUrl}
+            className="size-full min-h-[360px]"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

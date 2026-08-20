@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CLINIC } from "@/lib/constants";
 import { generateMeta } from "@/lib/seo";
+import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -15,18 +15,18 @@ export const metadata: Metadata = generateMeta({
 export default function HakkimizdaPage() {
   return (
     <main className="pb-16">
-      <div className="border-b border-border/60 bg-brand-primary-light/40">
-        <div className="container mx-auto max-w-3xl px-4 py-12">
-          <h1 className="font-heading text-3xl font-bold text-brand-dark md:text-4xl">
+      <div className="border-b border-brand-line bg-brand-primary-light">
+        <div className="container mx-auto max-w-[880px] px-6 py-14">
+          <h1 className="font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
             Hakkımızda
           </h1>
           <p className="mt-3 text-lg text-brand-mid">
-            {CLINIC.name} olarak Küçükçekmece’de şeffaf, güvenli ve konforlu diş
+            {BUSINESS.displayName} olarak Küçükçekmece’de şeffaf, güvenli ve konforlu diş
             hekimliği sunuyoruz.
           </p>
         </div>
       </div>
-      <div className="container mx-auto max-w-3xl px-4 py-12">
+      <div className="container mx-auto max-w-[880px] px-6 py-14">
         <div className="space-y-4 text-brand-mid leading-relaxed">
           <p>
             Dentakim; Fevzi Çakmak Mahallesi, Sultan Murat Caddesi üzerinde
@@ -55,15 +55,17 @@ export default function HakkimizdaPage() {
           </p>
         </div>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            href="/randevu"
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "default" }),
               "bg-brand-accent text-brand-dark hover:bg-brand-accent/90"
             )}
           >
-            Randevu al
-          </Link>
+            WhatsApp&apos;tan Bilgi Al
+          </a>
           <Link href="/iletisim" className={buttonVariants({ variant: "outline" })}>
             İletişim
           </Link>

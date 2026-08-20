@@ -14,9 +14,9 @@ export const kanalTedavisi: ServicePageContent = {
     "Rubber dam izolasyonu, kanal tedavisinde tükürük kontaminasyonunu azaltır ve güvenli çalışma sağlar. Rotary enstrümanlar ve irrigasyon solüsyonları birlikte biyofilm tabakasını etkili biçimde uzaklaştırır. Kanal dolgusunda gutta percha ve biyouyumlu sealer kombinasyonu ile sızdırmazlık hedeflenir.",
     "Kök kanalı sonrası koronal restorasyon kritiktir. Çürükten arındırılmış diş yapısı zayıfsa fiber post veya dolgu temelli core ile üst yapıya zemin hazırlanır. Gerektiğinde kron veya overlay protez planı konuşulur.",
     "Bazı vakalarda kanal tedavisi yenilenmesi (retreatment) gerekebilir; eski dolguların çıkarılması ve kaçırılmış kanalların yönetimi deneyim ister. Periapikal lezyonların iyileşme süresi aylar alabilir; kontrol röntgenleri ile takip edilir.",
-    "Ağrısız deneyim için etkili lokal anestezi ve sakinleştirici iletişim kullanılır. İşlem sonrası birkaç gün hafif hassasiyet normal karşılanabilir; ısırmaktan kaçınma ve gerekiyorsa analjezik önerisi yapılır.",
-    "Küçükçekmece Sultan Murat Caddesi üzerindeki kliniğimizde sterilizasyon zinciri ve tek kullanımlık dos grupları ile çapraz bulaş riski minimize edilir. Dr. Musa Burak Sakar ve ekibi, kanal tedavisini protez veya implant planlarıyla uyumlu şekilde sıralar.",
-    "Kanal tedavisi başarısızlığında apikal rezeksiyon veya diş çekimi seçenekleri açık konuşulur. Hedef, uzun ömürlü fonksiyon ve estetik dengedir. Ücretsiz ön görüşmede röntgen ve klinik bulgularla net bir yol haritası sunulur.",
+    "İşlem konforu için etkili lokal anestezi ve sakinleştirici iletişim kullanılır. İşlem sonrası birkaç gün hafif hassasiyet normal karşılanabilir; ısırmaktan kaçınma ve gerekiyorsa analjezik önerisi yapılır.",
+    "Küçükçekmece Sultan Murat Caddesi üzerindeki kliniğimizde sterilizasyon zinciri ve tek kullanımlık dos grupları ile çapraz bulaş riski minimize edilir. Hekimlerimiz, kanal tedavisini protez veya implant planlarıyla uyumlu şekilde sıralar.",
+    "Kanal tedavisi başarısızlığında apikal rezeksiyon veya diş çekimi seçenekleri açık konuşulur. Hedef, uzun ömürlü fonksiyon ve estetik dengedir. Muayene ön görüşmede röntgen ve klinik bulgularla net bir yol haritası sunulur.",
   ],
   steps: [
     "Muayene ve radyografi ile pulpa-doku durumu değerlendirilir; tedavi planı oluşturulur.",

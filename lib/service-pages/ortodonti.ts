@@ -16,7 +16,7 @@ export const ortodonti: ServicePageContent = {
     "Ortodonti süresince ağız bakımı: arayüz fırçaları, florür verniği ve düzenli profesyonel temizlik ile desteklenir. Sert ve yapışkan gıdalar tel kopmalarına yol açabilir; acil müdahale randevuları ile tedavi aksamadan devam eder.",
     "Tedavi bitiminde retansiyon (tutucu) fazı uzun vadeli stabilite için şarttır. Sabit lingual retainer veya şeffaf plak retainer kombinasyonları kişiye göre planlanır. Retansiyon ihmal edilirse relaps riski artar.",
     "Küçükçekmece Sultan Murat Caddesi’ne yakın konumumuz sayesinde okul ve iş çıkışı saatlerine uygun randevu planlaması yapılabilir. Dr. Musa Burak Sakar ve ekibi, ortodonti ile implant veya estetik kompozit işlemlerin sırasını koordine ederek bütüncül bir gülüş tasarımı sunar.",
-    "Son olarak, ortodonti yalnızca görünür dişleri düzeltmez; kapanış kuvvetlerini dengeleyerek dişlerin ömrünü de destekler. Ücretsiz ön görüşmede hedefleriniz, süre tahmini ve maliyet kalemleri şeffaf biçimde yazılı özetlenir; böylece tedaviye güvenle başlarsınız.",
+    "Son olarak, ortodonti yalnızca görünür dişleri düzeltmez; kapanış kuvvetlerini dengeleyerek dişlerin ömrünü de destekler. Muayene ön görüşmede hedefleriniz, süre tahmini ve maliyet kalemleri şeffaf biçimde yazılı özetlenir; böylece tedaviye güvenle başlarsınız.",
   ],
   steps: [
     "Muayene, fotoğraf ve gerekli radyografilerle tanı tamamlanır; periodontal durum değerlendirilir.",

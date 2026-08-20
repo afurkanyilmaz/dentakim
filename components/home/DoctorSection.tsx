@@ -1,62 +1,61 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { CLINIC } from "@/lib/constants";
-import { Award, Stethoscope } from "lucide-react";
+import Link from "next/link";
+import { DOCTORS } from "@/lib/doctors";
+import { Stethoscope } from "lucide-react";
+import { Section, SectionHeader, Card } from "@/components/shared/Section";
 
-const doctor = CLINIC.doctors[0];
-
+/**
+ * Hekim bölümü — lib/doctors.ts'ten okur.
+ * Kadroya yalnızca doğrulanmış hekimler eklenir; liste boşsa bölüm gizlenir.
+ */
 export function DoctorSection() {
+  if (DOCTORS.length === 0) return null;
+
   return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="container mx-auto max-w-6xl px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid items-center gap-10 lg:grid-cols-[320px_1fr]"
-        >
-          <div className="relative mx-auto w-full max-w-[320px]">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border/70 bg-brand-primary-light shadow-sm">
-              <Image
-                src={doctor.photo}
-                alt={`${doctor.name} — Küçükçekmece Dentakim diş hekimi portre fotoğrafı`}
-                width={800}
-                height={1000}
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-brand-primary">
-              Klinik ekibi
-            </p>
-            <h2 className="mt-2 font-heading text-3xl font-bold text-brand-dark md:text-4xl">
-              {doctor.name}
-            </h2>
-            <p className="mt-2 text-lg font-medium text-brand-mid">
-              {doctor.title} · {doctor.specialization}
-            </p>
-            <p className="mt-5 max-w-prose leading-relaxed text-brand-mid">{doctor.bio}</p>
-            <ul className="mt-8 space-y-3 text-sm text-brand-dark">
-              <li className="flex gap-3">
-                <Stethoscope className="mt-0.5 size-5 shrink-0 text-brand-primary" aria-hidden />
-                <span>
-                  Genel diş hekimliği, implant planlaması ve koruyucu yaklaşımlar.
+    <Section id="hekim" labelledBy="hekim-baslik">
+      <SectionHeader
+        id="hekim-baslik"
+        eyebrow="Klinik Ekibi"
+        title="Deneyimin Verdiği Güven"
+        lead="Tedavinizi kimin yapacağını önceden bilin."
+      />
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {DOCTORS.map((doctor) => (
+          <Card key={doctor.slug} as="article" className="group">
+            <Link href={`/hekimler/${doctor.slug}`} className="flex gap-5 p-[26px]">
+              {doctor.photo ? (
+                <Image
+                  src={doctor.photo}
+                  alt={`${doctor.name} — Küçükçekmece Dentakim diş hekimi`}
+                  width={120}
+                  height={150}
+                  className="h-[150px] w-[120px] shrink-0 rounded-panel object-cover object-top"
+                  loading="lazy"
+                />
+              ) : (
+                <span className="flex h-[150px] w-[120px] shrink-0 items-center justify-center rounded-panel border border-dashed border-brand-line-strong bg-brand-primary-light text-brand-accent">
+                  <Stethoscope className="size-8" aria-hidden />
                 </span>
-              </li>
-              <li className="flex gap-3">
-                <Award className="mt-0.5 size-5 shrink-0 text-brand-primary" aria-hidden />
-                <span>
-                  Hasta odaklı iletişim; tedavi adımları sade dil ile paylaşılır.
+              )}
+              <div className="min-w-0">
+                <h3 className="font-heading text-[24px] font-semibold leading-[1.2] text-brand-dark">
+                  {doctor.name}
+                </h3>
+                <p className="mt-1 text-[13px] font-semibold uppercase tracking-[0.1em] text-brand-accent">
+                  {doctor.specialization}
+                </p>
+                <p className="mt-3 text-[14.5px] leading-[1.6] text-brand-mid">
+                  {doctor.summary}
+                </p>
+                <span className="mt-4 inline-block text-sm font-bold text-brand-link transition-colors group-hover:text-brand-dark">
+                  Profili görüntüle →
                 </span>
-              </li>
-            </ul>
-          </div>
-        </motion.div>
+              </div>
+            </Link>
+          </Card>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

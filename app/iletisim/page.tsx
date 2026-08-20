@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CLINIC } from "@/lib/constants";
+import { BUSINESS } from "@/lib/business";
 import { generateMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { getContactPageSchema, getBreadcrumbSchema } from "@/lib/schema";
@@ -26,18 +26,18 @@ export default function IletisimPage() {
         ])}
       />
 
-      <div className="border-b border-border/60 bg-brand-primary-light/40">
-        <div className="container mx-auto max-w-6xl px-4 py-10">
+      <div className="border-b border-brand-line bg-brand-primary-light">
+        <div className="container mx-auto max-w-[1240px] px-6 py-12">
           <BreadcrumbNav
             items={[{ label: "Anasayfa", href: "/" }, { label: "İletişim" }]}
           />
-          <h1 className="mt-4 font-heading text-3xl font-bold text-brand-dark md:text-4xl">
+          <h1 className="mt-5 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
             İletişim
           </h1>
         </div>
       </div>
 
-      <div className="container mx-auto max-w-6xl px-4 py-12">
+      <div className="container mx-auto max-w-[1240px] px-6 py-14">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <h2 className="font-heading text-xl font-bold text-brand-dark">
@@ -52,16 +52,31 @@ export default function IletisimPage() {
             <p className="mt-4 text-brand-mid">
               <span className="font-medium text-brand-dark">Telefon:</span>{" "}
               <a
-                href={`tel:${CLINIC.phoneRaw}`}
+                href={BUSINESS.phone.href}
                 className="font-semibold text-brand-primary hover:underline"
               >
                 +90 553 313 78 88
               </a>
             </p>
             <p className="mt-2 text-brand-mid">
+              <span className="font-medium text-brand-dark">Plus Code:</span>{" "}
+              <span className="tabular-nums">{BUSINESS.plusCode}</span>
+            </p>
+            <p className="mt-2 text-brand-mid">
+              <span className="font-medium text-brand-dark">Google:</span>{" "}
+              <a
+                href={BUSINESS.google.profileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-link hover:underline"
+              >
+                İşletme profilimiz
+              </a>
+            </p>
+            <p className="mt-2 text-brand-mid">
               <span className="font-medium text-brand-dark">E-posta:</span>{" "}
-              <a href={`mailto:${CLINIC.email}`} className="text-brand-primary hover:underline">
-                {CLINIC.email}
+              <a href={`mailto:${BUSINESS.email}`} className="text-brand-primary hover:underline">
+                {BUSINESS.email}
               </a>
             </p>
             <p className="mt-6 text-sm text-brand-mid">
@@ -69,13 +84,37 @@ export default function IletisimPage() {
                 href={WA_DEEP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full bg-[#25D366] px-4 py-2 font-semibold text-white hover:opacity-95"
+                className="inline-flex min-h-12 items-center rounded-full bg-brand-whatsapp px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
               >
                 WhatsApp ile yazın
               </a>
             </p>
 
-            <div className="mt-10 space-y-3 text-sm text-brand-mid">
+            <div className="mt-8 rounded-panel border border-brand-line bg-brand-primary-light/50 p-5 text-sm text-brand-mid">
+              <p className="font-semibold text-brand-dark">Kuruluş bilgileri</p>
+              <dl className="mt-3 space-y-1.5">
+                <div className="flex gap-2">
+                  <dt className="shrink-0">Resmi unvan:</dt>
+                  <dd>{BUSINESS.legalName}</dd>
+                </div>
+                {BUSINESS.legal.responsibleManager ? (
+                  <div className="flex gap-2">
+                    <dt className="shrink-0">Mesul müdür:</dt>
+                    <dd>{BUSINESS.legal.responsibleManager}</dd>
+                  </div>
+                ) : null}
+                {BUSINESS.legal.licenseNumber ? (
+                  <div className="flex gap-2">
+                    <dt className="shrink-0">Faaliyet izni:</dt>
+                    <dd>
+                      {BUSINESS.legal.licenseNumber} — {BUSINESS.legal.licenseAuthority}
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+            </div>
+
+            <div className="mt-8 space-y-3 text-sm text-brand-mid">
               <h3 className="font-heading text-lg font-semibold text-brand-dark">
                 Toplu taşıma
               </h3>
@@ -89,10 +128,10 @@ export default function IletisimPage() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-border/70 shadow-sm">
+          <div className="overflow-hidden rounded-card border border-border/70 shadow-sm">
             <iframe
               title="Dentakim Google Haritalar — Küçükçekmece Sultan Murat Caddesi"
-              src={CLINIC.googleMapsEmbed}
+              src={BUSINESS.google.embedUrl}
               className="h-[360px] w-full lg:h-[420px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

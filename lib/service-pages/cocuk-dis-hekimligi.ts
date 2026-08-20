@@ -4,7 +4,7 @@ export const cocukDisHekimligi: ServicePageContent = {
   slug: "cocuk-dis-hekimligi",
   metaTitle: "Küçükçekmece Çocuk Diş Hekimliği",
   metaDescription:
-    "Küçükçekmece’de çocuk diş hekimliği: fissür örtücü, flor uygulaması, çürük yönetimi ve davranış yönlendirmeli ağrısız yaklaşım. Dentakim çocuk dostu ortam.",
+    "Küçükçekmece’de çocuk diş hekimliği: fissür örtücü, flor uygulaması, çürük yönetimi ve davranış yönlendirmeli lokal anestezi ile konfor odaklı yaklaşım. Dentakim çocuk dostu ortam.",
   h1: "Küçükçekmece Çocuk Diş Hekimliği",
   lead:
     "Çocukların diş hekimi deneyimini pozitif kurgulamak, ilerideki ağız sağlığı alışkanlıklarını belirler. Dentakim’de oyun ve iletişim odaklı yaklaşımla, Küçükçekmece’deki ailelerin çocuklarına güvenli ortamda muayene ve tedavi sunuyoruz.",
@@ -16,7 +16,7 @@ export const cocukDisHekimligi: ServicePageContent = {
     "Ortodontik açıdan erken yönlendirme, parmak emme, ters yutkunma veya ağız solunumu gibi alışkanlıkların değerlendirilmesini içerir. Büyüme çağında yapılan müdahaleler bazı vakalarda ilerideki cerrahi ihtiyacını azaltabilir.",
     "Spor yapan çocuklarda traumaya karşı ağız koruyucu (mouthguard) önerisi yapılır. Okul çağında düşme ve çarpma sonrası dişte renk değişimi veya mobilite gelişirse acil değerlendirme önemlidir.",
     "Ebeveynler için pratik öneriler: şekerli sıvıları yatmadan önce vermemek, atıştırmalıkları tek öğün yerine ana öğünle sınırlamak ve fırçalamayı rutinleştirmek. Küçükçekmece’deki yoğun şehir temposunda bile bu alışkanlıklar sürdürülebilir hale getirilebilir.",
-    "Dentakim’de sterilizasyon protokolleri ve tek kullanımlık malzemeler standarttır. Randevu öncesi telefon/WhatsApp hattımızdan çocuğun yaşı ve şikayeti paylaşılırsa ilk seans daha verimli planlanır. Ücretsiz ön görüşmede ağız içi tarama ve risk haritası çıkarılır.",
+    "Dentakim’de sterilizasyon protokolleri ve tek kullanımlık malzemeler standarttır. Randevu öncesi telefon/WhatsApp hattımızdan çocuğun yaşı ve şikayeti paylaşılırsa ilk seans daha verimli planlanır. Muayene ön görüşmede ağız içi tarama ve risk haritası çıkarılır.",
   ],
   steps: [
     "Oyun ve sohbet ile tanışma; ebeveynden öykü ve genel sağlık bilgisi alınır.",

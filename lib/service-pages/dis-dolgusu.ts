@@ -16,7 +16,7 @@ export const disDolgusu: ServicePageContent = {
     "Mine erozyonu veya asit reflüye bağlı kimyasal aşınmalarda sadece dolgu yetmeyebilir; tükürük pH’si ve beslenme alışkanlıkları da ele alınır. Gerekirse koruyucu ajanlar veya overlay restorasyonlar planlanır.",
     "Çocuklarda süt dişi dolguları hızlı ve iş birlikçi seanslarla tamamlanır; kalıcı dişlerde ise uzun ömürlü materyal seçimi önemlidir. Spor aktivitelerinde koruyucu önerilir.",
     "Dentakim’de diş dolgusu, ortodonti öncesi minimal düzeltmeler veya implant öncesi geçici protez fazları ile koordine edilebilir. Dr. Musa Burak Sakar, gülüş tasarımında dişeti hattı ve interdental boşlukları göz önünde bulundurur.",
-    "Düzenli kontrollerde dolgu kenarları ve çürük riski yeniden değerlendirilir. Küçükçekmece’de yoğun iş temposunda bile yılda iki rutin muayene ile küçük lezyonlar erken yakalanır. Ücretsiz ön görüşmede tedavi süresi ve maliyet kalemleri şeffaf biçimde paylaşılır.",
+    "Düzenli kontrollerde dolgu kenarları ve çürük riski yeniden değerlendirilir. Küçükçekmece’de yoğun iş temposunda bile yılda iki rutin muayene ile küçük lezyonlar erken yakalanır. Muayene ön görüşmede tedavi süresi ve maliyet kalemleri şeffaf biçimde paylaşılır.",
   ],
   steps: [
     "Muayene ve gerekirse röntgen ile çürük sınırları belirlenir.",

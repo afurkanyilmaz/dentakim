@@ -11,13 +11,17 @@ export type FAQItem = { question: string; answer: string };
 
 export function FAQAccordion({ items }: { items: FAQItem[] }) {
   return (
-    <Accordion className="w-full">
+    <Accordion className="flex w-full flex-col gap-3">
       {items.map((item, index) => (
-        <AccordionItem key={item.question} value={`faq-${index}`}>
-          <AccordionTrigger className="text-left font-heading text-brand-dark hover:text-brand-primary">
+        <AccordionItem
+          key={item.question}
+          value={`faq-${index}`}
+          className="overflow-hidden rounded-panel border border-brand-line bg-brand-surface"
+        >
+          <AccordionTrigger className="px-[26px] py-[22px] text-left text-[16.5px] font-bold text-brand-dark hover:no-underline [&_[data-slot=accordion-trigger-icon]]:size-5 [&_[data-slot=accordion-trigger-icon]]:text-brand-accent">
             {item.question}
           </AccordionTrigger>
-          <AccordionContent className="text-brand-mid leading-relaxed">
+          <AccordionContent className="px-[26px] pb-6 text-[15px] leading-[1.7] text-brand-mid">
             {item.answer}
           </AccordionContent>
         </AccordionItem>

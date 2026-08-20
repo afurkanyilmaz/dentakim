@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { HeartPulse, Shield, Sparkles, Wallet } from "lucide-react";
+import { Section, SectionHeader, Card } from "@/components/shared/Section";
 
 const ITEMS = [
   {
@@ -15,48 +13,39 @@ const ITEMS = [
     Icon: Sparkles,
   },
   {
-    title: "Ağrısız Tedavi",
+    title: "Konfor Odaklı Yaklaşım",
     desc: "Konfor odaklı anestezi ve sakin iletişim ile rahat seanslar.",
     Icon: HeartPulse,
   },
   {
-    title: "Uygun Fiyat",
-    desc: "Şeffaf planlama ve aşamalı tedavi ile bütçe dostu seçenekler.",
+    title: "Şeffaf Planlama",
+    desc: "Muayene sonrası yazılı tedavi planı ve kalem kalem fiyat teklifi.",
     Icon: Wallet,
   },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="container mx-auto max-w-6xl px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center font-heading text-3xl font-bold text-brand-dark md:text-4xl"
-        >
-          Neden Dentakim?
-        </motion.h2>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {ITEMS.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="rounded-2xl border border-border/70 bg-brand-surface/40 p-6"
-            >
-              <item.Icon className="size-9 text-brand-primary" aria-hidden />
-              <h3 className="mt-4 font-heading text-lg font-semibold text-brand-dark">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-brand-mid">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+    <Section tone="white" labelledBy="neden-baslik">
+      <SectionHeader
+        id="neden-baslik"
+        eyebrow="Neden Dentakim"
+        title="Kliniğimizde Standart Uygulamalar"
+        lead="Tedavi kadar süreci de önemsiyoruz: ne yapılacağını, ne kadar süreceğini ve ne kadar tutacağını baştan biliyorsunuz."
+      />
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {ITEMS.map(({ title, desc, Icon }) => (
+          <Card key={title} className="p-[26px] pb-6">
+            <span className="mb-4 inline-flex size-11 items-center justify-center rounded-panel bg-brand-primary-light text-brand-accent">
+              <Icon className="size-5" aria-hidden />
+            </span>
+            <h3 className="font-heading text-[26px] font-semibold leading-[1.2] text-brand-dark">
+              {title}
+            </h3>
+            <p className="mt-2.5 text-[14.5px] leading-[1.6] text-brand-mid">{desc}</p>
+          </Card>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

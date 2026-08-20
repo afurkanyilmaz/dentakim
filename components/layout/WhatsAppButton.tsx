@@ -1,30 +1,24 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { WHATSAPP_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { whatsappUrl } from "@/lib/business";
 
+/** Yüzen WhatsApp butonu — Claude Design'daki nabız animasyonlu yeşil daire. */
 export function WhatsAppButton() {
   const pathname = usePathname();
-  if (pathname === "/randevu") return null;
+  // İletişim sayfasında zaten belirgin WhatsApp butonu var; yüzen buton gizlenir.
+  if (pathname === "/iletisim") return null;
 
   return (
     <a
-      href={WHATSAPP_URL}
+      href={whatsappUrl()}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(
-        "fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 z-50 md:bottom-6",
-        "inline-flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg",
-        "animate-pulse-ring transition-transform hover:scale-105"
-      )}
-      aria-label="WhatsApp ile yazın"
+      aria-label="WhatsApp'tan yazın"
+      className="fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-[22px] z-[80] flex size-[60px] animate-pulse-ring items-center justify-center rounded-full bg-brand-whatsapp text-white transition-colors hover:bg-brand-whatsapp-dark motion-reduce:animate-none md:bottom-[22px]"
     >
-      <svg className="size-7" viewBox="0 0 32 32" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M16.004 2.5C8.914 2.5 3.16 8.252 3.16 15.34c0 2.35.61 4.59 1.77 6.59L2.5 29.5l7.74-2.03a12.9 12.9 0 0 0 5.76 1.43h.01c7.09 0 12.84-5.75 12.84-12.84 0-3.43-1.34-6.65-3.77-9.08A12.78 12.78 0 0 0 16.004 2.5Zm0 2.55c5.68 0 10.3 4.62 10.3 10.29 0 5.68-4.62 10.31-10.31 10.31a10.2 10.2 0 0 1-5.2-1.42l-.37-.22-4.34 1.14 1.16-4.23-.24-.39a10.26 10.26 0 0 1-1.59-5.5c0-5.67 4.63-10.29 10.31-10.29Zm5.84 14.55c-.08-.13-.29-.21-.6-.37-.31-.16-1.84-.9-2.12-1.01-.29-.1-.5-.16-.71.16-.21.31-.82 1-1 1.21-.19.21-.37.23-.68.08-.31-.16-1.32-.49-2.51-1.56-.93-.83-1.56-1.86-1.74-2.18-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54h-.6c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.23 3.4 5.4 4.77.75.32 1.34.52 1.8.66.76.24 1.45.21 2 .13.61-.1 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48Z"
-        />
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
+        <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.79.96-.97 1.16-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.15-.15.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.37 2.98 1.17 2.98.78 3.52.73.54-.05 1.75-.71 2-1.4.25-.68.25-1.27.17-1.39-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.37 9.37 0 01-1.44-5.01c0-5.18 4.22-9.4 9.42-9.4a9.34 9.34 0 016.65 2.76 9.32 9.32 0 012.75 6.65c0 5.19-4.22 9.41-9.41 9.41zM20.5 3.49A11.32 11.32 0 0012.04.01C5.81.01.75 5.07.75 11.29c0 1.99.52 3.93 1.5 5.64L.6 23.4l6.63-1.74a11.27 11.27 0 004.81 1.23h.01c6.22 0 11.28-5.06 11.29-11.28a11.2 11.2 0 00-3.3-7.98z" />
       </svg>
     </a>
   );

@@ -1,5 +1,6 @@
 import {
   Baby,
+  Scissors,
   Crown,
   Drill,
   Laugh,
@@ -17,6 +18,7 @@ const MAP: Record<string, LucideIcon> = {
   "root-canal": Stethoscope,
   crown: Crown,
   filling: Drill,
+  surgery: Scissors,
 };
 
 export function getServiceIcon(iconKey: string): LucideIcon {

@@ -6,6 +6,7 @@ import { cocukDisHekimligi } from "./cocuk-dis-hekimligi";
 import { kanalTedavisi } from "./kanal-tedavisi";
 import { protezZirkonyum } from "./protez-zirkonyum";
 import { disDolgusu } from "./dis-dolgusu";
+import { agizDisCeneCerrahisi } from "./agiz-dis-cene-cerrahisi";
 
 export type { ServicePageContent, ServiceFAQ } from "./types";
 
@@ -17,6 +18,7 @@ const ALL: ServicePageContent[] = [
   kanalTedavisi,
   protezZirkonyum,
   disDolgusu,
+  agizDisCeneCerrahisi,
 ];
 
 export const SERVICE_CONTENT_BY_SLUG: Record<string, ServicePageContent> =

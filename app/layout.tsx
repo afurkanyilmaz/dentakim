@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/Header";
@@ -8,38 +8,54 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { StickyCallBar } from "@/components/layout/StickyCallBar";
 import Script from "next/script";
 import { JsonLd } from "@/components/shared/JsonLd";
-import { getDentistSchema } from "@/lib/schema";
-import { CLINIC } from "@/lib/constants";
+import { getClinicSchema, getWebSiteSchema } from "@/lib/schema";
+import { DOCTORS } from "@/lib/doctors";
+import { REGIONS } from "@/lib/regions";
+import { BUSINESS } from "@/lib/business";
 
-const plusJakarta = Plus_Jakarta_Sans({
+/* Claude Design tipografisi: başlıklarda Cormorant Garamond, gövdede Manrope */
+const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body",
   display: "swap",
 });
 
+/**
+ * Google Analytics yalnızca NEXT_PUBLIC_GA_ID tanımlıysa yüklenir.
+ * Eski kodda örnek kimlik (G-XXXXXXXXXX) gömülüydü ve hiçbir şey ölçmüyordu.
+ */
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://dentakim.com"),
   title: {
-    default: `${CLINIC.shortName} — ${CLINIC.name}`,
-    template: `%s | ${CLINIC.shortName}`,
+    default: `${BUSINESS.brandName} — ${BUSINESS.displayName}`,
+    template: `%s | ${BUSINESS.brandName}`,
   },
   description:
     "Küçükçekmece’de güvenilir diş kliniği Dentakim. İmplant, ortodonti, estetik diş ve çocuk diş hekimliği.",
   openGraph: {
-    siteName: CLINIC.name,
+    siteName: BUSINESS.displayName,
     locale: "tr_TR",
     type: "website",
     url: "https://dentakim.com",
   },
   robots: { index: true, follow: true },
+  // Yerel arama için coğrafi meta etiketleri
+  other: {
+    "geo.region": BUSINESS.address.region,
+    "geo.placename": `${BUSINESS.address.district}, ${BUSINESS.address.city}`,
+    "geo.position": `${BUSINESS.coordinates.lat};${BUSINESS.coordinates.lng}`,
+    ICBM: `${BUSINESS.coordinates.lat}, ${BUSINESS.coordinates.lng}`,
+  },
 };
 
 export default function RootLayout({
@@ -48,21 +64,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={cn(plusJakarta.variable, dmSans.variable)}>
+    <html lang="tr" className={cn(cormorant.variable, manrope.variable)}>
       <body className="min-h-screen font-sans antialiased">
-        <JsonLd data={getDentistSchema()} />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-dentakim" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
+        <JsonLd data={getClinicSchema(DOCTORS, REGIONS.map((r) => r.name))} />
+        <JsonLd data={getWebSiteSchema()} />
+        {GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-dentakim" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { anonymize_ip: true });
+              `}
+            </Script>
+          </>
+        ) : null}
         <Header />
         <div className="pb-24 md:pb-0">{children}</div>
         <Footer />

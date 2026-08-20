@@ -15,8 +15,8 @@ export const protezZirkonyum: ServicePageContent = {
     "Zirkonyumun avantajları arasında biyo-uyumluluk ve düşük plak tutunumu sayılabilir. Ancak dişeti sağlığı kötüyse protez kenarlarında iltihap riski artar; bu yüzden aktif periodontal tedavi önceliklidir.",
     "Ölçü alımı intraoral tarayıcı veya hassas ölçü materyalleri ile yapılabilir. Laboratuvar ile dijital akış, deneme seanslarında ince ayarları kolaylaştırır. Oküzal kontakların dengelenmesi uzun ömür için şarttır.",
     "Gece bruksizmi (sıkıştırma) olan hastalarda gece plağı önerisi protez ve doğal dişleri korur. Aşırı kuvvetler seramik çatlaklarına yol açabilir; bu alışkanlık muayenede sorgulanır.",
-    "Dentakim’de Dr. Musa Burak Sakar, implant-cerrahi ve protez fazlarını koordine ederek tek noktadan süreç yönetimi sunar. Küçükçekmece’den gelen hastalar için randevu yoğunluğu dikkate alınarak laboratuvar süreleri önceden planlanır.",
-    "Alternatif olarak press seramik veya hibrit seramikler de bazı vakalarda tercih edilebilir. Seçim; kapanış mesafesi, dişeti mimarisi ve estetik beklentiye göre yapılır. Ücretsiz ön görüşmede ölçü maliyeti ve süre tablosu netleştirilir.",
+    "Dentakim’de protez alanında çalışan hekimlerimiz Dr. Musa Burak Sakar ve Dr. Berna Kalkan Yardım, implant-cerrahi ve protez fazlarını koordine ederek tek noktadan süreç yönetimi sunar. Küçükçekmece’den gelen hastalar için randevu yoğunluğu dikkate alınarak laboratuvar süreleri önceden planlanır.",
+    "Alternatif olarak press seramik veya hibrit seramikler de bazı vakalarda tercih edilebilir. Seçim; kapanış mesafesi, dişeti mimarisi ve estetik beklentiye göre yapılır. Muayene ön görüşmede ölçü maliyeti ve süre tablosu netleştirilir.",
   ],
   steps: [
     "Klinik ve radyografik değerlendirme ile restorasyon tipi (kron/köprü/implant üstü) belirlenir.",

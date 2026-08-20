@@ -1,0 +1,13 @@
+# Hasta iletişim kayıtları — kişisel veri, asla yayına gitmemeli (KVKK)
+.data/
+
+# Fotoğraf makinesi orijinalleri (12 MB) — sitede kullanılmıyor,
+# web sürümleri public/images/ altında
+fotograf-orijinalleri/
+
+# Tasarım referans dosyaları
+_tasarim-referans/
+
+# Yerel araçlar
+scripts/
+.claude/
