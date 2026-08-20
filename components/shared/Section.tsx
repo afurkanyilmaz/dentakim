@@ -104,7 +104,7 @@ export function Card({
   return (
     <Tag
       className={cn(
-        "flex flex-col overflow-hidden rounded-card border border-brand-line bg-white transition-colors hover:border-brand-line-strong",
+        "flex flex-col overflow-hidden rounded-card border border-brand-line bg-white transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-line-strong hover:shadow-[0_12px_28px_-18px_rgba(22,36,47,0.35)] motion-reduce:hover:translate-y-0",
         className
       )}
     >

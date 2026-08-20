@@ -1,15 +1,13 @@
 import Link from "next/link";
-import { getFeaturedRegions, REGIONS } from "@/lib/regions";
+import { getRegionsByGroup, GROUP_LABEL } from "@/lib/regions";
 import { Section, SectionHeader } from "@/components/shared/Section";
-import { MapPin } from "lucide-react";
 
 /**
- * Anasayfadan bölge sayfalarına iç bağlantı.
- * Bu bölüm eklenmeden önce 12 bölge sayfası sitede hiçbir yerden link almıyordu.
+ * Bölge bağlantıları — kart ızgarası yerine gruplu etiket düzeni.
+ * 12 bölge sayfasının tamamına anasayfadan bağlantı verir.
  */
 export function RegionsSection() {
-  const featured = getFeaturedRegions();
-  const others = REGIONS.filter((r) => !r.featured);
+  const groups = ["ilce-ici", "cevre-ilce"] as const;
 
   return (
     <Section labelledBy="bolgeler-baslik">
@@ -17,45 +15,34 @@ export function RegionsSection() {
         id="bolgeler-baslik"
         eyebrow="Hizmet Bölgelerimiz"
         title="Küçükçekmece ve çevresinden kolay ulaşım"
-        lead="Bölgenize özel ulaşım bilgisi, sık uygulanan tedaviler ve randevu önerileri için bölge sayfamıza göz atın."
+        lead="Bölgenize özel ulaşım bilgisi ve sık uygulanan tedaviler için bölge sayfasına göz atın."
       />
 
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {featured.map((region) => (
-          <Link
-            key={region.slug}
-            href={`/${region.slug}`}
-            className="group flex flex-col gap-2.5 rounded-card border border-brand-line bg-white p-[26px] transition-colors hover:border-brand-line-strong"
-          >
-            <MapPin className="size-5 text-brand-accent" aria-hidden />
-            <span className="font-heading text-[24px] font-semibold leading-[1.2] text-brand-dark">
-              {region.name}
-            </span>
-            <span className="text-[14px] leading-[1.6] text-brand-mid">
-              {region.proximity}
-            </span>
-          </Link>
+      <div className="flex flex-col gap-8">
+        {groups.map((g) => (
+          <div key={g}>
+            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+              {GROUP_LABEL[g]}
+            </p>
+            <ul className="flex flex-wrap gap-2.5">
+              {getRegionsByGroup(g).map((r) => (
+                <li key={r.slug}>
+                  <Link
+                    href={`/${r.slug}`}
+                    className="inline-block rounded-full border border-brand-line bg-white px-5 py-2.5 text-[15px] font-semibold text-brand-dark transition-colors hover:border-brand-line-strong hover:text-brand-accent"
+                  >
+                    {r.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[15px] text-brand-mid">
-        <span className="font-semibold text-brand-dark">Ayrıca:</span>
-        {others.map((region, i) => (
-          <span key={region.slug}>
-            <Link
-              href={`/${region.slug}`}
-              className="text-brand-link transition-colors hover:text-brand-dark"
-            >
-              {region.name}
-            </Link>
-            {i < others.length - 1 ? <span className="text-brand-faint"> ·</span> : null}
-          </span>
-        ))}
-      </div>
-
-      <p className="mt-6">
+      <p className="mt-8">
         <Link href="/bolgeler" className="text-sm font-bold text-brand-link hover:text-brand-dark">
-          Tüm hizmet bölgelerimiz →
+          Tüm hizmet bölgeleri ve ulaşım bilgileri →
         </Link>
       </p>
     </Section>

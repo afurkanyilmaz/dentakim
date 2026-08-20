@@ -4,6 +4,8 @@ import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { DoctorSection } from "@/components/home/DoctorSection";
 import { RegionsSection } from "@/components/home/RegionsSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
+import { ClinicStrip } from "@/components/home/ClinicStrip";
 import { MapSection } from "@/components/home/MapSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 
@@ -27,8 +29,10 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <DoctorSection />
       <ServicesGrid />
+      <ProcessSection />
+      <DoctorSection />
+      <ClinicStrip />
       <WhyChooseUs />
       <RegionsSection />
       <MapSection />

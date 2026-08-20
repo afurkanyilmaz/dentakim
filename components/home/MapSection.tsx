@@ -68,20 +68,20 @@ export function MapSection() {
               <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
                 Çalışma Saatleri
               </p>
-              <dl className="mt-1.5 space-y-1 text-[15px] text-brand-mid">
-                <div className="flex justify-between gap-6">
-                  <dt>{BUSINESS.hours.weekdays.days}</dt>
-                  <dd className="tabular-nums">
+              <dl className="mt-1.5 space-y-1 text-[14.5px] text-brand-mid">
+                <div className="flex justify-between gap-4">
+                  <dt className="whitespace-nowrap">{BUSINESS.hours.weekdays.days}</dt>
+                  <dd className="whitespace-nowrap tabular-nums">
                     {BUSINESS.hours.weekdays.opens} – {BUSINESS.hours.weekdays.closes}
                   </dd>
                 </div>
-                <div className="flex justify-between gap-6">
+                <div className="flex justify-between gap-4">
                   <dt>{BUSINESS.hours.saturday.days}</dt>
-                  <dd className="tabular-nums">
+                  <dd className="whitespace-nowrap tabular-nums">
                     {BUSINESS.hours.saturday.opens} – {BUSINESS.hours.saturday.closes}
                   </dd>
                 </div>
-                <div className="flex justify-between gap-6">
+                <div className="flex justify-between gap-4">
                   <dt>{BUSINESS.hours.sunday.days}</dt>
                   <dd>Kapalı</dd>
                 </div>
