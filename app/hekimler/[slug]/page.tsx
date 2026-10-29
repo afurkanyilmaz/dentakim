@@ -10,6 +10,8 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { getBreadcrumbSchema, getDoctorSchema } from "@/lib/schema";
 import { BreadcrumbNav } from "@/components/shared/BreadcrumbNav";
 import { ContactCTA } from "@/components/shared/ContactCTA";
+import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
+import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE, getReelsForDoctor } from "@/lib/instagram";
 
 type Props = { params: { slug: string } };
 
@@ -34,6 +36,7 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function HekimPage({ params }: Props) {
   const doctor = getDoctor(params.slug);
   if (!doctor) notFound();
+  const reels = getReelsForDoctor(doctor.slug);
 
   const url = `${BUSINESS.website}/hekimler/${doctor.slug}`;
 
@@ -129,6 +132,30 @@ export default function HekimPage({ params }: Props) {
               </section>
             ) : null}
 
+
+            {reels.length > 0 ? (
+              <section aria-labelledby="videolar">
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <h2
+                    id="videolar"
+                    className="font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark"
+                  >
+                    Videolar
+                  </h2>
+                  <a
+                    href={INSTAGRAM_PROFILE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[13px] font-bold text-brand-accent-dark hover:underline"
+                  >
+                    {INSTAGRAM_HANDLE} ↗
+                  </a>
+                </div>
+                <div className="mt-5">
+                  <InstagramEmbeds reels={reels} bleed={false} />
+                </div>
+              </section>
+            ) : null}
 
             {doctor.serviceSlugs.length > 0 ? (
               <section aria-labelledby="uyguladigi-tedaviler">
