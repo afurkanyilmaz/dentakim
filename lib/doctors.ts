@@ -196,6 +196,43 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
     ],
     pending: ["Mezuniyet ve eğitim bilgileri", "Deneyim yılı", "Sertifikalar"],
   },
+  {
+    /*
+     * Ortodontist — klinik tarafından 29.10.2026'da bildirildi. Ünvan
+     * "Dt." olarak yazıldı; uzmanlık belgesi veya doktora ünvanı teyit
+     * edilirse certifiedTitle / ad alanı güncellenir.
+     */
+    slug: "dt-selin-erginer",
+    name: "Dt. Selin Erginer",
+    title: "Diş Hekimi",
+    specialization: "Ortodonti",
+    titleShort: "Ortodonti",
+    medicalSpecialty: "Dentistry",
+    knowsAbout: [
+      "Ortodonti",
+      "Şeffaf plak (clear aligner) tedavisi",
+      "Metal ve seramik braket tedavisi",
+      "Pekiştirme plağı (retainer)",
+    ],
+    summary:
+      "Dentakim Ağız ve Diş Sağlığı Polikliniği'nde ortodonti alanında çalışmaktadır. Şeffaf plak ve braket tedavilerini yürütür.",
+    bio: [
+      "Dt. Selin Erginer, Dentakim Ağız ve Diş Sağlığı Polikliniği'nde ortodonti alanında çalışmaktadır. Çapraşık dişler, diş aralıkları ve kapanış bozuklukları için şeffaf plak ve braket tedavilerini planlar ve yürütür.",
+    ],
+    focusAreas: [
+      "Şeffaf plak (clear aligner) tedavisi",
+      "Metal ve seramik braket tedavisi",
+      "Tedavi sonrası pekiştirme (retainer)",
+    ],
+    education: [],
+    serviceSlugs: ["ortodonti", "seffaf-plak-tedavisi"],
+    pending: [
+      "Profil fotoğrafı",
+      "Ünvan teyidi (Dt. / Dr. / Uzm.)",
+      "Mezuniyet ve eğitim bilgileri",
+      "Ayrıntılı biyografi",
+    ],
+  },
 ];
 
 /**

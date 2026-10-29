@@ -25,7 +25,7 @@ export const seffafPlakTedavisi: ServicePageContent = {
     { label: "Sonrası", value: "Pekiştirme plağı (retainer)" },
   ],
   lead:
-    "Şeffaf plaklar, metal braket kullanmadan dişleri hizalamayı amaçlayan, neredeyse görünmez ve çıkarılabilir ortodonti apareyleridir. Dentakim’de şeffaf plak uygunluğu ortodontik muayene ve dijital planlama sonrası değerlendirilir.",
+    "Şeffaf plaklar, metal braket kullanmadan dişleri hizalamayı amaçlayan, neredeyse görünmez ve çıkarılabilir ortodonti apareyleridir. Dentakim’de şeffaf plak tedavisini ortodontistimiz Dt. Selin Erginer planlar; uygunluk ortodontik muayene ve dijital planlama sonrası değerlendirilir.",
   paragraphs: [
     "Tedavi, ağız içi tarama veya ölçü ile başlar. Dijital ortamda dişlerin başlangıç konumundan hedef konuma kadar hareketi aşama aşama planlanır ve her aşama için ayrı bir plak üretilir. Bazı vakalarda plakların dişlere daha iyi kuvvet uygulaması için dişlere küçük, diş renginde kompozit tutucular (attachment) yapıştırılır.",
     "Şeffaf plaklar hafif ve orta düzey çapraşıklık, diş aralıkları, bazı kapanış bozuklukları ve önceki ortodonti tedavisi sonrası oluşan nüksler için uygun olabilir. İskeletsel çene uyumsuzlukları veya karmaşık diş hareketleri gerektiren vakalarda sabit braketler veya kombine tedaviler daha uygun olabilir. Karar ortodontik muayene ve röntgen sonrası verilir.",
