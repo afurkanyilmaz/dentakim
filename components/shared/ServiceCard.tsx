@@ -25,7 +25,7 @@ export function ServiceCard({
           <Icon className="size-5" aria-hidden />
         </span>
 
-        <h3 className="font-heading text-[26px] font-semibold leading-[1.2] text-brand-dark">
+        <h3 className="font-heading text-[26px] font-bold leading-[1.2] text-brand-dark">
           {title}
         </h3>
 

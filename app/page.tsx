@@ -1,41 +1,45 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
+import { IntroSection } from "@/components/home/IntroSection";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { DoctorSection } from "@/components/home/DoctorSection";
-import { RegionsSection } from "@/components/home/RegionsSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ClinicStrip } from "@/components/home/ClinicStrip";
+import { PricingSection } from "@/components/home/PricingSection";
+import { BlogSection } from "@/components/home/BlogSection";
 import { MapSection } from "@/components/home/MapSection";
+import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { ContactCTA } from "@/components/shared/ContactCTA";
+import { generateMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "Küçükçekmece Diş Kliniği | Dentakim — İmplant, Ortodonti, Estetik Diş",
+/* Başlık ~60 karakter: Google'ın kestiği sınırın altında, birincil sorgu başta. */
+export const metadata: Metadata = generateMeta({
+  title: "Gülüş Tasarımı ve İmplant — İstanbul Küçükçekmece",
   description:
-    "Küçükçekmece'nin güvenilir diş kliniği Dentakim. Sultan Murat Caddesi üzerinde Dr. Musa Burak Sakar ve ekibiyle hizmetinizdeyiz. Bilgi ve randevu: +90 553 313 78 88",
-  alternates: { canonical: "https://dentakim.com/" },
-  openGraph: {
-    url: "https://dentakim.com/",
-    title:
-      "Küçükçekmece Diş Kliniği | Dentakim — İmplant, Ortodonti, Estetik Diş",
-    description:
-      "Küçükçekmece'nin güvenilir diş kliniği Dentakim. Sultan Murat Caddesi üzerinde Dr. Musa Burak Sakar ve ekibiyle hizmetinizdeyiz. Bilgi ve randevu: +90 553 313 78 88",
-    images: [{ url: "/og/default.jpg", width: 1200, height: 630 }],
-  },
-};
+    "İstanbul’da gülüş tasarımı (Hollywood Smile), implant, All-on-4, zirkonyum ve lamina. Dijital planlama, prova ve yazılı tedavi planı. Dentakim Diş Kliniği, Küçükçekmece.",
+  slug: "",
+});
 
+/*
+ * Bölüm sırası referans düzeni izler: hero → tanıtım → tedaviler → hekimler
+ * → neden biz (ızgara zemin) → lacivert klinik bandı → fiyatlandırma → blog
+ * → konum → SSS → iletişim. Referanstaki yapay zekâ gülüş simülasyonu, taksit
+ * hesaplayıcı, sertifika ve Instagram alanlarının yerine Dentakim'in gerçek
+ * içerikleri (klinik fotoğrafları, fiyatlandırma yaklaşımı, konum, SSS) konur.
+ */
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
+      <IntroSection />
       <ServicesGrid />
-      <ProcessSection />
       <DoctorSection />
-      <ClinicStrip />
       <WhyChooseUs />
-      <RegionsSection />
+      <ClinicStrip />
+      <PricingSection />
+      <BlogSection />
       <MapSection />
+      <HomeFAQ />
       <ContactCTA variant="band" />
     </main>
   );

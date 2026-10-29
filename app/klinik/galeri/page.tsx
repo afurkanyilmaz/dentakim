@@ -26,8 +26,8 @@ export default function GaleriPage() {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[
               { label: "Anasayfa", href: "/" },
@@ -35,10 +35,10 @@ export default function GaleriPage() {
               { label: "Galeri" },
             ]}
           />
-          <p className="mt-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
             Kliniğimizden
           </p>
-          <h1 className="mt-3 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Tedavi olacağınız yeri önceden görün
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid">
@@ -47,7 +47,7 @@ export default function GaleriPage() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[1240px] px-6 py-14">
+      <div className="mx-auto max-w-[1304px] px-5 sm:px-8 py-14">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {CLINIC_PHOTOS.map((photo, i) => (
             <div

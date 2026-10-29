@@ -2,10 +2,21 @@ import type { ServicePageContent } from "./types";
 
 export const protezZirkonyum: ServicePageContent = {
   slug: "protez-zirkonyum",
-  metaTitle: "Küçükçekmece Zirkonyum Diş Kaplama",
+  metaTitle: "Zirkonyum Diş Kaplama — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece’de zirkonyum kaplama, köprü ve implant üst yapıları. Metal alerjisi riski düşük, estetik ve dayanıklı protez çözümleri Dentakim’de dijital ölçü destekli planlanır.",
-  h1: "Küçükçekmece Zirkonyum Diş Kaplama",
+  h1: "Zirkonyum Diş Kaplama",
+  procedureType: "NoninvasiveProcedure",
+  alternateNames: ["Zirkonyum kaplama", "Zirkonyum kron", "Zirkonyum köprü"],
+  summary:
+    "Zirkonyum kaplama, metal içermeyen zirkonyum oksit seramikten üretilen, dişi tamamen saran kron veya köprüdür. Doğala yakın ışık geçirgenliği nedeniyle estetik, yüksek dayanımı nedeniyle arka dişlerde de kullanılabilir. Dentakim’de dijital ölçü ve renk eşleştirmesiyle planlanır.",
+  facts: [
+    { label: "Seans sayısı", value: "Genellikle 3 randevu" },
+    { label: "Toplam süre", value: "Çoğu vakada 5–10 iş günü" },
+    { label: "Anestezi", value: "Gerekirse lokal anestezi" },
+    { label: "Metal içeriği", value: "Metal içermez" },
+  ],
+  guideSlugs: ["zirkonyum-kaplama-kac-gun-surer", "lamina-mi-zirkonyum-mu", "dis-protezi-cesitleri"],
   lead:
     "Zirkonyum oksit seramikler, yüksek kırılma direnci ve doğal ışık geçirgenliği ile ön ve arka bölgede güvenilir restoratif seçenekler sunar. Dentakim’de eksik diş tamamlamalarında implant üstü zirkonyum kronlar, köprüler ve tam protez alternatifleri bütüncül şekilde değerlendirilir.",
   paragraphs: [

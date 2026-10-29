@@ -7,6 +7,14 @@ import { kanalTedavisi } from "./kanal-tedavisi";
 import { protezZirkonyum } from "./protez-zirkonyum";
 import { disDolgusu } from "./dis-dolgusu";
 import { agizDisCeneCerrahisi } from "./agiz-dis-cene-cerrahisi";
+import { allOn4Implant } from "./all-on-4-implant";
+import { allOn6Implant } from "./all-on-6-implant";
+import { hibritProtez } from "./hibrit-protez";
+import { gulusTasarimi } from "./gulus-tasarimi";
+import { laminaVeneer } from "./lamina-veneer";
+import { kemikGreftiSinusLifting } from "./kemik-grefti-sinus-lifting";
+import { gecePlagiBruksizm } from "./gece-plagi-bruksizm";
+import { seffafPlakTedavisi } from "./seffaf-plak-tedavisi";
 
 export type { ServicePageContent, ServiceFAQ } from "./types";
 
@@ -19,6 +27,14 @@ const ALL: ServicePageContent[] = [
   protezZirkonyum,
   disDolgusu,
   agizDisCeneCerrahisi,
+  allOn4Implant,
+  allOn6Implant,
+  hibritProtez,
+  gulusTasarimi,
+  laminaVeneer,
+  kemikGreftiSinusLifting,
+  gecePlagiBruksizm,
+  seffafPlakTedavisi,
 ];
 
 export const SERVICE_CONTENT_BY_SLUG: Record<string, ServicePageContent> =

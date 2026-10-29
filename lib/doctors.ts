@@ -95,6 +95,12 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
     serviceSlugs: [
       "protez-zirkonyum",
       "implant-tedavisi",
+      "all-on-4-implant",
+      "all-on-6-implant",
+      "hibrit-protez",
+      "gulus-tasarimi",
+      "lamina-veneer",
+      "gece-plagi-bruksizm",
       "dis-beyazlatma",
       "dis-dolgusu",
       "agiz-dis-cene-cerrahisi",
@@ -138,6 +144,7 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
     education: [],
     serviceSlugs: [
       "protez-zirkonyum",
+      "lamina-veneer",
       "dis-beyazlatma",
       "cocuk-dis-hekimligi",
       "kanal-tedavisi",
@@ -169,7 +176,7 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
       "Ağız, diş ve çene cerrahisi alanında çalışmaktadır. Gömülü yirmilik diş çekimi, cerrahi çekimler ve implant cerrahisi başlıca uygulama alanlarıdır.",
     bio: [
       "Dr. Ahmet Emin Kırıktaş, Dentakim'de ağız, diş ve çene cerrahisi kapsamındaki işlemleri yürütmektedir. Gömülü yirmilik diş çekimi, cerrahi diş çekimleri, implant cerrahisi ve kemik greftleme başlıca çalışma alanlarıdır.",
-      "Her cerrahi işlem öncesinde radyolojik değerlendirme yapılır; panoramik röntgen veya gerektiğinde üç boyutlu tomografi ile dişin konumu, kök şekli ve alt çene siniri ile sinüs tabanına uzaklığı ölçülür. Riskler ve iyileşme süreci hastaya işlem öncesinde ayrıntılı biçimde anlatılır.",
+      "Her cerrahi işlem öncesinde radyolojik değerlendirme yapılır; panoramik röntgen ve gerektiğinde görüntüleme merkezinde çekilen üç boyutlu tomografi ile dişin konumu, kök şekli ve alt çene siniri ile sinüs tabanına uzaklığı ölçülür. Riskler ve iyileşme süreci hastaya işlem öncesinde ayrıntılı biçimde anlatılır.",
       "İmplant vakalarında cerrahi fazı üstlenir; protez aşaması Dr. Musa Burak Sakar ile birlikte planlanır. İşlem sonrası hastaların doğrudan ulaşabileceği bir WhatsApp hattı açılır, iyileşme dönemi takip edilir.",
     ],
     focusAreas: [
@@ -180,8 +187,51 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
       "İşlem sonrası takip ve iyileşme yönetimi",
     ],
     education: [],
-    serviceSlugs: ["agiz-dis-cene-cerrahisi", "implant-tedavisi"],
+    serviceSlugs: [
+      "agiz-dis-cene-cerrahisi",
+      "implant-tedavisi",
+      "all-on-4-implant",
+      "all-on-6-implant",
+      "kemik-grefti-sinus-lifting",
+    ],
     pending: ["Mezuniyet ve eğitim bilgileri", "Deneyim yılı", "Sertifikalar"],
+  },
+  {
+    /*
+     * Ortodontist — klinik tarafından 29.10.2026'da bildirildi. Ünvan
+     * "Dt." olarak yazıldı; uzmanlık belgesi veya doktora ünvanı teyit
+     * edilirse certifiedTitle / ad alanı güncellenir.
+     */
+    slug: "dt-selin-erginer",
+    name: "Dt. Selin Erginer",
+    title: "Diş Hekimi",
+    specialization: "Ortodonti",
+    titleShort: "Ortodonti",
+    medicalSpecialty: "Dentistry",
+    knowsAbout: [
+      "Ortodonti",
+      "Şeffaf plak (clear aligner) tedavisi",
+      "Metal ve seramik braket tedavisi",
+      "Pekiştirme plağı (retainer)",
+    ],
+    summary:
+      "Dentakim Ağız ve Diş Sağlığı Polikliniği'nde ortodonti alanında çalışmaktadır. Şeffaf plak ve braket tedavilerini yürütür.",
+    bio: [
+      "Dt. Selin Erginer, Dentakim Ağız ve Diş Sağlığı Polikliniği'nde ortodonti alanında çalışmaktadır. Çapraşık dişler, diş aralıkları ve kapanış bozuklukları için şeffaf plak ve braket tedavilerini planlar ve yürütür.",
+    ],
+    focusAreas: [
+      "Şeffaf plak (clear aligner) tedavisi",
+      "Metal ve seramik braket tedavisi",
+      "Tedavi sonrası pekiştirme (retainer)",
+    ],
+    education: [],
+    serviceSlugs: ["ortodonti", "seffaf-plak-tedavisi"],
+    pending: [
+      "Profil fotoğrafı",
+      "Ünvan teyidi (Dt. / Dr. / Uzm.)",
+      "Mezuniyet ve eğitim bilgileri",
+      "Ayrıntılı biyografi",
+    ],
   },
 ];
 

@@ -46,6 +46,6 @@
     "@next/swc-darwin-arm64": "14.2.35"
   },
   "engines": {
-    "node": ">=18.17 <21"
+    "node": "24.x"
   }
 }

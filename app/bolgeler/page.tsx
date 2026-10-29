@@ -38,13 +38,13 @@ export default function BolgelerPage() {
         })}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav items={[{ label: "Anasayfa", href: "/" }, { label: "Bölgeler" }]} />
-          <p className="mt-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
             Hizmet Bölgelerimiz
           </p>
-          <h1 className="mt-3 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Küçükçekmece ve çevresinden Dentakim&apos;e ulaşım
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid [text-wrap:pretty]">
@@ -55,7 +55,7 @@ export default function BolgelerPage() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[1240px] px-6 py-14">
+      <div className="mx-auto max-w-[1304px] px-5 sm:px-8 py-14">
         {GROUPS.map((group) => {
           const regions = getRegionsByGroup(group);
           if (!regions.length) return null;
@@ -64,7 +64,7 @@ export default function BolgelerPage() {
             <section key={group} className="mb-14 last:mb-0" aria-labelledby={`grup-${group}`}>
               <h2
                 id={`grup-${group}`}
-                className="mb-8 font-heading text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.2] text-brand-dark"
+                className="mb-8 font-heading text-[clamp(26px,3.4vw,36px)] font-bold leading-[1.2] text-brand-dark"
               >
                 {GROUP_LABEL[group]}
               </h2>
@@ -76,13 +76,13 @@ export default function BolgelerPage() {
                     <Link
                       key={region.slug}
                       href={`/${region.slug}`}
-                      className="group flex flex-col gap-3 rounded-card border border-brand-line bg-white p-[26px] transition-colors hover:border-brand-line-strong"
+                      className="group flex flex-col gap-3 rounded-card border border-brand-line bg-brand-card p-[26px] transition-colors hover:border-brand-line-strong"
                     >
-                      <span className="flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+                      <span className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent">
                         <MapPin className="size-4" aria-hidden />
                         {region.proximity}
                       </span>
-                      <span className="font-heading text-[26px] font-semibold leading-[1.2] text-brand-dark">
+                      <span className="font-heading text-[26px] font-bold leading-[1.2] text-brand-dark">
                         {region.name}
                       </span>
                       {content ? (

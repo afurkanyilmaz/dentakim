@@ -2,10 +2,20 @@ import type { ServicePageContent } from "./types";
 
 export const disBeyazlatma: ServicePageContent = {
   slug: "dis-beyazlatma",
-  metaTitle: "Küçükçekmece Diş Beyazlatma",
+  metaTitle: "Diş Beyazlatma — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece Dentakim’de ofis tipi profesyonel diş beyazlatma ve hekim kontrolünde ev uygulamaları. Mine hassasiyeti yönetimi ve güvenli sonuç odaklı planlama.",
-  h1: "Küçükçekmece Diş Beyazlatma",
+  h1: "Diş Beyazlatma",
+  procedureType: "NoninvasiveProcedure",
+  summary:
+    "Diş beyazlatma, diş minesindeki renk pigmentlerinin beyazlatıcı jellerle açılmasıdır; diş dokusu aşındırılmaz. Klinik tipi (ofis) beyazlatma tek seansta, ev tipi beyazlatma kişiye özel plaklarla birkaç haftada uygulanır. Kaplama, dolgu ve laminaların rengi beyazlatmayla değişmez.",
+  facts: [
+    { label: "Klinik tipi", value: "Genellikle tek seans, 60–90 dk" },
+    { label: "Ev tipi", value: "Kişiye özel plakla 1–3 hafta" },
+    { label: "Aşındırma", value: "Yok" },
+    { label: "Geçici hassasiyet", value: "Görülebilir, genellikle kısa sürer" },
+  ],
+  guideSlugs: ["dis-beyazlatma-nasil-yapilir", "dis-beyazlatma-evde-mi-klinik-mi"],
   lead:
     "Parlak ve dengeli bir gülüş, özgüveni artırır; ancak güvenli beyazlatma için önce diş minesinin ve dişetinin sağlıklı olduğundan emin olmak gerekir. Sultan Murat Caddesi’ndeki Dentakim’de, klinikte kısa sürede belirgin açılım sağlayan veya daha kademeli ev protokollerini kombine edebilen kişisel planlar sunuyoruz.",
   paragraphs: [

@@ -48,8 +48,8 @@ export default function HekimPage({ params }: Props) {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[
               { label: "Anasayfa", href: "/" },
@@ -75,7 +75,7 @@ export default function HekimPage({ params }: Props) {
               </div>
             )}
             <div>
-              <h1 className="font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+              <h1 className="font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
                 {doctor.name}
               </h1>
               <p className="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-brand-accent">
@@ -87,7 +87,7 @@ export default function HekimPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[1240px] px-6 py-14">
+      <div className="mx-auto max-w-[1304px] px-5 sm:px-8 py-14">
         <div className="grid gap-10 lg:grid-cols-[1fr_min(100%,380px)] lg:items-start">
           <article className="min-w-0 space-y-8">
             {doctor.bio.length > 0 ? (
@@ -134,7 +134,7 @@ export default function HekimPage({ params }: Props) {
               <section aria-labelledby="uyguladigi-tedaviler">
                 <h2
                   id="uyguladigi-tedaviler"
-                  className="font-heading text-[clamp(24px,3.2vw,32px)] font-semibold leading-[1.25] text-brand-dark"
+                  className="font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark"
                 >
                   Uyguladığı tedaviler
                 </h2>
@@ -146,9 +146,9 @@ export default function HekimPage({ params }: Props) {
                       <Link
                         key={slug}
                         href={`/hizmetler/${slug}`}
-                        className="flex flex-col gap-1 rounded-panel border border-brand-line bg-white p-5 transition-colors hover:border-brand-line-strong"
+                        className="flex flex-col gap-1 rounded-panel border border-brand-line bg-brand-card p-5 transition-colors hover:border-brand-line-strong"
                       >
-                        <span className="font-heading text-[20px] font-semibold text-brand-dark">
+                        <span className="font-heading text-[20px] font-bold text-brand-dark">
                           {service.title}
                         </span>
                         <span className="text-[14px] text-brand-mid">{service.desc}</span>

@@ -18,7 +18,7 @@ export const HOME_FAQ: FAQItem[] = [
   {
     question: "Zirkonyum kaplama kaç yıl kullanılır?",
     answer:
-      "Düzenli bakım ve iyi ağız hijyeni ile zirkonyum kaplamalar ortalama 10-15 yıl, çoğu zaman daha uzun süre sorunsuz kullanılır. Leke tutmaz ve dişeti uyumu metal destekli kaplamalara göre çok daha iyidir.",
+      "Düzenli bakım ve iyi ağız hijyeni ile zirkonyum kaplamalar uzun yıllar kullanılabilir; literatürde sık bildirilen süre 10-15 yıldır. Metal alt yapı içermediği için dişeti kenarında koyu çizgi oluşturmaz; ömür ağız hijyeni ve kontrollere göre kişiden kişiye değişir.",
   },
   {
     question: "Diş tedavisi ağrılı mıdır?",
@@ -36,9 +36,9 @@ export const HOME_FAQ: FAQItem[] = [
       "Kliniğimiz Küçükçekmece Fevzi Çakmak Mahallesi, Sultan Murat Caddesi No:86 A adresindedir. Halkalı, Atakent, Sefaköy ve Cennet Mahallesi'nden 10 dakika içinde ulaşılır; metrobüs ve Marmaray bağlantılarına yakındır.",
   },
   {
-    question: "İlk muayene ücretli mi?",
+    question: "Muayene sonrası fiyat bilgisi nasıl verilir?",
     answer:
-      "Hayır, tedavi planlaması muayene sonrasında yapılır. Muayene sonrası size yazılı ve şeffaf bir fiyat teklifi sunarız.",
+      "Tedavi planlaması muayene sonrasında yapılır. Muayene ücreti ve güncel bilgi için randevu sırasında WhatsApp veya telefonla sorabilirsiniz; tedavi seçenekleri size yazılı olarak sunulur.",
   },
   {
     question: "Diş beyazlatma kalıcı mıdır?",

@@ -52,6 +52,12 @@ export const BUSINESS = {
 
   email: "info@dentakim.com",
 
+  /**
+   * Klinikteki toplam hekim sayısı (klinik teyidi, 29.10.2026): 4 hekim,
+   * biri ortodontist. Hekim profilleri lib/doctors.ts'tedir.
+   */
+  team: { doctorCount: 4, areas: "protez, estetik, cerrahi ve ortodonti" },
+
   /** Google Business Profile'da yayınlanan saatler. */
   hours: {
     verified: true,

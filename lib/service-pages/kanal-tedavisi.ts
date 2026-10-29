@@ -2,10 +2,10 @@ import type { ServicePageContent } from "./types";
 
 export const kanalTedavisi: ServicePageContent = {
   slug: "kanal-tedavisi",
-  metaTitle: "Küçükçekmece Kanal Tedavisi",
+  metaTitle: "Kanal Tedavisi — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece’de modern endodonti: ağrı kontrolü, mikroskobik yaklaşım prensipleri ve biyouyumlu dolgu materyalleri ile kanal tedavisi. Dişi kurtarmaya yönelik planlama Dentakim’de.",
-  h1: "Küçükçekmece Kanal Tedavisi",
+  h1: "Kanal Tedavisi",
   lead:
     "Canlılığını yitirmiş veya enfekte pulpa nedeniyle ağrı oluşturan dişlerde kanal tedavisi, çekim alternatifine karşı doğal dişi koruma şansı sunar. Dentakim’de işlem öncesi ağrı kontrolü, çalışma alanı izolasyonu ve kök kanallarının temizlenip sızdırmaz doldurulması adımları titizlikle uygulanır.",
   paragraphs: [

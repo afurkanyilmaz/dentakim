@@ -16,7 +16,7 @@ export function ImplantBrands() {
     <section aria-labelledby="implant-sistemleri">
       <h2
         id="implant-sistemleri"
-        className="font-heading text-[clamp(24px,3.2vw,32px)] font-semibold leading-[1.25] text-brand-dark"
+        className="font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark"
       >
         {used.length > 0
           ? "Kliniğimizde uygulanan implant sistemleri"
@@ -33,7 +33,7 @@ export function ImplantBrands() {
         {list.map((brand) => (
           <Card key={brand.slug} className="p-[26px]">
             <div className="flex items-baseline justify-between gap-3">
-              <h3 className="font-heading text-[22px] font-semibold text-brand-dark">
+              <h3 className="font-heading text-[22px] font-bold text-brand-dark">
                 {brand.name}
               </h3>
               <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-brand-accent">

@@ -18,6 +18,7 @@ import { ContactCTA } from "@/components/shared/ContactCTA";
 import { FAQAccordion } from "@/components/shared/FAQAccordion";
 import { ArticleBody, TableOfContents, extractHeadings } from "@/components/shared/ArticleBody";
 import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
+import { getPostImage } from "@/lib/blog-images";
 
 type Props = { params: { slug: string } };
 
@@ -32,12 +33,14 @@ export function generateMetadata({ params }: Props): Metadata {
     title: post.title,
     description: post.excerpt,
     slug: `blog/${post.slug}`,
+    image: getPostImage(post).src,
   });
 }
 
 export default function BlogPostPage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
   if (!post) notFound();
+  const cover = getPostImage(post);
 
   const url = `${BUSINESS.website}/blog/${post.slug}`;
   const author = post.authorSlug ? getDoctor(post.authorSlug) : undefined;
@@ -66,12 +69,13 @@ export default function BlogPostPage({ params }: Props) {
           datePublished: post.date,
           dateModified: post.updatedAt,
           author,
+          image: cover.src,
         })}
       />
       {post.faqs?.length ? <JsonLd data={getFAQPageSchema(post.faqs)} /> : null}
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[880px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[944px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[
               { label: "Anasayfa", href: "/" },
@@ -80,11 +84,11 @@ export default function BlogPostPage({ params }: Props) {
             ]}
           />
           {post.category ? (
-            <p className="mt-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+            <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
               {post.category}
             </p>
           ) : null}
-          <h1 className="mt-3 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             {post.title}
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13.5px] text-brand-faint">
@@ -121,7 +125,21 @@ export default function BlogPostPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[880px] px-6 py-14">
+      <div className="mx-auto max-w-[944px] px-5 sm:px-8 py-14">
+        <figure className="mb-10 overflow-hidden rounded-[22px] border border-brand-line">
+          <div className="relative aspect-[16/9]">
+            <Image
+              src={cover.src}
+              alt={cover.alt}
+              fill
+              priority
+              sizes="(max-width: 944px) 100vw, 880px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="bg-brand-card px-4 py-2 text-[11px] text-brand-faint">Temsili görsel</figcaption>
+        </figure>
+
         <TableOfContents headings={headings} />
 
         <article className="mt-10">
@@ -140,13 +158,13 @@ export default function BlogPostPage({ params }: Props) {
         </div>
 
         {service ? (
-          <div className="mt-8 rounded-card border border-brand-line bg-white p-[26px]">
-            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+          <div className="mt-8 rounded-card border border-brand-line bg-brand-card p-[26px]">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent">
               İlgili tedavi
             </p>
             <Link
               href={`/hizmetler/${service.slug}`}
-              className="mt-2 block font-heading text-[26px] font-semibold leading-[1.2] text-brand-dark hover:text-brand-accent"
+              className="mt-2 block font-heading text-[26px] font-bold leading-[1.2] text-brand-dark hover:text-brand-accent"
             >
               {service.title}
             </Link>
@@ -164,7 +182,7 @@ export default function BlogPostPage({ params }: Props) {
           <section className="mt-14" aria-labelledby="yazi-sss">
             <h2
               id="yazi-sss"
-              className="mb-6 font-heading text-[clamp(24px,3.2vw,32px)] font-semibold leading-[1.25] text-brand-dark"
+              className="mb-6 font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark"
             >
               Sık sorulan sorular
             </h2>
@@ -176,7 +194,7 @@ export default function BlogPostPage({ params }: Props) {
           <section className="mt-14 border-t border-brand-line pt-10" aria-labelledby="ilgili-yazilar">
             <p
               id="ilgili-yazilar"
-              className="mb-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent"
+              className="mb-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent"
             >
               İlgili yazılar
             </p>
@@ -185,9 +203,9 @@ export default function BlogPostPage({ params }: Props) {
                 <Link
                   key={r.slug}
                   href={`/blog/${r.slug}`}
-                  className="flex flex-col gap-2 rounded-panel border border-brand-line bg-white p-5 transition-colors hover:border-brand-line-strong"
+                  className="flex flex-col gap-2 rounded-panel border border-brand-line bg-brand-card p-5 transition-colors hover:border-brand-line-strong"
                 >
-                  <span className="font-heading text-[19px] font-semibold leading-[1.25] text-brand-dark">
+                  <span className="font-heading text-[19px] font-bold leading-[1.25] text-brand-dark">
                     {r.title}
                   </span>
                   <span className="text-[13px] text-brand-faint">{r.readTime} okuma</span>

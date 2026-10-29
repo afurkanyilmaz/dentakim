@@ -15,9 +15,9 @@ export const metadata: Metadata = generateMeta({
 export default function HakkimizdaPage() {
   return (
     <main className="pb-16">
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[880px] px-6 py-14">
-          <h1 className="font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[944px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
+          <h1 className="font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Hakkımızda
           </h1>
           <p className="mt-3 text-lg text-brand-mid">
@@ -26,7 +26,7 @@ export default function HakkimizdaPage() {
           </p>
         </div>
       </div>
-      <div className="container mx-auto max-w-[880px] px-6 py-14">
+      <div className="mx-auto max-w-[944px] px-5 sm:px-8 py-14">
         <div className="space-y-4 text-brand-mid leading-relaxed">
           <p>
             Dentakim; Fevzi Çakmak Mahallesi, Sultan Murat Caddesi üzerinde

@@ -1,6 +1,14 @@
 /** Slug list mirrors app/hizmetler/<slug>/page.tsx routes */
 export const HIZMET_SLUGS = [
   "implant-tedavisi",
+  "all-on-4-implant",
+  "all-on-6-implant",
+  "hibrit-protez",
+  "gulus-tasarimi",
+  "lamina-veneer",
+  "kemik-grefti-sinus-lifting",
+  "gece-plagi-bruksizm",
+  "seffaf-plak-tedavisi",
   "dis-beyazlatma",
   "ortodonti",
   "cocuk-dis-hekimligi",
