@@ -76,20 +76,15 @@ export function Footer() {
         {/* Üst: marka + iletişim | randevu kartı */}
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)] lg:gap-20">
           <div>
-            <Link href="/" className="inline-flex items-center gap-3" aria-label={`${BUSINESS.brandName} ana sayfa`}>
-              <Image src="/images/logo-mark-dark.png" alt="" width={64} height={64} className="size-16" />
-              <span>
-                <Image
-                  src="/images/logo-wordmark-dark.png"
-                  alt={BUSINESS.brandName}
-                  width={730}
-                  height={120}
-                  className="h-[34px] w-auto"
-                />
-                <span className="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.22em] text-brand-mid">
-                  Ağız ve Diş Sağlığı Polikliniği
-                </span>
-              </span>
+            <Link href="/" className="inline-block" aria-label={`${BUSINESS.brandName} ana sayfa`}>
+              {/* Özgün dikey logo: diş işareti üstte, DENTAKIM yazısı altta */}
+              <Image
+                src="/images/logo-full-dark.png"
+                alt={BUSINESS.brandName}
+                width={364}
+                height={327}
+                className="h-[120px] w-auto"
+              />
             </Link>
             <p className="mt-6 max-w-[520px] text-[14px] leading-[1.7]">
               {BUSINESS.displayName}, {BUSINESS.address.district} Sultan Murat
