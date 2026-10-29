@@ -33,36 +33,34 @@ const MOBILE_EXTRA = [
   { href: "/randevu", label: "Randevu" },
 ];
 
-/** Logo: altın diş işareti + yazı + küçük alt başlık. */
+/**
+ * Logo: özgün logo dosyasından (public/images/logo-dentakim.png) şeffaf
+ * kesilmiş altın diş işareti + DENTAKIM yazısı. Görseller oranları korunarak
+ * yalnızca yükseklikle ölçeklenir.
+ */
 function Wordmark() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2.5 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent"
+      className="flex items-center gap-3 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent"
       aria-label={`${BUSINESS.brandName} ana sayfa`}
     >
       <Image
         src="/images/logo-mark-dark.png"
         alt=""
-        width={44}
-        height={44}
-        className="size-11 shrink-0 lg:size-12"
+        width={240}
+        height={256}
+        className="h-11 w-auto shrink-0 lg:h-[50px]"
         priority
       />
-      <span className="flex flex-col">
-        {/* Logo dosyasından alınan özgün altın yazı (logo-wordmark-dark.png) */}
-        <Image
-          src="/images/logo-wordmark-dark.png"
-          alt={BUSINESS.brandName}
-          width={730}
-          height={120}
-          className="h-[20px] w-auto lg:h-[23px]"
-          priority
-        />
-        <span className="mt-1.5 text-[8.5px] font-bold uppercase tracking-[0.2em] text-brand-mid">
-          Ağız ve Diş Sağlığı Polikliniği
-        </span>
-      </span>
+      <Image
+        src="/images/logo-wordmark-dark.png"
+        alt={BUSINESS.brandName}
+        width={874}
+        height={120}
+        className="h-[19px] w-auto lg:h-[22px]"
+        priority
+      />
     </Link>
   );
 }
