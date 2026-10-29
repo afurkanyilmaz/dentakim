@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
-import { reelUrl, type InstagramReel } from "@/lib/instagram";
+import { INSTAGRAM_HANDLE, reelUrl, type InstagramReel } from "@/lib/instagram";
 
 declare global {
   interface Window {
@@ -59,7 +59,7 @@ export function InstagramEmbeds({ reels, bleed = true }: { reels: InstagramReel[
         (bleed ? "-mx-5 px-5 sm:-mx-8 sm:px-8" : "")
       }
     >
-      {reels.map(({ code }, i) => (
+      {reels.map(({ code, topic }) => (
         <li key={code} className="w-[326px] shrink-0 snap-start">
           {visible ? (
             <blockquote
@@ -77,11 +77,15 @@ export function InstagramEmbeds({ reels, bleed = true }: { reels: InstagramReel[
               href={reelUrl(code)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-[560px] flex-col items-center justify-center gap-2 rounded-[18px] border border-brand-line bg-panel text-brand-mid"
-              aria-label={`Instagram videosu ${i + 1}`}
+              className="flex h-[560px] flex-col justify-between rounded-[18px] border border-brand-line bg-panel p-4 text-brand-mid"
+              aria-label={`Instagram videosu: ${topic}`}
             >
-              <Play className="size-7" aria-hidden />
-              <span className="text-[12px] font-bold">Instagram videosu</span>
+              <span className="text-[12px] font-bold text-brand-light">{INSTAGRAM_HANDLE} · Instagram</span>
+              <span className="flex flex-col items-center gap-2 text-center">
+                <Play className="size-8" aria-hidden />
+                <span className="text-[13px] font-bold text-brand-light">{topic}</span>
+              </span>
+              <span className="text-[11px]">Instagram’da izle ↗</span>
             </a>
           )}
         </li>
