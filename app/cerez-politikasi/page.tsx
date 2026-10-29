@@ -34,7 +34,9 @@ export default function CerezPolitikasiPage() {
       </ul>
       <p>
         Sitede reklam veya yeniden pazarlama çerezi kullanılmamaktadır. Google Haritalar gömülü
-        içeriği, Google tarafından yerleştirilen kendi çerezlerini kullanabilir.
+        içeriği, Google tarafından yerleştirilen kendi çerezlerini kullanabilir. Anasayfadaki
+        Instagram videoları yalnızca &quot;Videoları göster&quot; düğmesine bastığınızda yüklenir; bu
+        durumda Instagram (Meta) kendi çerezlerini kullanabilir.
       </p>
 
       <h2>Çerezleri nasıl yönetirsiniz</h2>

@@ -36,7 +36,7 @@ export function MapSection() {
             href={BUSINESS.google.profileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center gap-2 rounded-[12px] border border-white/20 px-5 text-[13px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
+            className="inline-flex h-11 items-center gap-2 rounded-[12px] border border-fg/20 px-5 text-[13px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
           >
             Yol tarifi al <span aria-hidden>↗</span>
           </a>

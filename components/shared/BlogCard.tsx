@@ -17,7 +17,7 @@ export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-[22px] border border-brand-line bg-brand-card transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-brand-line-strong motion-reduce:transform-none">
-      <div className="relative aspect-[397/240] overflow-hidden bg-[#0C1019]">
+      <div className="relative aspect-[397/240] overflow-hidden bg-brand-card">
         {cover ? (
           <Image
             src={cover.src}

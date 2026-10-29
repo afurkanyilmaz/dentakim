@@ -142,7 +142,7 @@ export function TreatmentCard({
 
       {/* Metin alanı */}
       <div className="flex flex-1 flex-col px-5 pb-5 pt-5 sm:px-[18px]">
-        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-line bg-white/[0.03] px-3 py-1.5 text-[11px] font-bold text-brand-light">
+        <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-line bg-fg/[0.03] px-3 py-1.5 text-[11px] font-bold text-brand-light">
           <span className="size-1.5 rounded-full bg-brand-accent" aria-hidden />
           {BUSINESS.brandName}
         </span>
@@ -151,7 +151,7 @@ export function TreatmentCard({
           <span className="text-[12px] font-bold text-brand-light">Uzman Hekimle Ön Görüşme</span>
           <span
             aria-hidden
-            className="inline-flex size-[42px] items-center justify-center rounded-full bg-white/[0.04] text-brand-light transition-colors group-hover:bg-brand-accent group-hover:text-white"
+            className="inline-flex size-[42px] items-center justify-center rounded-full bg-fg/[0.05] text-brand-light transition-colors group-hover:bg-brand-accent group-hover:text-white"
           >
             <ArrowRight className="size-4" />
           </span>

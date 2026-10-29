@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { SERVICES, SERVICE_GROUP_LABEL, type ServiceGroup } from "@/lib/constants";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { DOCTORS } from "@/lib/doctors";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
@@ -27,41 +28,50 @@ const NAV = [
 
 const GROUPS: ServiceGroup[] = ["estetik", "implant", "genel"];
 
-const MOBILE_EXTRA = [
-  { href: "/sss", label: "Sık Sorulan Sorular" },
+const MOBILE_KURUMSAL = [
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/klinik", label: "Kliniğimiz" },
+  { href: "/klinik/galeri", label: "Galeri" },
+  { href: "/blog", label: "Blog" },
   { href: "/fiyatlar", label: "Fiyatlar" },
-  { href: "/randevu", label: "Randevu" },
+];
+
+const MOBILE_DESTEK = [
+  { href: "/randevu", label: "Online Randevu" },
+  { href: "/iletisim", label: "İletişim ve Ulaşım" },
+  { href: "/sss", label: "Sık Sorulan Sorular" },
 ];
 
 /**
- * Logo: özgün logo dosyasından (public/images/logo-dentakim.png) şeffaf
- * kesilmiş altın diş işareti + DENTAKIM yazısı. Görseller oranları korunarak
- * yalnızca yükseklikle ölçeklenir.
+ * Yazı logosu — "DENTAKIM". Görsel logo dosyası koyu zeminde temiz
+ * kesilemediği için şimdilik yalnızca yazı kullanılır. Büyük harf CSS ile
+ * yapılmaz: Türkçe dil ayarında "i" harfi "İ" olurdu.
  */
-function Wordmark() {
+export function TextLogo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className="flex items-center gap-3 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent"
       aria-label={`${BUSINESS.brandName} ana sayfa`}
+      className={cn(
+        "wordmark rounded-sm font-heading text-[23px] font-extrabold leading-none tracking-[0.14em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent lg:text-[27px]",
+        className
+      )}
     >
-      <Image
-        src="/images/logo-mark-dark.png"
-        alt=""
-        width={240}
-        height={256}
-        className="h-11 w-auto shrink-0 lg:h-[50px]"
-        priority
-      />
-      <Image
-        src="/images/logo-wordmark-dark.png"
-        alt={BUSINESS.brandName}
-        width={874}
-        height={120}
-        className="h-[19px] w-auto lg:h-[22px]"
-        priority
-      />
+      DENTAKIM
     </Link>
+  );
+}
+
+/** Mobil menüde açılır-kapanır ana başlık (yerel <details>, JS gerektirmez). */
+function MenuGroup({ title, children, defaultOpen = false }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) {
+  return (
+    <details open={defaultOpen} className="group border-b border-brand-line">
+      <summary className="flex cursor-pointer list-none items-center justify-between py-4 text-[15px] font-extrabold uppercase tracking-[0.06em] text-brand-light [&::-webkit-details-marker]:hidden">
+        {title}
+        <ChevronDown className="size-4 text-brand-accent transition-transform group-open:rotate-180 motion-reduce:transition-none" aria-hidden />
+      </summary>
+      <div className="pb-4">{children}</div>
+    </details>
   );
 }
 
@@ -93,16 +103,18 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter] duration-300",
-        solid ? "bg-[rgba(8,11,18,0.88)] backdrop-blur-[14px]" : "bg-gradient-to-b from-black/50 to-transparent"
+        solid
+          ? "bg-brand-surface/90 backdrop-blur-[14px]"
+          : "theme-dark bg-gradient-to-b from-black/50 to-transparent"
       )}
     >
       {/* Üst satır */}
-      <div className="border-b border-white/[0.12]">
+      <div className="border-b border-fg/[0.12]">
         <div className="mx-auto flex h-[75px] max-w-[1440px] items-center justify-between gap-6 pl-5 sm:pl-8 lg:h-[86px] lg:pr-8">
-          <Wordmark />
+          <TextLogo />
 
           <div className="hidden items-center gap-5 lg:flex">
-            <span className="inline-flex h-11 items-center gap-2.5 rounded-full border border-white/[0.14] bg-white/[0.06] pl-1.5 pr-4 text-[12px] font-bold text-brand-light">
+            <span className="inline-flex h-11 items-center gap-2.5 rounded-full border border-fg/[0.14] bg-fg/[0.06] pl-1.5 pr-4 text-[12px] font-bold text-brand-light">
               <span className="inline-flex size-8 items-center justify-center rounded-full bg-brand-accent text-brand-surface">
                 <Clock className="size-4" aria-hidden />
               </span>
@@ -123,6 +135,7 @@ export function Header() {
             </a>
 
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <a
                 href={whatsappUrl()}
                 target="_blank"
@@ -148,77 +161,134 @@ export function Header() {
           </div>
 
           {/* Menü düğmesi — mobilde ana gezinme, masaüstünde tam menü */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger
-              className="flex h-full w-[75px] items-center justify-center border-l border-white/[0.12] text-brand-light transition-colors hover:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brand-accent lg:w-auto lg:border-0 lg:pl-2"
-              aria-label="Menüyü aç"
-            >
-              <Menu className="size-7" strokeWidth={1.6} />
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[min(100vw,420px)] border-l border-white/10 bg-brand-surface px-6 text-brand-light"
-            >
-              <SheetTitle className="sr-only">Menü</SheetTitle>
-              <div className="mt-14 flex flex-col pb-10">
-                {GROUPS.map((g) => (
-                  <div key={g} className="pb-5">
-                    <p className="pb-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
-                      {SERVICE_GROUP_LABEL[g]}
-                    </p>
-                    {SERVICES.filter((s) => s.group === g).map((s) => (
+          <div className="flex h-full items-center">
+            <ThemeToggle className="mr-3 lg:hidden" />
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger
+                className="flex h-full w-[75px] items-center justify-center border-l border-fg/[0.12] text-brand-light transition-colors hover:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brand-accent lg:w-auto lg:border-0 lg:pl-2"
+                aria-label="Menüyü aç"
+              >
+                <Menu className="size-7" strokeWidth={1.6} />
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="flex h-dvh w-[min(100vw,420px)] flex-col gap-0 overflow-hidden border-l border-fg/10 bg-brand-surface p-0 text-brand-light data-[side=right]:w-[min(100vw,420px)] data-[side=right]:sm:max-w-[420px]"
+              >
+                <SheetTitle className="sr-only">Menü</SheetTitle>
+                <div className="flex h-[75px] shrink-0 items-center border-b border-brand-line px-6">
+                  <TextLogo className="text-[21px]" />
+                </div>
+
+                {/* Kaydırılabilir orta alan */}
+                <nav aria-label="Mobil menü" className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 pb-6">
+                  <Link
+                    href="/"
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-brand-line py-4 text-[15px] font-extrabold uppercase tracking-[0.06em] text-brand-light"
+                  >
+                    Anasayfa
+                  </Link>
+                  <MenuGroup title="Tedavilerimiz">
+                    {GROUPS.map((g) => (
+                      <details key={g} className="group/sub">
+                        <summary className="flex cursor-pointer list-none items-center justify-between py-2.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-brand-accent [&::-webkit-details-marker]:hidden">
+                          {SERVICE_GROUP_LABEL[g]}
+                          <ChevronDown className="size-3.5 transition-transform group-open/sub:rotate-180" aria-hidden />
+                        </summary>
+                        <div className="pb-2 pl-3">
+                          {SERVICES.filter((s) => s.group === g).map((s) => (
+                            <Link
+                              key={s.slug}
+                              href={`/hizmetler/${s.slug}`}
+                              onClick={() => setOpen(false)}
+                              className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                            >
+                              {s.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </details>
+                    ))}
+                    <Link
+                      href="/hizmetler"
+                      onClick={() => setOpen(false)}
+                      className="mt-1 inline-block text-[13px] font-bold text-brand-accent-dark"
+                    >
+                      Tüm tedaviler ↗
+                    </Link>
+                  </MenuGroup>
+                  <MenuGroup title="Hekimlerimiz">
+                    {DOCTORS.map((d) => (
                       <Link
-                        key={s.slug}
-                        href={`/hizmetler/${s.slug}`}
+                        key={d.slug}
+                        href={`/hekimler/${d.slug}`}
                         onClick={() => setOpen(false)}
-                        className="block border-b border-white/[0.08] py-2.5 font-heading text-[16.5px] font-bold tracking-[-0.02em] text-brand-light transition-colors hover:text-brand-accent"
+                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
                       >
-                        {s.title}
+                        {d.name}
+                        <span className="block text-[12px] font-medium text-brand-mid">{d.specialization}</span>
                       </Link>
                     ))}
+                  </MenuGroup>
+                  <MenuGroup title="Kurumsal">
+                    {MOBILE_KURUMSAL.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </MenuGroup>
+                  <MenuGroup title="Destek">
+                    {MOBILE_DESTEK.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </MenuGroup>
+                  <div className="flex items-center justify-between pt-5">
+                    <span className="text-[13px] font-semibold text-brand-mid">Görünüm</span>
+                    <ThemeToggle withLabel />
                   </div>
-                ))}
+                </nav>
 
-                <p className="pb-3 pt-8 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
-                  Dentakim
-                </p>
-                {[...NAV.filter((n) => n.href !== "/hizmetler"), ...MOBILE_EXTRA].map((item) => (
+                {/* Sabit alt eylemler */}
+                <div className="shrink-0 border-t border-brand-line px-6 pb-[max(16px,env(safe-area-inset-bottom))] pt-4">
                   <Link
-                    key={item.href}
-                    href={item.href}
+                    href="/randevu"
                     onClick={() => setOpen(false)}
-                    className="py-2.5 text-[13px] font-extrabold uppercase tracking-[0.06em] text-brand-mid transition-colors hover:text-brand-light"
+                    className="flex h-[50px] items-center justify-between rounded-[2px] bg-brand-accent px-5 text-[15px] font-extrabold text-white"
                   >
-                    {item.label}
+                    Randevu Oluştur <span aria-hidden>↗</span>
                   </Link>
-                ))}
-
-                <Link
-                  href="/randevu"
-                  onClick={() => setOpen(false)}
-                  className="mt-8 flex h-[54px] items-center justify-between rounded-[2px] bg-brand-accent px-6 text-[15px] font-extrabold text-white"
-                >
-                  Randevu Oluştur <span aria-hidden>↗</span>
-                </Link>
-                <div className="mt-3 grid grid-cols-2 gap-3">
-                  <a
-                    href={whatsappUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-12 items-center justify-center gap-2 rounded-[12px] bg-brand-whatsapp text-[13px] font-extrabold text-white"
-                  >
-                    <WhatsAppIcon className="size-4" /> WhatsApp
-                  </a>
-                  <a
-                    href={BUSINESS.phone.href}
-                    className="flex h-12 items-center justify-center gap-2 rounded-[12px] border border-white/20 text-[13px] font-extrabold text-brand-light"
-                  >
-                    <Phone className="size-4" aria-hidden /> Hemen Ara
-                  </a>
+                  <div className="mt-3 grid grid-cols-2 gap-3">
+                    <a
+                      href={whatsappUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 items-center justify-center gap-2 rounded-[12px] bg-brand-whatsapp text-[13px] font-extrabold text-white"
+                    >
+                      <WhatsAppIcon className="size-4" /> WhatsApp
+                    </a>
+                    <a
+                      href={BUSINESS.phone.href}
+                      className="flex h-11 items-center justify-center gap-2 rounded-[12px] border border-fg/20 text-[13px] font-extrabold text-brand-light"
+                    >
+                      <Phone className="size-4" aria-hidden /> Hemen Ara
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
 
@@ -249,7 +319,7 @@ export function Header() {
                   <DropdownMenuContent
                     align="start"
                     sideOffset={14}
-                    className="w-[min(100vw-2rem,900px)] rounded-[22px] border border-white/10 bg-brand-card p-3 text-brand-light shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
+                    className="w-[min(100vw-2rem,900px)] rounded-[22px] border border-fg/10 bg-brand-card p-3 text-brand-light shadow-[0_30px_80px_rgba(0,0,0,0.25)]"
                   >
                     <div className="grid grid-cols-3 gap-2">
                       {GROUPS.map((g) => (
@@ -261,7 +331,7 @@ export function Header() {
                             <Link
                               key={s.slug}
                               href={`/hizmetler/${s.slug}`}
-                              className="group block rounded-[12px] px-4 py-2.5 outline-none transition-colors hover:bg-white/[0.05] focus-visible:bg-white/[0.07]"
+                              className="group block rounded-[12px] px-4 py-2.5 outline-none transition-colors hover:bg-fg/[0.05] focus-visible:bg-fg/[0.07]"
                             >
                               <span className="block text-[13.5px] font-extrabold text-brand-light group-hover:text-brand-accent">
                                 {s.title}
@@ -274,7 +344,7 @@ export function Header() {
                     </div>
                     <Link
                       href="/hizmetler"
-                      className="mt-2 flex items-center justify-between rounded-[14px] border-t border-white/10 px-4 pb-1 pt-4 text-[12px] font-extrabold uppercase tracking-[0.08em] text-brand-accent"
+                      className="mt-2 flex items-center justify-between rounded-[14px] border-t border-fg/10 px-4 pb-1 pt-4 text-[12px] font-extrabold uppercase tracking-[0.08em] text-brand-accent"
                     >
                       Tüm tedaviler <span aria-hidden>↗</span>
                     </Link>
@@ -299,7 +369,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/iletisim"
-              className="inline-flex h-[42px] items-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.04] px-4 text-[11.5px] font-bold text-brand-mid transition-colors hover:text-brand-light"
+              className="inline-flex h-[42px] items-center gap-2 rounded-full border border-fg/[0.14] bg-fg/[0.04] px-4 text-[11.5px] font-bold text-brand-mid transition-colors hover:text-brand-light"
             >
               <span className="size-1.5 rounded-full bg-[#E5484D]" aria-hidden />
               Klinik:
@@ -307,7 +377,7 @@ export function Header() {
             </Link>
             <Link
               href="/randevu"
-              className="inline-flex h-[46px] items-center gap-1.5 whitespace-nowrap rounded-full border border-white/[0.28] px-5 text-[12px] font-extrabold text-white transition-colors hover:border-brand-accent hover:bg-brand-accent"
+              className="inline-flex h-[46px] items-center gap-1.5 whitespace-nowrap rounded-full border border-fg/[0.28] px-5 text-[12px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white"
             >
               Randevu Al <span aria-hidden>↗</span>
             </Link>

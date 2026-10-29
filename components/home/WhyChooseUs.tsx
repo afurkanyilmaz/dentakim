@@ -32,7 +32,7 @@ export function WhyChooseUs() {
           </p>
 
           {/* Tedavi akışı kartı */}
-          <div className="mt-8 max-w-[560px] rounded-[22px] border border-brand-line bg-[linear-gradient(160deg,#141A28,#0D121C)] p-6">
+          <div className="mt-8 max-w-[560px] rounded-[22px] border border-brand-line bg-panel p-6">
             <p className="text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-brand-mid">
               Tedavi akışı
             </p>
@@ -49,7 +49,7 @@ export function WhyChooseUs() {
                 </li>
               ))}
             </ol>
-            <div className="mt-6 h-1 overflow-hidden rounded-full bg-white/10" aria-hidden>
+            <div className="mt-6 h-1 overflow-hidden rounded-full bg-fg/10" aria-hidden>
               <div className="h-full w-3/4 rounded-full bg-brand-light" />
             </div>
           </div>
@@ -63,7 +63,7 @@ export function WhyChooseUs() {
             </Link>
             <Link
               href="/hizmetler"
-              className="inline-flex h-[54px] items-center rounded-[14px] border border-white/20 px-7 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
+              className="inline-flex h-[54px] items-center rounded-[14px] border border-fg/20 px-7 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
             >
               Tedavileri İncele
             </Link>
@@ -75,13 +75,13 @@ export function WhyChooseUs() {
             <li
               key={big}
               className={
-                "relative flex min-h-[260px] flex-col rounded-[22px] border p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] lg:min-h-[300px] " +
+                "relative flex min-h-[260px] flex-col rounded-[22px] border p-6 shadow-[0_24px_60px_rgba(0,0,0,0.12)] lg:min-h-[300px] " +
                 (i === 0
-                  ? "border-white/25 bg-[linear-gradient(150deg,#4A4E57,#1A1F2B_55%,#121722)]"
-                  : "border-brand-line bg-[linear-gradient(160deg,#151B29,#0B0F18)]")
+                  ? "border-fg/25 bg-panel-strong"
+                  : "border-brand-line bg-panel")
               }
             >
-              <span className="inline-flex size-11 items-center justify-center rounded-[12px] bg-white/[0.06] text-brand-light">
+              <span className="inline-flex size-11 items-center justify-center rounded-[12px] bg-fg/[0.06] text-brand-light">
                 <Icon className="size-5" aria-hidden />
               </span>
               <span className="absolute right-6 top-7 size-2 rounded-full bg-brand-accent" aria-hidden />

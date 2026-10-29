@@ -147,9 +147,9 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
           ].map(({ Icon, k, v }) => (
             <li
               key={k}
-              className="flex items-center gap-4 rounded-[18px] border border-brand-line bg-[#0F1420]/95 px-5 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.4)] backdrop-blur"
+              className="flex items-center gap-4 rounded-[18px] border border-brand-line bg-brand-card/95 px-5 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur"
             >
-              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-white/[0.06] text-brand-accent">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-fg/[0.06] text-brand-accent">
                 <Icon className="size-5" aria-hidden />
               </span>
               <span className="min-w-0">
@@ -174,7 +174,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
                   <li key={t.id}>
                     <a
                       href={`#${t.id}`}
-                      className="flex items-center gap-3 rounded-[10px] px-3 py-2.5 text-[13px] font-bold text-brand-mid transition-colors hover:bg-white/[0.05] hover:text-brand-light"
+                      className="flex items-center gap-3 rounded-[10px] px-3 py-2.5 text-[13px] font-bold text-brand-mid transition-colors hover:bg-fg/[0.05] hover:text-brand-light"
                     >
                       <span className="text-[11px] text-brand-faint">{String(i + 1).padStart(2, "0")}</span>
                       {t.label}
@@ -197,7 +197,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
               <section
                 id="kisaca"
                 aria-labelledby="kisaca-baslik"
-                className="rounded-[22px] border border-brand-accent/40 bg-[linear-gradient(160deg,#1A1B22,#11151F)] p-6 sm:p-8"
+                className="rounded-[22px] border border-brand-accent/40 bg-panel p-6 sm:p-8"
               >
                 <h2 id="kisaca-baslik" className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
                   Kısaca: {shortTitle} nedir?
@@ -206,7 +206,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
                 {content.facts?.length ? (
                   <dl className="mt-6 grid gap-px overflow-hidden rounded-[16px] border border-brand-line bg-brand-line sm:grid-cols-2">
                     {content.facts.map((f) => (
-                      <div key={f.label} className="flex items-baseline justify-between gap-4 bg-[#121621] px-4 py-3">
+                      <div key={f.label} className="flex items-baseline justify-between gap-4 bg-brand-card px-4 py-3">
                         <dt className="text-[12.5px] text-brand-mid">{f.label}</dt>
                         <dd className="text-right text-[13.5px] font-bold text-brand-light">{f.value}</dd>
                       </div>
@@ -234,7 +234,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
               </h2>
               <ol className="mt-6 grid gap-4 sm:grid-cols-2">
                 {content.steps.map((step, i) => (
-                  <li key={i} className="rounded-[16px] border border-brand-line bg-white/[0.02] p-5">
+                  <li key={i} className="rounded-[16px] border border-brand-line bg-fg/[0.02] p-5">
                     <span className="font-heading text-[28px] font-extrabold leading-none tracking-[-0.04em] text-brand-accent">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -271,7 +271,7 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
                     <Link
                       key={doctor.slug}
                       href={`/hekimler/${doctor.slug}`}
-                      className="flex items-center gap-4 rounded-[16px] border border-brand-line bg-white/[0.02] p-4 transition-colors hover:border-brand-line-strong"
+                      className="flex items-center gap-4 rounded-[16px] border border-brand-line bg-fg/[0.02] p-4 transition-colors hover:border-brand-line-strong"
                     >
                       {doctor.photo ? (
                         <Image
