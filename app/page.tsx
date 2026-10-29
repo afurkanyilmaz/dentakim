@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
+import { IntroSection } from "@/components/home/IntroSection";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
-import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { DoctorSection } from "@/components/home/DoctorSection";
-import { RegionsSection } from "@/components/home/RegionsSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { ClinicStrip } from "@/components/home/ClinicStrip";
+import { PricingSection } from "@/components/home/PricingSection";
+import { BlogSection } from "@/components/home/BlogSection";
 import { MapSection } from "@/components/home/MapSection";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { ContactCTA } from "@/components/shared/ContactCTA";
@@ -20,22 +21,25 @@ export const metadata: Metadata = generateMeta({
 });
 
 /*
- * Bölüm ritmi: koyu hero → beyaz (yaklaşım) → koyu (tedaviler) → krem (hekimler)
- * → fotoğraf şeridi → koyu (süreç) → beyaz (SSS) → krem (bölgeler) → beyaz (konum)
- * → koyu kapanış. Aynı tonda iki bölüm art arda gelmez.
+ * Bölüm sırası referans düzeni izler: hero → tanıtım → tedaviler → hekimler
+ * → neden biz (ızgara zemin) → lacivert klinik bandı → fiyatlandırma → blog
+ * → konum → SSS → iletişim. Referanstaki yapay zekâ gülüş simülasyonu, taksit
+ * hesaplayıcı, sertifika ve Instagram alanlarının yerine Dentakim'in gerçek
+ * içerikleri (klinik fotoğrafları, fiyatlandırma yaklaşımı, konum, SSS) konur.
  */
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <WhyChooseUs />
+      <IntroSection />
       <ServicesGrid />
       <DoctorSection />
+      <WhyChooseUs />
       <ClinicStrip />
-      <ProcessSection />
-      <HomeFAQ />
-      <RegionsSection />
+      <PricingSection />
+      <BlogSection />
       <MapSection />
+      <HomeFAQ />
       <ContactCTA variant="band" />
     </main>
   );

@@ -72,8 +72,8 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[
               { label: "Anasayfa", href: "/" },
@@ -81,7 +81,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
               { label: regionName },
             ]}
           />
-          <h1 className="mt-5 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-5 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             {geo.h1}
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid [text-wrap:pretty]">
@@ -110,7 +110,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
         </div>
       </div>
 
-      <article className="container mx-auto max-w-[1240px] px-6 py-14">
+      <article className="mx-auto max-w-[1304px] px-5 sm:px-8 py-14">
         <div className="flex max-w-[880px] flex-col gap-5">
           {geo.paragraphs.map((p, i) => (
             <p key={i} className="text-[17px] leading-[1.78] text-brand-mid [text-wrap:pretty]">
@@ -123,7 +123,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
         <section className="mt-14" aria-labelledby="geo-hekimler">
           <h2
             id="geo-hekimler"
-            className="font-heading text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.2] text-brand-dark"
+            className="font-heading text-[clamp(26px,3.4vw,36px)] font-bold leading-[1.2] text-brand-dark"
           >
             Tedavinizi yapacak hekimler
           </h2>
@@ -132,7 +132,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
               <Link
                 key={doctor.slug}
                 href={`/hekimler/${doctor.slug}`}
-                className="flex items-center gap-4 rounded-panel border border-brand-line bg-white p-4 transition-colors hover:border-brand-line-strong"
+                className="flex items-center gap-4 rounded-panel border border-brand-line bg-brand-card p-4 transition-colors hover:border-brand-line-strong"
               >
                 {doctor.photo ? (
                   <Image
@@ -146,7 +146,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
                   <span className="size-16 shrink-0 rounded-full border border-dashed border-brand-line-strong bg-brand-primary-light" />
                 )}
                 <span className="min-w-0">
-                  <span className="block font-heading text-[20px] font-semibold text-brand-dark">
+                  <span className="block font-heading text-[20px] font-bold text-brand-dark">
                     {doctor.name}
                   </span>
                   <span className="block text-[13px] text-brand-mid">
@@ -162,7 +162,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
         <section className="mt-14" aria-labelledby="geo-hizmetler">
           <h2
             id="geo-hizmetler"
-            className="font-heading text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.2] text-brand-dark"
+            className="font-heading text-[clamp(26px,3.4vw,36px)] font-bold leading-[1.2] text-brand-dark"
           >
             {regionName}&apos;den gelen hastalarımıza uyguladığımız tedaviler
           </h2>
@@ -183,7 +183,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
         <section className="mt-14" aria-labelledby="geo-ulasim">
           <h2
             id="geo-ulasim"
-            className="font-heading text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.2] text-brand-dark"
+            className="font-heading text-[clamp(26px,3.4vw,36px)] font-bold leading-[1.2] text-brand-dark"
           >
             {regionName}&apos;den ulaşım
           </h2>
@@ -209,7 +209,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
         <section className="mt-14 max-w-[880px]" aria-labelledby="geo-sss">
           <h2
             id="geo-sss"
-            className="mb-6 font-heading text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.2] text-brand-dark"
+            className="mb-6 font-heading text-[clamp(26px,3.4vw,36px)] font-bold leading-[1.2] text-brand-dark"
           >
             {regionName} için sık sorulan sorular
           </h2>
@@ -221,7 +221,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
           <section className="mt-14" aria-labelledby="geo-yakin">
             <h2
               id="geo-yakin"
-              className="font-heading text-[clamp(26px,3.4vw,36px)] font-semibold leading-[1.2] text-brand-dark"
+              className="font-heading text-[clamp(26px,3.4vw,36px)] font-bold leading-[1.2] text-brand-dark"
             >
               Yakın bölgeler
             </h2>
@@ -230,9 +230,9 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
                 <Link
                   key={n.slug}
                   href={`/${n.slug}`}
-                  className="rounded-panel border border-brand-line bg-white p-5 transition-colors hover:border-brand-line-strong"
+                  className="rounded-panel border border-brand-line bg-brand-card p-5 transition-colors hover:border-brand-line-strong"
                 >
-                  <p className="font-heading text-[20px] font-semibold text-brand-dark">
+                  <p className="font-heading text-[20px] font-bold text-brand-dark">
                     {getRegion(n.slug)?.name ?? n.h1}
                   </p>
                   <p className="mt-1 text-[14px] text-brand-mid">

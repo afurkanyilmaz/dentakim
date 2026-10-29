@@ -28,15 +28,15 @@ export default function SSSPage() {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[880px] px-6 py-12">
+      <div className="page-hero">
+        <div className="container mx-auto max-w-[880px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[{ label: "Anasayfa", href: "/" }, { label: "Sık Sorulan Sorular" }]}
           />
-          <p className="mt-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
             Merak Ettikleriniz
           </p>
-          <h1 className="mt-3 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Sık Sorulan Sorular
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid">
@@ -46,7 +46,7 @@ export default function SSSPage() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[880px] px-6 py-14">
+      <div className="mx-auto max-w-[944px] px-5 sm:px-8 py-14">
         <FAQAccordion items={HOME_FAQ} />
 
         <p className="mt-10 text-[15px] text-brand-mid">

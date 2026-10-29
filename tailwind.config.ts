@@ -10,13 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        /* Cormorant Garamond — başlıklar; Manrope — gövde ve arayüz */
-        heading: ["var(--font-heading)", "Georgia", "Times New Roman", "serif"],
+        /* Plus Jakarta Sans — başlıklar; Manrope — gövde ve arayüz */
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
         sans: ["var(--font-body)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       borderRadius: {
-        card: "20px",
-        panel: "16px",
+        card: "26px",
+        panel: "14px",
       },
       colors: {
         background: "var(--background)",
@@ -37,23 +37,31 @@ const config: Config = {
         accent: "var(--accent)",
         "accent-foreground": "var(--accent-foreground)",
         destructive: "var(--destructive)",
-        /* Claude Design görsel kimliği — Dentakim Anasayfa.dc.html'den alındı */
+        /*
+         * Koyu klinik kimliği — referans düzenin (ozbeydent.com) ölçülen
+         * paletine göre. Token adları korunarak tüm sayfalar tek yerden
+         * dönüştürüldü: "dark" artık başlık rengi (açık), "surface" sayfa zemini.
+         */
         brand: {
-          primary: "#16242F",        /* mürekkep lacivert — başlık, marka, bağlantı */
-          "primary-light": "#F3EFE7", /* sıcak krem — bölüm zemini */
-          accent: "#B99358",          /* altın — vurgu, üst başlık, hover */
-          "accent-dark": "#8A6A32",
-          deep: "#0E2A3D",            /* koyu lacivert — CTA blokları, footer */
-          dark: "#16242F",
-          mid: "#5B6B77",             /* gövde metni */
-          faint: "#8A97A1",           /* ikincil metin */
-          line: "#ECE7DD",            /* çizgi */
-          "line-strong": "#D8CFBE",
-          link: "#1D5C86",            /* bağlantı mavisi — tasarımdaki kart bağlantıları */
-          "on-deep": "#8FA6B5",       /* koyu zemin üzerindeki ikincil metin */
-          surface: "#FCFBF9",         /* sayfa zemini */
-          whatsapp: "#1DA851",
-          "whatsapp-dark": "#179145",
+          primary: "#F6F8FF",        /* başlık / vurgu metni */
+          "primary-light": "#101521", /* ikincil bölüm ve kart zemini */
+          accent: "#BCA188",          /* bronz — üst başlık, CTA */
+          "accent-dark": "#D2BBA3",   /* koyu zeminde okunur bronz metin */
+          deep: "#07101F",            /* footer, koyu bant */
+          navy: "#06152C",            /* lacivert bant */
+          ink: "#071328",             /* koyu düğme */
+          dark: "#F6F8FF",            /* başlık metni */
+          light: "#F6F8FF",           /* koyu zemin üstü metin */
+          mid: "#9AA7BC",             /* gövde metni */
+          faint: "#6E7B91",           /* ikincil metin */
+          line: "rgba(255,255,255,0.12)",
+          "line-strong": "rgba(255,255,255,0.24)",
+          link: "#D2BBA3",
+          "on-deep": "#9AA7BC",
+          surface: "#080B12",         /* sayfa zemini */
+          card: "#101521",            /* kart zemini */
+          whatsapp: "#25D366",
+          "whatsapp-dark": "#1DA851",
         },
       },
       keyframes: {

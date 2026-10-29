@@ -41,6 +41,24 @@ export const SERVICES = [
     desc: "Eksik dişlerinizi kalıcı olarak tamamlayın",
   },
   {
+    slug: "all-on-4-implant",
+    title: "All-on-4 İmplant",
+    icon: "all-on-4",
+    desc: "Dişsiz çenede dört implant üzerine sabit protez",
+  },
+  {
+    slug: "all-on-6-implant",
+    title: "All-on-6 İmplant",
+    icon: "all-on-6",
+    desc: "Dişsiz çenede altı implant üzerine sabit protez",
+  },
+  {
+    slug: "hibrit-protez",
+    title: "Hibrit Protez",
+    icon: "hybrid",
+    desc: "İmplantlara vidalı sabit tam çene protezi",
+  },
+  {
     slug: "dis-beyazlatma",
     title: "Diş Beyazlatma",
     icon: "whitening",

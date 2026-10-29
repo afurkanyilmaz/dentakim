@@ -56,13 +56,13 @@ export default function RandevuPage() {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[880px] px-6 py-12">
+      <div className="page-hero">
+        <div className="container mx-auto max-w-[880px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav items={[{ label: "Anasayfa", href: "/" }, { label: "Randevu" }]} />
-          <p className="mt-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
             Randevu
           </p>
-          <h1 className="mt-3 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Küçükçekmece&apos;de diş hekimi randevusu
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid [text-wrap:pretty]">
@@ -91,11 +91,11 @@ export default function RandevuPage() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[880px] px-6 py-14">
+      <div className="mx-auto max-w-[944px] px-5 sm:px-8 py-14">
         <div className="grid gap-5 sm:grid-cols-2">
-          <div className="rounded-card border border-brand-line bg-white p-[26px]">
+          <div className="rounded-card border border-brand-line bg-brand-card p-[26px]">
             <Clock className="size-5 text-brand-accent" aria-hidden />
-            <h2 className="mt-3 font-heading text-[22px] font-semibold text-brand-dark">
+            <h2 className="mt-3 font-heading text-[22px] font-bold text-brand-dark">
               Çalışma saatleri
             </h2>
             <dl className="mt-3 space-y-1.5 text-[15px] text-brand-mid">
@@ -118,9 +118,9 @@ export default function RandevuPage() {
             </dl>
           </div>
 
-          <div className="rounded-card border border-brand-line bg-white p-[26px]">
+          <div className="rounded-card border border-brand-line bg-brand-card p-[26px]">
             <MapPin className="size-5 text-brand-accent" aria-hidden />
-            <h2 className="mt-3 font-heading text-[22px] font-semibold text-brand-dark">
+            <h2 className="mt-3 font-heading text-[22px] font-bold text-brand-dark">
               Klinik adresi
             </h2>
             <p className="mt-3 text-[15px] leading-[1.7] text-brand-mid">
@@ -140,7 +140,7 @@ export default function RandevuPage() {
         <section className="mt-14" aria-labelledby="randevu-sss">
           <h2
             id="randevu-sss"
-            className="mb-6 font-heading text-[clamp(24px,3.2vw,32px)] font-semibold leading-[1.25] text-brand-dark"
+            className="mb-6 font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark"
           >
             Randevu hakkında sık sorulanlar
           </h2>

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { StickyCallBar } from "@/components/layout/StickyCallBar";
 import Script from "next/script";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { getClinicSchema, getWebSiteSchema } from "@/lib/schema";
@@ -13,10 +12,10 @@ import { DOCTORS } from "@/lib/doctors";
 import { REGIONS } from "@/lib/regions";
 import { BUSINESS } from "@/lib/business";
 
-/* Claude Design tipografisi: başlıklarda Cormorant Garamond, gövdede Manrope */
-const cormorant = Cormorant_Garamond({
+/* Tipografi: başlıklarda Plus Jakarta Sans, gövdede Manrope */
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-heading",
   display: "swap",
 });
@@ -64,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={cn(cormorant.variable, manrope.variable)}>
+    <html lang="tr" className={cn(jakarta.variable, manrope.variable)}>
       <body className="min-h-screen font-sans antialiased">
         <JsonLd data={getClinicSchema(DOCTORS, REGIONS.map((r) => r.name))} />
         <JsonLd data={getWebSiteSchema()} />
@@ -85,10 +84,10 @@ export default function RootLayout({
           </>
         ) : null}
         <Header />
-        <div className="pb-24 md:pb-0">{children}</div>
+        {/* Sabit header yüksekliği kadar boşluk; anasayfa hero bu alanın altına uzanır. */}
+        <div className="pt-[75px] lg:pt-[140px]">{children}</div>
         <Footer />
         <WhatsAppButton />
-        <StickyCallBar />
       </body>
     </html>
   );

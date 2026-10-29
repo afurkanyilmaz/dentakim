@@ -1,189 +1,261 @@
 import Link from "next/link";
-import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import Image from "next/image";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { SERVICES } from "@/lib/constants";
 import { DOCTORS } from "@/lib/doctors";
-import { REGIONS } from "@/lib/regions";
-import { MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
-const KLINIK_LINKS = [
+const KURUMSAL = [
+  { href: "/hakkimizda", label: "Hakkımızda" },
   { href: "/klinik", label: "Kliniğimiz" },
   { href: "/klinik/galeri", label: "Galeri" },
-  { href: "/hakkimizda", label: "Hakkımızda" },
-  { href: "/hizmetler", label: "Tedaviler" },
   { href: "/blog", label: "Blog" },
-  { href: "/sss", label: "Sık Sorulan Sorular" },
   { href: "/fiyatlar", label: "Fiyatlar" },
-  { href: "/iletisim", label: "İletişim" },
+  /* Semt sayfaları yalnızca SEO için: görünür menüde yer almaz. */
+  { href: "/bolgeler", label: "Hizmet bölgeleri" },
 ];
 
-const LEGAL_LINKS = [
+const DESTEK = [
+  { href: "/randevu", label: "Online Randevu" },
+  { href: "/iletisim", label: "İletişim" },
+  { href: "/sss", label: "Sık Sorulan Sorular" },
   { href: "/kvkk", label: "KVKK Aydınlatma Metni" },
   { href: "/gizlilik", label: "Gizlilik Politikası" },
   { href: "/cerez-politikasi", label: "Çerez Politikası" },
 ];
 
+/** Tedaviler iki sütuna bölünür: implant ve protez grubu, diğer tedaviler. */
+const IMPLANT_GROUP = [
+  "implant-tedavisi",
+  "all-on-4-implant",
+  "all-on-6-implant",
+  "hibrit-protez",
+  "protez-zirkonyum",
+  "agiz-dis-cene-cerrahisi",
+];
+const TREATMENT_COLUMNS = [
+  { title: "İmplant ve Protez", match: (slug: string) => IMPLANT_GROUP.includes(slug), all: true },
+  { title: "Genel Tedaviler", match: (slug: string) => !IMPLANT_GROUP.includes(slug), all: false },
+];
+
+const COL_TITLE = "text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-brand-faint";
+const COL_LINK = "text-[13px] text-brand-mid transition-colors hover:text-brand-light";
+
+function ContactBox({
+  Icon,
+  label,
+  value,
+  href,
+  external,
+}: {
+  Icon: typeof Phone;
+  label: string;
+  value: string;
+  href: string;
+  external?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="flex items-center gap-4 rounded-[14px] border border-white/10 bg-white/[0.03] px-4 py-3.5 transition-colors hover:border-white/25"
+    >
+      <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-white/[0.06] text-brand-light">
+        <Icon className="size-4" aria-hidden />
+      </span>
+      <span className="min-w-0">
+        <span className="block text-[9.5px] font-extrabold uppercase tracking-[0.18em] text-brand-faint">
+          {label}
+        </span>
+        <span className="block truncate text-[14px] font-extrabold text-brand-light">{value}</span>
+      </span>
+    </a>
+  );
+}
+
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-dark text-[rgba(252,251,249,0.7)]">
-      <div className="container mx-auto max-w-[1240px] px-6 py-[clamp(48px,6vw,72px)]">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Marka + NAP */}
+    <footer className="bg-brand-deep text-brand-mid">
+      <div className="mx-auto max-w-[1304px] px-5 pb-10 pt-[clamp(56px,6vw,88px)] sm:px-8">
+        {/* Üst: marka + iletişim | randevu kartı */}
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)] lg:gap-20">
           <div>
-            <p className="flex items-center gap-2.5 font-heading text-[30px] font-bold text-brand-surface">
-              <Image
-                src="/images/logo-mark.png"
-                alt=""
-                width={36}
-                height={36}
-                className="size-9 shrink-0"
+            <Link href="/" className="inline-flex items-center gap-3" aria-label={`${BUSINESS.brandName} ana sayfa`}>
+              <Image src="/images/logo-mark-dark.png" alt="" width={64} height={64} className="size-16" />
+              <span>
+                <span className="block font-heading text-[40px] font-bold leading-none tracking-[-0.04em] text-brand-accent">
+                  {BUSINESS.brandName.toLowerCase()}
+                </span>
+                <span className="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.22em] text-brand-mid">
+                  Ağız ve Diş Sağlığı Polikliniği
+                </span>
+              </span>
+            </Link>
+            <p className="mt-6 max-w-[520px] text-[14px] leading-[1.7]">
+              {BUSINESS.displayName}, {BUSINESS.address.district} Sultan Murat
+              Caddesi&apos;nde muayene, dijital görüntüleme ve yazılı tedavi
+              planıyla hizmet verir.
+            </p>
+
+            <div className="mt-8 grid max-w-[560px] gap-3 sm:grid-cols-2">
+              <ContactBox Icon={Phone} label="Telefon" value={BUSINESS.phone.display} href={BUSINESS.phone.href} />
+              <ContactBox
+                Icon={WhatsAppIcon as unknown as typeof Phone}
+                label="WhatsApp"
+                value="Mesaj gönderin"
+                href={whatsappUrl()}
+                external
               />
-              {BUSINESS.brandName}
+              <ContactBox Icon={Mail} label="E-posta" value={BUSINESS.email} href={`mailto:${BUSINESS.email}`} />
+              <ContactBox
+                Icon={MapPin}
+                label="Adres"
+                value="Sultan Murat Cd. No:86 A"
+                href={BUSINESS.google.profileUrl}
+                external
+              />
+            </div>
+          </div>
+
+          {/* Randevu kartı */}
+          <div className="h-fit rounded-[26px] border border-white/10 bg-[linear-gradient(160deg,#121A2B,#0A1120)] p-6 sm:p-7">
+            <div className="flex items-center gap-3 rounded-[16px] border border-white/10 bg-white/[0.04] p-3">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-brand-accent text-white">
+                <Clock className="size-5" aria-hidden />
+              </span>
+              <span>
+                <span className="block text-[13px] font-extrabold text-brand-light">
+                  {BUSINESS.brandName} · {BUSINESS.address.district}
+                </span>
+                <span className="mt-0.5 flex items-center gap-1.5 text-[11.5px]">
+                  <span className="size-1.5 rounded-full bg-brand-whatsapp" aria-hidden />
+                  Hafta içi {BUSINESS.hours.weekdays.opens}–{BUSINESS.hours.weekdays.closes} · Cmt{" "}
+                  {BUSINESS.hours.saturday.opens}–{BUSINESS.hours.saturday.closes}
+                </span>
+              </span>
+            </div>
+            <p className="mt-6 text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-brand-faint">
+              Online randevu
             </p>
-            <p className="mt-3 text-[14.5px] leading-[1.7]">
-              {BUSINESS.displayName}
+            <p className="mt-2 font-heading text-[24px] font-bold leading-[1.2] tracking-[-0.03em] text-brand-light">
+              Sağlıklı gülüşünüz için ilk adımı atın
             </p>
-            <p className="mt-4 flex gap-2 text-[14.5px] leading-[1.7]">
-              <MapPin className="mt-1 size-4 shrink-0 text-brand-accent" aria-hidden />
-              <span>{BUSINESS.address.full}</span>
+            <p className="mt-2 text-[13px] leading-[1.6]">
+              Size uygun gün ve saati birlikte planlayalım; muayene sonrası tedavi
+              seçenekleri yazılı olarak paylaşılır.
             </p>
-            <a
-              href={BUSINESS.phone.href}
-              className="mt-4 inline-flex items-center gap-2 text-[15.5px] font-bold text-brand-surface transition-colors hover:text-brand-accent"
+            <Link
+              href="/randevu"
+              className="mt-6 flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-white text-[14px] font-extrabold text-[#0B1220] transition-colors hover:bg-brand-accent hover:text-white"
             >
-              <Phone className="size-4" aria-hidden />
-              {BUSINESS.phone.display}
-            </a>
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-2 text-[15px] font-semibold text-brand-accent transition-colors hover:text-brand-surface"
-            >
-              <WhatsAppIcon className="size-4" />
-              WhatsApp&apos;tan yazın
-            </a>
-          </div>
-
-          {/* Tedaviler */}
-          <div>
-            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">Tedaviler</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              {SERVICES.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/hizmetler/${s.slug}`}
-                    className="text-[14.5px] text-[rgba(252,251,249,0.7)] transition-colors hover:text-brand-surface"
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Hekimler + Klinik */}
-          <div className="space-y-8">
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">Hekimler</p>
-              <ul className="mt-4 space-y-2 text-sm">
-                {DOCTORS.map((d) => (
-                  <li key={d.slug}>
-                    <Link
-                      href={`/hekimler/${d.slug}`}
-                      className="text-[14.5px] text-[rgba(252,251,249,0.7)] transition-colors hover:text-brand-surface"
-                    >
-                      {d.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
-                Bölgeler
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                {REGIONS.slice(0, 7).map((r) => (
-                  <li key={r.slug}>
-                    <Link
-                      href={`/${r.slug}`}
-                      className="text-[14.5px] text-[rgba(252,251,249,0.7)] transition-colors hover:text-brand-surface"
-                    >
-                      {r.name}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link
-                    href="/bolgeler"
-                    className="text-[14.5px] font-semibold text-brand-accent transition-colors hover:text-brand-surface"
-                  >
-                    Tüm bölgeler →
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">Klinik</p>
-              <ul className="mt-4 space-y-2 text-sm">
-                {KLINIK_LINKS.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-[14.5px] text-[rgba(252,251,249,0.7)] transition-colors hover:text-brand-surface">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Çalışma saatleri + hukuki */}
-          <div className="space-y-8">
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">
-                Çalışma saatleri
-              </p>
-              <dl className="mt-4 space-y-1.5 text-[14.5px]">
-                <div className="flex justify-between gap-4">
-                  <dt>{BUSINESS.hours.weekdays.days}</dt>
-                  <dd className="tabular-nums">
-                    {BUSINESS.hours.weekdays.opens} – {BUSINESS.hours.weekdays.closes}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>{BUSINESS.hours.saturday.days}</dt>
-                  <dd className="tabular-nums">
-                    {BUSINESS.hours.saturday.opens} – {BUSINESS.hours.saturday.closes}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt>{BUSINESS.hours.sunday.days}</dt>
-                  <dd>Kapalı</dd>
-                </div>
-              </dl>
-            </div>
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-accent">Yasal</p>
-              <ul className="mt-4 space-y-2 text-sm">
-                {LEGAL_LINKS.map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="text-[14.5px] text-[rgba(252,251,249,0.7)] transition-colors hover:text-brand-surface">
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              Randevu Al <span aria-hidden>↗</span>
+            </Link>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 items-center justify-center rounded-[12px] border border-white/15 text-[13px] font-extrabold text-brand-light transition-colors hover:border-brand-whatsapp"
+              >
+                WhatsApp
+              </a>
+              <a
+                href={BUSINESS.phone.href}
+                className="flex h-11 items-center justify-center rounded-[12px] border border-white/15 text-[13px] font-extrabold text-brand-light transition-colors hover:border-brand-accent"
+              >
+                Hemen Ara
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-[rgba(252,251,249,0.12)] pt-6 text-[13px] text-[rgba(252,251,249,0.5)] sm:flex-row sm:justify-between">
+        {/* Bağlantı sütunları */}
+        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/10 pt-12 md:grid-cols-3 lg:grid-cols-5">
+          {TREATMENT_COLUMNS.map((col) => (
+            <nav key={col.title} aria-label={col.title}>
+              <p className={COL_TITLE}>{col.title}</p>
+              <ul className="mt-5 space-y-2.5">
+                {SERVICES.filter((s) => col.match(s.slug)).map((s) => (
+                  <li key={s.slug}>
+                    <Link href={`/hizmetler/${s.slug}`} className={COL_LINK}>
+                      {s.title}
+                    </Link>
+                  </li>
+                ))}
+                {col.all ? (
+                  <li>
+                    <Link href="/hizmetler" className="text-[13px] font-bold text-brand-light hover:text-brand-accent">
+                      Tüm Tedaviler ↗
+                    </Link>
+                  </li>
+                ) : null}
+              </ul>
+            </nav>
+          ))}
+          <nav aria-label="Hekimlerimiz">
+            <p className={COL_TITLE}>Hekimlerimiz</p>
+            <ul className="mt-5 space-y-2.5">
+              {DOCTORS.map((d) => (
+                <li key={d.slug}>
+                  <Link href={`/hekimler/${d.slug}`} className={COL_LINK}>
+                    {d.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Kurumsal">
+            <p className={COL_TITLE}>Kurumsal</p>
+            <ul className="mt-5 space-y-2.5">
+              {KURUMSAL.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={COL_LINK}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Destek">
+            <p className={COL_TITLE}>Destek</p>
+            <ul className="mt-5 space-y-2.5">
+              {DESTEK.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={COL_LINK}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Hızlı eylemler */}
+        <div className="mt-12 grid gap-3 sm:grid-cols-3">
+          {[
+            { href: BUSINESS.phone.href, label: "Bize Ulaşın", Icon: Phone },
+            { href: "/randevu", label: "Online Randevu", Icon: Clock },
+            { href: BUSINESS.google.profileUrl, label: "Yol Tarifi", Icon: MapPin, external: true },
+          ].map(({ href, label, Icon, external }) => (
+            <a
+              key={label}
+              href={href}
+              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className="flex h-12 items-center justify-center gap-2 rounded-full border border-white/10 text-[12px] font-bold text-brand-mid transition-colors hover:border-white/25 hover:text-brand-light"
+            >
+              <Icon className="size-3.5" aria-hidden />
+              {label}
+            </a>
+          ))}
+        </div>
+
+        {/* Alt çubuk */}
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[11.5px] text-brand-faint lg:flex-row lg:items-start lg:justify-between">
           <p>
-            © {year} {BUSINESS.legalName}
+            © {year} {BUSINESS.legalName}. Tüm hakları saklıdır.
           </p>
           {BUSINESS.legal.responsibleManager || BUSINESS.legal.licenseNumber ? (
             <p>
@@ -196,9 +268,9 @@ export function Footer() {
                 : null}
             </p>
           ) : null}
-          <p className="max-w-[70ch] sm:text-right">
-            Bu sitedeki bilgiler yalnızca bilgilendirme amaçlıdır; tanı ve tedavi yerine
-            geçmez. Tedavi kararı hekim muayenesi sonrasında verilir.
+          <p className="max-w-[64ch] lg:text-right">
+            Bu sitedeki bilgiler yalnızca bilgilendirme amaçlıdır; tanı ve tedavi
+            yerine geçmez. Tedavi kararı hekim muayenesi sonrasında verilir.
           </p>
         </div>
       </div>

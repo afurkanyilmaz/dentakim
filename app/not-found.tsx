@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export default function NotFound() {
   return (
     <main className="container mx-auto flex max-w-2xl flex-col items-center px-4 py-24 text-center">
-      <p className="font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
+      <p className="font-heading text-sm font-bold uppercase tracking-wide text-brand-primary">
         404
       </p>
       <h1 className="mt-3 font-heading text-3xl font-bold text-brand-dark md:text-4xl">

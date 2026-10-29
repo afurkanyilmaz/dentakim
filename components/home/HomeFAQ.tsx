@@ -1,54 +1,45 @@
-import Link from "next/link";
-import { Plus } from "lucide-react";
 import { HOME_FAQ } from "@/lib/faq";
-import { Section, SectionHeader } from "@/components/shared/Section";
+import { ArrowLink, Section, SectionHeader } from "@/components/shared/Section";
 
 /**
- * Anasayfa SSS özeti.
+ * Anasayfa SSS — yatay kaydırılan soru kartları.
  *
- * Yerel <details> kullanılır: yanıtlar sunucu HTML'inde her zaman bulunur
+ * Yanıtlar kart içinde açık durur: sunucu HTML'inde her zaman bulunur
  * (arama motorları ve yapay zekâ tarayıcıları için okunabilir) ve istemci
- * tarafı JavaScript gerektirmez. FAQPage şeması yalnızca /sss sayfasında
- * yer alır; aynı soruların iki sayfada işaretlenmesi önlenir.
+ * JavaScript'i gerektirmez. FAQPage şeması yalnızca /sss sayfasındadır.
  */
-const COUNT = 5;
-
 export function HomeFAQ() {
   return (
-    <Section tone="white" labelledBy="sss-baslik">
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        <div>
-          <SectionHeader
-            id="sss-baslik"
-            eyebrow="Sık Sorulan Sorular"
-            title="Tedavi öncesi merak edilenler"
-            lead="Yanıtlar genel bilgilendirme amaçlıdır; size uygun tedavi muayene sonrasında hekim tarafından belirlenir."
-          />
-          <Link
-            href="/sss"
-            className="-mt-6 inline-flex text-[14.5px] font-bold text-brand-link transition-colors hover:text-brand-dark"
-          >
-            Tüm soruları görün →
-          </Link>
-        </div>
+    <Section labelledBy="sss-baslik" className="overflow-hidden">
+      <SectionHeader
+        id="sss-baslik"
+        eyebrow="Sık sorulan sorular"
+        title="Tedavi öncesi merak edilenler."
+        action={<ArrowLink href="/sss">Tüm Sorular</ArrowLink>}
+      />
 
-        <div className="border-t border-brand-line">
-          {HOME_FAQ.slice(0, COUNT).map((item) => (
-            <details key={item.question} className="group border-b border-brand-line">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 text-left font-heading text-[clamp(20px,2.2vw,24px)] font-semibold leading-[1.3] text-brand-dark marker:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent [&::-webkit-details-marker]:hidden">
-                {item.question}
-                <Plus
-                  className="mt-1 size-5 shrink-0 text-brand-accent transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
-                  aria-hidden
-                />
-              </summary>
-              <p className="max-w-[62ch] pb-7 text-[15.5px] leading-[1.75] text-brand-mid">
-                {item.answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </div>
+      <ul
+        className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8"
+        aria-label="Sık sorulan sorular"
+      >
+        {HOME_FAQ.map((item, i) => (
+          <li
+            key={item.question}
+            className="flex w-[82%] shrink-0 snap-start flex-col rounded-[22px] border border-brand-line bg-brand-card p-6 sm:w-[320px]"
+          >
+            <span className="text-[11px] font-extrabold tracking-[0.2em] text-brand-accent">
+              S.{String(i + 1).padStart(2, "0")}
+            </span>
+            <h3 className="mt-4 font-heading text-[19px] font-bold leading-[1.3] tracking-[-0.02em] text-brand-light">
+              {item.question}
+            </h3>
+            <p className="mt-3 text-[13.5px] leading-[1.65] text-brand-mid">{item.answer}</p>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 text-[12px] text-brand-faint">
+        Yanıtlar genel bilgilendirme amaçlıdır; size uygun tedavi muayene sonrasında hekim tarafından belirlenir.
+      </p>
     </Section>
   );
 }

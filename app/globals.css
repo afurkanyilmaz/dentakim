@@ -8,6 +8,22 @@
   .text-balance {
     text-wrap: balance;
   }
+  /* Başlık tipografisi: sıkı harf aralığı (referans: -0.05em) */
+  .tracking-display {
+    letter-spacing: -0.05em;
+  }
+  /* İnce ızgara zemini — "neden biz" bölümü */
+  .bg-grid {
+    background-image: linear-gradient(rgba(128, 145, 176, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(128, 145, 176, 0.07) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer base {
@@ -16,25 +32,25 @@
     --font-sans: var(--font-sans);
   }
   :root {
-    /* Claude Design token'ları — Dentakim Anasayfa.dc.html */
-    --background: #FCFBF9;
-    --foreground: #16242F;
-    --card: #FFFFFF;
-    --card-foreground: #16242F;
-    --popover: #FFFFFF;
-    --popover-foreground: #16242F;
-    --primary: #16242F;
-    --primary-foreground: #FCFBF9;
-    --secondary: #F3EFE7;
-    --secondary-foreground: #16242F;
-    --muted: #F3EFE7;
-    --muted-foreground: #5B6B77;
-    --accent: #F3EAD9;
-    --accent-foreground: #8A6A32;
-    --destructive: #9C3520;
-    --border: #ECE7DD;
-    --input: #ECE7DD;
-    --ring: #B99358;
+    /* Koyu klinik kimliği — tailwind.config.ts brand paletiyle aynı */
+    --background: #080B12;
+    --foreground: #F6F8FF;
+    --card: #101521;
+    --card-foreground: #F6F8FF;
+    --popover: #101521;
+    --popover-foreground: #F6F8FF;
+    --primary: #F6F8FF;
+    --primary-foreground: #080B12;
+    --secondary: #101521;
+    --secondary-foreground: #F6F8FF;
+    --muted: #101521;
+    --muted-foreground: #9AA7BC;
+    --accent: #1A2130;
+    --accent-foreground: #D2BBA3;
+    --destructive: #E06C5A;
+    --border: rgba(255, 255, 255, 0.12);
+    --input: rgba(255, 255, 255, 0.16);
+    --ring: #BCA188;
     --radius: 1rem;
   }
   .dark {
@@ -76,8 +92,28 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    color-scheme: dark;
+  }
+  .font-heading {
+    letter-spacing: -0.03em;
   }
   html {
     @apply scroll-smooth font-sans;
+  }
+}
+@layer components {
+  /*
+   * İç sayfa başlık bandı — referanstaki kompakt hero: bulanık klinik
+   * fotoğrafı üzerinde koyu degrade. Görsel önceden küçültülüp
+   * bulanıklaştırıldı (public/images/klinik/sayfa-zemini.jpg).
+   */
+  .page-hero {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: #090c13;
+    background-image: linear-gradient(90deg, rgba(9, 12, 19, 0.95) 0%, rgba(9, 12, 19, 0.82) 50%, rgba(9, 12, 19, 0.6) 100%),
+      url("/images/klinik/sayfa-zemini.jpg");
+    background-size: cover;
+    background-position: center;
   }
 }

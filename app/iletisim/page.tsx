@@ -26,18 +26,18 @@ export default function IletisimPage() {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[{ label: "Anasayfa", href: "/" }, { label: "İletişim" }]}
           />
-          <h1 className="mt-5 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-5 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             İletişim
           </h1>
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[1240px] px-6 py-14">
+      <div className="mx-auto max-w-[1304px] px-5 sm:px-8 py-14">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <h2 className="font-heading text-xl font-bold text-brand-dark">
@@ -115,7 +115,7 @@ export default function IletisimPage() {
             </div>
 
             <div className="mt-8 space-y-3 text-sm text-brand-mid">
-              <h3 className="font-heading text-lg font-semibold text-brand-dark">
+              <h3 className="font-heading text-lg font-bold text-brand-dark">
                 Toplu taşıma
               </h3>
               <p>

@@ -82,7 +82,7 @@ export function ArticleBody({ content }: { content: string }) {
   const flush = (key: string) => {
     if (bullets.length) {
       out.push(
-        <ul key={`ul-${key}`} className="flex flex-col gap-3 rounded-panel border border-brand-line bg-white p-6">
+        <ul key={`ul-${key}`} className="flex flex-col gap-3 rounded-panel border border-brand-line bg-brand-card p-6">
           {bullets.map((b, i) => (
             <li key={i} className="flex gap-3.5">
               <span className="mt-[10px] size-1.5 shrink-0 rounded-full bg-brand-accent" aria-hidden />
@@ -97,7 +97,7 @@ export function ArticleBody({ content }: { content: string }) {
       out.push(
         <ol key={`ol-${key}`} className="flex flex-col gap-4">
           {steps.map((b, i) => (
-            <li key={i} className="flex gap-4 rounded-panel border border-brand-line bg-white p-5">
+            <li key={i} className="flex gap-4 rounded-panel border border-brand-line bg-brand-card p-5">
               <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-primary-light font-heading text-[17px] font-bold text-brand-accent tabular-nums">
                 {i + 1}
               </span>
@@ -125,9 +125,9 @@ export function ArticleBody({ content }: { content: string }) {
           <h2
             key={i}
             id={slugify(text)}
-            className="scroll-mt-24 border-t border-brand-line pt-8 font-heading text-[clamp(24px,3.2vw,32px)] font-semibold leading-[1.25] text-brand-dark [text-wrap:pretty] first:border-0 first:pt-0"
+            className="scroll-mt-24 border-t border-brand-line pt-8 font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark [text-wrap:pretty] first:border-0 first:pt-0"
           >
-            <span className="mb-2 block text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+            <span className="mb-2 block text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent">
               {String(sectionCount).padStart(2, "0")}
             </span>
             {text}
@@ -190,11 +190,11 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
   return (
     <nav
       aria-labelledby="icindekiler"
-      className="rounded-card border border-brand-line bg-white p-6"
+      className="rounded-card border border-brand-line bg-brand-card p-6"
     >
       <p
         id="icindekiler"
-        className="text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand-accent"
+        className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent"
       >
         Bu yazıda
       </p>

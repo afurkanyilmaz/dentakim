@@ -95,6 +95,9 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
     serviceSlugs: [
       "protez-zirkonyum",
       "implant-tedavisi",
+      "all-on-4-implant",
+      "all-on-6-implant",
+      "hibrit-protez",
       "dis-beyazlatma",
       "dis-dolgusu",
       "agiz-dis-cene-cerrahisi",
@@ -180,7 +183,12 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
       "İşlem sonrası takip ve iyileşme yönetimi",
     ],
     education: [],
-    serviceSlugs: ["agiz-dis-cene-cerrahisi", "implant-tedavisi"],
+    serviceSlugs: [
+      "agiz-dis-cene-cerrahisi",
+      "implant-tedavisi",
+      "all-on-4-implant",
+      "all-on-6-implant",
+    ],
     pending: ["Mezuniyet ve eğitim bilgileri", "Deneyim yılı", "Sertifikalar"],
   },
 ];

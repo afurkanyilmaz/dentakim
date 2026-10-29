@@ -52,6 +52,9 @@ export const implantTedavisi: ServicePageContent = {
     },
   ],
   relatedSlugOrder: [
+    "all-on-4-implant",
+    "all-on-6-implant",
+    "hibrit-protez",
     "protez-zirkonyum",
     "kanal-tedavisi",
     "dis-dolgusu",

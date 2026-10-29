@@ -39,13 +39,13 @@ export default function KlinikPage() {
         ])}
       />
 
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-12">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav items={[{ label: "Anasayfa", href: "/" }, { label: "Klinik" }]} />
-          <p className="mt-6 text-[12.5px] font-bold uppercase tracking-[0.16em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
             Kliniğimiz
           </p>
-          <h1 className="mt-3 font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+          <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             {BUSINESS.displayName}
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid [text-wrap:pretty]">
@@ -56,7 +56,7 @@ export default function KlinikPage() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-[1240px] px-6 py-14">
+      <div className="mx-auto max-w-[1304px] px-5 sm:px-8 py-14">
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           {cover ? (
             <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-brand-line">
@@ -126,9 +126,9 @@ export default function KlinikPage() {
             <Link
               key={l.href}
               href={l.href}
-              className="group flex flex-col gap-2 rounded-card border border-brand-line bg-white p-[26px] transition-colors hover:border-brand-line-strong"
+              className="group flex flex-col gap-2 rounded-card border border-brand-line bg-brand-card p-[26px] transition-colors hover:border-brand-line-strong"
             >
-              <span className="font-heading text-[24px] font-semibold leading-[1.2] text-brand-dark">
+              <span className="font-heading text-[24px] font-bold leading-[1.2] text-brand-dark">
                 {l.title}
               </span>
               <span className="text-[14.5px] leading-[1.6] text-brand-mid">{l.desc}</span>

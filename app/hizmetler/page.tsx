@@ -3,22 +3,21 @@ import Link from "next/link";
 import { SERVICES } from "@/lib/constants";
 import { generateMeta } from "@/lib/seo";
 import { whatsappUrl } from "@/lib/business";
-import { getServiceIcon } from "@/lib/service-icons";
-import { ServiceCard } from "@/components/shared/ServiceCard";
+import { TREATMENT_BLURBS, TreatmentCard } from "@/components/shared/TreatmentCard";
 
 export const metadata: Metadata = generateMeta({
   title: "Diş Tedavileri ve Hizmetler",
   description:
-    "Dentakim Küçükçekmece hizmetleri: implant, beyazlatma, ortodonti, çocuk diş hekimliği, kanal tedavisi, zirkonyum protez ve dolgu.",
+    "Dentakim Küçükçekmece tedavileri: implant, All-on-4, All-on-6, hibrit protez, zirkonyum, ortodonti, beyazlatma, kanal tedavisi, çocuk diş hekimliği ve dolgu.",
   slug: "hizmetler",
 });
 
 export default function HizmetlerPage() {
   return (
     <main className="pb-16">
-      <div className="border-b border-brand-line bg-brand-primary-light">
-        <div className="container mx-auto max-w-[1240px] px-6 py-14">
-          <h1 className="font-heading text-[clamp(32px,4.6vw,50px)] font-medium leading-[1.12] text-brand-dark [text-wrap:pretty]">
+      <div className="page-hero">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
+          <h1 className="font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Hizmetlerimiz
           </h1>
           <p className="mt-5 max-w-[640px] text-[17px] leading-[1.7] text-brand-mid [text-wrap:pretty]">
@@ -27,15 +26,16 @@ export default function HizmetlerPage() {
           </p>
         </div>
       </div>
-      <div className="container mx-auto max-w-[1240px] px-6 py-14">
+      <div className="mx-auto max-w-[1304px] px-5 py-[clamp(56px,6vw,96px)] sm:px-8">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <ServiceCard
+          {SERVICES.map((s, i) => (
+            <TreatmentCard
               key={s.slug}
-              href={`/hizmetler/${s.slug}`}
+              slug={s.slug}
               title={s.title}
-              description={s.desc}
-              Icon={getServiceIcon(s.icon)}
+              desc={TREATMENT_BLURBS[s.slug] ?? s.desc}
+              icon={s.icon}
+              index={i + 1}
             />
           ))}
         </div>
@@ -44,12 +44,12 @@ export default function HizmetlerPage() {
             href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-brand-primary underline"
+            className="font-bold text-brand-accent underline underline-offset-4"
           >
             WhatsApp&apos;tan bilgi alın
           </a>{" "}
           veya{" "}
-          <Link href="/iletisim" className="font-medium text-brand-primary underline">
+          <Link href="/iletisim" className="font-bold text-brand-accent underline underline-offset-4">
             iletişime geçin
           </Link>
           .
