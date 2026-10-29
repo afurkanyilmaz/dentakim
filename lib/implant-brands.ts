@@ -23,6 +23,11 @@ export type ImplantBrand = {
   usedInClinic: boolean;
 };
 
+/*
+ * Klinikte kullanılan sistemler 29.10.2026'da klinik tarafından teyit edildi:
+ * Medigma, Nucleoss, Bilim İmplant, Osstem. Teknik özellikler genel ve
+ * karşılaştırmasızdır.
+ */
 export const IMPLANT_BRANDS: ImplantBrand[] = [
   {
     slug: "medigma",
@@ -33,7 +38,40 @@ export const IMPLANT_BRANDS: ImplantBrand[] = [
       "Konik bağlantı (conical connection) platformu",
       "Kumlanmış ve asitlenmiş yüzey işlemi",
     ],
-    usedInClinic: false,
+    usedInClinic: true,
+  },
+  {
+    slug: "nucleoss",
+    name: "Nucleoss",
+    origin: "Türkiye",
+    characteristics: [
+      "Yerli üretim titanyum implant sistemi",
+      "Farklı çap ve boy seçenekleri",
+      "Protetik bileşen tedariki yurt içinden",
+    ],
+    usedInClinic: true,
+  },
+  {
+    slug: "bilim-implant",
+    name: "Bilim İmplant",
+    origin: "Türkiye",
+    characteristics: [
+      "Yerli üretim titanyum implant sistemi",
+      "Farklı kemik yapılarına yönelik boy ve çap seçenekleri",
+      "Yedek parça ve protetik bileşen tedariki yurt içinden",
+    ],
+    usedInClinic: true,
+  },
+  {
+    slug: "osstem",
+    name: "Osstem",
+    origin: "Güney Kore",
+    characteristics: [
+      "Uluslararası pazarda yaygın kullanılan implant sistemi",
+      "Farklı kemik tiplerine yönelik implant serileri",
+      "Geniş protetik bileşen yelpazesi",
+    ],
+    usedInClinic: true,
   },
   {
     slug: "implant-direct",

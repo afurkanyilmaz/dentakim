@@ -5,6 +5,7 @@ import { SERVICES } from "@/lib/constants";
 import { REGIONS } from "@/lib/regions";
 import { BLOG_POSTS } from "@/lib/blog";
 import { HOME_FAQ } from "@/lib/faq";
+import { getUsedBrands } from "@/lib/implant-brands";
 
 export const dynamic = "force-static";
 
@@ -22,7 +23,8 @@ export function GET() {
 
 > ${address.district}, ${address.city}'da hizmet veren ağız ve diş sağlığı polikliniği.
 > Gülüş tasarımı (Hollywood Smile), implant, All-on-4 / All-on-6, hibrit protez,
-> zirkonyum kaplama, lamina veneer, diş beyazlatma, ortodonti, kanal tedavisi,
+> zirkonyum kaplama, lamina veneer, şeffaf plak (clear aligner), diş beyazlatma,
+> ortodonti, kanal tedavisi,
 > kemik grefti ve sinüs lifting, ağız-diş-çene cerrahisi ve çocuk diş hekimliği
 > uygulanmaktadır.
 > Bu belgedeki bilgiler tanı ve tedavi yerine geçmez.
@@ -59,6 +61,9 @@ ${SERVICES.map((s) => {
   ];
   return lines.filter(Boolean).join("\n");
 }).join("\n\n")}
+
+## Kullanılan İmplant Sistemleri
+${getUsedBrands().map((b) => `- ${b.name} (${b.origin})`).join("\n")}
 
 ## Hizmet Verilen Bölgeler
 Klinik ${address.district} ilçesindedir; aşağıdaki bölgelerde şube bulunmamakta,

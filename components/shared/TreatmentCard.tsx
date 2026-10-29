@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
  * eklenirse burada açıklama yoksa SERVICES.desc kullanılır.
  */
 export const TREATMENT_BLURBS: Record<string, string> = {
+  "seffaf-plak-tedavisi":
+    "Kişiye özel şeffaf ve çıkarılabilir plaklarla dişlerin kademeli olarak hizalanması; metal braket görünmez.",
   "gulus-tasarimi":
     "Diş rengi, formu ve dizilimi yüz hatlarınıza göre dijital olarak planlanır; sonuç kalıcı işlemden önce prova edilir.",
   "lamina-veneer":

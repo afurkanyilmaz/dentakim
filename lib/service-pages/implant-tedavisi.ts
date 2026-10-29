@@ -7,7 +7,7 @@ export const implantTedavisi: ServicePageContent = {
     "Küçükçekmece’de implant tedavisi: eksik diş tamamlama, kemik uygunluğu analizi ve estetik protez seçenekleri. Cerrahi ve protez fazı ayrı hekimlerce yürütülür. Dentakim’de ön görüşme.",
   h1: "İmplant Tedavisi",
   procedureType: "SurgicalProcedure",
-  alternateNames: ["Diş implantı", "Dental implant"],
+  alternateNames: ["Diş implantı", "Dental implant", "Medigma implant", "Nucleoss implant", "Bilim implant", "Osstem implant"],
   summary:
     "İmplant tedavisi, eksik dişin yerine çene kemiğine titanyum bir vida (implant) yerleştirilip üzerine kron, köprü veya protez yapılmasıdır. Komşu dişlere dokunmadan eksik dişi sabit olarak tamamlar. Dentakim’de cerrahi fazı ağız-diş-çene cerrahımız, protez fazını protez alanında çalışan hekimimiz yürütür.",
   facts: [
@@ -36,6 +36,11 @@ export const implantTedavisi: ServicePageContent = {
     "Abutman ölçüsü ile estetik-fonksiyonel uyumlu sabit ya da çıkan protez fazı tamamlanır.",
   ],
   faqs: [
+    {
+      question: "Hangi implant markalarını kullanıyorsunuz?",
+      answer:
+        "Kliniğimizde Medigma, Nucleoss, Bilim İmplant ve Osstem implant sistemleri uygulanmaktadır. Hangi sistemin sizin için uygun olduğu; kemik yapınız, eksik diş bölgesi ve protez planınıza göre muayenede belirlenir.",
+    },
     {
       question: "İmplant ağırı hisseder miyim?",
       answer:

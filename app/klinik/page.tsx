@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { BUSINESS } from "@/lib/business";
-import { DOCTORS } from "@/lib/doctors";
 import { CLINIC_PHOTOS } from "@/lib/clinic-photos.generated";
 import { generateMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -113,7 +112,7 @@ export default function KlinikPage() {
               </dl>
             </div>
             <p className="text-[15px] text-brand-mid">
-              Klinikte {DOCTORS.length} hekim görev yapmaktadır.{" "}
+              Klinikte {BUSINESS.team.doctorCount} hekim ({BUSINESS.team.areas}) görev yapmaktadır.{" "}
               <Link href="/hekimler" className="font-bold text-brand-link hover:text-brand-dark">
                 Hekimlerimizi tanıyın →
               </Link>

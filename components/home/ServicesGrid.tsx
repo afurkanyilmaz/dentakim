@@ -7,9 +7,9 @@ const HOME_ORDER = [
   "gulus-tasarimi",
   "implant-tedavisi",
   "protez-zirkonyum",
+  "seffaf-plak-tedavisi",
   "lamina-veneer",
   "all-on-4-implant",
-  "all-on-6-implant",
 ];
 
 export function ServicesGrid() {

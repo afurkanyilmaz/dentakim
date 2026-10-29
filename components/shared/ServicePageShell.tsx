@@ -244,7 +244,11 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
               </ol>
             </section>
 
-            {content.slug === "implant-tedavisi" ? <ImplantBrands /> : null}
+            {["implant-tedavisi", "all-on-4-implant", "all-on-6-implant", "hibrit-protez"].includes(content.slug) ? (
+              <div className={BLOCK}>
+                <ImplantBrands />
+              </div>
+            ) : null}
 
             <MedicalDisclaimer />
 

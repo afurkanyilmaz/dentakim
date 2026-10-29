@@ -8,6 +8,7 @@ export const HIZMET_SLUGS = [
   "lamina-veneer",
   "kemik-grefti-sinus-lifting",
   "gece-plagi-bruksizm",
+  "seffaf-plak-tedavisi",
   "dis-beyazlatma",
   "ortodonti",
   "cocuk-dis-hekimligi",

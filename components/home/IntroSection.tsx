@@ -1,6 +1,5 @@
 import { BUSINESS } from "@/lib/business";
 import { SERVICES } from "@/lib/constants";
-import { DOCTORS } from "@/lib/doctors";
 import { DISPLAY_H2, Eyebrow } from "@/components/shared/Section";
 
 /**
@@ -12,7 +11,7 @@ import { DISPLAY_H2, Eyebrow } from "@/components/shared/Section";
  */
 export function IntroSection() {
   const facts = [
-    { value: String(DOCTORS.length), label: "Hekim · protez, estetik ve cerrahi" },
+    { value: String(BUSINESS.team.doctorCount), label: `Hekim · ${BUSINESS.team.areas}` },
     { value: String(SERVICES.length), label: "Tedavi alanı tek klinikte" },
     { value: "Dijital", label: "Gülüş tasarımı ve prova" },
     { value: "6 gün", label: `Pzt–Cmt açık · ${BUSINESS.address.district}` },

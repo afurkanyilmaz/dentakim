@@ -1,5 +1,6 @@
 import {
   Anchor,
+  Sparkle,
   Bone,
   Moon,
   Smile,
@@ -20,6 +21,7 @@ import type { LucideIcon } from "lucide-react";
 const MAP: Record<string, LucideIcon> = {
   implant: Anchor,
   smile: Smile,
+  aligner: Sparkle,
   bone: Bone,
   moon: Moon,
   "all-on-4": Grid2x2,

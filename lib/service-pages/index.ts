@@ -14,6 +14,7 @@ import { gulusTasarimi } from "./gulus-tasarimi";
 import { laminaVeneer } from "./lamina-veneer";
 import { kemikGreftiSinusLifting } from "./kemik-grefti-sinus-lifting";
 import { gecePlagiBruksizm } from "./gece-plagi-bruksizm";
+import { seffafPlakTedavisi } from "./seffaf-plak-tedavisi";
 
 export type { ServicePageContent, ServiceFAQ } from "./types";
 
@@ -33,6 +34,7 @@ const ALL: ServicePageContent[] = [
   laminaVeneer,
   kemikGreftiSinusLifting,
   gecePlagiBruksizm,
+  seffafPlakTedavisi,
 ];
 
 export const SERVICE_CONTENT_BY_SLUG: Record<string, ServicePageContent> =

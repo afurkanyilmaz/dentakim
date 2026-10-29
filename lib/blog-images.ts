@@ -39,6 +39,7 @@ const BY_SLUG: Record<string, StockPhoto> = {
   "agiz-kokusu-neden-olur": B.muayene,
   "bonding-nedir": B["dis-modeli"],
   "dis-tasi-temizligi-zararli-mi": B.unit,
+  "invisalign-nedir-seffaf-plak-markalari": T["seffaf-plak-tedavisi"],
 };
 
 const FALLBACK = Object.values(B);

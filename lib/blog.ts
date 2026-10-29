@@ -779,7 +779,7 @@ Bu soruların yazılı olarak cevaplanması, yıllar sonra başka bir hekime git
 
 ## Dentakim'de yaklaşım
 
-Kliniğimizde kullanılan sistemin bilgisi, barkodu ve seri numarası hasta dosyasına işlenir; talep ettiğinizde size de verilir. Sistem seçimi tomografi sonrası kemik hacminiz ve protetik planınız değerlendirilerek yapılır, kararı birlikte veririz.
+Dentakim’de Medigma, Nucleoss, Bilim İmplant ve Osstem sistemleri uygulanmaktadır. Kliniğimizde kullanılan sistemin bilgisi, barkodu ve seri numarası hasta dosyasına işlenir; talep ettiğinizde size de verilir. Sistem seçimi tomografi sonrası kemik hacminiz ve protetik planınız değerlendirilerek yapılır, kararı birlikte veririz.
 
 İmplant tedavisi düşünüyorsanız ve hangi sistemin size uygun olduğunu öğrenmek istiyorsanız WhatsApp'tan yazabilir veya doğrudan arayabilirsiniz.
     `.trim(),
@@ -1698,6 +1698,70 @@ Diş taşı temizliği; [gülüş tasarımı](/hizmetler/gulus-tasarimi), [beyaz
         question: "Diş taşı temizliği dişleri beyazlatır mı?",
         answer:
           "Taş ve yüzeysel lekeleri temizlediği için dişler daha açık görünebilir; ancak dişin kendi rengini değiştirmez. Renk açmak için beyazlatma gerekir.",
+      },
+    ],
+  },
+  {
+    slug: "invisalign-nedir-seffaf-plak-markalari",
+    title: "Invisalign Nedir? Şeffaf Plak Markaları ve Farkları",
+    excerpt:
+      "Invisalign ve diğer şeffaf plak (clear aligner) sistemleri nasıl çalışır, aralarındaki farklar nelerdir, kimler için uygundur ve tedavi kaç ay sürer?",
+    date: "2026-10-29",
+    readTime: "6 dk",
+    category: "Ortodonti",
+    serviceSlug: "seffaf-plak-tedavisi",
+    whatsappMessage: "Merhaba, şeffaf plak tedavisi hakkında bilgi almak istiyorum.",
+    content: `
+Invisalign, şeffaf plak (clear aligner) ile diş hizalama yönteminin en bilinen markalarından biridir. Yöntemin genel adı şeffaf plak tedavisidir; farklı firmaların benzer prensiple çalışan sistemleri bulunur.
+
+## Şeffaf plak nasıl çalışır?
+
+Ağız içi tarama veya ölçü ile dişlerin üç boyutlu modeli çıkarılır. Dişlerin hedef konuma kadar hareketi bilgisayarda aşama aşama planlanır ve her aşama için kişiye özel şeffaf bir plak üretilir. Plaklar genellikle 1–2 haftada bir değiştirilir; her plak dişleri küçük bir miktar hareket ettirir.
+
+## Bilinen şeffaf plak sistemleri
+
+- Invisalign: Şeffaf plak yöntemini yaygınlaştıran, uzun süredir kullanılan sistem.
+- ClearCorrect: Benzer prensiple çalışan bir başka uluslararası sistem.
+- Spark: Farklı bir plak malzemesi kullanan şeffaf plak sistemi.
+- Yerli ve laboratuvar üretimi sistemler: Dijital planlama ile üretilen farklı plak seçenekleri de bulunur.
+
+Sistemler malzeme, planlama yazılımı ve üretim süreci açısından farklılık gösterebilir. Markalar arasında genel bir üstünlük sıralaması yapmak doğru değildir; uygun seçenek vakanın ihtiyacına ve hekimin planına göre belirlenir.
+
+> Hangi marka olursa olsun, sonucun en önemli belirleyicilerinden biri plakların günde 20–22 saat takılmasıdır.
+
+## Kimler için uygun?
+
+Hafif ve orta düzey çapraşıklık, diş aralıkları, bazı kapanış bozuklukları ve önceki tel tedavisinden sonra oluşan kaymalar için uygun olabilir. İskeletsel çene uyumsuzluklarında veya karmaşık diş hareketlerinde sabit braketler ya da kombine tedaviler önerilebilir.
+
+## Kaç ay sürer?
+
+Hafif vakalarda birkaç ay, kapsamlı vakalarda 1–2 yıl sürebilir. Dijital planlama ile tahmini süre tedaviden önce görülebilir.
+
+## Şeffaf plak mı tel mi?
+
+Şeffaf plak estetik ve çıkarılabilirdir; yemek sırasında çıkarıldığı için beslenme kısıtlaması azdır. Ancak takma disiplini gerektirir. Sabit braketler ise hasta uyumundan bağımsız çalışır ve karmaşık hareketlerde daha fazla kontrol sağlayabilir. Ayrıntılı karşılaştırma için [Şeffaf Plak mı Tel mi?](/blog/seffaf-plak-mi-tel-mi) yazımıza bakabilirsiniz.
+
+## Tedavi sonrası
+
+Dişlerin eski konumuna dönmemesi için pekiştirme plağı (retainer) kullanılır. Kullanım süresi hekim tarafından belirlenir.
+
+Ayrıntılar için [Şeffaf Plak Tedavisi](/hizmetler/seffaf-plak-tedavisi) ve [Ortodonti](/hizmetler/ortodonti) sayfalarımıza bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Invisalign ile diğer şeffaf plaklar arasındaki fark nedir?",
+        answer:
+          "Sistemler plak malzemesi, planlama yazılımı ve üretim süreci açısından farklılık gösterebilir. Hepsi benzer prensiple çalışır; uygun sistem vakaya göre hekim tarafından belirlenir.",
+      },
+      {
+        question: "Şeffaf plak günde kaç saat takılmalı?",
+        answer:
+          "Genellikle günde 20–22 saat takılması önerilir. Yemek yerken ve su dışındaki içecekleri içerken çıkarılır.",
+      },
+      {
+        question: "Şeffaf plak tedavisi ağrılı mı?",
+        answer:
+          "Yeni plağa geçişte birkaç gün baskı hissi olabilir; genellikle kısa sürede azalır.",
       },
     ],
   },
