@@ -16,7 +16,7 @@ const POINTS = [
  */
 export function ClinicStrip() {
   return (
-    <section aria-labelledby="klinik-serit" className="overflow-hidden bg-brand-navy">
+    <section aria-labelledby="klinik-serit" className="theme-dark overflow-hidden bg-brand-navy">
       <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,0.62fr)] lg:gap-8 lg:py-12">
         <div>
           <h2

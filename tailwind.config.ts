@@ -38,28 +38,30 @@ const config: Config = {
         "accent-foreground": "var(--accent-foreground)",
         destructive: "var(--destructive)",
         /*
-         * Koyu klinik kimliği — referans düzenin (ozbeydent.com) ölçülen
-         * paletine göre. Token adları korunarak tüm sayfalar tek yerden
-         * dönüştürüldü: "dark" artık başlık rengi (açık), "surface" sayfa zemini.
+         * Tema renkleri CSS değişkenlerinden okunur (app/globals.css):
+         * varsayılan koyu tema, [data-theme="light"] açık tema. ".theme-dark"
+         * sınıflı alanlar (fotoğraflı hero, klinik bandı, footer) her temada koyudur.
          */
+        /** Tema rengine göre tersine dönen ön plan rengi (kenarlık, yarı saydam yüzey). */
+        fg: "rgb(var(--c-fg) / <alpha-value>)",
         brand: {
-          primary: "#F6F8FF",        /* başlık / vurgu metni */
-          "primary-light": "#101521", /* ikincil bölüm ve kart zemini */
-          accent: "#BCA188",          /* bronz — üst başlık, CTA */
-          "accent-dark": "#D2BBA3",   /* koyu zeminde okunur bronz metin */
-          deep: "#07101F",            /* footer, koyu bant */
-          navy: "#06152C",            /* lacivert bant */
-          ink: "#071328",             /* koyu düğme */
-          dark: "#F6F8FF",            /* başlık metni */
-          light: "#F6F8FF",           /* koyu zemin üstü metin */
-          mid: "#9AA7BC",             /* gövde metni */
-          faint: "#6E7B91",           /* ikincil metin */
-          line: "rgba(255,255,255,0.12)",
-          "line-strong": "rgba(255,255,255,0.24)",
-          link: "#D2BBA3",
-          "on-deep": "#9AA7BC",
-          surface: "#080B12",         /* sayfa zemini */
-          card: "#101521",            /* kart zemini */
+          primary: "rgb(var(--c-text) / <alpha-value>)",       /* başlık / vurgu metni */
+          "primary-light": "rgb(var(--c-card) / <alpha-value>)", /* ikincil bölüm ve kart zemini */
+          accent: "#BCA188",                                     /* bronz — üst başlık, CTA */
+          "accent-dark": "rgb(var(--c-accent-text) / <alpha-value>)", /* zemine göre okunur bronz metin */
+          deep: "#07101F",                                       /* footer, koyu bant (her temada koyu) */
+          navy: "#06152C",                                       /* lacivert bant (her temada koyu) */
+          ink: "#071328",                                        /* koyu düğme */
+          dark: "rgb(var(--c-text) / <alpha-value>)",            /* başlık metni */
+          light: "rgb(var(--c-text) / <alpha-value>)",           /* ana metin rengi */
+          mid: "rgb(var(--c-mid) / <alpha-value>)",              /* gövde metni */
+          faint: "rgb(var(--c-faint) / <alpha-value>)",          /* ikincil metin */
+          line: "rgb(var(--c-fg) / 0.12)",
+          "line-strong": "rgb(var(--c-fg) / 0.24)",
+          link: "rgb(var(--c-accent-text) / <alpha-value>)",
+          "on-deep": "rgb(var(--c-mid) / <alpha-value>)",
+          surface: "rgb(var(--c-surface) / <alpha-value>)",      /* sayfa zemini */
+          card: "rgb(var(--c-card) / <alpha-value>)",            /* kart zemini */
           whatsapp: "#25D366",
           "whatsapp-dark": "#1DA851",
         },

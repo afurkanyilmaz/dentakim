@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
+import { TextLogo } from "@/components/layout/Header";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { SERVICES, SERVICE_GROUP_LABEL } from "@/lib/constants";
 import { DOCTORS } from "@/lib/doctors";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone, Play } from "lucide-react";
 
 const KURUMSAL = [
   { href: "/hakkimizda", label: "Hakkımızda" },
@@ -71,21 +71,15 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-deep text-brand-mid">
+    <footer className="theme-dark bg-brand-deep text-brand-mid">
       <div className="mx-auto max-w-[1304px] px-5 pb-10 pt-[clamp(56px,6vw,88px)] sm:px-8">
         {/* Üst: marka + iletişim | randevu kartı */}
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,480px)] lg:gap-20">
           <div>
-            <Link href="/" className="inline-block" aria-label={`${BUSINESS.brandName} ana sayfa`}>
-              {/* Özgün dikey logo: diş işareti üstte, DENTAKIM yazısı altta */}
-              <Image
-                src="/images/logo-full-dark.png"
-                alt={BUSINESS.brandName}
-                width={364}
-                height={327}
-                className="h-[120px] w-auto"
-              />
-            </Link>
+            <TextLogo className="text-[34px]" />
+            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.22em] text-brand-mid">
+              Ağız ve Diş Sağlığı Polikliniği
+            </p>
             <p className="mt-6 max-w-[520px] text-[14px] leading-[1.7]">
               {BUSINESS.displayName}, {BUSINESS.address.district} Sultan Murat
               Caddesi&apos;nde muayene, dijital görüntüleme ve yazılı tedavi
@@ -226,11 +220,12 @@ export function Footer() {
         </div>
 
         {/* Hızlı eylemler */}
-        <div className="mt-12 grid gap-3 sm:grid-cols-3">
+        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { href: BUSINESS.phone.href, label: "Bize Ulaşın", Icon: Phone },
             { href: "/randevu", label: "Online Randevu", Icon: Clock },
             { href: BUSINESS.google.profileUrl, label: "Yol Tarifi", Icon: MapPin, external: true },
+            { href: BUSINESS.social.instagram.url, label: "Instagram", Icon: Play, external: true },
           ].map(({ href, label, Icon, external }) => (
             <a
               key={label}

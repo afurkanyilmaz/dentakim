@@ -9,6 +9,7 @@ import { PricingSection } from "@/components/home/PricingSection";
 import { BlogSection } from "@/components/home/BlogSection";
 import { MapSection } from "@/components/home/MapSection";
 import { HomeFAQ } from "@/components/home/HomeFAQ";
+import { InstagramSection } from "@/components/home/InstagramSection";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import { generateMeta } from "@/lib/seo";
 
@@ -39,6 +40,7 @@ export default function HomePage() {
       <PricingSection />
       <BlogSection />
       <MapSection />
+      <InstagramSection />
       <HomeFAQ />
       <ContactCTA variant="band" />
     </main>

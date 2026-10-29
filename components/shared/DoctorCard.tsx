@@ -12,7 +12,7 @@ import type { Doctor } from "@/lib/doctors";
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-[22px] border border-brand-line bg-brand-card transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-brand-line-strong motion-reduce:transform-none">
-      <div className="relative aspect-[288/420] overflow-hidden bg-[#0C1019]">
+      <div className="relative aspect-[288/420] overflow-hidden bg-brand-card">
         {doctor.photo ? (
           <Image
             src={doctor.photo}
@@ -33,7 +33,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
         <h3 className="mt-2 font-heading text-[22px] font-bold leading-[1.2] tracking-[-0.03em] text-brand-light">
           {doctor.name}
         </h3>
-        <span className="mt-3 inline-flex w-fit rounded-full border border-brand-line bg-white/[0.03] px-3 py-1 text-[11px] font-semibold text-brand-mid">
+        <span className="mt-3 inline-flex w-fit rounded-full border border-brand-line bg-fg/[0.03] px-3 py-1 text-[11px] font-semibold text-brand-mid">
           {doctor.title}
         </span>
 

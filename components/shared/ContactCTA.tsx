@@ -62,7 +62,7 @@ export function ContactCTA({
           <div>
             <dl>
               {rows.map((row) => (
-                <div key={row.label} className="border-b border-white/[0.14] pb-4 pt-5 first:pt-0">
+                <div key={row.label} className="border-b border-fg/[0.14] pb-4 pt-5 first:pt-0">
                   <dt className="text-[11.5px] font-semibold text-brand-mid">{row.label}</dt>
                   <dd className="mt-2 text-[15.5px] font-bold text-brand-light">
                     {row.href ? (
@@ -92,7 +92,7 @@ export function ContactCTA({
               </a>
               <a
                 href={BUSINESS.phone.href}
-                className="flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 px-8 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent"
+                className="flex h-14 items-center justify-center gap-2 rounded-full border border-fg/20 px-8 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent"
               >
                 <Phone className="size-4" aria-hidden />
                 Hemen Ara
@@ -109,7 +109,7 @@ export function ContactCTA({
       className={cn(
         "rounded-[22px] border border-brand-line p-[26px]",
         variant === "panel"
-          ? "bg-[linear-gradient(160deg,#151B29,#0B0F18)]"
+          ? "bg-panel"
           : "bg-brand-card"
       )}
       aria-labelledby="iletisim-cta"
@@ -134,7 +134,7 @@ export function ContactCTA({
         </a>
         <a
           href={BUSINESS.phone.href}
-          className="inline-flex min-h-12 items-center gap-2 rounded-[12px] border border-white/20 px-5 text-[14px] font-extrabold text-brand-light transition-colors hover:border-brand-accent"
+          className="inline-flex min-h-12 items-center gap-2 rounded-[12px] border border-fg/20 px-5 text-[14px] font-extrabold text-brand-light transition-colors hover:border-brand-accent"
         >
           <Phone className="size-4" aria-hidden />
           Hemen Ara

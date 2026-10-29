@@ -30,7 +30,7 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-baslik"
-      className="relative isolate -mt-[75px] overflow-hidden bg-[#090C13] lg:-mt-[140px]"
+      className="theme-dark relative isolate -mt-[75px] overflow-hidden bg-[#090C13] lg:-mt-[140px]"
     >
       <Image
         src="/images/klinik/resepsiyon.jpg"

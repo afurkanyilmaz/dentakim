@@ -102,7 +102,8 @@ export const BUSINESS = {
    * Teyit edilene kadar sitede gösterilmez ve sameAs'e eklenmez.
    */
   social: {
-    instagram: { url: "https://instagram.com/dentakim.istanbul", verified: false },
+    // Klinik tarafından 30.10.2026'da teyit edildi.
+    instagram: { url: "https://www.instagram.com/dentakim.istanbul/", verified: true },
     facebook: { url: "https://facebook.com/dentakim", verified: false },
   },
 } as const;

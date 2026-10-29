@@ -18,6 +18,20 @@
       linear-gradient(90deg, rgba(128, 145, 176, 0.07) 1px, transparent 1px);
     background-size: 64px 64px;
   }
+  /* Yazı logosu — altın degrade; açık temada koyu altın */
+  .wordmark {
+    background-image: var(--wordmark, linear-gradient(180deg, #f3d892 0%, #c9a24e 55%, #a9832f 100%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Tema duyarlı panel zeminleri (özellik kartları, yanıt blokları) */
+  .bg-panel {
+    background-image: var(--panel);
+  }
+  .bg-panel-strong {
+    background-image: var(--panel-strong);
+  }
   .no-scrollbar {
     scrollbar-width: none;
   }
@@ -31,27 +45,88 @@
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
   }
-  :root {
-    /* Koyu klinik kimliği — tailwind.config.ts brand paletiyle aynı */
-    --background: #080B12;
-    --foreground: #F6F8FF;
+  /*
+   * Tema değişkenleri. Kanal değerleri "R G B" biçimindedir; Tailwind
+   * opaklık ekleri (bg-brand-card/90 gibi) bu sayede çalışır.
+   */
+  :root,
+  .theme-dark,
+  .page-hero {
+    --c-surface: 8 11 18;
+    --c-card: 16 21 33;
+    --c-text: 246 248 255;
+    --c-mid: 154 167 188;
+    --c-faint: 110 123 145;
+    --c-fg: 255 255 255;
+    --c-accent-text: 210 187 163;
+    --panel: linear-gradient(160deg, #151b29, #0b0f18);
+    --panel-strong: linear-gradient(150deg, #4a4e57, #1a1f2b 55%, #121722);
+
+    --background: #080b12;
+    --foreground: #f6f8ff;
     --card: #101521;
-    --card-foreground: #F6F8FF;
+    --card-foreground: #f6f8ff;
     --popover: #101521;
-    --popover-foreground: #F6F8FF;
-    --primary: #F6F8FF;
-    --primary-foreground: #080B12;
+    --popover-foreground: #f6f8ff;
+    --primary: #f6f8ff;
+    --primary-foreground: #080b12;
     --secondary: #101521;
-    --secondary-foreground: #F6F8FF;
+    --secondary-foreground: #f6f8ff;
     --muted: #101521;
-    --muted-foreground: #9AA7BC;
-    --accent: #1A2130;
-    --accent-foreground: #D2BBA3;
-    --destructive: #E06C5A;
+    --muted-foreground: #9aa7bc;
+    --accent: #1a2130;
+    --accent-foreground: #d2bba3;
+    --destructive: #e06c5a;
     --border: rgba(255, 255, 255, 0.12);
     --input: rgba(255, 255, 255, 0.16);
-    --ring: #BCA188;
+    --ring: #bca188;
     --radius: 1rem;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --c-surface: 250 248 244;
+    --c-card: 255 255 255;
+    --c-text: 22 36 47;
+    --c-mid: 78 92 106;
+    --c-faint: 112 124 137;
+    --c-fg: 22 36 47;
+    --c-accent-text: 138 106 50;
+    --panel: linear-gradient(160deg, #ffffff, #f3efe7);
+    --panel-strong: linear-gradient(150deg, #efe4d2, #fbf8f2 60%, #ffffff);
+    --wordmark: linear-gradient(180deg, #b8892e 0%, #8a6a1f 100%);
+
+    --background: #faf8f4;
+    --foreground: #16242f;
+    --card: #ffffff;
+    --card-foreground: #16242f;
+    --popover: #ffffff;
+    --popover-foreground: #16242f;
+    --primary: #16242f;
+    --primary-foreground: #faf8f4;
+    --secondary: #f3efe7;
+    --secondary-foreground: #16242f;
+    --muted: #f3efe7;
+    --muted-foreground: #4e5c6a;
+    --accent: #f3ead9;
+    --accent-foreground: #8a6a32;
+    --destructive: #9c3520;
+    --border: rgba(22, 36, 47, 0.12);
+    --input: rgba(22, 36, 47, 0.16);
+    color-scheme: light;
+  }
+  /* Açık temada da koyu kalan alanlar değişkenleri yeniden koyuya çeker. */
+  :root[data-theme="light"] .theme-dark,
+  :root[data-theme="light"] .page-hero {
+    --c-surface: 8 11 18;
+    --c-card: 16 21 33;
+    --c-text: 246 248 255;
+    --c-mid: 154 167 188;
+    --c-faint: 110 123 145;
+    --c-fg: 255 255 255;
+    --c-accent-text: 210 187 163;
+    --panel: linear-gradient(160deg, #151b29, #0b0f18);
+    --wordmark: linear-gradient(180deg, #f3d892 0%, #c9a24e 55%, #a9832f 100%);
+    color-scheme: dark;
   }
   .dark {
     --background: oklch(0.145 0 0);
@@ -92,7 +167,6 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    color-scheme: dark;
   }
   .font-heading {
     letter-spacing: -0.03em;
