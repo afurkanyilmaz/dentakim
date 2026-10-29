@@ -16,7 +16,7 @@ export default function HakkimizdaPage() {
   return (
     <main className="pb-16">
       <div className="page-hero">
-        <div className="container mx-auto max-w-[880px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
+        <div className="mx-auto max-w-[944px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <h1 className="font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Hakkımızda
           </h1>

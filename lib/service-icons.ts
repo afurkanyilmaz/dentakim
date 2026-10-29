@@ -1,5 +1,8 @@
 import {
   Anchor,
+  Bone,
+  Moon,
+  Smile,
   Baby,
   Gem,
   Grid2x2,
@@ -16,6 +19,9 @@ import type { LucideIcon } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
   implant: Anchor,
+  smile: Smile,
+  bone: Bone,
+  moon: Moon,
   "all-on-4": Grid2x2,
   "all-on-6": Grid3x2,
   hybrid: Layers,

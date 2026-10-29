@@ -14,7 +14,7 @@ export default function BlogPage() {
   return (
     <main className="pb-16">
       <div className="page-hero">
-        <div className="container mx-auto max-w-[880px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
+        <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <h1 className="font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
             Blog
           </h1>
@@ -26,7 +26,7 @@ export default function BlogPage() {
       </div>
       <div className="mx-auto max-w-[1304px] px-5 py-[clamp(56px,6vw,96px)] sm:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {BLOG_POSTS.map((post, i) => (
+          {[...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date)).map((post, i) => (
             <BlogCard key={post.slug} post={post} index={i} />
           ))}
         </div>

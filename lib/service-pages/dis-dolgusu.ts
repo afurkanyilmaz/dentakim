@@ -2,10 +2,10 @@ import type { ServicePageContent } from "./types";
 
 export const disDolgusu: ServicePageContent = {
   slug: "dis-dolgusu",
-  metaTitle: "Küçükçekmece Diş Dolgusu",
+  metaTitle: "Diş Dolgusu — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece’de estetik kompozit dolgu, çürük temizliği ve renk uyumu. Ön bölge kırık tamirleri ve mine erozyon yönetimi Dentakim’de mikro invaziv prensiplerle yapılır.",
-  h1: "Küçükçekmece Diş Dolgusu",
+  h1: "Diş Dolgusu",
   lead:
     "Çürükler ve mine kayıpları erken evrede fark edildiğinde kompozit dolgularla diş dokusu korunarak restore edilir. Dentakim’de renk seçimi, anatomik kontur ve polisaj adımlarıyla doğal görünümlü, fonksiyonel sonuçlar hedeflenir.",
   paragraphs: [

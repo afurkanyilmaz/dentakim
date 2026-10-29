@@ -7,12 +7,23 @@ import type { ServicePageContent } from "./types";
  */
 export const allOn4Implant: ServicePageContent = {
   slug: "all-on-4-implant",
-  metaTitle: "Küçükçekmece All-on-4 İmplant",
+  metaTitle: "All-on-4 İmplant — İstanbul Küçükçekmece",
   metaDescription:
     "All-on-4 implant: tamamen dişsiz çenede dört implant üzerine sabit protez. Kemik değerlendirmesi, uygunluk ve süreç hakkında bilgi. Dentakim Küçükçekmece.",
-  h1: "Küçükçekmece All-on-4 İmplant",
+  h1: "All-on-4 İmplant",
+  procedureType: "SurgicalProcedure",
+  alternateNames: ["All on four", "Dört implant üzeri sabit protez"],
+  summary:
+    "All-on-4, tamamen dişsiz bir çenede dört implant üzerine hasta tarafından çıkarılmayan sabit bir protez yapılmasıdır. Arka implantların açılı yerleştirilmesi, kemik hacmi sınırlı hastalarda ek kemik işlemi ihtiyacını azaltabilir. Uygunluk muayene, röntgen ve gerektiğinde tomografi ile belirlenir.",
+  facts: [
+    { label: "İmplant sayısı", value: "Çene başına 4" },
+    { label: "Cerrahi", value: "Genellikle tek seans" },
+    { label: "Geçici protez", value: "Uygun vakalarda kısa sürede" },
+    { label: "Kalıcı protez", value: "İyileşme sonrası (birkaç ay)" },
+  ],
+  guideSlugs: ["all-on-4-mu-all-on-6-mi", "dis-protezi-cesitleri"],
   lead:
-    "All-on-4, tamamen dişsiz veya dişlerinin çekilmesi planlanan bir çenede dört implant üzerine sabit (hasta tarafından çıkarılmayan) bir protez yapılması yaklaşımıdır. Dentakim’de uygunluk, tomografi ile kemik değerlendirmesi yapıldıktan sonra belirlenir.",
+    "All-on-4, tamamen dişsiz veya dişlerinin çekilmesi planlanan bir çenede dört implant üzerine sabit (hasta tarafından çıkarılmayan) bir protez yapılması yaklaşımıdır. Dentakim’de uygunluk, röntgen ve gerektiğinde görüntüleme merkezinde çekilen tomografi ile kemik değerlendirmesi yapıldıktan sonra belirlenir.",
   paragraphs: [
     "Bu yöntemde genellikle öndeki iki implant dik, arkadaki iki implant ise belirli bir açıyla yerleştirilir. Açılı yerleşim, arka bölgede kemik hacmi sınırlı olduğunda sinüs veya sinir kanalı gibi anatomik yapılardan uzak durarak daha uzun implant kullanılmasına olanak tanıyabilir.",
     "All-on-4 her dişsiz hasta için uygun değildir. Kemik yüksekliği ve genişliği, kapanış kuvvetleri, diş sıkma alışkanlığı, genel sağlık durumu ve ağız hijyeni değerlendirilir. Kemik hacmi yeterliyse daha fazla implantla yapılan All-on-6 veya farklı protez seçenekleri de karşılaştırmalı olarak anlatılır.",
@@ -21,7 +32,7 @@ export const allOn4Implant: ServicePageContent = {
     "Dentakim’de cerrahi fazı ağız-diş-çene cerrahımız, protez fazını protez alanında çalışan hekimimiz yürütür. Tedavi sonrası düzenli kontroller ve protezin altının profesyonel temizliği, uzun dönem başarı için önemlidir.",
   ],
   steps: [
-    "Muayene, tomografi ile kemik analizi ve genel sağlık değerlendirmesi yapılır; uygunsa seçenekler yazılı olarak sunulur.",
+    "Muayene, röntgen ve gerekirse tomografi ile kemik analizi ve genel sağlık değerlendirmesi yapılır; uygunsa seçenekler yazılı olarak sunulur.",
     "Gerekli diş çekimleri ve dört implantın yerleştirilmesi aynı cerrahi seansta planlanabilir.",
     "Başlangıç stabilitesi yeterliyse geçici sabit protez takılır; iyileşme döneminde kontroller yapılır.",
     "İyileşme tamamlandıktan sonra ölçü alınır ve kalıcı sabit protez teslim edilir.",
@@ -30,7 +41,7 @@ export const allOn4Implant: ServicePageContent = {
     {
       question: "All-on-4 kimler için uygundur?",
       answer:
-        "Tamamen dişsiz veya dişlerinin çoğu kurtarılamayacak durumda olan, kemik yapısı ve genel sağlığı uygun yetişkinler değerlendirilir. Uygunluk tomografi ve muayene sonrası hekim tarafından belirlenir.",
+        "Tamamen dişsiz veya dişlerinin çoğu kurtarılamayacak durumda olan, kemik yapısı ve genel sağlığı uygun yetişkinler değerlendirilir. Uygunluk muayene ve görüntüleme sonrası hekim tarafından belirlenir.",
     },
     {
       question: "Aynı gün dişler takılabilir mi?",

@@ -98,6 +98,9 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
       "all-on-4-implant",
       "all-on-6-implant",
       "hibrit-protez",
+      "gulus-tasarimi",
+      "lamina-veneer",
+      "gece-plagi-bruksizm",
       "dis-beyazlatma",
       "dis-dolgusu",
       "agiz-dis-cene-cerrahisi",
@@ -141,6 +144,7 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
     education: [],
     serviceSlugs: [
       "protez-zirkonyum",
+      "lamina-veneer",
       "dis-beyazlatma",
       "cocuk-dis-hekimligi",
       "kanal-tedavisi",
@@ -172,7 +176,7 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
       "Ağız, diş ve çene cerrahisi alanında çalışmaktadır. Gömülü yirmilik diş çekimi, cerrahi çekimler ve implant cerrahisi başlıca uygulama alanlarıdır.",
     bio: [
       "Dr. Ahmet Emin Kırıktaş, Dentakim'de ağız, diş ve çene cerrahisi kapsamındaki işlemleri yürütmektedir. Gömülü yirmilik diş çekimi, cerrahi diş çekimleri, implant cerrahisi ve kemik greftleme başlıca çalışma alanlarıdır.",
-      "Her cerrahi işlem öncesinde radyolojik değerlendirme yapılır; panoramik röntgen veya gerektiğinde üç boyutlu tomografi ile dişin konumu, kök şekli ve alt çene siniri ile sinüs tabanına uzaklığı ölçülür. Riskler ve iyileşme süreci hastaya işlem öncesinde ayrıntılı biçimde anlatılır.",
+      "Her cerrahi işlem öncesinde radyolojik değerlendirme yapılır; panoramik röntgen ve gerektiğinde görüntüleme merkezinde çekilen üç boyutlu tomografi ile dişin konumu, kök şekli ve alt çene siniri ile sinüs tabanına uzaklığı ölçülür. Riskler ve iyileşme süreci hastaya işlem öncesinde ayrıntılı biçimde anlatılır.",
       "İmplant vakalarında cerrahi fazı üstlenir; protez aşaması Dr. Musa Burak Sakar ile birlikte planlanır. İşlem sonrası hastaların doğrudan ulaşabileceği bir WhatsApp hattı açılır, iyileşme dönemi takip edilir.",
     ],
     focusAreas: [
@@ -188,6 +192,7 @@ const DOCTOR_RECORDS: Omit<Doctor, "photo">[] = [
       "implant-tedavisi",
       "all-on-4-implant",
       "all-on-6-implant",
+      "kemik-grefti-sinus-lifting",
     ],
     pending: ["Mezuniyet ve eğitim bilgileri", "Deneyim yılı", "Sertifikalar"],
   },

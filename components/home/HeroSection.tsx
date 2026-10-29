@@ -52,17 +52,18 @@ export function HeroSection() {
       <div className="mx-auto grid min-h-[100svh] max-w-[1304px] items-center gap-10 px-5 pb-16 pt-[120px] sm:px-8 lg:min-h-[900px] lg:grid-cols-[minmax(0,620px)_1fr] lg:gap-12 lg:pb-12 lg:pt-[170px]">
         <div className="lg:pl-5">
           <p className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-light">
-            {BUSINESS.brandName}
+            {BUSINESS.brandName} · {BUSINESS.address.district}, {BUSINESS.address.city}
           </p>
           <h1
             id="hero-baslik"
             className="mt-4 font-heading text-[clamp(42px,5vw,74px)] font-bold leading-[0.96] tracking-[-0.055em] text-white"
           >
-            Küçükçekmece&apos;de modern diş kliniği
+            İstanbul&apos;da gülüş tasarımı ve implant
           </h1>
           <p className="mt-6 max-w-[540px] text-[16px] leading-[1.7] text-white/[0.78] sm:text-[18px]">
-            İmplant, zirkonyum ve estetik diş tedavilerinde muayene, dijital
-            görüntüleme ve yazılı tedavi planıyla ilerliyoruz.
+            Hollywood Smile, lamina, zirkonyum ve implant tedavilerinde yeni
+            gülüşünüzü kalıcı işlemden önce dijital olarak birlikte planlıyor
+            ve prova ediyoruz.
           </p>
           <Link
             href="/randevu"

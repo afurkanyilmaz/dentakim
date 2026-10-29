@@ -1,15 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog";
-import { CLINIC_PHOTOS } from "@/lib/clinic-photos.generated";
-
-/**
- * Yazılara ait görsel yok; kart görseli olarak kliniğin kendi fotoğrafları
- * sırayla kullanılır (stok fotoğraf yok).
- */
-function coverFor(index: number) {
-  return CLINIC_PHOTOS[index % CLINIC_PHOTOS.length];
-}
+import { getPostImage } from "@/lib/blog-images";
 
 export function formatPostDate(iso: string) {
   return new Date(iso).toLocaleDateString("tr-TR", {
@@ -21,7 +13,7 @@ export function formatPostDate(iso: string) {
 
 /** Blog kartı — üstte görsel ve ok kutusu, altta kategori, başlık, özet. */
 export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
-  const cover = coverFor(index);
+  const cover = getPostImage(post, index);
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-[22px] border border-brand-line bg-brand-card transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-brand-line-strong motion-reduce:transform-none">
@@ -29,7 +21,7 @@ export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
         {cover ? (
           <Image
             src={cover.src}
-            alt=""
+            alt={cover.alt}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.04] motion-reduce:transform-none"

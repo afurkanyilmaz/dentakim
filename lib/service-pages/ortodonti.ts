@@ -2,10 +2,10 @@ import type { ServicePageContent } from "./types";
 
 export const ortodonti: ServicePageContent = {
   slug: "ortodonti",
-  metaTitle: "Küçükçekmece Ortodonti Tedavisi",
+  metaTitle: "Ortodonti Tedavisi — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece’de metal braket, seramik ve şeffaf plak (aligner) ortodonti seçenekleri. Kapanış düzeltme, çene genişletme ve estetik gülüş hattı planlaması Dentakim’de.",
-  h1: "Küçükçekmece Ortodonti Tedavisi",
+  h1: "Ortodonti Tedavisi",
   lead:
     "Çapraşık dişler ve uyumsuz çene ilişkileri sadece estetik değil; çiğneme, konuşma ve dişeti sağlığı açısından da yönetilmesi gereken konulardır. Dentakim’de ortodontik planı yaş, büyüme durumu ve periodontal tabloya göre kişiselleştiriyor; metal, seramik veya şeffaf aparey alternatiflerini net biçimde karşılaştırıyoruz.",
   paragraphs: [

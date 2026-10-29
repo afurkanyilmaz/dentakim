@@ -7,10 +7,20 @@ import type { ServicePageContent } from "./types";
  */
 export const hibritProtez: ServicePageContent = {
   slug: "hibrit-protez",
-  metaTitle: "Küçükçekmece Hibrit Protez",
+  metaTitle: "Hibrit Protez — İstanbul Küçükçekmece",
   metaDescription:
     "Hibrit protez: implantlara vidalanan sabit tam çene protezi. Materyal seçenekleri, bakım ve tedavi süreci. Dentakim Küçükçekmece’de muayene ve yazılı plan.",
-  h1: "Küçükçekmece Hibrit Protez",
+  h1: "Hibrit Protez",
+  procedureType: "NoninvasiveProcedure",
+  summary:
+    "Hibrit protez, dişsiz çenede implantlara vidalanan ve dişlerle birlikte kayıp dişeti dokusunu da tamamlayan sabit tam çene protezidir. Hasta tarafından çıkarılmaz; bakım ve kontrol için hekim tarafından sökülebilir. Genellikle All-on-4 veya All-on-6 planlarının protez aşamasında kullanılır.",
+  facts: [
+    { label: "Dayanak", value: "4–6 implant" },
+    { label: "Materyal", value: "Akrilik/kompozit dişler veya zirkonyum" },
+    { label: "Çıkarılabilirlik", value: "Hasta tarafından çıkarılmaz" },
+    { label: "Bakım", value: "Ara yüz fırçası, düzenli kontrol" },
+  ],
+  guideSlugs: ["all-on-4-mu-all-on-6-mi", "dis-protezi-cesitleri"],
   lead:
     "Hibrit protez, dişsiz bir çenede implantlara vidalanarak sabitlenen, dişleri ve kaybolan dişeti dokusunu birlikte taklit eden tam çene protezidir. Dentakim’de All-on-4 ve All-on-6 gibi implant planlarının protez aşamasında değerlendirilir.",
   paragraphs: [

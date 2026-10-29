@@ -2,10 +2,10 @@ import type { ServicePageContent } from "./types";
 
 export const cocukDisHekimligi: ServicePageContent = {
   slug: "cocuk-dis-hekimligi",
-  metaTitle: "Küçükçekmece Çocuk Diş Hekimliği",
+  metaTitle: "Çocuk Diş Hekimliği — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece’de çocuk diş hekimliği: fissür örtücü, flor uygulaması, çürük yönetimi ve davranış yönlendirmeli lokal anestezi ile konfor odaklı yaklaşım. Dentakim çocuk dostu ortam.",
-  h1: "Küçükçekmece Çocuk Diş Hekimliği",
+  h1: "Çocuk Diş Hekimliği",
   lead:
     "Çocukların diş hekimi deneyimini pozitif kurgulamak, ilerideki ağız sağlığı alışkanlıklarını belirler. Dentakim’de oyun ve iletişim odaklı yaklaşımla, Küçükçekmece’deki ailelerin çocuklarına güvenli ortamda muayene ve tedavi sunuyoruz.",
   paragraphs: [

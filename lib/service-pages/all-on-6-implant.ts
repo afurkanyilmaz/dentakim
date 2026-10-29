@@ -6,12 +6,23 @@ import type { ServicePageContent } from "./types";
  */
 export const allOn6Implant: ServicePageContent = {
   slug: "all-on-6-implant",
-  metaTitle: "Küçükçekmece All-on-6 İmplant",
+  metaTitle: "All-on-6 İmplant — İstanbul Küçükçekmece",
   metaDescription:
     "All-on-6 implant: dişsiz çenede altı implant üzerine sabit protez. Kemik uygunluğu, All-on-4 ile farkı ve tedavi süreci. Dentakim Küçükçekmece.",
-  h1: "Küçükçekmece All-on-6 İmplant",
+  h1: "All-on-6 İmplant",
+  procedureType: "SurgicalProcedure",
+  alternateNames: ["All on six", "Altı implant üzeri sabit protez"],
+  summary:
+    "All-on-6, tamamen dişsiz bir çenede altı implant üzerine sabit protez yapılmasıdır. Çiğneme kuvveti daha fazla implanta dağıtılır; bu nedenle kemik hacmi yeterli olan hastalarda tercih edilebilir. Uygunluk muayene, röntgen ve gerektiğinde tomografi sonrası belirlenir.",
+  facts: [
+    { label: "İmplant sayısı", value: "Çene başına 6" },
+    { label: "Cerrahi", value: "Genellikle tek seans" },
+    { label: "Kemik gereksinimi", value: "Arka bölgelerde de yeterli kemik" },
+    { label: "Kalıcı protez", value: "İyileşme sonrası (birkaç ay)" },
+  ],
+  guideSlugs: ["all-on-4-mu-all-on-6-mi", "dis-protezi-cesitleri"],
   lead:
-    "All-on-6, tamamen dişsiz bir çenede altı implant üzerine sabit protez yapılmasıdır. Kemik hacmi yeterli olan hastalarda yükün daha fazla implanta dağıtılması amaçlanır. Dentakim’de karar, tomografi ve muayene sonrası verilir.",
+    "All-on-6, tamamen dişsiz bir çenede altı implant üzerine sabit protez yapılmasıdır. Kemik hacmi yeterli olan hastalarda yükün daha fazla implanta dağıtılması amaçlanır. Dentakim’de karar muayene ve röntgen ile, gerektiğinde görüntüleme merkezinde çekilen tomografi sonrası verilir.",
   paragraphs: [
     "Altı implant, protezin taşıdığı çiğneme kuvvetini daha geniş bir alana yayar. Bu nedenle özellikle üst çenede veya kapanış kuvvetleri yüksek hastalarda, kemik izin veriyorsa tercih edilebilir. Daha fazla implant, protez tasarımında da (örneğin daha uzun köprü bölümleri) esneklik sağlayabilir.",
     "All-on-6 için arka bölgelerde de yeterli kemik bulunması gerekir. Kemik hacmi yetersizse kemik grefti veya sinüs tabanı yükseltme gibi ek işlemler, ya da daha az implantla yapılan All-on-4 gibi alternatifler değerlendirilir. Her seçeneğin süresi ve ek işlem gereksinimi muayenede yazılı olarak anlatılır.",
@@ -20,7 +31,7 @@ export const allOn6Implant: ServicePageContent = {
     "Cerrahi fazı ağız-diş-çene cerrahımız, protez fazını protez alanında çalışan hekimimiz yürütür. Tedavi sonrasında düzenli kontroller ve profesyonel temizlik önerilir.",
   ],
   steps: [
-    "Muayene, tomografi ve genel sağlık değerlendirmesi; uygunsa All-on-6 ve alternatifleri yazılı olarak sunulur.",
+    "Muayene, röntgen (gerekirse tomografi) ve genel sağlık değerlendirmesi; uygunsa All-on-6 ve alternatifleri yazılı olarak sunulur.",
     "Gerekli çekimler ve altı implantın yerleştirilmesi planlanan cerrahi seansta yapılır.",
     "Stabilite uygunsa geçici sabit protez takılır; iyileşme döneminde kontroller yapılır.",
     "Kemik kaynaşmasının ardından ölçü alınır ve kalıcı sabit protez teslim edilir.",

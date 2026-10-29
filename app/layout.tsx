@@ -11,6 +11,7 @@ import { getClinicSchema, getWebSiteSchema } from "@/lib/schema";
 import { DOCTORS } from "@/lib/doctors";
 import { REGIONS } from "@/lib/regions";
 import { BUSINESS } from "@/lib/business";
+import { SERVICES } from "@/lib/constants";
 
 /* Tipografi: başlıklarda Plus Jakarta Sans, gövdede Manrope */
 const jakarta = Plus_Jakarta_Sans({
@@ -65,7 +66,13 @@ export default function RootLayout({
   return (
     <html lang="tr" className={cn(jakarta.variable, manrope.variable)}>
       <body className="min-h-screen font-sans antialiased">
-        <JsonLd data={getClinicSchema(DOCTORS, REGIONS.map((r) => r.name))} />
+        <JsonLd
+          data={getClinicSchema(
+            DOCTORS,
+            REGIONS.map((r) => r.name),
+            SERVICES.map((sv) => ({ slug: sv.slug, title: sv.title }))
+          )}
+        />
         <JsonLd data={getWebSiteSchema()} />
         {GA_ID ? (
           <>

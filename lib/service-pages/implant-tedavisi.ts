@@ -2,10 +2,21 @@ import type { ServicePageContent } from "./types";
 
 export const implantTedavisi: ServicePageContent = {
   slug: "implant-tedavisi",
-  metaTitle: "Küçükçekmece İmplant Tedavisi",
+  metaTitle: "İmplant Tedavisi — İstanbul Küçükçekmece",
   metaDescription:
     "Küçükçekmece’de implant tedavisi: eksik diş tamamlama, kemik uygunluğu analizi ve estetik protez seçenekleri. Cerrahi ve protez fazı ayrı hekimlerce yürütülür. Dentakim’de ön görüşme.",
-  h1: "Küçükçekmece İmplant Tedavisi",
+  h1: "İmplant Tedavisi",
+  procedureType: "SurgicalProcedure",
+  alternateNames: ["Diş implantı", "Dental implant"],
+  summary:
+    "İmplant tedavisi, eksik dişin yerine çene kemiğine titanyum bir vida (implant) yerleştirilip üzerine kron, köprü veya protez yapılmasıdır. Komşu dişlere dokunmadan eksik dişi sabit olarak tamamlar. Dentakim’de cerrahi fazı ağız-diş-çene cerrahımız, protez fazını protez alanında çalışan hekimimiz yürütür.",
+  facts: [
+    { label: "Cerrahi süre", value: "Tek implant için genellikle 30–60 dk" },
+    { label: "İyileşme", value: "Genellikle 2–4 ay (kemik kaynaşması)" },
+    { label: "Anestezi", value: "Lokal anestezi" },
+    { label: "Planlama", value: "Panoramik röntgen; gerekirse tomografi" },
+  ],
+  guideSlugs: ["implant-ne-kadar-surer", "implant-yaptirmak-istiyorum-nereden-baslamali", "implant-markalari-arasindaki-fark", "implant-sonrasi-bakim"],
   lead:
     "Eksik dişler çiğneme fonksiyonunu, fonasyonu ve çene kapanışını etkileyebilir. Küçükçekmece Sultan Murat Caddesi üzerindeki Dentakim’de, implant sürecini adım adım planlıyor; osseointegrasyon, iyileşme ve üst yapı fazlarını yazılı olarak paylaşıyoruz.",
   paragraphs: [

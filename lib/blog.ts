@@ -497,7 +497,7 @@ Süreç muayene ile başlar. Ağız içi incelemede eksik diş bölgesindeki di�
 
 ## Adım 2: Görüntüleme
 
-Panoramik röntgen ve gerektiğinde üç boyutlu tomografi çekilir. Tomografi implant planlamasının en kritik verisidir: kemiğin genişliği, yüksekliği, yoğunluğu ve alt çene siniri ile sinüs tabanına uzaklık milimetrik olarak ölçülür. Bu ölçüm olmadan verilen implant kararı tahmine dayanır.
+Panoramik röntgen ve gerektiğinde bir görüntüleme merkezinde üç boyutlu tomografi istenir. Tomografi implant planlamasının en kritik verisidir: kemiğin genişliği, yüksekliği, yoğunluğu ve alt çene siniri ile sinüs tabanına uzaklık milimetrik olarak ölçülür. Bu ölçüm olmadan verilen implant kararı tahmine dayanır.
 
 ## Adım 3: Planlama ve yazılı teklif
 
@@ -553,7 +553,7 @@ Eksik dişiniz için implantın uygun olup olmadığını öğrenmenin tek yolu 
       {
         question: "İmplant öncesi hangi tetkikler gerekir?",
         answer:
-          "Ağız içi muayene, panoramik röntgen ve çoğu vakada üç boyutlu tomografi. Sistemik hastalık veya düzenli ilaç kullanımı varsa güncel kan tahlili ve hekim raporu istenebilir.",
+          "Ağız içi muayene, panoramik röntgen; gerekirse görüntüleme merkezinde çekilen üç boyutlu tomografi. Sistemik hastalık veya düzenli ilaç kullanımı varsa güncel kan tahlili ve hekim raporu istenebilir.",
       },
     ],
   },
@@ -874,7 +874,7 @@ Sabit protezlerde en sık karşılaşılan sorun, kron kenarındaki dişeti ilti
 
 ## Karar nasıl veriliyor?
 
-Muayenede kalan dişlerin sağlamlığı, dişeti durumu, kapanış ilişkisi ve çene kemiği hacmi değerlendirilir; gerekirse panoramik röntgen veya tomografi alınır. Ardından uygun seçenekler ömür, süre ve maliyet açısından yan yana anlatılır. Çoğu hastada birden fazla seçenek uygundur; tercih birlikte yapılır.
+Muayenede kalan dişlerin sağlamlığı, dişeti durumu, kapanış ilişkisi ve çene kemiği hacmi değerlendirilir; gerekirse panoramik röntgen alınır veya tomografi istenir. Ardından uygun seçenekler ömür, süre ve maliyet açısından yan yana anlatılır. Çoğu hastada birden fazla seçenek uygundur; tercih birlikte yapılır.
 
 Protez tedavilerimizi [Protez ve Zirkonyum sayfamızda](/hizmetler/protez-zirkonyum), implant seçeneklerini ise [İmplant Tedavisi sayfamızda](/hizmetler/implant-tedavisi) ayrıntılı anlatıyoruz.
 
@@ -995,6 +995,709 @@ Kendi gülüşünüz için hangi yöntemin uygun olduğunu öğrenmek isterseniz
         question: "Sonucu önceden görebilir miyim?",
         answer:
           "Evet. Dijital tasarımda yeni gülüşünüz ekranda modellenir; istenirse geçici bir prova (mock-up) olarak dişlerinizin üzerine uygulanır ve aynada gerçek boyutta değerlendirirsiniz. Onayınızdan sonra kalıcı işleme geçilir.",
+      },
+    ],
+  },
+  /*
+   * Popüler tedavi rehberleri (29.10.2026). Hekim adına yazılmadı; yazar
+   * kurum olarak işaretlenir. KLİNİSYEN ONAYI BEKLİYOR.
+   */
+  {
+    slug: "hollywood-smile-nedir",
+    title: "Hollywood Smile Nedir? Kimlere Uygulanır, Süreç Nasıl İşler?",
+    excerpt:
+      "Hollywood Smile’ın ne olduğu, lamina ve zirkonyum seçenekleri, kimler için uygun olduğu, kaç günde tamamlandığı ve doğal görünüm için dikkat edilmesi gerekenler.",
+    date: "2026-10-29",
+    readTime: "7 dk",
+    category: "Gülüş Tasarımı",
+    serviceSlug: "gulus-tasarimi",
+    whatsappMessage: "Merhaba, Hollywood Smile ve gülüş tasarımı hakkında bilgi almak istiyorum.",
+    content: `
+Hollywood Smile, ön bölgede gülerken görünen dişlerin (genellikle üst ve alt çenede 8–10 diş) lamina veneer veya zirkonyum kaplamalarla aynı plan içinde yenilendiği kapsamlı gülüş tasarımına verilen addır. Tıbbi bir terim değil, gülüş tasarımının en bilinen uygulama biçimini anlatan yaygın bir ifadedir.
+
+## Hollywood Smile ile gülüş tasarımı arasındaki fark
+
+Gülüş tasarımı; dişlerin rengini, boyunu, formunu ve dizilimini yüz hatlarıyla birlikte planlayan genel yaklaşımdır. Bu plan bazen yalnızca beyazlatma ve birkaç dişte bonding ile tamamlanır. Hollywood Smile ise planın ön dişlerin tamamına porselen veya zirkonyum uygulanarak hayata geçirildiği halidir.
+
+> Her gülüş tasarımı Hollywood Smile değildir. Daha az müdahaleyle aynı uyum sağlanabiliyorsa önce o seçenek değerlendirilir.
+
+## Hangi materyaller kullanılır?
+
+- Lamina veneer: Dişin yalnızca ön yüzüne yapıştırılan ince porselen yaprakçıklar. Diş dokusu büyük ölçüde sağlamsa tercih edilir; aşındırma minimaldir.
+- Zirkonyum kaplama: Dişi tamamen saran, metal içermeyen kron. Dişte büyük dolgu, kırık veya kanal tedavisi varsa daha uygundur.
+- Karma planlar: Aynı gülüşte bazı dişlere lamina, bazılarına zirkonyum uygulanabilir; renk uyumu laboratuvarda birlikte ayarlanır.
+
+## Kimler için uygundur?
+
+Renk değişikliği beyazlatmaya yanıt vermeyen, dişlerinde form bozukluğu, aralık, aşınma veya eski ve renklenmiş kaplamaları olan yetişkinler değerlendirilebilir. Aktif diş eti iltihabı, tedavi edilmemiş çürükler veya ileri kapanış bozuklukları varsa bunlar önce tedavi edilir. Ciddi diş sıkma alışkanlığı olanlarda gece plağı planlanır.
+
+## Süreç adım adım
+
+1. Muayene, fotoğraf ve ölçü: Beklentiniz dinlenir, yüz ve gülüş oranları değerlendirilir.
+2. Dijital tasarım: Yeni gülüş bilgisayarda modellenir.
+3. Prova (mock-up): Tasarım geçici materyalle dişlerinize uygulanır; aynada gerçek boyutta görürsünüz.
+4. Hazırlık ve ölçü: Onayınızdan sonra dişler hazırlanır, geçici kaplamalar takılır.
+5. Uygulama: Kalıcı lamina veya zirkonyumlar prova edilip yapıştırılır.
+
+Yalnızca kaplama içeren planlar çoğu vakada 1–3 hafta içinde tamamlanır. Ortodonti veya implant gerekiyorsa süre uzar.
+
+## Doğal görünüm için nelere dikkat edilir?
+
+Aşırı beyaz tonlar ve birbirinin aynısı formlar yapay algılanabilir. Doğal bir sonuç için renk cilt ve göz tonuna, diş boyu dudak hareketine, form yüz tipine göre seçilir. Hafif asimetri ve yüzey dokusu tasarımın bilinçli parçalarıdır.
+
+## Bakım
+
+Lamina ve zirkonyum çürümez; ancak altındaki diş ve diş eti çürüyebilir veya iltihaplanabilir. Günde iki kez fırçalama, diş ipi veya ara yüz fırçası ve 6 ayda bir kontrol önerilir. Sert cisimleri (kalem, çekirdek, buz) ısırmaktan kaçınılmalıdır.
+
+Ayrıntılar için [Gülüş Tasarımı sayfamıza](/hizmetler/gulus-tasarimi) ve [Lamina Veneer sayfamıza](/hizmetler/lamina-veneer) göz atabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Hollywood Smile kaç günde yapılır?",
+        answer:
+          "Yalnızca lamina veya zirkonyum içeren planlar çoğu vakada 1–3 hafta içinde, genellikle 3–4 randevuda tamamlanır. Ön tedavi gerekiyorsa süre uzar.",
+      },
+      {
+        question: "Hollywood Smile için dişler kesilir mi?",
+        answer:
+          "Lamina veneerde dişin ön yüzünden minimal, zirkonyum kaplamada daha fazla aşındırma yapılır. Bazı uygun vakalarda aşındırmasız lamina değerlendirilebilir.",
+      },
+      {
+        question: "Hollywood Smile herkese uygun mu?",
+        answer:
+          "Hayır. Diş eti hastalığı, tedavi edilmemiş çürük veya ileri kapanış bozukluğu olanlarda önce bu sorunlar giderilir. Uygunluk muayene sonrası belirlenir.",
+      },
+    ],
+  },
+  {
+    slug: "gulus-tasarimi-nasil-yapilir",
+    title: "Gülüş Tasarımı Nasıl Yapılır? Dijital Planlama ve Prova",
+    excerpt:
+      "Dijital gülüş tasarımında fotoğraf, ölçü ve prova (mock-up) aşamaları; hangi tedavilerin plana girebileceği ve sonucu önceden görmenin yolu.",
+    date: "2026-10-29",
+    readTime: "6 dk",
+    category: "Gülüş Tasarımı",
+    serviceSlug: "gulus-tasarimi",
+    whatsappMessage: "Merhaba, gülüş tasarımı için bilgi almak istiyorum.",
+    content: `
+Gülüş tasarımı, tek tek dişler yerine gülüşün bütününü yüzünüzle birlikte planlamaktır. Amaç dişleri olabildiğince beyaz veya simetrik yapmak değil; renk, form ve oranı yüz hatlarınıza uygun hale getirmektir.
+
+## Planlamada neler değerlendirilir?
+
+- Orta hat: Ön dişlerin ortası ile yüzün orta çizgisinin uyumu.
+- Diş boyu ve genişlik oranı: Ön dişlerin birbirine ve yüze oranı.
+- Diş eti çizgisi: Gülerken görünen diş eti miktarı ve seviyesi.
+- Dudak hareketi: Konuşurken ve gülerken dişlerin ne kadar göründüğü.
+- Renk: Cilt ve göz tonu, yaş ve kişisel beklenti.
+
+## Dijital tasarım
+
+Yüz ve gülüş fotoğrafları, gerektiğinde kısa bir video ve ağız içi ölçüler birleştirilerek yeni gülüş bilgisayarda modellenir. Bu aşamada farklı diş formları ve boyları karşılaştırılabilir.
+
+## Prova (mock-up)
+
+Tasarım, dişlerinize herhangi bir aşındırma yapılmadan geçici bir materyalle uygulanabilir. Böylece yeni gülüşünüzü aynada, konuşurken ve gülerken gerçek boyutta değerlendirirsiniz. Değişiklik istenirse tasarım bu aşamada güncellenir.
+
+> Kalıcı işleme, yalnızca prova sonrası onayınızla geçilir.
+
+## Hangi tedaviler plana girebilir?
+
+Gülüş tasarımı bir tedavi paketi değil, bir plandır. Plana; [diş beyazlatma](/hizmetler/dis-beyazlatma), kompozit bonding, [lamina veneer](/hizmetler/lamina-veneer), [zirkonyum kaplama](/hizmetler/protez-zirkonyum), diş eti düzenlemesi, [ortodonti](/hizmetler/ortodonti) veya eksik dişler için [implant](/hizmetler/implant-tedavisi) girebilir. En az müdahaleyle hedefe ulaşan seçenek önceliklidir.
+
+## Ön tedaviler
+
+Çürükler, diş taşı ve diş eti iltihabı estetik işlemlerden önce tedavi edilir. Aktif iltihap varken yapılan kaplamalarda kenar uyumu ve renk bozulabilir. Diş sıkma varsa [gece plağı](/hizmetler/gece-plagi-bruksizm) planlanır.
+
+## Ne kadar sürer?
+
+Yalnızca kaplama içeren planlar çoğu vakada 1–3 hafta sürer. Ortodonti veya implant içeren kapsamlı planlar aylar alabilir; takvim muayene sonrası yazılı olarak paylaşılır.
+    `.trim(),
+    faqs: [
+      {
+        question: "Gülüş tasarımı sonucunu önceden görebilir miyim?",
+        answer:
+          "Evet. Dijital tasarım ekranda gösterilir ve istenirse aşındırma yapılmadan geçici bir prova (mock-up) olarak dişlerinize uygulanır.",
+      },
+      {
+        question: "Gülüş tasarımı için kaplama şart mı?",
+        answer:
+          "Hayır. Bazı vakalarda beyazlatma ve bonding yeterli olabilir. Kaplama gerekip gerekmediği muayene ve tasarım sonrası belirlenir.",
+      },
+    ],
+  },
+  {
+    slug: "lamina-mi-zirkonyum-mu",
+    title: "Lamina mı Zirkonyum mu? Farkları ve Hangisi Size Uygun",
+    excerpt:
+      "Lamina veneer ile zirkonyum kaplama arasındaki farklar: aşındırma miktarı, dayanıklılık, estetik, hangi durumda hangisinin tercih edildiği.",
+    date: "2026-10-29",
+    readTime: "6 dk",
+    category: "Estetik Diş Hekimliği",
+    serviceSlug: "lamina-veneer",
+    whatsappMessage: "Merhaba, lamina ve zirkonyum seçenekleri hakkında bilgi almak istiyorum.",
+    content: `
+Lamina veneer ve zirkonyum kaplama, gülüş tasarımında en sık kullanılan iki yöntemdir. İkisi de estetik sonuç verebilir; aralarındaki temel fark, dişin ne kadarını kapladıkları ve ne kadar aşındırma gerektirdikleridir.
+
+## Kısa karşılaştırma
+
+- Kapsadığı alan: Lamina yalnızca dişin ön yüzünü, zirkonyum dişin tamamını kaplar.
+- Aşındırma: Lamina minimal (çoğunlukla mine sınırında), zirkonyum daha fazla aşındırma gerektirir.
+- Uygun diş: Lamina büyük ölçüde sağlam dişler için, zirkonyum madde kaybı olan, kırık veya kanal tedavili dişler için uygundur.
+- Kullanım bölgesi: Lamina daha çok ön dişlerde, zirkonyum ön ve arka dişlerde kullanılabilir.
+- Köprü: Eksik diş varsa lamina ile köprü yapılamaz; zirkonyum köprü veya implant üstü kron gerekir.
+
+## Ne zaman lamina?
+
+Renk değişikliği beyazlatmaya yanıt vermiyorsa, dişlerde küçük kırık, aralık veya form bozukluğu varsa ve diş dokusu büyük ölçüde sağlamsa lamina daha koruyucu bir seçenektir. Lamina genellikle lityum disilikat (E-max gibi) veya feldspatik cam seramikten üretilir.
+
+## Ne zaman zirkonyum?
+
+Dişte büyük dolgular, kırıklar, kanal tedavisi veya eski kaplamalar varsa; arka dişlerde yüksek çiğneme kuvveti söz konusuysa ya da eksik diş köprüyle tamamlanacaksa zirkonyum tercih edilebilir.
+
+> Aynı gülüş planında bazı dişlere lamina, bazılarına zirkonyum uygulanabilir. Laboratuvarda renk uyumu birlikte ayarlanır.
+
+## Diş sıkma ve dayanıklılık
+
+Ciddi diş sıkma (bruksizm) hem lamina hem zirkonyum için risk oluşturur; laminada kırılma riski daha belirgin olabilir. Bu hastalarda [gece plağı](/hizmetler/gece-plagi-bruksizm) önerilir.
+
+## Karar nasıl verilir?
+
+Seçim; dişlerin mevcut durumu, kapanış, diş eti sağlığı ve estetik beklentiye göre muayenede yapılır. Dijital tasarım ve prova, iki seçeneğin görünümünü karşılaştırmaya yardımcı olur. Ayrıntılar için [Lamina Veneer](/hizmetler/lamina-veneer) ve [Zirkonyum Kaplama](/hizmetler/protez-zirkonyum) sayfalarımıza bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Lamina mı daha dayanıklı zirkonyum mu?",
+        answer:
+          "Zirkonyum daha yüksek kırılma direncine sahiptir ve tam kaplama olduğu için arka dişlerde de kullanılabilir. Lamina ise doğru vakada, uygun bakım ve kontrollerle uzun süre kullanılabilir.",
+      },
+      {
+        question: "Lamina ile zirkonyum aynı gülüşte kullanılabilir mi?",
+        answer:
+          "Evet. Dişlerin durumuna göre bazılarına lamina, bazılarına zirkonyum uygulanabilir; renk uyumu laboratuvarda sağlanır.",
+      },
+    ],
+  },
+  {
+    slug: "all-on-4-mu-all-on-6-mi",
+    title: "All-on-4 mü All-on-6 mı? Dişsiz Çenede Sabit Diş Seçenekleri",
+    excerpt:
+      "Tamamen dişsiz çenede dört veya altı implant üzerine sabit protez: farkları, kemik gereksinimi, süreç ve hibrit protez seçenekleri.",
+    date: "2026-10-29",
+    readTime: "7 dk",
+    category: "İmplant",
+    serviceSlug: "all-on-4-implant",
+    whatsappMessage: "Merhaba, All-on-4 ve All-on-6 hakkında bilgi almak istiyorum.",
+    content: `
+All-on-4 ve All-on-6, tamamen dişsiz veya dişleri kurtarılamayacak durumdaki bir çenede, sırasıyla dört veya altı implant üzerine hasta tarafından çıkarılmayan sabit bir protez yapılmasıdır. İkisi de hareketli takma dişe alternatif olarak değerlendirilir.
+
+## Temel fark
+
+- İmplant sayısı: All-on-4’te 4, All-on-6’da 6 implant kullanılır.
+- Yük dağılımı: Altı implant, çiğneme kuvvetini daha fazla noktaya dağıtır.
+- Kemik gereksinimi: All-on-4’te arka implantlar açılı yerleştirildiği için, arka bölgede kemik sınırlı olsa bile ek kemik işlemine gerek kalmayabilir. All-on-6 için arka bölgelerde de yeterli kemik gerekir.
+- Ek işlem: Kemik yetersizse All-on-6 öncesinde [kemik grefti veya sinüs lifting](/hizmetler/kemik-grefti-sinus-lifting) gerekebilir.
+
+## Hangisi daha iyi?
+
+Biri diğerinden her durumda daha iyi değildir. Üst çene mi alt çene mi olduğu, kemik hacmi, kapanış kuvvetleri, diş sıkma alışkanlığı ve protez tasarımı birlikte değerlendirilir. Karar muayene ve görüntüleme sonrası verilir.
+
+## Süreç
+
+1. Muayene ve röntgen yapılır; gerekirse görüntüleme merkezinde tomografi çektirilerek kemik ölçülür, genel sağlık değerlendirilir.
+2. Gerekli çekimler ve implantların yerleştirilmesi genellikle tek cerrahi seansta yapılır.
+3. İmplantların başlangıç stabilitesi yeterliyse kısa sürede geçici sabit protez takılabilir. Bu, önceden garanti edilemez.
+4. Kemik kaynaşması için birkaç aylık iyileşme sonrası kalıcı protez yapılır.
+
+## Kalıcı protez seçenekleri
+
+Kalıcı üst yapı, akrilik veya kompozit dişli [hibrit protez](/hizmetler/hibrit-protez) ya da zirkonyum esaslı köprü olabilir. Hibrit protez kayıp diş eti dokusunu da tamamlar; zirkonyum farklı bir estetik, dayanıklılık ve onarım profiline sahiptir.
+
+## Bakım
+
+Protezin altı ara yüz fırçası veya ağız duşu ile temizlenmeli, düzenli kontrollerde profesyonel temizlik yapılmalıdır. Sigara ve kontrolsüz diyabet implant sağlığını olumsuz etkileyebilir.
+
+Ayrıntılar: [All-on-4](/hizmetler/all-on-4-implant), [All-on-6](/hizmetler/all-on-6-implant), [Hibrit Protez](/hizmetler/hibrit-protez).
+    `.trim(),
+    faqs: [
+      {
+        question: "All-on-4 ile aynı gün diş takılır mı?",
+        answer:
+          "Bazı vakalarda implantlar yerleştirildikten sonra kısa sürede geçici sabit protez takılabilir. Bu, implantların başlangıç stabilitesine bağlıdır ve önceden garanti edilemez.",
+      },
+      {
+        question: "Kemiğim az, All-on-6 yapılabilir mi?",
+        answer:
+          "Kemik grefti veya sinüs lifting ile kemik hacmi artırılabilir ya da açılı implantlarla All-on-4 değerlendirilebilir. Karar tomografi sonrası verilir.",
+      },
+    ],
+  },
+  {
+    slug: "dis-sikma-bruksizm-gece-plagi",
+    title: "Diş Sıkma (Bruksizm): Belirtiler, Zararları ve Gece Plağı",
+    excerpt:
+      "Gece diş sıkma ve gıcırdatmanın belirtileri, dişlere ve kaplamalara etkisi, gece plağının ne işe yaradığı ve nasıl kullanıldığı.",
+    date: "2026-10-29",
+    readTime: "5 dk",
+    category: "Genel Diş Sağlığı",
+    serviceSlug: "gece-plagi-bruksizm",
+    whatsappMessage: "Merhaba, diş sıkma ve gece plağı hakkında bilgi almak istiyorum.",
+    content: `
+Bruksizm, dişlerin farkında olmadan sıkılması veya gıcırdatılmasıdır. Gündüz de görülebilir; ancak en sık uykuda ortaya çıkar ve çoğu kişi bunu fark etmez.
+
+## Belirtiler
+
+- Sabahları çene, şakak veya kulak çevresinde ağrı ve yorgunluk
+- Dişlerde düzleşme, aşınma ve minede çatlaklar
+- Sıcak-soğuk hassasiyeti
+- Çene ekleminde ses veya ağzı açarken zorlanma
+- Yanak içinde ve dil kenarında diş izleri
+- Eşinizin gece gıcırdatma sesi duyması
+
+## Neden olur?
+
+Stres ve kaygı, uyku düzensizlikleri, bazı ilaçlar, kafein ve alkol tüketimi ile kapanış bozuklukları ilişkili faktörler arasında sayılır. Nedenler kişiden kişiye değişir.
+
+## Dişlere ve kaplamalara etkisi
+
+Sıkma sırasında oluşan kuvvet normal çiğnemenin çok üzerine çıkabilir. Uzun dönemde minede aşınma, dolgu ve kaplamalarda kırılma, lamina veneerlerde çatlama görülebilir. [Gülüş tasarımı](/hizmetler/gulus-tasarimi) veya [lamina](/hizmetler/lamina-veneer) yaptıracak hastalarda bu nedenle diş sıkma muayenede mutlaka değerlendirilir.
+
+## Gece plağı ne işe yarar?
+
+Kişiye özel ölçüyle hazırlanan gece plağı (oklüzal splint) diş sıkmayı tamamen ortadan kaldırmaz; ancak kuvveti dağıtarak dişleri ve restorasyonları korur, çene kaslarındaki yükü azaltmaya yardımcı olur. Hazır plaklar kapanışa uymayabileceği için hekim tarafından ayarlanan plak daha uygundur.
+
+## Kullanım ve temizlik
+
+Plak her gece takılır, sabah ılık su ve yumuşak fırçayla temizlenir, sıcak suya konmaz ve havalandırmalı kabında saklanır. Kontrol randevularında aşınma ve uyum kontrol edilir.
+
+Ayrıntılar için [Diş Sıkma ve Gece Plağı sayfamıza](/hizmetler/gece-plagi-bruksizm) bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Diş sıktığımı nasıl anlarım?",
+        answer:
+          "Sabah çene ağrısı, dişlerde düzleşme, hassasiyet veya yakınlarınızın duyduğu gıcırdatma sesi işaret olabilir. Muayenede dişlerdeki aşınma bulguları değerlendirilir.",
+      },
+      {
+        question: "Gece plağı kaç yıl kullanılır?",
+        answer:
+          "Süre, sıkma şiddetine ve bakıma göre değişir. Aşınma ve uyum kontrol randevularında değerlendirilir; gerekirse yenilenir.",
+      },
+    ],
+  },
+  {
+    slug: "sinus-lifting-nedir",
+    title: "Sinüs Lifting Nedir? İmplant İçin Kemik Yetersizse",
+    excerpt:
+      "Üst çene arka bölgede implant için kemik yetersizse uygulanan sinüs lifting (sinüs yükseltme): açık ve kapalı yöntem, iyileşme ve dikkat edilmesi gerekenler.",
+    date: "2026-10-29",
+    readTime: "5 dk",
+    category: "İmplant",
+    serviceSlug: "kemik-grefti-sinus-lifting",
+    whatsappMessage: "Merhaba, sinüs lifting ve kemik grefti hakkında bilgi almak istiyorum.",
+    content: `
+Üst çenenin arka bölgesinde dişler kaybedildikten sonra kemik zamanla erir ve üzerindeki sinüs boşluğu aşağı doğru genişleyebilir. Bu durumda implant için yeterli kemik yüksekliği kalmayabilir. Sinüs lifting, sinüs zarının nazikçe yükseltilip altına greft materyali yerleştirilerek kemik yüksekliğinin artırılmasıdır.
+
+## Ne zaman gerekir?
+
+İhtiyaç, üç boyutlu tomografi ile ölçülen kemik yüksekliğine göre belirlenir. Kemik yeterliyse sinüs lifting gerekmez. Kısa implantlar veya açılı implantlarla yapılan All-on-4 gibi alternatifler de bazı vakalarda değerlendirilebilir.
+
+## Kapalı ve açık yöntem
+
+- Kapalı (krestal) yöntem: Sinüs zarı implant yuvasından az miktarda yükseltilir. Daha az kemik ihtiyacında uygulanır ve çoğu zaman implant aynı seansta yerleştirilir.
+- Açık (lateral) yöntem: Yandan küçük bir pencere açılarak daha fazla kemik kazanılır. İmplant aynı seansta veya iyileşme sonrası yerleştirilebilir.
+
+## İyileşme
+
+Greftin kemikle kaynaşması için genellikle birkaç aylık süre gerekir. İlk günlerde şişlik, hassasiyet ve burunda hafif kanama görülebilir. Bir süre burun sümkürmekten, pipetle içmekten, uçak yolculuğundan ve ağır egzersizden kaçınılması önerilir. Sigara iyileşmeyi olumsuz etkiler.
+
+## Riskler
+
+Sinüs zarında yırtılma, enfeksiyon veya greftin yeterli kaynaşmaması gibi riskler vardır. Riskler işlem öncesinde ayrıntılı olarak anlatılır ve tomografi ile planlama bu riskleri azaltmayı amaçlar.
+
+Ayrıntılar için [Kemik Grefti ve Sinüs Lifting](/hizmetler/kemik-grefti-sinus-lifting) ve [İmplant Tedavisi](/hizmetler/implant-tedavisi) sayfalarımıza bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Sinüs lifting sonrası implant ne zaman yapılır?",
+        answer:
+          "Kapalı yöntemde çoğu zaman aynı seansta, açık yöntemde vakaya göre aynı seansta veya birkaç aylık iyileşme sonrasında yapılır.",
+      },
+      {
+        question: "Sinüs lifting ağrılı mı?",
+        answer:
+          "İşlem lokal anestezi altında yapılır. Sonrasında birkaç gün şişlik ve hassasiyet olabilir; önerilen ilaçlarla kontrol altına alınır.",
+      },
+    ],
+  },
+  /*
+   * Yüksek arama hacimli genel sorular (29.10.2026). Yazar kurum olarak
+   * işaretlenir. KLİNİSYEN ONAYI BEKLİYOR.
+   */
+  {
+    slug: "implant-mi-kopru-mu",
+    title: "İmplant mı Köprü mü? Eksik Diş İçin Hangisi Daha Uygun",
+    excerpt:
+      "Tek veya birkaç eksik dişte implant ile köprünün farkları: komşu dişlere etkisi, süre, bakım ve hangi durumda hangisinin önerildiği.",
+    date: "2026-10-29",
+    readTime: "6 dk",
+    category: "İmplant",
+    serviceSlug: "implant-tedavisi",
+    content: `
+Eksik bir dişi tamamlamanın en yaygın iki sabit yolu implant ve köprüdür. İkisi de çiğneme ve estetiği geri kazandırabilir; aralarındaki temel fark, komşu dişlere ne kadar dokunulduğu ve kemiğin nasıl etkilendiğidir.
+
+## Köprü nasıl yapılır?
+
+Köprüde eksik dişin iki yanındaki dişler küçültülür ve üç parçalı (veya daha uzun) bir kaplama bu dişlere yapıştırılır. Ortadaki parça eksik dişin yerini alır.
+
+## İmplant nasıl yapılır?
+
+İmplantta eksik dişin yerine çene kemiğine titanyum bir vida yerleştirilir. Kemikle kaynaştıktan sonra üzerine kron yapılır. Komşu dişlere dokunulmaz.
+
+## Karşılaştırma
+
+- Komşu dişler: Köprüde sağlam komşu dişler aşındırılır; implantta dokunulmaz.
+- Kemik: Diş kaybından sonra kemik zamanla erir. İmplant bu bölgeye yük aktararak kemiğin korunmasına yardımcı olabilir; köprüde eksik dişin altındaki kemik yüklenmez.
+- Süre: Köprü genellikle 1–2 haftada tamamlanır. İmplantta kemik kaynaşması için birkaç ay beklenir.
+- Cerrahi: Köprü cerrahi gerektirmez; implant küçük bir cerrahi işlemdir.
+- Temizlik: Köprünün altı özel diş ipi veya ara yüz fırçasıyla temizlenmelidir; implant kendi dişiniz gibi fırçalanır.
+
+## Hangi durumda hangisi?
+
+Komşu dişler zaten büyük dolgulu veya kaplamalıysa köprü mantıklı olabilir. Komşu dişler sağlamsa ve kemik uygunsa implant daha koruyucudur. Kemik yetersizse [kemik grefti](/hizmetler/kemik-grefti-sinus-lifting) gerekebilir. Kontrolsüz diyabet ve yoğun sigara kullanımı implant planını etkileyebilir.
+
+Ayrıntılar için [İmplant Tedavisi](/hizmetler/implant-tedavisi) ve [Zirkonyum Kaplama](/hizmetler/protez-zirkonyum) sayfalarımıza bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "İmplant mı köprü mü daha uzun ömürlü?",
+        answer:
+          "Süre; ağız hijyeni, kemik ve diş eti sağlığı, diş sıkma alışkanlığı ve kontrollere göre değişir. Doğru vakada ve iyi bakımla her ikisi de uzun yıllar kullanılabilir.",
+      },
+      {
+        question: "Köprü için sağlam dişler kesilir mi?",
+        answer:
+          "Evet, köprünün dayanak olacağı iki komşu diş kaplama için küçültülür. Komşu dişler sağlamsa bu nedenle implant daha koruyucu bir seçenek olabilir.",
+      },
+    ],
+  },
+  {
+    slug: "zirkonyum-mu-porselen-mi",
+    title: "Zirkonyum mu Metal Destekli Porselen mi? Farkları Nelerdir",
+    excerpt:
+      "Zirkonyum ve metal destekli porselen kaplamaların estetik, dayanıklılık ve diş eti uyumu açısından farkları; hangisinin hangi dişte tercih edildiği.",
+    date: "2026-10-29",
+    readTime: "5 dk",
+    category: "Protez",
+    serviceSlug: "protez-zirkonyum",
+    content: `
+Kaplama (kron) yaptıracak hastaların en sık sorduğu sorulardan biri, zirkonyum ile metal destekli porselen arasındaki farktır. İkisinde de dişin üzeri tamamen kaplanır; fark alt yapının malzemesindedir.
+
+## Metal destekli porselen
+
+Alt yapı metal alaşımdır, üzerine porselen pişirilir. Uzun yıllardır kullanılan, dayanıklı bir yöntemdir. Ancak metal ışığı geçirmediği için görünüm daha opak olabilir ve diş eti zamanla çekildiğinde kaplamanın kenarında koyu bir çizgi görülebilir.
+
+## Zirkonyum
+
+Alt yapı beyaz renkli zirkonyum oksit seramiktir; metal içermez. Işığı kısmen geçirdiği için doğal dişe daha yakın görünür ve diş eti kenarında koyu çizgi oluşturmaz. Metal alerjisi olanlar için de bir seçenektir. Monolitik (tek parça) zirkonyum arka dişlerde yüksek dayanım sağlar.
+
+## Karşılaştırma
+
+- Estetik: Zirkonyum ışık geçirgenliği nedeniyle genellikle daha doğal görünür.
+- Diş eti uyumu: Zirkonyumda kenarda metal görünümü oluşmaz.
+- Dayanıklılık: Her ikisi de dayanıklıdır; arka dişlerde monolitik zirkonyum sık tercih edilir.
+- Alerji: Zirkonyum metal içermez.
+
+## Hangisi seçilmeli?
+
+Ön dişlerde estetik öncelikliyse zirkonyum veya [lamina veneer](/hizmetler/lamina-veneer) değerlendirilir. Seçim; dişin durumu, kapanış, diş sıkma alışkanlığı ve beklentiye göre muayenede yapılır. Ayrıntılar için [Zirkonyum Kaplama](/hizmetler/protez-zirkonyum) sayfamıza bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Zirkonyum kaplama kararır mı?",
+        answer:
+          "Zirkonyum porselen yüzey leke tutmaya dirençlidir ve metal içermediği için kenarda koyu çizgi oluşturmaz. Diş eti sağlığı ve ağız hijyeni görünümün korunmasında önemlidir.",
+      },
+      {
+        question: "Eski metal destekli kaplamalar zirkonyumla değiştirilebilir mi?",
+        answer:
+          "Evet. Eski kaplamalar çıkarılıp altındaki dişler kontrol edildikten sonra zirkonyum kaplama yapılabilir. Gerekirse önce çürük veya kanal tedavisi yapılır.",
+      },
+    ],
+  },
+  {
+    slug: "dis-hassasiyeti-neden-olur",
+    title: "Diş Hassasiyeti Neden Olur? Soğuk ve Sıcakta Diş Sızlaması",
+    excerpt:
+      "Soğuk, sıcak veya tatlıyla dişlerin sızlamasının nedenleri, evde dikkat edilmesi gerekenler ve diş hekimine ne zaman gidilmeli.",
+    date: "2026-10-29",
+    readTime: "5 dk",
+    category: "Genel Diş Sağlığı",
+    serviceSlug: "dis-dolgusu",
+    content: `
+Diş hassasiyeti; soğuk, sıcak, tatlı veya ekşi bir şeyle temas edildiğinde dişte kısa süreli, keskin bir sızlama hissidir. Genellikle dişin iç tabakası olan dentinin açığa çıkmasıyla ilişkilidir.
+
+## Sık nedenler
+
+- Diş eti çekilmesi: Kök yüzeyi açığa çıkar ve kök yüzeyi minedeki gibi korunmaz.
+- Mine aşınması: Sert fırçalama, asitli içecekler ve diş sıkma mineyi aşındırabilir.
+- Çürük ve kırık dolgular: Hassasiyet tek bir dişte belirginse çürük veya çatlak düşünülmelidir.
+- Beyazlatma sonrası: Geçici hassasiyet görülebilir; genellikle kısa sürede geçer.
+- Diş taşı temizliği sonrası: Taşın altında kalan yüzeyler açığa çıkınca birkaç gün hassasiyet olabilir.
+
+## Evde neler yapılabilir?
+
+- Yumuşak kıllı fırça kullanın ve dişleri bastırmadan, dairesel hareketlerle fırçalayın.
+- Hassasiyet karşıtı diş macunlarını düzenli kullanın.
+- Asitli içecekleri pipetle için ve hemen ardından fırçalamak yerine su ile çalkalayın.
+- Diş sıkıyorsanız [gece plağı](/hizmetler/gece-plagi-bruksizm) için hekiminize danışın.
+
+## Ne zaman diş hekimine gidilmeli?
+
+Hassasiyet tek bir dişte, uzun süreli veya giderek artıyorsa; uyaran kalktıktan sonra ağrı devam ediyorsa ya da kendiliğinden ağrı başladıysa çürük veya sinir iltihabı olabilir. Bu durumda muayene gerekir. Tedavi nedene göre [dolgu](/hizmetler/dis-dolgusu), flor uygulaması, diş eti tedavisi veya [kanal tedavisi](/hizmetler/kanal-tedavisi) olabilir.
+    `.trim(),
+    faqs: [
+      {
+        question: "Diş hassasiyeti kendiliğinden geçer mi?",
+        answer:
+          "Beyazlatma veya diş taşı temizliği sonrası geçici hassasiyet genellikle kendiliğinden geçer. Uzun süren veya artan hassasiyet çürük, çatlak ya da diş eti çekilmesine bağlı olabileceği için muayene önerilir.",
+      },
+      {
+        question: "Hassasiyet macunu işe yarar mı?",
+        answer:
+          "Düzenli kullanıldığında dentin kanallarını kapatarak birçok kişide hassasiyeti azaltabilir. Etki genellikle birkaç haftalık kullanımdan sonra belirginleşir.",
+      },
+    ],
+  },
+  {
+    slug: "yirmilik-dis-cekimi-sonrasi",
+    title: "Yirmilik Diş Çekimi Sonrası: Şişlik, Beslenme ve Dikkat Edilecekler",
+    excerpt:
+      "Gömülü yirmilik diş çekiminden sonra ilk 24 saat, şişlik ve ağrı yönetimi, ne yenir, ne zaman fırçalanır ve hangi belirtilerde hekime başvurulur.",
+    date: "2026-10-29",
+    readTime: "6 dk",
+    category: "Ağız Cerrahisi",
+    serviceSlug: "agiz-dis-cene-cerrahisi",
+    content: `
+Yirmilik (üçüncü büyük azı) diş çekimi, özellikle gömülü dişlerde küçük bir cerrahi işlemdir. İyileşmenin rahat geçmesi büyük ölçüde ilk günlerde yapılanlara bağlıdır.
+
+## İlk 24 saat
+
+- Isırmanız için verilen gazlı bezi 30–45 dakika sıkıca tutun.
+- Tükürmeyin, ağzınızı çalkalamayın ve pipetle içmeyin; pıhtının yerinden oynaması iyileşmeyi geciktirebilir.
+- İlk gün aralıklı olarak yanağın dışından soğuk uygulama yapın.
+- Sigara içmeyin; sigara kuru soket riskini artırır.
+- Anestezi geçene kadar sıcak yiyecek ve içeceklerden kaçının.
+
+## Şişlik ve ağrı
+
+Şişlik genellikle ikinci-üçüncü günde en belirgin hale gelir, sonra azalır. Hekiminizin önerdiği ağrı kesici ve varsa diğer ilaçları düzenli kullanın. Başınızı biraz yüksekte tutarak uyumak şişliği azaltmaya yardımcı olabilir.
+
+## Beslenme
+
+İlk günlerde ılık veya soğuk, yumuşak yiyecekler tercih edin: yoğurt, çorba (ılık), püre, muhallebi gibi. Çekim tarafıyla çiğnemeyin. Sert, çıtır ve baharatlı yiyeceklerden birkaç gün uzak durun.
+
+## Ağız bakımı
+
+Çekimden sonraki gün dişlerinizi fırçalayabilirsiniz; çekim bölgesine dokunmadan, nazikçe. Hekiminiz önerdiyse ertesi günden itibaren tuzlu ılık su veya gargarayla çok hafif çalkalama yapılabilir.
+
+## Ne zaman hekime başvurmalı?
+
+Kanama durmuyorsa, ağrı 3–4. günden sonra azalmak yerine artıyorsa, ateş, kötü koku veya tat, belirgin yutkunma veya ağız açma güçlüğü varsa hekiminize başvurun. Ayrıntılar için [Ağız, Diş ve Çene Cerrahisi](/hizmetler/agiz-dis-cene-cerrahisi) sayfamıza bakabilirsiniz.
+    `.trim(),
+    faqs: [
+      {
+        question: "Yirmilik diş çekimi sonrası şişlik kaç gün sürer?",
+        answer:
+          "Şişlik genellikle 2–3. günde en belirgin olur ve çoğu kişide bir hafta içinde belirgin şekilde azalır. Artan şişlik, ateş veya kötü koku varsa hekime başvurulmalıdır.",
+      },
+      {
+        question: "Kuru soket nedir?",
+        answer:
+          "Çekim yerindeki kan pıhtısının erken kaybolmasıyla oluşan ağrılı bir durumdur. Genellikle 2–4. günde artan ağrı ile kendini gösterir. Sigara, pipet kullanımı ve sık çalkalama riski artırır.",
+      },
+    ],
+  },
+  {
+    slug: "dis-eti-kanamasi-neden-olur",
+    title: "Diş Eti Kanaması Neden Olur? Fırçalarken Kanayan Diş Etleri",
+    excerpt:
+      "Fırçalarken veya diş ipi kullanırken diş etlerinin kanamasının en sık nedenleri, diş taşının rolü, evde bakım ve tedavi seçenekleri.",
+    date: "2026-10-29",
+    readTime: "5 dk",
+    category: "Genel Diş Sağlığı",
+    content: `
+Diş eti kanaması çoğunlukla diş etinde iltihap (gingivitis) olduğunu gösterir. Sık görülür ve erken dönemde genellikle geri döndürülebilir; ancak ihmal edildiğinde diş eti çekilmesine ve kemik kaybına (periodontitis) ilerleyebilir.
+
+## En sık nedenler
+
+- Bakteri plağı ve diş taşı: Diş eti kenarında biriken plak iltihaba yol açar; sertleşip diş taşına dönüşünce fırçayla temizlenemez.
+- Yetersiz veya yanlış fırçalama: Ara yüzlerin temizlenmemesi en sık nedendir.
+- Hormonal değişiklikler: Gebelik ve ergenlikte diş etleri daha hassas olabilir.
+- Sigara: Kanamayı gizleyebilir ve diş eti hastalığını ilerletebilir.
+- Bazı ilaçlar ve sistemik hastalıklar: Kan sulandırıcılar ve diyabet gibi durumlar etkileyebilir.
+
+## Evde ne yapılmalı?
+
+Kanıyor diye fırçalamayı bırakmayın; aksine nazik ama düzenli fırçalamaya devam edin. Günde iki kez yumuşak fırçayla fırçalayın, günde bir kez diş ipi veya ara yüz fırçası kullanın. İlk günlerde kanama artabilir, iltihap azaldıkça kanama da azalır.
+
+## Tedavi
+
+Diş taşı varsa profesyonel temizlik (diş taşı temizliği) gerekir. Daha ileri durumlarda diş eti cebi temizliği gibi diş eti tedavileri planlanır. Diş eti sağlığı; [gülüş tasarımı](/hizmetler/gulus-tasarimi), [zirkonyum](/hizmetler/protez-zirkonyum) ve [implant](/hizmetler/implant-tedavisi) gibi tedavilerden önce mutlaka sağlanmalıdır.
+
+## Ne zaman acil?
+
+Kendiliğinden ve durmayan kanama, diş etinde belirgin şişlik ve ağrı, apse veya sallanan dişler varsa vakit kaybetmeden muayene olun.
+    `.trim(),
+    faqs: [
+      {
+        question: "Diş eti kanaması kendiliğinden geçer mi?",
+        answer:
+          "Hafif diş eti iltihabı düzenli fırçalama ve diş ipi ile birkaç haftada gerileyebilir. Diş taşı varsa profesyonel temizlik gerekir; sürekli kanama muayene gerektirir.",
+      },
+      {
+        question: "Diş taşı temizliği diş etine zarar verir mi?",
+        answer:
+          "Hayır. Temizlik sonrası birkaç gün hassasiyet olabilir; ancak diş taşının uzaklaştırılması diş eti iltihabının azalmasına yardımcı olur.",
+      },
+    ],
+  },
+  {
+    slug: "agiz-kokusu-neden-olur",
+    title: "Ağız Kokusu Neden Olur? Kalıcı Ağız Kokusuna Ne İyi Gelir",
+    excerpt:
+      "Ağız kokusunun ağız içi ve ağız dışı nedenleri, dil temizliği, diş eti hastalığının rolü ve kalıcı ağız kokusunda yapılması gerekenler.",
+    date: "2026-10-29",
+    readTime: "5 dk",
+    category: "Genel Diş Sağlığı",
+    content: `
+Ağız kokusunun (halitozis) büyük çoğunluğu ağız içi kaynaklıdır. Bakterilerin ürettiği kükürtlü bileşikler kokunun ana nedenidir; bu yüzden çözüm çoğunlukla ağız içinden başlar.
+
+## Ağız içi nedenler
+
+- Dil sırtında biriken bakteri tabakası
+- Diş eti iltihabı ve diş eti cepleri
+- Çürük dişler, kırık dolgular ve temizlenemeyen eski kaplamalar
+- Köprü veya protez altında biriken yiyecek artıkları
+- Ağız kuruluğu: Tükürük azaldığında koku artar (uyku sonrası, az su içme, bazı ilaçlar)
+
+## Ağız dışı nedenler
+
+Sinüzit, bademcik taşları, reflü ve bazı sistemik hastalıklar da ağız kokusuna yol açabilir. Diş hekimi muayenesinde ağız içi neden bulunmazsa ilgili hekime yönlendirme yapılır.
+
+## Ne iyi gelir?
+
+- Günde iki kez fırçalama ve günde bir kez diş ipi veya ara yüz fırçası
+- Dil temizleyici veya fırçayla dil sırtının nazikçe temizlenmesi
+- Bol su içmek, şekersiz sakız
+- Sigara ve alkolü azaltmak
+- 6 ayda bir diş hekimi kontrolü ve gerekirse diş taşı temizliği
+
+Gargaralar kokuyu geçici olarak maskeleyebilir; altta yatan neden tedavi edilmedikçe koku geri döner.
+
+## Muayenede neler yapılır?
+
+Diş eti sağlığı, çürükler, eski dolgu ve kaplamaların uyumu kontrol edilir. Gerekirse diş taşı temizliği, [dolgu](/hizmetler/dis-dolgusu) yenilemesi veya [kanal tedavisi](/hizmetler/kanal-tedavisi) planlanır.
+    `.trim(),
+    faqs: [
+      {
+        question: "Sabahları ağız kokusu normal mi?",
+        answer:
+          "Uyku sırasında tükürük azaldığı için sabah ağız kokusu sık görülür ve fırçalama ile geçer. Gün boyu süren koku başka bir nedene işaret edebilir.",
+      },
+      {
+        question: "Ağız kokusu için gargara yeterli mi?",
+        answer:
+          "Gargara kokuyu geçici olarak azaltabilir ancak dil sırtındaki bakteri tabakası, diş eti iltihabı veya çürük gibi nedenler tedavi edilmeden kalıcı çözüm sağlamaz.",
+      },
+    ],
+  },
+  {
+    slug: "bonding-nedir",
+    title: "Bonding Nedir? Kompozit ile Diş Aralığı ve Kırık Düzeltme",
+    excerpt:
+      "Bonding (kompozit estetik) ile diş aralıkları, küçük kırıklar ve şekil bozukluklarının tek seansta düzeltilmesi; avantajları, sınırları ve bakım.",
+    date: "2026-10-29",
+    readTime: "4 dk",
+    category: "Estetik Diş Hekimliği",
+    serviceSlug: "gulus-tasarimi",
+    content: `
+Bonding, diş renginde kompozit dolgu maddesinin diş yüzeyine katman katman şekillendirilerek uygulanmasıdır. Küçük estetik sorunları çoğu zaman tek seansta ve diş aşındırmadan veya çok az aşındırarak düzeltmeyi amaçlar.
+
+## Hangi durumlarda kullanılır?
+
+- Ön dişlerdeki küçük aralıklar (diastema)
+- Küçük kırık ve çentikler
+- Hafif şekil ve boy farklılıkları
+- Lokal renk değişiklikleri
+
+## Avantajları
+
+- Çoğu zaman tek seansta tamamlanır.
+- Diş dokusundan aşındırma gerekmez veya çok azdır.
+- Gerektiğinde onarılabilir veya yenilenebilir.
+
+## Sınırları
+
+Kompozit, porselen kadar leke tutmaya dirençli değildir; çay, kahve ve sigara kullanımında birkaç yılda bir parlatma veya yenileme gerekebilir. Büyük form değişiklikleri ve tüm gülüşü kapsayan düzenlemelerde [lamina veneer](/hizmetler/lamina-veneer) veya [zirkonyum](/hizmetler/protez-zirkonyum) daha uygun olabilir.
+
+## Bakım
+
+Normal fırçalama ve diş ipi yeterlidir. Tırnak yeme, kalem ısırma gibi alışkanlıklardan kaçınılmalıdır. Kontrol randevularında yüzey parlatılabilir.
+
+Bonding, çoğu zaman [gülüş tasarımı](/hizmetler/gulus-tasarimi) planının en az müdahaleli seçeneklerinden biridir; sizin için uygun olup olmadığı muayenede belirlenir.
+    `.trim(),
+    faqs: [
+      {
+        question: "Bonding kaç yıl dayanır?",
+        answer:
+          "Süre; bölgeye, alışkanlıklara ve bakıma göre değişir. Renklenme veya küçük kırıklarda parlatma ya da onarımla yenilenebilir.",
+      },
+      {
+        question: "Bonding mi lamina mı?",
+        answer:
+          "Küçük aralık ve kırıklarda bonding hızlı ve koruyucu bir seçenektir. Renk ve formun kapsamlı değiştirilmesi gerekiyorsa lamina veneer daha dayanıklı ve leke tutmaya dirençli bir alternatiftir.",
+      },
+    ],
+  },
+  {
+    slug: "dis-tasi-temizligi-zararli-mi",
+    title: "Diş Taşı Temizliği Zararlı mı? Ne Sıklıkla Yaptırılmalı",
+    excerpt:
+      "Diş taşı temizliğinin mineye zarar verip vermediği, temizlik sonrası hassasiyet ve kanama, ne sıklıkla yaptırılması gerektiği.",
+    date: "2026-10-29",
+    readTime: "4 dk",
+    category: "Genel Diş Sağlığı",
+    content: `
+Diş taşı, diş yüzeyinde biriken bakteri plağının tükürükteki minerallerle sertleşmesiyle oluşur. Sertleştikten sonra fırçayla temizlenemez ve diş eti iltihabının en önemli nedenlerinden biridir.
+
+## Temizlik mineye zarar verir mi?
+
+Hayır. Diş taşı temizliği ultrasonik aletler ve el aletleriyle taşın dişten ayrılmasıdır; sağlam mineyi aşındırmaz. Temizlik sonrası yapılan parlatma yüzeyi pürüzsüzleştirerek plak birikimini azaltmaya yardımcı olur.
+
+## Neden sonrasında aralık varmış gibi gelir?
+
+Taş, dişler arasındaki boşlukları doldurmuş olabilir. Taş alındığında aslında var olan aralıklar hissedilir. Diş eti iltihabı azaldıkça diş etleri sıkılaşır.
+
+## Hassasiyet ve kanama
+
+Temizlik sonrası birkaç gün sıcak-soğuk hassasiyeti ve hafif kanama görülebilir. Genellikle kısa sürede geçer. Hassasiyet macunu bu dönemde rahatlatabilir.
+
+## Ne sıklıkla yaptırılmalı?
+
+Çoğu kişi için 6 ayda bir kontrol ve gerektiğinde temizlik yeterlidir. Diş taşı birikimi hızlı olanlarda, sigara kullananlarda veya diş eti hastalığı geçirenlerde daha sık kontrol önerilebilir.
+
+Diş taşı temizliği; [gülüş tasarımı](/hizmetler/gulus-tasarimi), [beyazlatma](/hizmetler/dis-beyazlatma) ve [implant](/hizmetler/implant-tedavisi) gibi tedavilerden önce de genellikle ilk adımdır.
+    `.trim(),
+    faqs: [
+      {
+        question: "Diş taşı temizliği ağrılı mı?",
+        answer:
+          "Çoğu kişi için ağrısızdır; hassas diş etlerinde hafif rahatsızlık hissedilebilir. Gerekirse lokal anestezi uygulanabilir.",
+      },
+      {
+        question: "Diş taşı temizliği dişleri beyazlatır mı?",
+        answer:
+          "Taş ve yüzeysel lekeleri temizlediği için dişler daha açık görünebilir; ancak dişin kendi rengini değiştirmez. Renk açmak için beyazlatma gerekir.",
       },
     ],
   },

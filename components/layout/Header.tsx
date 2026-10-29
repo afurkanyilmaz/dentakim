@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, SERVICE_GROUP_LABEL, type ServiceGroup } from "@/lib/constants";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
@@ -24,6 +24,8 @@ const NAV = [
   { href: "/blog", label: "Blog" },
   { href: "/iletisim", label: "İletişim" },
 ] as const;
+
+const GROUPS: ServiceGroup[] = ["estetik", "implant", "genel"];
 
 const MOBILE_EXTRA = [
   { href: "/sss", label: "Sık Sorulan Sorular" },
@@ -48,10 +50,16 @@ function Wordmark() {
         priority
       />
       <span className="flex flex-col">
-        <span className="font-heading text-[25px] font-bold leading-none tracking-[-0.03em] text-brand-accent lg:text-[28px]">
-          {BUSINESS.brandName.toLowerCase()}
-        </span>
-        <span className="mt-1 text-[8.5px] font-bold uppercase tracking-[0.2em] text-brand-mid">
+        {/* Logo dosyasından alınan özgün altın yazı (logo-wordmark-dark.png) */}
+        <Image
+          src="/images/logo-wordmark-dark.png"
+          alt={BUSINESS.brandName}
+          width={730}
+          height={120}
+          className="h-[20px] w-auto lg:h-[23px]"
+          priority
+        />
+        <span className="mt-1.5 text-[8.5px] font-bold uppercase tracking-[0.2em] text-brand-mid">
           Ağız ve Diş Sağlığı Polikliniği
         </span>
       </span>
@@ -155,18 +163,22 @@ export function Header() {
             >
               <SheetTitle className="sr-only">Menü</SheetTitle>
               <div className="mt-14 flex flex-col pb-10">
-                <p className="pb-3 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
-                  Tedavilerimiz
-                </p>
-                {SERVICES.map((s) => (
-                  <Link
-                    key={s.slug}
-                    href={`/hizmetler/${s.slug}`}
-                    onClick={() => setOpen(false)}
-                    className="border-b border-white/[0.08] py-3 font-heading text-[18px] font-bold tracking-[-0.02em] text-brand-light transition-colors hover:text-brand-accent"
-                  >
-                    {s.title}
-                  </Link>
+                {GROUPS.map((g) => (
+                  <div key={g} className="pb-5">
+                    <p className="pb-2 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+                      {SERVICE_GROUP_LABEL[g]}
+                    </p>
+                    {SERVICES.filter((s) => s.group === g).map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/hizmetler/${s.slug}`}
+                        onClick={() => setOpen(false)}
+                        className="block border-b border-white/[0.08] py-2.5 font-heading text-[16.5px] font-bold tracking-[-0.02em] text-brand-light transition-colors hover:text-brand-accent"
+                      >
+                        {s.title}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
 
                 <p className="pb-3 pt-8 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
@@ -239,25 +251,27 @@ export function Header() {
                   <DropdownMenuContent
                     align="start"
                     sideOffset={14}
-                    className="w-[min(100vw-2rem,620px)] rounded-[22px] border border-white/10 bg-brand-card p-3 text-brand-light shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
+                    className="w-[min(100vw-2rem,900px)] rounded-[22px] border border-white/10 bg-brand-card p-3 text-brand-light shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
                   >
-                    <div className="grid grid-cols-2 gap-1">
-                      {SERVICES.map((s, i) => (
-                        <Link
-                          key={s.slug}
-                          href={`/hizmetler/${s.slug}`}
-                          className="group flex gap-3 rounded-[14px] px-4 py-3 outline-none transition-colors hover:bg-white/[0.05] focus-visible:bg-white/[0.07]"
-                        >
-                          <span className="pt-0.5 text-[11px] font-bold text-brand-faint">
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                          <span>
-                            <span className="block text-[14px] font-extrabold text-brand-light group-hover:text-brand-accent">
-                              {s.title}
-                            </span>
-                            <span className="mt-0.5 block text-[12px] text-brand-mid">{s.desc}</span>
-                          </span>
-                        </Link>
+                    <div className="grid grid-cols-3 gap-2">
+                      {GROUPS.map((g) => (
+                        <div key={g}>
+                          <p className="px-4 pb-1 pt-3 text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-brand-accent">
+                            {SERVICE_GROUP_LABEL[g]}
+                          </p>
+                          {SERVICES.filter((s) => s.group === g).map((s) => (
+                            <Link
+                              key={s.slug}
+                              href={`/hizmetler/${s.slug}`}
+                              className="group block rounded-[12px] px-4 py-2.5 outline-none transition-colors hover:bg-white/[0.05] focus-visible:bg-white/[0.07]"
+                            >
+                              <span className="block text-[13.5px] font-extrabold text-brand-light group-hover:text-brand-accent">
+                                {s.title}
+                              </span>
+                              <span className="mt-0.5 block text-[11.5px] leading-snug text-brand-mid">{s.desc}</span>
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
                     <Link

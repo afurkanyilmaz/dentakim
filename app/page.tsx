@@ -14,9 +14,9 @@ import { generateMeta } from "@/lib/seo";
 
 /* Başlık ~60 karakter: Google'ın kestiği sınırın altında, birincil sorgu başta. */
 export const metadata: Metadata = generateMeta({
-  title: "Küçükçekmece Diş Kliniği — İmplant ve Zirkonyum",
+  title: "Gülüş Tasarımı ve İmplant — İstanbul Küçükçekmece",
   description:
-    "Küçükçekmece Sultan Murat Caddesi'nde Dentakim: implant, zirkonyum kaplama, ortodonti ve estetik diş tedavileri. Muayene sonrası yazılı tedavi planı.",
+    "İstanbul’da gülüş tasarımı (Hollywood Smile), implant, All-on-4, zirkonyum ve lamina. Dijital planlama, prova ve yazılı tedavi planı. Dentakim Diş Kliniği, Küçükçekmece.",
   slug: "",
 });
 

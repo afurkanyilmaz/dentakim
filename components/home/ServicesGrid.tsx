@@ -4,12 +4,12 @@ import { TREATMENT_BLURBS, TreatmentCard } from "@/components/shared/TreatmentCa
 
 /** Anasayfada gösterilen tedaviler (2 satır × 3). Diğerleri "Tüm Tedaviler"de. */
 const HOME_ORDER = [
+  "gulus-tasarimi",
   "implant-tedavisi",
+  "protez-zirkonyum",
+  "lamina-veneer",
   "all-on-4-implant",
   "all-on-6-implant",
-  "hibrit-protez",
-  "protez-zirkonyum",
-  "ortodonti",
 ];
 
 export function ServicesGrid() {
@@ -22,7 +22,7 @@ export function ServicesGrid() {
       <SectionHeader
         id="tedaviler-baslik"
         eyebrow="Neler yapıyoruz?"
-        title="Tedavilerimiz"
+        title="En çok tercih edilen tedaviler"
         action={<ArrowLink href="/hizmetler">Tüm Tedaviler</ArrowLink>}
       />
 

@@ -18,6 +18,7 @@ import { ContactCTA } from "@/components/shared/ContactCTA";
 import { FAQAccordion } from "@/components/shared/FAQAccordion";
 import { ArticleBody, TableOfContents, extractHeadings } from "@/components/shared/ArticleBody";
 import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
+import { getPostImage } from "@/lib/blog-images";
 
 type Props = { params: { slug: string } };
 
@@ -32,12 +33,14 @@ export function generateMetadata({ params }: Props): Metadata {
     title: post.title,
     description: post.excerpt,
     slug: `blog/${post.slug}`,
+    image: getPostImage(post).src,
   });
 }
 
 export default function BlogPostPage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
   if (!post) notFound();
+  const cover = getPostImage(post);
 
   const url = `${BUSINESS.website}/blog/${post.slug}`;
   const author = post.authorSlug ? getDoctor(post.authorSlug) : undefined;
@@ -66,12 +69,13 @@ export default function BlogPostPage({ params }: Props) {
           datePublished: post.date,
           dateModified: post.updatedAt,
           author,
+          image: cover.src,
         })}
       />
       {post.faqs?.length ? <JsonLd data={getFAQPageSchema(post.faqs)} /> : null}
 
       <div className="page-hero">
-        <div className="container mx-auto max-w-[880px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
+        <div className="mx-auto max-w-[944px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav
             items={[
               { label: "Anasayfa", href: "/" },
@@ -122,6 +126,20 @@ export default function BlogPostPage({ params }: Props) {
       </div>
 
       <div className="mx-auto max-w-[944px] px-5 sm:px-8 py-14">
+        <figure className="mb-10 overflow-hidden rounded-[22px] border border-brand-line">
+          <div className="relative aspect-[16/9]">
+            <Image
+              src={cover.src}
+              alt={cover.alt}
+              fill
+              priority
+              sizes="(max-width: 944px) 100vw, 880px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="bg-brand-card px-4 py-2 text-[11px] text-brand-faint">Temsili görsel</figcaption>
+        </figure>
+
         <TableOfContents headings={headings} />
 
         <article className="mt-10">

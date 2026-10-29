@@ -18,7 +18,11 @@ import type { Doctor } from "@/lib/doctors";
  */
 
 /** Klinik entity'si — tüm sayfalar bu @id'ye referans verir. */
-export function getClinicSchema(doctors: Doctor[] = [], areaServed: string[] = []) {
+export function getClinicSchema(
+  doctors: Doctor[] = [],
+  areaServed: string[] = [],
+  services: { slug: string; title: string }[] = []
+) {
   const openingHours = getOpeningHoursSpecification();
 
   return {
@@ -66,6 +70,17 @@ export function getClinicSchema(doctors: Doctor[] = [], areaServed: string[] = [
                 .map(() => "Surgical"),
             ])
           ),
+        }
+      : {}),
+    ...(services.length
+      ? {
+          // Sunulan tedaviler — her biri kendi sayfasındaki MedicalProcedure düğümüne bağlanır.
+          availableService: services.map((sv) => ({
+            "@type": "MedicalProcedure",
+            "@id": procedureId(sv.slug),
+            name: sv.title,
+            url: `${BUSINESS.website}/hizmetler/${sv.slug}`,
+          })),
         }
       : {}),
     areaServed: (areaServed.length
@@ -146,15 +161,84 @@ export function getMedicalWebPageSchema(input: {
   name: string;
   description: string;
   url: string;
+  /** Sayfanın ana konusu olan MedicalProcedure düğümünün @id'si. */
+  procedureId?: string;
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
+    "@id": `${input.url}#sayfa`,
     name: input.name,
     description: input.description,
     url: input.url,
+    inLanguage: "tr-TR",
     isPartOf: { "@id": ENTITY_ID.website },
-    about: { "@id": ENTITY_ID.clinic },
+    publisher: { "@id": ENTITY_ID.clinic },
+    about: input.procedureId ? [{ "@id": input.procedureId }, { "@id": ENTITY_ID.clinic }] : { "@id": ENTITY_ID.clinic },
+    ...(input.procedureId ? { mainEntity: { "@id": input.procedureId } } : {}),
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
+    audience: { "@type": "PeopleAudience", audienceType: "Hasta" },
+  };
+}
+
+/** Tedavi düğümünün kanonik kimliği — klinik ve sayfa şemaları buna bağlanır. */
+export function procedureId(slug: string) {
+  return `${BUSINESS.website}/hizmetler/${slug}#tedavi`;
+}
+
+/**
+ * Tedavi (MedicalProcedure). Yalnızca sayfada gerçekten yazan bilgiler
+ * kullanılır: tanım, adımlar ve uygulayan klinik. Başarı oranı, fiyat veya
+ * süre garantisi yazılmaz.
+ */
+export function getMedicalProcedureSchema(input: {
+  slug: string;
+  name: string;
+  description: string;
+  alternateNames?: string[];
+  procedureType?: "SurgicalProcedure" | "NoninvasiveProcedure";
+  steps?: string[];
+  doctors?: Doctor[];
+}) {
+  const url = `${BUSINESS.website}/hizmetler/${input.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "@id": procedureId(input.slug),
+    name: input.name,
+    ...(input.alternateNames?.length ? { alternateName: input.alternateNames } : {}),
+    description: input.description,
+    url,
+    bodyLocation: "Ağız ve dişler",
+    ...(input.procedureType
+      ? { procedureType: `https://schema.org/${input.procedureType}` }
+      : {}),
+    ...(input.steps?.length ? { howPerformed: input.steps.join(" ") } : {}),
+    relevantSpecialty: "https://schema.org/Dentistry",
+    provider: { "@id": ENTITY_ID.clinic },
+    ...(input.doctors?.length
+      ? {
+          performer: input.doctors.map((d) => ({
+            "@id": `${BUSINESS.website}/hekimler/${d.slug}#kisi`,
+          })),
+        }
+      : {}),
+  };
+}
+
+/** Tedaviler dizini için ItemList. */
+export function getServiceListSchema(items: { slug: string; title: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${BUSINESS.brandName} tedavileri`,
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.title,
+      url: `${BUSINESS.website}/hizmetler/${it.slug}`,
+    })),
   };
 }
 

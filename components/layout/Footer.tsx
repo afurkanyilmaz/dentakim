@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, SERVICE_GROUP_LABEL } from "@/lib/constants";
 import { DOCTORS } from "@/lib/doctors";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
@@ -25,19 +25,12 @@ const DESTEK = [
   { href: "/cerez-politikasi", label: "Çerez Politikası" },
 ];
 
-/** Tedaviler iki sütuna bölünür: implant ve protez grubu, diğer tedaviler. */
-const IMPLANT_GROUP = [
-  "implant-tedavisi",
-  "all-on-4-implant",
-  "all-on-6-implant",
-  "hibrit-protez",
-  "protez-zirkonyum",
-  "agiz-dis-cene-cerrahisi",
-];
-const TREATMENT_COLUMNS = [
-  { title: "İmplant ve Protez", match: (slug: string) => IMPLANT_GROUP.includes(slug), all: true },
-  { title: "Genel Tedaviler", match: (slug: string) => !IMPLANT_GROUP.includes(slug), all: false },
-];
+/** Tedaviler gruplarına göre üç sütunda listelenir (lib/constants.ts). */
+const TREATMENT_COLUMNS = (["estetik", "implant", "genel"] as const).map((g, i) => ({
+  title: SERVICE_GROUP_LABEL[g],
+  match: (group: string) => group === g,
+  all: i === 0,
+}));
 
 const COL_TITLE = "text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-brand-faint";
 const COL_LINK = "text-[13px] text-brand-mid transition-colors hover:text-brand-light";
@@ -86,9 +79,13 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3" aria-label={`${BUSINESS.brandName} ana sayfa`}>
               <Image src="/images/logo-mark-dark.png" alt="" width={64} height={64} className="size-16" />
               <span>
-                <span className="block font-heading text-[40px] font-bold leading-none tracking-[-0.04em] text-brand-accent">
-                  {BUSINESS.brandName.toLowerCase()}
-                </span>
+                <Image
+                  src="/images/logo-wordmark-dark.png"
+                  alt={BUSINESS.brandName}
+                  width={730}
+                  height={120}
+                  className="h-[34px] w-auto"
+                />
                 <span className="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.22em] text-brand-mid">
                   Ağız ve Diş Sağlığı Polikliniği
                 </span>
@@ -173,12 +170,12 @@ export function Footer() {
         </div>
 
         {/* Bağlantı sütunları */}
-        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/10 pt-12 md:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-white/10 pt-12 md:grid-cols-3 lg:grid-cols-6">
           {TREATMENT_COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <p className={COL_TITLE}>{col.title}</p>
               <ul className="mt-5 space-y-2.5">
-                {SERVICES.filter((s) => col.match(s.slug)).map((s) => (
+                {SERVICES.filter((s) => col.match(s.group)).map((s) => (
                   <li key={s.slug}>
                     <Link href={`/hizmetler/${s.slug}`} className={COL_LINK}>
                       {s.title}

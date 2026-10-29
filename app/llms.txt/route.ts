@@ -1,5 +1,6 @@
 import { BUSINESS } from "@/lib/business";
-import { DOCTORS } from "@/lib/doctors";
+import { DOCTORS, getDoctorsForService } from "@/lib/doctors";
+import { getServiceContent } from "@/lib/service-pages";
 import { SERVICES } from "@/lib/constants";
 import { REGIONS } from "@/lib/regions";
 import { BLOG_POSTS } from "@/lib/blog";
@@ -20,8 +21,10 @@ export function GET() {
   const body = `# ${BUSINESS.displayName}
 
 > ${address.district}, ${address.city}'da hizmet veren ağız ve diş sağlığı polikliniği.
-> İmplant, zirkonyum kaplama, lamina veneer, diş beyazlatma, kanal tedavisi,
-> ortodonti, çocuk diş hekimliği ve ağız-diş-çene cerrahisi uygulanmaktadır.
+> Gülüş tasarımı (Hollywood Smile), implant, All-on-4 / All-on-6, hibrit protez,
+> zirkonyum kaplama, lamina veneer, diş beyazlatma, ortodonti, kanal tedavisi,
+> kemik grefti ve sinüs lifting, ağız-diş-çene cerrahisi ve çocuk diş hekimliği
+> uygulanmaktadır.
 > Bu belgedeki bilgiler tanı ve tedavi yerine geçmez.
 
 ## Klinik Bilgileri
@@ -43,9 +46,19 @@ ${DOCTORS.map(
 ).join("\n")}
 
 ## Tedaviler
-${SERVICES.map(
-  (s) => `- ${s.title}: ${s.desc}. ${BUSINESS.website}/hizmetler/${s.slug}`
-).join("\n")}
+${SERVICES.map((s) => {
+  const c = getServiceContent(s.slug);
+  const docs = getDoctorsForService(s.slug).map((d) => d.name);
+  const lines = [
+    `### ${s.title}`,
+    `Sayfa: ${BUSINESS.website}/hizmetler/${s.slug}`,
+    c?.alternateNames?.length ? `Diğer adlar: ${c.alternateNames.join(", ")}` : "",
+    c?.summary ?? c?.lead ?? s.desc,
+    c?.facts?.length ? c.facts.map((f) => `- ${f.label}: ${f.value}`).join("\n") : "",
+    docs.length ? `Uygulayan hekimler: ${docs.join(", ")}` : "",
+  ];
+  return lines.filter(Boolean).join("\n");
+}).join("\n\n")}
 
 ## Hizmet Verilen Bölgeler
 Klinik ${address.district} ilçesindedir; aşağıdaki bölgelerde şube bulunmamakta,

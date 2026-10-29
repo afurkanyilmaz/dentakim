@@ -4,7 +4,7 @@ import { DISPLAY_H2, Eyebrow } from "@/components/shared/Section";
 
 /** Sağdaki 2 × 2 özellik kartları — yalnızca klinikte gerçekten uygulanan süreçler. */
 const FEATURES = [
-  { big: "Dijital", sub: "Görüntüleme", desc: "Panoramik röntgen ve gerektiğinde tomografi ile tanı.", Icon: ScanLine },
+  { big: "Dijital", sub: "Görüntüleme", desc: "Panoramik röntgen ile tanı; gerekirse tomografi istenir.", Icon: ScanLine },
   { big: "Yazılı", sub: "Tedavi Planı", desc: "Seçenekler, seans sayısı ve süre yazılı olarak paylaşılır.", Icon: ClipboardList },
   { big: "Ayrı", sub: "Çalışma Alanları", desc: "Protez ve ağız cerrahisi fazlarını farklı hekimler yürütür.", Icon: Users },
   { big: "Konfor", sub: "Odaklı Seans", desc: "Lokal anestezi ve sakin iletişimle planlanan randevular.", Icon: HeartPulse },
