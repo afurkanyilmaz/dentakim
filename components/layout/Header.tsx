@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { SERVICES } from "@/lib/constants";
-import { DOCTORS } from "@/lib/doctors";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import {
@@ -53,19 +53,26 @@ function Wordmark() {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-brand-line bg-[rgba(252,251,249,0.92)] backdrop-blur-[12px]">
-      <div className="container mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-8 gap-y-3 px-6 py-3.5">
+      <div className="container mx-auto flex max-w-[1240px] items-center justify-between gap-x-6 px-6 py-3.5">
         <Wordmark />
 
         {/* Masaüstü menü */}
         <nav
-          className="hidden items-center gap-x-[26px] text-[14.5px] font-semibold md:flex"
+          className="hidden items-center gap-x-[26px] text-[14.5px] font-semibold lg:flex"
           aria-label="Ana menü"
         >
           <DropdownMenu>
-            <DropdownMenuTrigger className="inline-flex items-center gap-1 text-brand-mid outline-none transition-colors hover:text-brand-dark focus-visible:text-brand-dark">
+            <DropdownMenuTrigger
+              className={cn(
+                "inline-flex items-center gap-1 rounded-sm outline-none transition-colors hover:text-brand-dark focus-visible:ring-2 focus-visible:ring-brand-accent data-[popup-open]:text-brand-dark",
+                isActive("/hizmetler") ? "text-brand-dark" : "text-brand-mid"
+              )}
+            >
               Tedaviler
               <ChevronDown className="size-4 opacity-70" aria-hidden />
             </DropdownMenuTrigger>
@@ -102,7 +109,12 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-brand-mid transition-colors hover:text-brand-dark"
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={cn(
+                "relative rounded-sm py-1 transition-colors hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent",
+                "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brand-accent after:transition-transform hover:after:scale-x-100 motion-reduce:after:transition-none",
+                isActive(item.href) ? "text-brand-dark after:scale-x-100" : "text-brand-mid"
+              )}
             >
               {item.label}
             </Link>
@@ -113,7 +125,7 @@ export function Header() {
         <div className="flex items-center gap-3.5">
           <a
             href={BUSINESS.phone.href}
-            className="hidden items-center gap-2 text-[14.5px] font-bold text-brand-dark transition-colors hover:text-brand-accent lg:flex"
+            className="hidden items-center gap-2 whitespace-nowrap text-[14.5px] font-bold text-brand-dark transition-colors hover:text-brand-accent xl:flex"
           >
             <span
               className="inline-block size-2 rounded-full bg-brand-whatsapp"
@@ -121,19 +133,17 @@ export function Header() {
             />
             {BUSINESS.phone.display}
           </a>
-          <a
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-full bg-brand-dark px-[22px] py-3 text-sm font-bold text-brand-surface transition-colors hover:bg-brand-deep sm:inline-block"
+          <Link
+            href="/randevu"
+            className="hidden whitespace-nowrap rounded-full bg-brand-dark px-[22px] py-3 text-sm font-bold text-brand-surface transition-colors hover:bg-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent sm:inline-block"
           >
             Randevu Oluştur
-          </a>
+          </Link>
 
           {/* Mobil menü */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className="inline-flex size-10 items-center justify-center rounded-full border border-brand-line text-brand-dark md:hidden"
+              className="inline-flex size-11 items-center justify-center rounded-full border border-brand-line text-brand-dark lg:hidden"
               aria-label="Menüyü aç"
             >
               <Menu className="size-5" />
@@ -182,17 +192,21 @@ export function Header() {
                     {item.label}
                   </Link>
                 ))}
-                {DOCTORS.length > 0 ? null : null}
 
+                <Link
+                  href="/randevu"
+                  onClick={() => setOpen(false)}
+                  className="mt-5 rounded-full bg-brand-dark px-6 py-3.5 text-center text-sm font-bold text-brand-surface"
+                >
+                  Randevu Oluştur
+                </Link>
                 <a
                   href={whatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cn(
-                    "mt-5 rounded-full bg-brand-dark px-6 py-3.5 text-center text-sm font-bold text-brand-surface"
-                  )}
+                  className="mt-2 rounded-full bg-brand-whatsapp px-6 py-3.5 text-center text-sm font-bold text-white"
                 >
-                  Randevu Oluştur
+                  WhatsApp&apos;tan Yazın
                 </a>
                 <a
                   href={BUSINESS.phone.href}

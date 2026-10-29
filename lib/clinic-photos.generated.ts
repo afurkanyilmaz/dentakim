@@ -3,18 +3,18 @@ export type ClinicPhoto = { src: string; alt: string };
 export const CLINIC_PHOTOS: ClinicPhoto[] = [
   {
     "src": "/images/klinik/bekleme-alani.jpg",
-    "alt": "Dentakim Küçükçekmece kliniği — Bekleme alani"
+    "alt": "Dentakim Küçükçekmece kliniği — bekleme alanı"
   },
   {
     "src": "/images/klinik/resepsiyon.jpg",
-    "alt": "Dentakim Küçükçekmece kliniği — Resepsiyon"
+    "alt": "Dentakim Küçükçekmece kliniği — karşılama ve resepsiyon alanı"
   },
   {
     "src": "/images/klinik/tedavi-odasi-1.jpg",
-    "alt": "Dentakim Küçükçekmece kliniği — Tedavi odasi 1"
+    "alt": "Dentakim Küçükçekmece kliniği — tedavi odası ve diş ünitesi"
   },
   {
     "src": "/images/klinik/tedavi-odasi-2.jpg",
-    "alt": "Dentakim Küçükçekmece kliniği — Tedavi odasi 2"
+    "alt": "Dentakim Küçükçekmece kliniği — ikinci tedavi odası"
   }
 ];

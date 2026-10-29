@@ -152,7 +152,20 @@ console.log("[foto] Klinik fotoğrafları");
 const clinicFiles = await processFolder("klinik", "klinik");
 
 /** Dosya adından okunabilir açıklama üretir: tedavi-odasi-1 → "Tedavi odası 1" */
+/**
+ * Dosya adları ASCII tutulduğu için Türkçe karakterler kayboluyor
+ * ("bekleme-alani" → "Bekleme alani"). Bilinen dosyalar için doğru açıklama.
+ */
+const ALT_TEXT = {
+  "bekleme-alani": "bekleme alanı",
+  resepsiyon: "karşılama ve resepsiyon alanı",
+  "tedavi-odasi-1": "tedavi odası ve diş ünitesi",
+  "tedavi-odasi-2": "ikinci tedavi odası",
+};
+
 function toAlt(file) {
+  const known = ALT_TEXT[basename(file, extname(file))];
+  if (known) return known;
   const stem = basename(file, extname(file)).replace(/-/g, " ");
   return stem.charAt(0).toUpperCase() + stem.slice(1);
 }

@@ -7,33 +7,33 @@ import { RegionsSection } from "@/components/home/RegionsSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ClinicStrip } from "@/components/home/ClinicStrip";
 import { MapSection } from "@/components/home/MapSection";
+import { HomeFAQ } from "@/components/home/HomeFAQ";
 import { ContactCTA } from "@/components/shared/ContactCTA";
+import { generateMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:
-    "Küçükçekmece Diş Kliniği | Dentakim — İmplant, Ortodonti, Estetik Diş",
+/* Başlık ~60 karakter: Google'ın kestiği sınırın altında, birincil sorgu başta. */
+export const metadata: Metadata = generateMeta({
+  title: "Küçükçekmece Diş Kliniği — İmplant ve Zirkonyum",
   description:
-    "Küçükçekmece'nin güvenilir diş kliniği Dentakim. Sultan Murat Caddesi üzerinde Dr. Musa Burak Sakar ve ekibiyle hizmetinizdeyiz. Bilgi ve randevu: +90 553 313 78 88",
-  alternates: { canonical: "https://dentakim.com/" },
-  openGraph: {
-    url: "https://dentakim.com/",
-    title:
-      "Küçükçekmece Diş Kliniği | Dentakim — İmplant, Ortodonti, Estetik Diş",
-    description:
-      "Küçükçekmece'nin güvenilir diş kliniği Dentakim. Sultan Murat Caddesi üzerinde Dr. Musa Burak Sakar ve ekibiyle hizmetinizdeyiz. Bilgi ve randevu: +90 553 313 78 88",
-    images: [{ url: "/og/default.jpg", width: 1200, height: 630 }],
-  },
-};
+    "Küçükçekmece Sultan Murat Caddesi'nde Dentakim: implant, zirkonyum kaplama, ortodonti ve estetik diş tedavileri. Muayene sonrası yazılı tedavi planı.",
+  slug: "",
+});
 
+/*
+ * Bölüm ritmi: koyu hero → beyaz (yaklaşım) → koyu (tedaviler) → krem (hekimler)
+ * → fotoğraf şeridi → koyu (süreç) → beyaz (SSS) → krem (bölgeler) → beyaz (konum)
+ * → koyu kapanış. Aynı tonda iki bölüm art arda gelmez.
+ */
 export default function HomePage() {
   return (
     <main>
       <HeroSection />
+      <WhyChooseUs />
       <ServicesGrid />
-      <ProcessSection />
       <DoctorSection />
       <ClinicStrip />
-      <WhyChooseUs />
+      <ProcessSection />
+      <HomeFAQ />
       <RegionsSection />
       <MapSection />
       <ContactCTA variant="band" />

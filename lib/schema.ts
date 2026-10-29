@@ -29,8 +29,16 @@ export function getClinicSchema(doctors: Doctor[] = [], areaServed: string[] = [
     legalName: BUSINESS.legalName,
     alternateName: [BUSINESS.brandName, BUSINESS.legalName],
     url: BUSINESS.website,
-    telephone: BUSINESS.phone.display,
+    // Google, BlogPosting publisher ve yerel işletme kartı için logo ve görsel bekler.
+    logo: `${BUSINESS.website}/images/logo-dentakim.png`,
+    image: [
+      `${BUSINESS.website}/images/klinik/resepsiyon.jpg`,
+      `${BUSINESS.website}/images/klinik/tedavi-odasi-1.jpg`,
+      `${BUSINESS.website}/images/klinik/bekleme-alani.jpg`,
+    ],
+    telephone: BUSINESS.phone.href.replace("tel:", ""),
     email: BUSINESS.email,
+    currenciesAccepted: "TRY",
     address: getPostalAddress(),
     geo: {
       "@type": "GeoCoordinates",
