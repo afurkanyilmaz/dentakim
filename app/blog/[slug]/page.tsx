@@ -19,6 +19,9 @@ import { FAQAccordion } from "@/components/shared/FAQAccordion";
 import { ArticleBody, TableOfContents, extractHeadings } from "@/components/shared/ArticleBody";
 import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
 import { getPostImage } from "@/lib/blog-images";
+import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
+import { INSTAGRAM_HANDLE } from "@/lib/instagram";
+import { getReelsForBlog } from "@/lib/instagram-feed";
 
 type Props = { params: { slug: string } };
 
@@ -37,10 +40,11 @@ export function generateMetadata({ params }: Props): Metadata {
   });
 }
 
-export default function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
   if (!post) notFound();
   const cover = getPostImage(post);
+  const reels = await getReelsForBlog(post.slug);
 
   const url = `${BUSINESS.website}/blog/${post.slug}`;
   const author = post.authorSlug ? getDoctor(post.authorSlug) : undefined;
@@ -145,6 +149,23 @@ export default function BlogPostPage({ params }: Props) {
         <article className="mt-10">
           <ArticleBody content={post.content} />
         </article>
+
+        {reels.length > 0 ? (
+          <section aria-labelledby="yazi-video" className="mt-12">
+            <h2
+              id="yazi-video"
+              className="font-heading text-[clamp(22px,2.6vw,28px)] font-bold tracking-[-0.03em] text-brand-light"
+            >
+              Bu konuda videomuz
+            </h2>
+            <p className="mt-2 text-[14px] text-brand-mid">
+              Hekimlerimizin Instagram hesabımızdaki kısa anlatımı ({INSTAGRAM_HANDLE}).
+            </p>
+            <div className="mt-5">
+              <InstagramEmbeds reels={reels} bleed={false} />
+            </div>
+          </section>
+        ) : null}
 
         <MedicalDisclaimer className="mt-10" />
 

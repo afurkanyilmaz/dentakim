@@ -21,6 +21,9 @@ import {
 } from "@/lib/schema";
 import { BLOG_POSTS } from "@/lib/blog";
 import { TREATMENT_PHOTOS } from "@/lib/stock-photos";
+import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
+import { INSTAGRAM_HANDLE } from "@/lib/instagram";
+import { getReelsForService } from "@/lib/instagram-feed";
 import { formatPostDate } from "@/components/shared/BlogCard";
 
 /** Tedavi sayfası içeriklerinin son gözden geçirilme tarihi. */
@@ -43,12 +46,13 @@ const H2 = "font-heading text-[clamp(24px,2.4vw,30px)] font-bold leading-[1.15] 
  * Tedavi sayfası şablonu — kompakt hero + bilgi şeridi, solda yapışkan
  * içindekiler ve iletişim kartı, sağda kart düzeninde içerik.
  */
-export function ServicePageShell({ content }: { content: ServicePageContent }) {
+export async function ServicePageShell({ content }: { content: ServicePageContent }) {
   const doctors = getDoctorsForService(content.slug);
   const related = content.relatedSlugOrder
     .map((slug) => SERVICES.find((s) => s.slug === slug))
     .filter(Boolean) as (typeof SERVICES)[number][];
   const shortTitle = content.h1.replace(/^Küçükçekmece\s+/, "");
+  const reels = await getReelsForService(content.slug);
   const url = `${BUSINESS.website}/hizmetler/${content.slug}`;
   const heroPhoto = TREATMENT_PHOTOS[content.slug] ?? {
     src: "/images/klinik/tedavi-odasi-1.jpg",
@@ -227,6 +231,18 @@ export function ServicePageShell({ content }: { content: ServicePageContent }) {
                 ))}
               </div>
             </section>
+
+            {reels.length > 0 ? (
+              <section aria-labelledby="video-baslik" className={BLOCK}>
+                <h2 id="video-baslik" className={H2}>
+                  {shortTitle} hakkında video
+                </h2>
+                <p className="mt-2 text-[14px] text-brand-mid">Instagram hesabımızdan ({INSTAGRAM_HANDLE}).</p>
+                <div className="mt-5">
+                  <InstagramEmbeds reels={reels} bleed={false} />
+                </div>
+              </section>
+            ) : null}
 
             <section aria-labelledby="surec-baslik" className={BLOCK}>
               <h2 id="surec-baslik" className={H2}>

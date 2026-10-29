@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { BUSINESS } from "@/lib/business";
+import { getIntroReel } from "@/lib/instagram-feed";
+import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
 
 const POINTS = [
   "Ayrı tedavi odaları",
@@ -14,10 +16,11 @@ const POINTS = [
  * Lacivert tam genişlik bant — solda başlık ve kontrol listesi, ortada
  * ikiye bölünmüş klinik fotoğrafı, sağda klinik bilgi paneli.
  */
-export function ClinicStrip() {
+export async function ClinicStrip() {
+  const intro = await getIntroReel();
   return (
     <section aria-labelledby="klinik-serit" className="theme-dark overflow-hidden bg-brand-navy">
-      <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,0.62fr)] lg:gap-8 lg:py-12">
+      <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-14 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)_minmax(0,0.62fr)] lg:gap-8 lg:py-12">
         <div>
           <h2
             id="klinik-serit"
@@ -26,8 +29,8 @@ export function ClinicStrip() {
             Kliniğimizi yakından görün.
           </h2>
           <p className="mt-5 max-w-[440px] text-[15px] leading-[1.7] text-white/70">
-            Tedavi olacağınız ortamı randevudan önce tanıyın. Fotoğraflar
-            kliniğimizde çekilmiştir.
+            Tedavi olacağınız ortamı randevudan önce tanıyın. Fotoğraflar ve
+            tanıtım videosu kliniğimizde çekilmiştir.
           </p>
           <ul className="mt-6 space-y-3">
             {POINTS.map((p) => (
@@ -55,30 +58,23 @@ export function ClinicStrip() {
           </div>
         </div>
 
-        {/* İkiye bölünmüş fotoğraf çerçevesi */}
-        <div className="relative grid aspect-[16/10] grid-cols-2 gap-1 overflow-hidden rounded-[26px] border border-white/15 shadow-[0_40px_80px_rgba(0,0,0,0.4)]">
-          <div className="relative">
+        {/* Klinik fotoğrafı + Instagram tanıtım videosu */}
+        <div className="flex items-stretch justify-center gap-4">
+          <div className="relative hidden min-h-[420px] flex-1 overflow-hidden rounded-[22px] border border-white/15 shadow-[0_40px_80px_rgba(0,0,0,0.4)] sm:block">
             <Image
               src="/images/klinik/tedavi-odasi-1.jpg"
               alt="Dentakim tedavi odası ve diş ünitesi"
               fill
-              sizes="(max-width: 1024px) 50vw, 26vw"
+              sizes="(max-width: 1024px) 40vw, 18vw"
               className="object-cover"
             />
           </div>
-          <div className="relative">
-            <Image
-              src="/images/klinik/bekleme-alani.jpg"
-              alt="Dentakim bekleme alanı"
-              fill
-              sizes="(max-width: 1024px) 50vw, 26vw"
-              className="object-cover"
-            />
-          </div>
-          <span
-            aria-hidden
-            className="absolute inset-y-0 left-1/2 w-[3px] -translate-x-1/2 bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)]"
-          />
+          {intro ? (
+            <div className="shrink-0">
+              <p className="mb-2 text-[11px] font-bold text-white/70">Klinik tanıtım videosu · Instagram</p>
+              <InstagramEmbeds reels={[intro]} bleed={false} />
+            </div>
+          ) : null}
         </div>
 
         {/* Bilgi paneli */}

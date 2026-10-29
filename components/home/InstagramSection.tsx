@@ -1,9 +1,11 @@
-import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE, INSTAGRAM_REELS } from "@/lib/instagram";
+import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE } from "@/lib/instagram";
+import { getAllReels } from "@/lib/instagram-feed";
 import { Section, SectionHeader } from "@/components/shared/Section";
 import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
 
-/** Anasayfa Instagram bölümü — reel'ler doğrudan görünür. */
-export function InstagramSection() {
+/** Anasayfa Instagram bölümü — reel'ler doğrudan görünür; liste haftalık güncellenir. */
+export async function InstagramSection() {
+  const reels = await getAllReels();
   return (
     <Section labelledBy="instagram-baslik" className="overflow-hidden">
       <SectionHeader
@@ -21,7 +23,7 @@ export function InstagramSection() {
           </a>
         }
       />
-      <InstagramEmbeds reels={INSTAGRAM_REELS} />
+      <InstagramEmbeds reels={reels} />
     </Section>
   );
 }

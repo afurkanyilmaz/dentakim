@@ -11,7 +11,8 @@ import { getBreadcrumbSchema, getDoctorSchema } from "@/lib/schema";
 import { BreadcrumbNav } from "@/components/shared/BreadcrumbNav";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
-import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE, getReelsForDoctor } from "@/lib/instagram";
+import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE } from "@/lib/instagram";
+import { getReelsForDoctor } from "@/lib/instagram-feed";
 
 type Props = { params: { slug: string } };
 
@@ -33,10 +34,10 @@ export function generateMetadata({ params }: Props): Metadata {
   });
 }
 
-export default function HekimPage({ params }: Props) {
+export default async function HekimPage({ params }: Props) {
   const doctor = getDoctor(params.slug);
   if (!doctor) notFound();
-  const reels = getReelsForDoctor(doctor.slug);
+  const reels = await getReelsForDoctor(doctor.slug);
 
   const url = `${BUSINESS.website}/hekimler/${doctor.slug}`;
 
