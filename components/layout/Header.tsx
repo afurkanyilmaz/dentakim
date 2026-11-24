@@ -7,7 +7,6 @@ import { SERVICES, SERVICE_GROUP_LABEL, type ServiceGroup } from "@/lib/constant
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { DOCTORS } from "@/lib/doctors";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -135,7 +134,6 @@ export function Header() {
             </a>
 
             <div className="flex items-center gap-2">
-              <ThemeToggle />
               <a
                 href={whatsappUrl()}
                 target="_blank"
@@ -162,7 +160,6 @@ export function Header() {
 
           {/* Menü düğmesi — mobilde ana gezinme, masaüstünde tam menü */}
           <div className="flex h-full items-center">
-            <ThemeToggle className="mr-3 lg:hidden" />
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger
                 className="flex h-full w-[75px] items-center justify-center border-l border-fg/[0.12] text-brand-light transition-colors hover:text-brand-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brand-accent lg:w-auto lg:border-0 lg:pl-2"
@@ -254,10 +251,6 @@ export function Header() {
                       </Link>
                     ))}
                   </MenuGroup>
-                  <div className="flex items-center justify-between pt-5">
-                    <span className="text-[13px] font-semibold text-brand-mid">Görünüm</span>
-                    <ThemeToggle withLabel />
-                  </div>
                 </nav>
 
                 {/* Sabit alt eylemler */}

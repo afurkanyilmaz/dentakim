@@ -1,5 +1,6 @@
 import { BUSINESS } from "@/lib/business";
 import { Section, SectionHeader } from "@/components/shared/Section";
+import { GoogleRatingBadge } from "@/components/shared/GoogleRatingBadge";
 
 /**
  * Konum — çerçeveli büyük harita. Semt sayfaları görünür gezinmede yer
@@ -31,6 +32,7 @@ export function MapSection() {
               {BUSINESS.displayName}
             </p>
             <p className="mt-1 text-[13.5px] text-brand-mid">{BUSINESS.address.full}</p>
+            <GoogleRatingBadge className="mt-4" />
           </div>
           <a
             href={BUSINESS.google.profileUrl}
