@@ -69,7 +69,7 @@ export default function RootLayout({
         {/* Tema ilk boyamadan önce uygulanır: kayıtlı tercih, yoksa cihaz ayarı. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("dentakim-theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.dataset.theme=t}catch(e){}`,
+            __html: `document.documentElement.dataset.theme="light"`,
           }}
         />
       </head>

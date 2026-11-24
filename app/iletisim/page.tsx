@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { InfoFAQ } from "@/components/shared/InfoFAQ";
+import { GoogleRatingBadge } from "@/components/shared/GoogleRatingBadge";
 import { BUSINESS } from "@/lib/business";
 import { generateMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -67,6 +68,7 @@ export default function IletisimPage() {
             <h2 className="font-heading text-xl font-bold text-brand-dark">
               Dentakim Ağız ve Diş Sağlığı Polikliniği
             </h2>
+            <GoogleRatingBadge className="mt-4" />
             <p className="mt-4 text-brand-mid leading-relaxed">
               <span className="font-medium text-brand-dark">Adres:</span>
               <br />

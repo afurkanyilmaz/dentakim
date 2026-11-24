@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BUSINESS } from "@/lib/business";
+import { GoogleRatingBadge } from "@/components/shared/GoogleRatingBadge";
 
 /** Sağdaki fotoğraf kartları — yalnızca kliniğin kendi fotoğrafları. */
 const RAIL = [
@@ -74,6 +75,7 @@ export function HeroSection() {
               ↗
             </span>
           </Link>
+          <GoogleRatingBadge className="mt-6" />
         </div>
 
         {/* Fotoğraf kartı dizisi */}
