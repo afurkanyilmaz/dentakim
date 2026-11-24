@@ -98,7 +98,7 @@ export function ArticleBody({ content }: { content: string }) {
         <ol key={`ol-${key}`} className="flex flex-col gap-4">
           {steps.map((b, i) => (
             <li key={i} className="flex gap-4 rounded-panel border border-brand-line bg-brand-card p-5">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-primary-light font-heading text-[17px] font-bold text-brand-accent tabular-nums">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-primary-light font-heading text-[17px] font-bold text-brand-accent-dark tabular-nums">
                 {i + 1}
               </span>
               <span className="pt-1 text-[16.5px] leading-[1.7] text-brand-mid">{withLinks(b)}</span>
@@ -127,7 +127,7 @@ export function ArticleBody({ content }: { content: string }) {
             id={slugify(text)}
             className="scroll-mt-24 border-t border-brand-line pt-8 font-heading text-[clamp(24px,3.2vw,32px)] font-bold leading-[1.25] text-brand-dark [text-wrap:pretty] first:border-0 first:pt-0"
           >
-            <span className="mb-2 block text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent">
+            <span className="mb-2 block text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent-dark">
               {String(sectionCount).padStart(2, "0")}
             </span>
             {text}
@@ -143,7 +143,7 @@ export function ArticleBody({ content }: { content: string }) {
             key={i}
             className="flex gap-3.5 rounded-panel border border-brand-accent/35 bg-brand-primary-light p-5"
           >
-            <AlertTriangle className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+            <AlertTriangle className="mt-0.5 size-5 shrink-0 text-brand-accent-dark" aria-hidden />
             <p className="text-[16px] font-medium leading-[1.7] text-brand-dark">{withLinks(t.slice(2))}</p>
           </aside>
         );
@@ -194,14 +194,14 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
     >
       <p
         id="icindekiler"
-        className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent"
+        className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent-dark"
       >
         Bu yazıda
       </p>
       <ol className="mt-4 flex flex-col gap-2.5">
         {headings.map((h, i) => (
           <li key={h.id} className="flex gap-3">
-            <span className="font-heading text-[15px] font-bold text-brand-accent tabular-nums">
+            <span className="font-heading text-[15px] font-bold text-brand-accent-dark tabular-nums">
               {String(i + 1).padStart(2, "0")}
             </span>
             <a

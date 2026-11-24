@@ -151,7 +151,7 @@ export function TreatmentCard({
           <span className="text-[12px] font-bold text-brand-light">Uzman Hekimle Ön Görüşme</span>
           <span
             aria-hidden
-            className="inline-flex size-[42px] items-center justify-center rounded-full bg-fg/[0.05] text-brand-light transition-colors group-hover:bg-brand-accent group-hover:text-white"
+            className="inline-flex size-[42px] items-center justify-center rounded-full bg-fg/[0.05] text-brand-light transition-colors group-hover:bg-brand-accent group-hover:text-brand-ink"
           >
             <ArrowRight className="size-4" />
           </span>

@@ -95,7 +95,7 @@ export function GeoPageShell({ geo }: { geo: GeoPageDef }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
+              className="inline-flex min-h-12 items-center rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-brand-whatsapp-ink transition-colors hover:bg-brand-whatsapp-dark"
             >
               <WhatsAppIcon className="size-4" />
               WhatsApp&apos;tan Randevu

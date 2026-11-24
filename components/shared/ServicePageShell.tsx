@@ -153,7 +153,7 @@ export async function ServicePageShell({ content }: { content: ServicePageConten
               key={k}
               className="flex items-center gap-4 rounded-[18px] border border-brand-line bg-brand-card/95 px-5 py-5 shadow-[0_20px_50px_rgba(0,0,0,0.15)] backdrop-blur"
             >
-              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-fg/[0.06] text-brand-accent">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-fg/[0.06] text-brand-accent-dark">
                 <Icon className="size-5" aria-hidden />
               </span>
               <span className="min-w-0">
@@ -203,7 +203,7 @@ export async function ServicePageShell({ content }: { content: ServicePageConten
                 aria-labelledby="kisaca-baslik"
                 className="rounded-[22px] border border-brand-accent/40 bg-panel p-6 sm:p-8"
               >
-                <h2 id="kisaca-baslik" className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+                <h2 id="kisaca-baslik" className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
                   Kısaca: {shortTitle} nedir?
                 </h2>
                 <p className="mt-4 text-[17px] leading-[1.75] text-brand-light">{content.summary}</p>
@@ -251,7 +251,7 @@ export async function ServicePageShell({ content }: { content: ServicePageConten
               <ol className="mt-6 grid gap-4 sm:grid-cols-2">
                 {content.steps.map((step, i) => (
                   <li key={i} className="rounded-[16px] border border-brand-line bg-fg/[0.02] p-5">
-                    <span className="font-heading text-[28px] font-extrabold leading-none tracking-[-0.04em] text-brand-accent">
+                    <span className="font-heading text-[28px] font-extrabold leading-none tracking-[-0.04em] text-brand-accent-dark">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <p className="mt-3 text-[14px] leading-[1.65] text-brand-mid">{step}</p>
@@ -299,7 +299,7 @@ export async function ServicePageShell({ content }: { content: ServicePageConten
                         />
                       ) : null}
                       <span className="min-w-0">
-                        <span className="block text-[11px] font-bold text-brand-accent">{doctor.specialization}</span>
+                        <span className="block text-[11px] font-bold text-brand-accent-dark">{doctor.specialization}</span>
                         <span className="mt-1 block font-heading text-[18px] font-bold tracking-[-0.02em] text-brand-light">
                           {doctor.name}
                         </span>
@@ -320,13 +320,13 @@ export async function ServicePageShell({ content }: { content: ServicePageConten
                     <li key={g.slug}>
                       <Link
                         href={`/blog/${g.slug}`}
-                        className="group flex items-center justify-between gap-4 py-4 text-[15px] font-bold text-brand-light transition-colors hover:text-brand-accent"
+                        className="group flex items-center justify-between gap-4 py-4 text-[15px] font-bold text-brand-light transition-colors hover:text-brand-accent-dark"
                       >
                         <span>
                           {g.title}
                           <span className="mt-1 block text-[12.5px] font-medium text-brand-mid">{g.excerpt}</span>
                         </span>
-                        <span aria-hidden className="shrink-0 text-brand-accent">
+                        <span aria-hidden className="shrink-0 text-brand-accent-dark">
                           →
                         </span>
                       </Link>
@@ -343,7 +343,7 @@ export async function ServicePageShell({ content }: { content: ServicePageConten
                 </h2>
                 <Link
                   href="/hizmetler"
-                  className="border-b border-brand-line-strong pb-1 text-[12.5px] font-extrabold text-brand-light hover:text-brand-accent"
+                  className="border-b border-brand-line-strong pb-1 text-[12.5px] font-extrabold text-brand-light hover:text-brand-accent-dark"
                 >
                   Tüm Tedaviler ↗
                 </Link>

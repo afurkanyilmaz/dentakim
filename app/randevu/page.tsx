@@ -11,7 +11,7 @@ import { MedicalDisclaimer } from "@/components/shared/MedicalDisclaimer";
 import { Clock, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = generateMeta({
-  title: "Randevu",
+  title: "Diş Hekimi Randevusu — Küçükçekmece",
   description:
     "Dentakim Küçükçekmece'de randevu nasıl alınır? WhatsApp ve telefon ile randevu, çalışma saatleri, ilk muayenede izlenen adımlar ve yanınızda getirmeniz gerekenler.",
   slug: "randevu",
@@ -59,7 +59,7 @@ export default function RandevuPage() {
       <div className="page-hero">
         <div className="mx-auto max-w-[944px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav items={[{ label: "Anasayfa", href: "/" }, { label: "Randevu" }]} />
-          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
             Randevu
           </p>
           <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
@@ -75,7 +75,7 @@ export default function RandevuPage() {
               href={whatsappUrl("Merhaba, randevu oluşturmak istiyorum.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
+              className="inline-flex min-h-12 items-center gap-2.5 rounded-full bg-brand-whatsapp px-7 text-[15px] font-bold text-brand-whatsapp-ink transition-colors hover:bg-brand-whatsapp-dark"
             >
               <WhatsAppIcon className="size-5" />
               WhatsApp&apos;tan Yazın
@@ -94,7 +94,7 @@ export default function RandevuPage() {
       <div className="mx-auto max-w-[944px] px-5 sm:px-8 py-14">
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="rounded-card border border-brand-line bg-brand-card p-[26px]">
-            <Clock className="size-5 text-brand-accent" aria-hidden />
+            <Clock className="size-5 text-brand-accent-dark" aria-hidden />
             <h2 className="mt-3 font-heading text-[22px] font-bold text-brand-dark">
               Çalışma saatleri
             </h2>
@@ -119,7 +119,7 @@ export default function RandevuPage() {
           </div>
 
           <div className="rounded-card border border-brand-line bg-brand-card p-[26px]">
-            <MapPin className="size-5 text-brand-accent" aria-hidden />
+            <MapPin className="size-5 text-brand-accent-dark" aria-hidden />
             <h2 className="mt-3 font-heading text-[22px] font-bold text-brand-dark">
               Klinik adresi
             </h2>

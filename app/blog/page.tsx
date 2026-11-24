@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "@/lib/blog";
 import { generateMeta } from "@/lib/seo";
+import { preloadPageHero } from "@/lib/page-hero";
 import { BlogCard } from "@/components/shared/BlogCard";
 
 export const metadata: Metadata = generateMeta({
-  title: "Diş Sağlığı Blogu",
+  title: "Diş Sağlığı Blogu: Tedavi Rehberleri",
   description:
     "Diş ağrısı, implant, kanal tedavisi ve diş beyazlatma hakkında hekimlerimizin kaleminden rehberler. Küçükçekmece Dentakim Ağız ve Diş Sağlığı Polikliniği.",
   slug: "blog",
 });
 
 export default function BlogPage() {
+  preloadPageHero();
   return (
     <main className="pb-16">
       <div className="page-hero">

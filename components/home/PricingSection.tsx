@@ -30,7 +30,7 @@ export function PricingSection() {
             id="fiyat-baslik"
             className="font-heading text-[clamp(40px,5vw,72px)] font-bold leading-[1.02] tracking-display text-brand-light"
           >
-            Fiyatı <span className="text-brand-accent">tahmin etmeyin</span>, yazılı öğrenin.
+            Fiyatı <span className="text-brand-accent-dark">tahmin etmeyin</span>, yazılı öğrenin.
           </h2>
           <p className="mt-6 max-w-[560px] text-[16px] leading-[1.8] text-brand-mid sm:text-[18px]">
             Tedavi ücreti tanıya, kullanılan materyale ve seans sayısına göre
@@ -62,13 +62,13 @@ export function PricingSection() {
               href={whatsappUrl("Merhaba, tedavi ücretleri hakkında bilgi almak istiyorum.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-[54px] items-center gap-2 rounded-[14px] bg-brand-ink px-7 text-[15px] font-extrabold text-white transition-colors hover:bg-brand-accent"
+              className="inline-flex h-[54px] items-center gap-2 rounded-[14px] bg-brand-ink px-7 text-[15px] font-extrabold text-white transition-colors hover:bg-brand-accent hover:text-brand-ink"
             >
               Bilgi Al <span aria-hidden>↗</span>
             </a>
             <Link
               href="/fiyatlar"
-              className="inline-flex h-[54px] items-center rounded-[14px] border border-fg/20 px-7 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
+              className="inline-flex h-[54px] items-center rounded-[14px] border border-fg/20 px-7 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent-dark"
             >
               Fiyatlandırma
             </Link>

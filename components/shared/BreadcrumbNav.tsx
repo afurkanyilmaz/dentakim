@@ -1,8 +1,11 @@
 import Link from "next/link";
+import { preloadPageHero } from "@/lib/page-hero";
 
 export type Crumb = { label: string; href?: string };
 
 export function BreadcrumbNav({ items }: { items: Crumb[] }) {
+  // Breadcrumb yalnızca koyu başlık bandında kullanılır; bant görselini önden yükle.
+  preloadPageHero();
   return (
     <nav aria-label="Breadcrumb" className="text-[12px] font-semibold text-white/55">
       <ol className="flex flex-wrap items-center gap-1">
@@ -23,7 +26,7 @@ export function BreadcrumbNav({ items }: { items: Crumb[] }) {
                   {crumb.label}
                 </Link>
               ) : (
-                <span className={last ? "text-brand-accent" : undefined}>
+                <span className={last ? "text-brand-accent-dark" : undefined}>
                   {crumb.label}
                 </span>
               )}

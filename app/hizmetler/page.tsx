@@ -4,6 +4,7 @@ import { SERVICES, SERVICE_GROUP_LABEL } from "@/lib/constants";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { getServiceListSchema } from "@/lib/schema";
 import { generateMeta } from "@/lib/seo";
+import { preloadPageHero } from "@/lib/page-hero";
 import { whatsappUrl } from "@/lib/business";
 import { TREATMENT_BLURBS, TreatmentCard } from "@/components/shared/TreatmentCard";
 
@@ -15,6 +16,7 @@ export const metadata: Metadata = generateMeta({
 });
 
 export default function HizmetlerPage() {
+  preloadPageHero();
   return (
     <main className="pb-16">
       <JsonLd data={getServiceListSchema(SERVICES.map((s) => ({ slug: s.slug, title: s.title })))} />
@@ -57,12 +59,12 @@ export default function HizmetlerPage() {
             href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-brand-accent underline underline-offset-4"
+            className="font-bold text-brand-accent-dark underline underline-offset-4"
           >
             WhatsApp&apos;tan bilgi alın
           </a>{" "}
           veya{" "}
-          <Link href="/iletisim" className="font-bold text-brand-accent underline underline-offset-4">
+          <Link href="/iletisim" className="font-bold text-brand-accent-dark underline underline-offset-4">
             iletişime geçin
           </Link>
           .

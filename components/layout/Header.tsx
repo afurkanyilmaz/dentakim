@@ -68,7 +68,7 @@ function MenuGroup({ title, children, defaultOpen = false }: { title: string; ch
     <details open={defaultOpen} className="group border-b border-brand-line">
       <summary className="flex cursor-pointer list-none items-center justify-between py-4 text-[15px] font-extrabold uppercase tracking-[0.06em] text-brand-light [&::-webkit-details-marker]:hidden">
         {title}
-        <ChevronDown className="size-4 text-brand-accent transition-transform group-open:rotate-180 motion-reduce:transition-none" aria-hidden />
+        <ChevronDown className="size-4 text-brand-accent-dark transition-transform group-open:rotate-180 motion-reduce:transition-none" aria-hidden />
       </summary>
       <div className="pb-4">{children}</div>
     </details>
@@ -115,7 +115,7 @@ export function Header() {
 
           <div className="hidden items-center gap-5 lg:flex">
             <span className="inline-flex h-11 items-center gap-2.5 rounded-full border border-fg/[0.14] bg-fg/[0.06] pl-1.5 pr-4 text-[12px] font-bold text-brand-light">
-              <span className="inline-flex size-8 items-center justify-center rounded-full bg-brand-accent text-brand-surface">
+              <span className="inline-flex size-8 items-center justify-center rounded-full bg-brand-accent text-brand-ink">
                 <Clock className="size-4" aria-hidden />
               </span>
               {BUSINESS.brandName} · {BUSINESS.address.district}
@@ -129,7 +129,7 @@ export function Header() {
               <span className="text-[10.5px] font-semibold text-brand-mid">
                 Çalışma {BUSINESS.hours.weekdays.opens}–{BUSINESS.hours.weekdays.closes}
               </span>
-              <span className="text-[15px] font-extrabold text-brand-light transition-colors group-hover:text-brand-accent">
+              <span className="text-[15px] font-extrabold text-brand-light transition-colors group-hover:text-brand-accent-dark">
                 {BUSINESS.phone.display}
               </span>
             </a>
@@ -141,11 +141,11 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp'tan yazın"
-                className={cn(ROUND, "bg-brand-whatsapp text-white")}
+                className={cn(ROUND, "bg-brand-whatsapp text-brand-whatsapp-ink")}
               >
                 <WhatsAppIcon className="size-[18px]" />
               </a>
-              <a href={BUSINESS.phone.href} aria-label="Telefonla arayın" className={cn(ROUND, "bg-brand-accent text-brand-surface")}>
+              <a href={BUSINESS.phone.href} aria-label="Telefonla arayın" className={cn(ROUND, "bg-brand-accent text-brand-ink")}>
                 <Phone className="size-4" aria-hidden />
               </a>
               <a
@@ -165,7 +165,7 @@ export function Header() {
             <ThemeToggle className="mr-3 lg:hidden" />
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger
-                className="flex h-full w-[75px] items-center justify-center border-l border-fg/[0.12] text-brand-light transition-colors hover:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brand-accent lg:w-auto lg:border-0 lg:pl-2"
+                className="flex h-full w-[75px] items-center justify-center border-l border-fg/[0.12] text-brand-light transition-colors hover:text-brand-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brand-accent lg:w-auto lg:border-0 lg:pl-2"
                 aria-label="Menüyü aç"
               >
                 <Menu className="size-7" strokeWidth={1.6} />
@@ -191,7 +191,7 @@ export function Header() {
                   <MenuGroup title="Tedavilerimiz">
                     {GROUPS.map((g) => (
                       <details key={g} className="group/sub">
-                        <summary className="flex cursor-pointer list-none items-center justify-between py-2.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-brand-accent [&::-webkit-details-marker]:hidden">
+                        <summary className="flex cursor-pointer list-none items-center justify-between py-2.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-brand-accent-dark [&::-webkit-details-marker]:hidden">
                           {SERVICE_GROUP_LABEL[g]}
                           <ChevronDown className="size-3.5 transition-transform group-open/sub:rotate-180" aria-hidden />
                         </summary>
@@ -201,7 +201,7 @@ export function Header() {
                               key={s.slug}
                               href={`/hizmetler/${s.slug}`}
                               onClick={() => setOpen(false)}
-                              className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                              className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent-dark"
                             >
                               {s.title}
                             </Link>
@@ -223,7 +223,7 @@ export function Header() {
                         key={d.slug}
                         href={`/hekimler/${d.slug}`}
                         onClick={() => setOpen(false)}
-                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent-dark"
                       >
                         {d.name}
                         <span className="block text-[12px] font-medium text-brand-mid">{d.specialization}</span>
@@ -236,7 +236,7 @@ export function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent-dark"
                       >
                         {item.label}
                       </Link>
@@ -248,7 +248,7 @@ export function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent"
+                        className="block py-2 text-[15px] font-semibold text-brand-light transition-colors hover:text-brand-accent-dark"
                       >
                         {item.label}
                       </Link>
@@ -265,7 +265,7 @@ export function Header() {
                   <Link
                     href="/randevu"
                     onClick={() => setOpen(false)}
-                    className="flex h-[50px] items-center justify-between rounded-[2px] bg-brand-accent px-5 text-[15px] font-extrabold text-white"
+                    className="flex h-[50px] items-center justify-between rounded-[2px] bg-brand-accent px-5 text-[15px] font-extrabold text-brand-ink"
                   >
                     Randevu Oluştur <span aria-hidden>↗</span>
                   </Link>
@@ -274,7 +274,7 @@ export function Header() {
                       href={whatsappUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-11 items-center justify-center gap-2 rounded-[12px] bg-brand-whatsapp text-[13px] font-extrabold text-white"
+                      className="flex h-11 items-center justify-center gap-2 rounded-[12px] bg-brand-whatsapp text-[13px] font-extrabold text-brand-whatsapp-ink"
                     >
                       <WhatsAppIcon className="size-4" /> WhatsApp
                     </a>
@@ -300,7 +300,7 @@ export function Header() {
               href="/"
               aria-label="Anasayfa"
               aria-current={isHome ? "page" : undefined}
-              className="text-brand-light transition-colors hover:text-brand-accent"
+              className="text-brand-light transition-colors hover:text-brand-accent-dark"
             >
               <Home className="size-4" aria-hidden />
             </Link>
@@ -309,8 +309,8 @@ export function Header() {
                 <DropdownMenu key={item.href}>
                   <DropdownMenuTrigger
                     className={cn(
-                      "inline-flex items-center gap-1 rounded-sm text-[12px] font-extrabold uppercase tracking-[0.03em] outline-none transition-colors hover:text-brand-accent focus-visible:ring-2 focus-visible:ring-brand-accent",
-                      isActive(item.href) ? "text-brand-accent" : "text-brand-light"
+                      "inline-flex items-center gap-1 rounded-sm text-[12px] font-extrabold uppercase tracking-[0.03em] outline-none transition-colors hover:text-brand-accent-dark focus-visible:ring-2 focus-visible:ring-brand-accent",
+                      isActive(item.href) ? "text-brand-accent-dark" : "text-brand-light"
                     )}
                   >
                     {item.label}
@@ -324,7 +324,7 @@ export function Header() {
                     <div className="grid grid-cols-3 gap-2">
                       {GROUPS.map((g) => (
                         <div key={g}>
-                          <p className="px-4 pb-1 pt-3 text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-brand-accent">
+                          <p className="px-4 pb-1 pt-3 text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-brand-accent-dark">
                             {SERVICE_GROUP_LABEL[g]}
                           </p>
                           {SERVICES.filter((s) => s.group === g).map((s) => (
@@ -333,7 +333,7 @@ export function Header() {
                               href={`/hizmetler/${s.slug}`}
                               className="group block rounded-[12px] px-4 py-2.5 outline-none transition-colors hover:bg-fg/[0.05] focus-visible:bg-fg/[0.07]"
                             >
-                              <span className="block text-[13.5px] font-extrabold text-brand-light group-hover:text-brand-accent">
+                              <span className="block text-[13.5px] font-extrabold text-brand-light group-hover:text-brand-accent-dark">
                                 {s.title}
                               </span>
                               <span className="mt-0.5 block text-[11.5px] leading-snug text-brand-mid">{s.desc}</span>
@@ -344,7 +344,7 @@ export function Header() {
                     </div>
                     <Link
                       href="/hizmetler"
-                      className="mt-2 flex items-center justify-between rounded-[14px] border-t border-fg/10 px-4 pb-1 pt-4 text-[12px] font-extrabold uppercase tracking-[0.08em] text-brand-accent"
+                      className="mt-2 flex items-center justify-between rounded-[14px] border-t border-fg/10 px-4 pb-1 pt-4 text-[12px] font-extrabold uppercase tracking-[0.08em] text-brand-accent-dark"
                     >
                       Tüm tedaviler <span aria-hidden>↗</span>
                     </Link>
@@ -356,8 +356,8 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={cn(
-                    "rounded-sm text-[12px] font-extrabold uppercase tracking-[0.03em] transition-colors hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent",
-                    isActive(item.href) ? "text-brand-accent" : "text-brand-light"
+                    "rounded-sm text-[12px] font-extrabold uppercase tracking-[0.03em] transition-colors hover:text-brand-accent-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent",
+                    isActive(item.href) ? "text-brand-accent-dark" : "text-brand-light"
                   )}
                 >
                   {item.label}
@@ -377,7 +377,7 @@ export function Header() {
             </Link>
             <Link
               href="/randevu"
-              className="inline-flex h-[46px] items-center gap-1.5 whitespace-nowrap rounded-full border border-fg/[0.28] px-5 text-[12px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-white"
+              className="inline-flex h-[46px] items-center gap-1.5 whitespace-nowrap rounded-full border border-fg/[0.28] px-5 text-[12px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:bg-brand-accent hover:text-brand-ink"
             >
               Randevu Al <span aria-hidden>↗</span>
             </Link>

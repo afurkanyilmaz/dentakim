@@ -17,7 +17,7 @@ export function MedicalDisclaimer({ className }: { className?: string }) {
       )}
       aria-label="Tıbbi bilgilendirme"
     >
-      <Info className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+      <Info className="mt-0.5 size-5 shrink-0 text-brand-accent-dark" aria-hidden />
       <p className="text-[14px] leading-[1.7] text-brand-mid">
         Bu sayfadaki bilgiler yalnızca genel bilgilendirme amaçlıdır; muayene, tanı ve
         tedavi yerine geçmez. Her hastanın durumu farklıdır ve uygulanacak tedavi ancak

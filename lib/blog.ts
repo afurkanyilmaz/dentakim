@@ -410,7 +410,7 @@ Ağrınız varsa beklemeyin: WhatsApp'tan yazarak veya doğrudan arayarak durumu
   },
   {
     slug: "acil-dis-hekimi-kucukcekmece",
-    title: "Küçükçekmece'de Acil Diş Hekimi: Hangi Durumlar Gerçekten Acildir?",
+    title: "Küçükçekmece'de Acil Diş Hekimi: Hangi Durum Acildir?",
     excerpt:
       "Kırılan diş, düşen dolgu, apse ve travma: hangi durum bekleyebilir, hangisi aynı gün müdahale ister? Küçükçekmece ve çevresi için acil diş rehberi.",
     date: "2026-08-11",
@@ -814,7 +814,7 @@ Dentakim’de Medigma, Nucleoss, Bilim İmplant ve Osstem sistemleri uygulanmakt
 
   {
     slug: "dis-protezi-cesitleri",
-    title: "Diş Protezi Çeşitleri: Sabit mi, Hareketli mi? Hangisi Size Uygun?",
+    title: "Diş Protezi Çeşitleri: Sabit mi, Hareketli mi?",
     excerpt:
       "Zirkonyum köprü, implant üstü protez, tam ve bölümlü damak: protez türlerinin farkları, ömürleri ve hangi durumda hangisinin tercih edildiği.",
     date: "2026-08-20",
@@ -1470,7 +1470,7 @@ Hassasiyet tek bir dişte, uzun süreli veya giderek artıyorsa; uyaran kalktık
   },
   {
     slug: "yirmilik-dis-cekimi-sonrasi",
-    title: "Yirmilik Diş Çekimi Sonrası: Şişlik, Beslenme ve Dikkat Edilecekler",
+    title: "Yirmilik Diş Çekimi Sonrası: Şişlik ve Beslenme",
     excerpt:
       "Gömülü yirmilik diş çekiminden sonra ilk 24 saat, şişlik ve ağrı yönetimi, ne yenir, ne zaman fırçalanır ve hangi belirtilerde hekime başvurulur.",
     date: "2026-10-29",

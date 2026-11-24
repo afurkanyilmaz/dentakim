@@ -41,7 +41,7 @@ export default function BolgelerPage() {
       <div className="page-hero">
         <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav items={[{ label: "Anasayfa", href: "/" }, { label: "Bölgeler" }]} />
-          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
             Hizmet Bölgelerimiz
           </p>
           <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
@@ -78,7 +78,7 @@ export default function BolgelerPage() {
                       href={`/${region.slug}`}
                       className="group flex flex-col gap-3 rounded-card border border-brand-line bg-brand-card p-[26px] transition-colors hover:border-brand-line-strong"
                     >
-                      <span className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent">
+                      <span className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent-dark">
                         <MapPin className="size-4" aria-hidden />
                         {region.proximity}
                       </span>

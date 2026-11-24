@@ -17,7 +17,7 @@ export async function InstagramSection() {
             href={INSTAGRAM_PROFILE}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 border-b border-brand-line-strong pb-1.5 text-[12.5px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
+            className="inline-flex items-center gap-1.5 border-b border-brand-line-strong pb-1.5 text-[12.5px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent-dark"
           >
             {INSTAGRAM_HANDLE} <span aria-hidden>↗</span>
           </a>

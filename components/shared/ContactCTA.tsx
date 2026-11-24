@@ -69,7 +69,7 @@ export function ContactCTA({
                       <a
                         href={row.href}
                         {...(row.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                        className="transition-colors hover:text-brand-accent"
+                        className="transition-colors hover:text-brand-accent-dark"
                       >
                         {row.value}
                       </a>
@@ -127,7 +127,7 @@ export function ContactCTA({
           href={wa}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex min-h-12 items-center gap-2 rounded-[12px] bg-brand-whatsapp px-5 text-[14px] font-extrabold text-white transition-colors hover:bg-brand-whatsapp-dark"
+          className="inline-flex min-h-12 items-center gap-2 rounded-[12px] bg-brand-whatsapp px-5 text-[14px] font-extrabold text-brand-whatsapp-ink transition-colors hover:bg-brand-whatsapp-dark"
         >
           <WhatsAppIcon className="size-4" />
           WhatsApp&apos;tan Bilgi Al

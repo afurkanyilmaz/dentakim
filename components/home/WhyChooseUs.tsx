@@ -42,7 +42,7 @@ export function WhyChooseUs() {
             <ol className="mt-5 grid gap-3 sm:grid-cols-2">
               {STEPS.map((step, i) => (
                 <li key={step} className="flex items-baseline gap-3">
-                  <span className="font-heading text-[26px] font-extrabold leading-none tracking-[-0.04em] text-brand-accent">
+                  <span className="font-heading text-[26px] font-extrabold leading-none tracking-[-0.04em] text-brand-accent-dark">
                     {i + 1}
                   </span>
                   <span className="text-[13.5px] font-semibold text-brand-light">{step}</span>
@@ -57,13 +57,13 @@ export function WhyChooseUs() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/randevu"
-              className="inline-flex h-[54px] items-center gap-2 rounded-[14px] border border-brand-ink bg-brand-ink px-7 text-[15px] font-extrabold text-white transition-colors hover:bg-brand-accent hover:border-brand-accent"
+              className="inline-flex h-[54px] items-center gap-2 rounded-[14px] border border-brand-ink bg-brand-ink px-7 text-[15px] font-extrabold text-white transition-colors hover:bg-brand-accent hover:text-brand-ink hover:border-brand-accent"
             >
               Randevu Al <span aria-hidden>↗</span>
             </Link>
             <Link
               href="/hizmetler"
-              className="inline-flex h-[54px] items-center rounded-[14px] border border-fg/20 px-7 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
+              className="inline-flex h-[54px] items-center rounded-[14px] border border-fg/20 px-7 text-[15px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent-dark"
             >
               Tedavileri İncele
             </Link>

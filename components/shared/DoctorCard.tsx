@@ -22,14 +22,14 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
           />
         ) : (
-          <span className="flex size-full items-center justify-center text-brand-accent">
+          <span className="flex size-full items-center justify-center text-brand-accent-dark">
             <Stethoscope className="size-10" aria-hidden />
           </span>
         )}
       </div>
 
       <div className="flex flex-1 flex-col px-[22px] pb-5 pt-5">
-        <p className="text-[11px] font-bold text-brand-accent">{doctor.specialization}</p>
+        <p className="text-[11px] font-bold text-brand-accent-dark">{doctor.specialization}</p>
         <h3 className="mt-2 font-heading text-[22px] font-bold leading-[1.2] tracking-[-0.03em] text-brand-light">
           {doctor.name}
         </h3>
@@ -39,18 +39,18 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
 
         <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[11.5px] text-brand-mid">
           <span className="inline-flex items-center gap-1.5">
-            <MapPin className="size-3.5 text-brand-accent" aria-hidden />
+            <MapPin className="size-3.5 text-brand-accent-dark" aria-hidden />
             {BUSINESS.address.district}
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <Stethoscope className="size-3.5 text-brand-accent" aria-hidden />
+            <Stethoscope className="size-3.5 text-brand-accent-dark" aria-hidden />
             {doctor.focusAreas.length || doctor.knowsAbout.length} çalışma alanı
           </span>
         </div>
 
         <Link
           href={`/hekimler/${doctor.slug}`}
-          className="mt-5 flex h-11 items-center justify-center gap-2 rounded-[12px] bg-brand-ink text-[12.5px] font-extrabold text-white transition-colors after:absolute after:inset-0 hover:bg-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+          className="mt-5 flex h-11 items-center justify-center gap-2 rounded-[12px] bg-brand-ink text-[12.5px] font-extrabold text-white transition-colors after:absolute after:inset-0 hover:bg-brand-accent hover:text-brand-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
         >
           Profili gör <span aria-hidden>↗</span>
         </Link>

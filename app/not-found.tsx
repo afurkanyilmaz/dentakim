@@ -20,7 +20,7 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
-          className={cn(buttonVariants({ variant: "default" }), "bg-brand-accent text-brand-dark hover:bg-brand-accent/90")}
+          className={cn(buttonVariants({ variant: "default" }), "bg-brand-accent text-brand-dark hover:bg-brand-accent hover:text-brand-ink/90")}
         >
           Ana sayfa
         </Link>

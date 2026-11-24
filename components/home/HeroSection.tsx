@@ -67,7 +67,7 @@ export function HeroSection() {
           </p>
           <Link
             href="/randevu"
-            className="mt-9 flex h-[58px] w-full items-center justify-between rounded-[2px] bg-brand-accent px-6 text-[16px] font-extrabold text-white transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-[300px]"
+            className="mt-9 flex h-[58px] w-full items-center justify-between rounded-[2px] bg-brand-accent px-6 text-[16px] font-extrabold text-brand-ink transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-[300px]"
           >
             Randevu Oluştur
             <span aria-hidden className="text-[18px]">
@@ -104,6 +104,9 @@ export function HeroSection() {
                   fill
                   sizes="(max-width: 1024px) 45vw, 292px"
                   className="object-cover"
+                  // İlk iki kart ilk ekranda görünür; ilki sayfanın en büyük öğesi (LCP)
+                  priority={i === 0}
+                  loading={i < 2 ? "eager" : "lazy"}
                 />
               </div>
               <p className="mt-3 text-[13px] font-extrabold text-white sm:text-[14px]">

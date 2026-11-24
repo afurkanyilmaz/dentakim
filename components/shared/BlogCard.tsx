@@ -35,13 +35,13 @@ export function BlogCard({ post, index }: { post: BlogPost; index: number }) {
         </span>
       </div>
       <div className="flex flex-1 flex-col px-[22px] pb-6 pt-5">
-        <p className="text-[11px] font-extrabold tracking-[0.06em] text-brand-accent">
+        <p className="text-[11px] font-extrabold tracking-[0.06em] text-brand-accent-dark">
           {post.category ?? "Ağız ve Diş Sağlığı"}
         </p>
         <h3 className="mt-2.5 font-heading text-[20px] font-bold leading-[1.3] tracking-[-0.02em] text-brand-light">
           <Link
             href={`/blog/${post.slug}`}
-            className="after:absolute after:inset-0 focus-visible:outline-none group-focus-within:text-brand-accent"
+            className="after:absolute after:inset-0 focus-visible:outline-none group-focus-within:text-brand-accent-dark"
           >
             {post.title}
           </Link>

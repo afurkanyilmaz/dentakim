@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: Props) {
             ]}
           />
           {post.category ? (
-            <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+            <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
               {post.category}
             </p>
           ) : null}
@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: Props) {
             {author ? (
               <Link
                 href={`/hekimler/${author.slug}`}
-                className="flex items-center gap-2.5 font-semibold text-brand-dark hover:text-brand-accent"
+                className="flex items-center gap-2.5 font-semibold text-brand-dark hover:text-brand-accent-dark"
               >
                 {author.photo ? (
                   <Image
@@ -180,12 +180,12 @@ export default async function BlogPostPage({ params }: Props) {
 
         {service ? (
           <div className="mt-8 rounded-card border border-brand-line bg-brand-card p-[26px]">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-brand-accent-dark">
               İlgili tedavi
             </p>
             <Link
               href={`/hizmetler/${service.slug}`}
-              className="mt-2 block font-heading text-[26px] font-bold leading-[1.2] text-brand-dark hover:text-brand-accent"
+              className="mt-2 block font-heading text-[26px] font-bold leading-[1.2] text-brand-dark hover:text-brand-accent-dark"
             >
               {service.title}
             </Link>
@@ -215,7 +215,7 @@ export default async function BlogPostPage({ params }: Props) {
           <section className="mt-14 border-t border-brand-line pt-10" aria-labelledby="ilgili-yazilar">
             <p
               id="ilgili-yazilar"
-              className="mb-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent"
+              className="mb-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark"
             >
               İlgili yazılar
             </p>

@@ -22,7 +22,7 @@ export function FAQAccordion({ items, defaultOpen = 0 }: { items: FAQItem[]; def
           <summary className="flex cursor-pointer list-none items-start justify-between gap-5 px-[22px] py-[18px] text-left text-[15.5px] font-bold text-brand-light focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-brand-accent [&::-webkit-details-marker]:hidden">
             <h3 className="font-sans text-[15.5px] font-bold leading-snug">{item.question}</h3>
             <Plus
-              className="mt-0.5 size-5 shrink-0 text-brand-accent transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+              className="mt-0.5 size-5 shrink-0 text-brand-accent-dark transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
               aria-hidden
             />
           </summary>

@@ -7,15 +7,38 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import { BreadcrumbNav } from "@/components/shared/BreadcrumbNav";
 import { ContactCTA } from "@/components/shared/ContactCTA";
+import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
+import { getIntroReel } from "@/lib/instagram-feed";
+
+/** Fotoğraflardaki alanların açıklamaları — yalnızca klinikte bulunan alanlar. */
+const AREAS = [
+  {
+    title: "Karşılama ve resepsiyon",
+    text: "Randevu, kayıt ve tedavi planı bilgilendirmesinin yapıldığı alan. Muayene öncesi kimlik ve varsa önceki röntgenleriniz burada dosyanıza eklenir.",
+  },
+  {
+    title: "Bekleme alanı",
+    text: "Randevu saatinize kadar oturabileceğiniz ferah bekleme bölümü. Randevular, bekleme süresini kısa tutacak şekilde planlanır.",
+  },
+  {
+    title: "Tedavi odaları",
+    text: "Muayene ve tedavilerin yapıldığı, diş ünitesi bulunan ayrı tedavi odaları. Her hasta sonrası sterilizasyon ve hijyen protokolü uygulanır.",
+  },
+  {
+    title: "Sterilizasyon ve hijyen",
+    text: "Tedavide kullanılan aletler her hastadan sonra temizlenir ve sterilizasyon sürecinden geçirilir; tek kullanımlık malzemeler yalnızca bir kez kullanılır. Tedavi odaları hasta aralarında dezenfekte edilir.",
+  },
+];
 
 export const metadata: Metadata = generateMeta({
-  title: "Klinik Galerisi",
+  title: "Klinik Galerisi — Tedavi Odaları ve Bekleme Alanı",
   description:
     "Dentakim Küçükçekmece kliniğinin tedavi odaları, bekleme alanı ve karşılama bölümünden fotoğraflar.",
   slug: "klinik/galeri",
 });
 
-export default function GaleriPage() {
+export default async function GaleriPage() {
+  const intro = await getIntroReel();
   return (
     <main className="pb-16">
       <JsonLd
@@ -35,7 +58,7 @@ export default function GaleriPage() {
               { label: "Galeri" },
             ]}
           />
-          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
             Kliniğimizden
           </p>
           <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
@@ -65,6 +88,28 @@ export default function GaleriPage() {
             </div>
           ))}
         </div>
+
+        <section aria-labelledby="galeri-alanlar" className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start">
+          <div>
+            <h2 id="galeri-alanlar" className="font-heading text-[clamp(24px,2.8vw,32px)] font-bold tracking-[-0.03em] text-brand-light">
+              Kliniğimizde sizi neler bekliyor?
+            </h2>
+            <dl className="mt-6 space-y-5">
+              {AREAS.map((a) => (
+                <div key={a.title}>
+                  <dt className="font-heading text-[18px] font-bold text-brand-light">{a.title}</dt>
+                  <dd className="mt-1 text-[15px] leading-[1.7] text-brand-mid">{a.text}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          {intro ? (
+            <div>
+              <p className="mb-2 text-[12px] font-bold text-brand-mid">Klinik tanıtım videosu · Instagram</p>
+              <InstagramEmbeds reels={[intro]} bleed={false} />
+            </div>
+          ) : null}
+        </section>
 
         <div className="mt-12">
           <ContactCTA

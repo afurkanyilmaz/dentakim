@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { InfoFAQ } from "@/components/shared/InfoFAQ";
 import { BUSINESS } from "@/lib/business";
 import { generateMeta } from "@/lib/seo";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -14,6 +15,29 @@ export const metadata: Metadata = generateMeta({
 
 const WA_DEEP =
   "https://wa.me/905533137888?text=Merhaba, randevu almak istiyorum.";
+
+const CONTACT_FAQ = [
+  {
+    question: "Dentakim'e nasıl ulaşırım?",
+    answer: `Kliniğimiz ${BUSINESS.address.full} adresindedir. Marmaray Halkalı hattı ve metrobüs bağlantılarıyla Küçükçekmece içinde ulaşım kolaydır. Google Haritalar'da "Dentakim" olarak arayabilir veya Plus Code ${BUSINESS.plusCode} ile konumu bulabilirsiniz.`,
+  },
+  {
+    question: "Çalışma saatleriniz nedir?",
+    answer: `${BUSINESS.hours.weekdays.days} ${BUSINESS.hours.weekdays.opens}–${BUSINESS.hours.weekdays.closes}, ${BUSINESS.hours.saturday.days} ${BUSINESS.hours.saturday.opens}–${BUSINESS.hours.saturday.closes} saatleri arasında hizmet veriyoruz. Pazar günü kliniğimiz kapalıdır.`,
+  },
+  {
+    question: "Randevu nasıl alabilirim?",
+    answer: `En hızlı yol WhatsApp'tan yazmaktır: ${BUSINESS.phone.display}. Aynı numaradan telefonla arayabilir veya kliniğe uğrayarak randevu oluşturabilirsiniz.`,
+  },
+  {
+    question: "Diş ağrısı gibi acil durumlarda ne yapmalıyım?",
+    answer: "Ağrı, şişlik veya kırık diş gibi durumlarda telefonla ya da WhatsApp'tan durumunuzu belirtin; günlük programda öncelik açmaya çalışıyoruz. Yüzde hızla yayılan şişlik, ateş veya yutkunma güçlüğü varsa vakit kaybetmeden bir acil servise başvurun.",
+  },
+  {
+    question: "Muayeneye gelirken yanımda ne getirmeliyim?",
+    answer: "Kimlik belgeniz yeterlidir. Varsa daha önce çekilmiş röntgenlerinizi, kullandığınız ilaçların listesini ve kronik hastalığınıza ait raporu getirmeniz tedavi planlamasını kolaylaştırır.",
+  },
+];
 
 export default function IletisimPage() {
   return (
@@ -84,7 +108,7 @@ export default function IletisimPage() {
                 href={WA_DEEP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center rounded-full bg-brand-whatsapp px-6 text-[15px] font-bold text-white transition-colors hover:bg-brand-whatsapp-dark"
+                className="inline-flex min-h-12 items-center rounded-full bg-brand-whatsapp px-6 text-[15px] font-bold text-brand-whatsapp-ink transition-colors hover:bg-brand-whatsapp-dark"
               >
                 WhatsApp ile yazın
               </a>
@@ -138,6 +162,7 @@ export default function IletisimPage() {
             />
           </div>
         </div>
+        <InfoFAQ id="iletisim-sss" title="Ulaşım ve ziyaret hakkında" items={CONTACT_FAQ} />
       </div>
     </main>
   );
