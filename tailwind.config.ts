@@ -64,6 +64,8 @@ const config: Config = {
           card: "rgb(var(--c-card) / <alpha-value>)",            /* kart zemini */
           whatsapp: "#25D366",
           "whatsapp-dark": "#1DA851",
+          /** WhatsApp yeşili üzerinde okunur koyu metin (WCAG AA, 8.2:1). */
+          "whatsapp-ink": "#04260F",
         },
       },
       keyframes: {
