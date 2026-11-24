@@ -11,7 +11,7 @@ import { ContactCTA } from "@/components/shared/ContactCTA";
 import { Clock, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = generateMeta({
-  title: "Kliniğimiz",
+  title: "Kliniğimiz — Küçükçekmece Diş Kliniği",
   description:
     "Dentakim Ağız ve Diş Sağlığı Polikliniği: Küçükçekmece Sultan Murat Caddesi'ndeki kliniğimiz, hekim kadromuz, çalışma saatlerimiz ve ulaşım bilgileri.",
   slug: "klinik",
@@ -41,7 +41,7 @@ export default function KlinikPage() {
       <div className="page-hero">
         <div className="mx-auto max-w-[1304px] px-5 py-[clamp(48px,6vw,88px)] sm:px-8">
           <BreadcrumbNav items={[{ label: "Anasayfa", href: "/" }, { label: "Klinik" }]} />
-          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
             Kliniğimiz
           </p>
           <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
@@ -72,7 +72,7 @@ export default function KlinikPage() {
 
           <div className="flex flex-col gap-6">
             <div className="flex gap-3.5">
-              <MapPin className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+              <MapPin className="mt-0.5 size-5 shrink-0 text-brand-accent-dark" aria-hidden />
               <p className="text-[15.5px] leading-[1.7] text-brand-mid">
                 {BUSINESS.address.full}
                 <br />
@@ -82,16 +82,16 @@ export default function KlinikPage() {
               </p>
             </div>
             <div className="flex gap-3.5">
-              <Phone className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+              <Phone className="mt-0.5 size-5 shrink-0 text-brand-accent-dark" aria-hidden />
               <a
                 href={BUSINESS.phone.href}
-                className="text-[17px] font-bold text-brand-dark hover:text-brand-accent"
+                className="text-[17px] font-bold text-brand-dark hover:text-brand-accent-dark"
               >
                 {BUSINESS.phone.display}
               </a>
             </div>
             <div className="flex gap-3.5">
-              <Clock className="mt-0.5 size-5 shrink-0 text-brand-accent" aria-hidden />
+              <Clock className="mt-0.5 size-5 shrink-0 text-brand-accent-dark" aria-hidden />
               <dl className="w-full max-w-xs space-y-1 text-[15px] text-brand-mid">
                 <div className="flex justify-between gap-6">
                   <dt>{BUSINESS.hours.weekdays.days}</dt>

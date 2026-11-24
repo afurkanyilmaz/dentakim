@@ -35,7 +35,7 @@ export async function ClinicStrip() {
           <ul className="mt-6 space-y-3">
             {POINTS.map((p) => (
               <li key={p} className="flex items-center gap-3 text-[13.5px] font-semibold text-white/85">
-                <span className="inline-flex size-6 items-center justify-center rounded-full bg-white/10 text-brand-accent">
+                <span className="inline-flex size-6 items-center justify-center rounded-full bg-white/10 text-brand-accent-dark">
                   <Check className="size-3.5" aria-hidden />
                 </span>
                 {p}
@@ -45,7 +45,7 @@ export async function ClinicStrip() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/klinik/galeri"
-              className="inline-flex h-[50px] items-center gap-2 rounded-[12px] bg-brand-accent px-6 text-[14px] font-extrabold text-white transition-[filter] hover:brightness-110"
+              className="inline-flex h-[50px] items-center gap-2 rounded-[12px] bg-brand-accent px-6 text-[14px] font-extrabold text-brand-ink transition-[filter] hover:brightness-110"
             >
               Galeriyi İncele <span aria-hidden>→</span>
             </Link>

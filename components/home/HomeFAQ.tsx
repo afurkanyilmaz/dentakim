@@ -27,7 +27,7 @@ export function HomeFAQ() {
             key={item.question}
             className="flex w-[82%] shrink-0 snap-start flex-col rounded-[22px] border border-brand-line bg-brand-card p-6 sm:w-[320px]"
           >
-            <span className="text-[11px] font-extrabold tracking-[0.2em] text-brand-accent">
+            <span className="text-[11px] font-extrabold tracking-[0.2em] text-brand-accent-dark">
               S.{String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="mt-4 font-heading text-[19px] font-bold leading-[1.3] tracking-[-0.02em] text-brand-light">

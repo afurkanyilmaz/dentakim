@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { generateMeta } from "@/lib/seo";
+import { preloadPageHero } from "@/lib/page-hero";
 import { BUSINESS, whatsappUrl } from "@/lib/business";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -13,6 +14,7 @@ export const metadata: Metadata = generateMeta({
 });
 
 export default function HakkimizdaPage() {
+  preloadPageHero();
   return (
     <main className="pb-16">
       <div className="page-hero">
@@ -61,7 +63,7 @@ export default function HakkimizdaPage() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "default" }),
-              "bg-brand-accent text-brand-dark hover:bg-brand-accent/90"
+              "bg-brand-accent text-brand-dark hover:bg-brand-accent hover:text-brand-ink/90"
             )}
           >
             WhatsApp&apos;tan Bilgi Al

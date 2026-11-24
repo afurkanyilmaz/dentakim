@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { getBreadcrumbSchema, getDoctorSchema } from "@/lib/schema";
 import { BreadcrumbNav } from "@/components/shared/BreadcrumbNav";
 import { ContactCTA } from "@/components/shared/ContactCTA";
+import { TREATMENT_BLURBS } from "@/components/shared/TreatmentCard";
 import { InstagramEmbeds } from "@/components/shared/InstagramEmbeds";
 import { INSTAGRAM_HANDLE, INSTAGRAM_PROFILE } from "@/lib/instagram";
 import { getReelsForDoctor } from "@/lib/instagram-feed";
@@ -26,7 +27,11 @@ export function generateMetadata({ params }: Props): Metadata {
   // Başlık çalışma alanı + ilçe hedefler. Korunan ünvan ("uzman") belge
   // olmadan kullanılmaz; bkz. lib/doctors.ts CERTIFIED_TITLES.
   return generateMeta({
-    title: `${doctor.name} — ${doctor.titleShort}, Küçükçekmece`,
+    // Uzun ad + ünvan 65 karakteri aşarsa konum eki düşülür
+    title:
+      `${doctor.name} — ${doctor.titleShort}, Küçükçekmece`.length <= 65
+        ? `${doctor.name} — ${doctor.titleShort}, Küçükçekmece`
+        : `${doctor.name} — ${doctor.titleShort}`,
     omitSuffix: true,
     description: doctor.summary,
     slug: `hekimler/${doctor.slug}`,
@@ -82,7 +87,7 @@ export default async function HekimPage({ params }: Props) {
               <h1 className="font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">
                 {doctor.name}
               </h1>
-              <p className="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-brand-accent">
+              <p className="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-brand-accent-dark">
                 {doctor.specialization}
               </p>
               <p className="mt-4 max-w-2xl text-brand-mid">{doctor.summary}</p>
@@ -179,7 +184,7 @@ export default async function HekimPage({ params }: Props) {
                         <span className="font-heading text-[20px] font-bold text-brand-dark">
                           {service.title}
                         </span>
-                        <span className="text-[14px] text-brand-mid">{service.desc}</span>
+                        <span className="text-[14px] leading-[1.6] text-brand-mid">{TREATMENT_BLURBS[slug] ?? service.desc}</span>
                       </Link>
                     );
                   })}

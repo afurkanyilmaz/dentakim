@@ -21,7 +21,7 @@ export function ServiceCard({
   return (
     <Card as="article" className="group">
       <div className="flex flex-1 flex-col gap-2.5 p-[26px] pb-6">
-        <span className="mb-1 inline-flex size-11 items-center justify-center rounded-panel bg-brand-primary-light text-brand-accent">
+        <span className="mb-1 inline-flex size-11 items-center justify-center rounded-panel bg-brand-primary-light text-brand-accent-dark">
           <Icon className="size-5" aria-hidden />
         </span>
 

@@ -28,8 +28,31 @@ const SITE_SUFFIX = BUSINESS.brandName;
  * "KVKK | Küçükçekmece Diş Kliniği — Dentakim | Dentakim" gibi çift son ekle
  * çıkardı. Semt sayfalarında son ek dört kez tekrarlanıyordu.
  */
-export function generateMeta({ title, description, slug, image, omitSuffix }: MetaProps): Metadata {
-  const fullTitle = omitSuffix ? title : `${title} | ${SITE_SUFFIX}`;
+/** Google'ın başlıkları kestiği yaklaşık sınır. */
+const TITLE_MAX = 65;
+/** Arama sonucunda gösterilen açıklama sınırı. */
+const DESC_MAX = 160;
+
+/**
+ * Başlık uzunsa marka son eki düşülür: anahtar kelime ve konum korunur,
+ * marka adı Google'da site adı olarak zaten ayrıca gösterilir.
+ */
+function fitTitle(title: string, omitSuffix?: boolean) {
+  if (omitSuffix) return title;
+  const withBrand = `${title} | ${SITE_SUFFIX}`;
+  return withBrand.length <= TITLE_MAX ? withBrand : title;
+}
+
+/** Uzun açıklamayı kelime sınırında kısaltır (arama sonucunda yarım kalmasın). */
+function fitDescription(text: string) {
+  if (text.length <= DESC_MAX) return text;
+  const cut = text.slice(0, DESC_MAX - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,.;:—-]+$/, "")}…`;
+}
+
+export function generateMeta({ title, description: rawDescription, slug, image, omitSuffix }: MetaProps): Metadata {
+  const fullTitle = fitTitle(title, omitSuffix);
+  const description = fitDescription(rawDescription);
   const path = slug ? `/${slug}` : "/";
   const url = `${BUSINESS.website}${path}`;
 

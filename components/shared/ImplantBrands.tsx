@@ -36,7 +36,7 @@ export function ImplantBrands() {
               <h3 className="font-heading text-[22px] font-bold text-brand-dark">
                 {brand.name}
               </h3>
-              <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-brand-accent">
+              <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-brand-accent-dark">
                 {brand.origin}
               </span>
             </div>

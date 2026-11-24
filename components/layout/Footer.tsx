@@ -109,7 +109,7 @@ export function Footer() {
           {/* Randevu kartı */}
           <div className="h-fit rounded-[26px] border border-white/10 bg-[linear-gradient(160deg,#121A2B,#0A1120)] p-6 sm:p-7">
             <div className="flex items-center gap-3 rounded-[16px] border border-white/10 bg-white/[0.04] p-3">
-              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-brand-accent text-white">
+              <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-brand-accent text-brand-ink">
                 <Clock className="size-5" aria-hidden />
               </span>
               <span>
@@ -135,7 +135,7 @@ export function Footer() {
             </p>
             <Link
               href="/randevu"
-              className="mt-6 flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-white text-[14px] font-extrabold text-[#0B1220] transition-colors hover:bg-brand-accent hover:text-white"
+              className="mt-6 flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-white text-[14px] font-extrabold text-[#0B1220] transition-colors hover:bg-brand-accent hover:text-brand-ink"
             >
               Randevu Al <span aria-hidden>↗</span>
             </Link>
@@ -173,7 +173,7 @@ export function Footer() {
                 ))}
                 {col.all ? (
                   <li>
-                    <Link href="/hizmetler" className="text-[13px] font-bold text-brand-light hover:text-brand-accent">
+                    <Link href="/hizmetler" className="text-[13px] font-bold text-brand-light hover:text-brand-accent-dark">
                       Tüm Tedaviler ↗
                     </Link>
                   </li>

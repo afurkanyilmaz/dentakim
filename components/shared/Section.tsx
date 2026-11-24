@@ -103,7 +103,7 @@ export function ArrowLink({ href, children }: { href: string; children: ReactNod
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-1.5 border-b border-brand-line-strong pb-1.5 text-[12.5px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent"
+      className="inline-flex items-center gap-1.5 border-b border-brand-line-strong pb-1.5 text-[12.5px] font-extrabold text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent-dark"
     >
       {children}
       <span aria-hidden>↗</span>

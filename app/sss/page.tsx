@@ -33,7 +33,7 @@ export default function SSSPage() {
           <BreadcrumbNav
             items={[{ label: "Anasayfa", href: "/" }, { label: "Sık Sorulan Sorular" }]}
           />
-          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent">
+          <p className="mt-6 text-[11px] font-extrabold uppercase tracking-[0.24em] text-brand-accent-dark">
             Merak Ettikleriniz
           </p>
           <h1 className="mt-3 font-heading text-[clamp(38px,5vw,64px)] font-bold leading-[1.02] tracking-display text-white [text-wrap:pretty]">

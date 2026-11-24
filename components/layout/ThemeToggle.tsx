@@ -39,7 +39,7 @@ export function ThemeToggle({ className, withLabel = false }: { className?: stri
       aria-label={label}
       title={label}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full border border-fg/[0.14] bg-fg/[0.05] text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent",
+        "inline-flex items-center justify-center gap-2 rounded-full border border-fg/[0.14] bg-fg/[0.05] text-brand-light transition-colors hover:border-brand-accent hover:text-brand-accent-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent",
         withLabel ? "h-11 px-4 text-[13px] font-bold" : "size-9",
         className
       )}

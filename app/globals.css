@@ -56,7 +56,7 @@
     --c-card: 16 21 33;
     --c-text: 246 248 255;
     --c-mid: 154 167 188;
-    --c-faint: 110 123 145;
+    --c-faint: 127 139 160;
     --c-fg: 255 255 255;
     --c-accent-text: 210 187 163;
     --panel: linear-gradient(160deg, #151b29, #0b0f18);
@@ -88,7 +88,7 @@
     --c-card: 255 255 255;
     --c-text: 22 36 47;
     --c-mid: 78 92 106;
-    --c-faint: 112 124 137;
+    --c-faint: 95 106 118;
     --c-fg: 22 36 47;
     --c-accent-text: 138 106 50;
     --panel: linear-gradient(160deg, #ffffff, #f3efe7);
@@ -121,7 +121,7 @@
     --c-card: 16 21 33;
     --c-text: 246 248 255;
     --c-mid: 154 167 188;
-    --c-faint: 110 123 145;
+    --c-faint: 127 139 160;
     --c-fg: 255 255 255;
     --c-accent-text: 210 187 163;
     --panel: linear-gradient(160deg, #151b29, #0b0f18);
